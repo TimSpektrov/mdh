@@ -31,11 +31,11 @@ export const Works: FC<WorksProps> = (props) => {
 
   useEffect(() => {
     scroll(
-      (progress) => {
-        const targetOffset:number = progress.y.targetOffset
+      ({y}) => {
+        const targetOffset:number = y.targetOffset
         setFilterPosition(targetOffset);
       
-        progress.y.current > targetOffset
+        y.current > targetOffset
           ? openFilter()
           : closeFilter();
       },
