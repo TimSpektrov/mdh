@@ -12,6 +12,25 @@ import { IWork } from '@/types/IWork';
 import { scroll } from 'framer-motion/dom';
 import { useFilterStore } from '@/store/useFilterStore';
 
+interface IAxisScrollInfo {
+  current: number;
+  offset: number[];
+  progress: number;
+  scrollLength: number;
+  velocity: number;
+  targetOffset: number;
+  targetLength: number;
+  containerLength: number;
+  interpolatorOffsets?: number[];
+  interpolate?: (v: number) => number;
+}
+
+interface IScrollInfo {
+  time: number;
+  x: IAxisScrollInfo;
+  y: IAxisScrollInfo;
+}
+
 export const Works: FC<WorksProps> = (props) => {
   const filterRef = useRef<any>(null);
   const searchParam = useSearchParams();
@@ -30,21 +49,19 @@ export const Works: FC<WorksProps> = (props) => {
   });
 
   useEffect(() => {
-    setTimeout(() => {
-      scroll(
+    scroll(
+      (progress: IScrollInfo) => {
 
-        (progress: any) => {
-          const y = progress.y
-          const targetOffset:number = y.targetOffset
-          setFilterPosition(targetOffset);
-        
-          y.current > targetOffset
-            ? openFilter()
-            : closeFilter();
-        },
-        { target: filterRef.current }
-      );
-    },1000)
+        const y = progress.y
+        const targetOffset:number = y.targetOffset
+        setFilterPosition(targetOffset);
+      
+        y.current > targetOffset
+          ? openFilter()
+          : closeFilter();
+      },
+      { target: filterRef.current }
+    );
     
   }, [closeFilter, openFilter, setFilterPosition]);
 
