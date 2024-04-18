@@ -9,7 +9,7 @@ import { Feedback } from '@/components/ui/Feedback';
 import { HorisontalScrollFilter } from '@/components/ui/HorisontalScrollFilter';
 import { useSearchParams } from 'next/navigation';
 import { IWork } from '@/types/IWork';
-import { scroll } from 'framer-motion/dom';
+import { scroll } from 'framer-motion';
 import { useFilterStore } from '@/store/useFilterStore';
 
 interface IAxisScrollInfo {
@@ -29,6 +29,13 @@ interface IScrollInfo {
   time: number;
   x: IAxisScrollInfo;
   y: IAxisScrollInfo;
+}
+
+interface IScrollOptions {
+  container?: HTMLElement;
+  target?: Element;
+  axis?: "x" | "y";
+  smooth?: number;
 }
 
 export const Works: FC<WorksProps> = (props) => {
@@ -60,7 +67,7 @@ export const Works: FC<WorksProps> = (props) => {
           ? openFilter()
           : closeFilter();
       },
-      { target: filterRef.current }
+      { target: filterRef.current } as IScrollOptions
     );
     
   }, [closeFilter, openFilter, setFilterPosition]);
