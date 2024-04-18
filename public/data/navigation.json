@@ -1,0 +1,110 @@
+[
+  {
+    "id": "0",
+    "name": "Наши работы",
+    "url": "/works",
+    "showHeader": true,
+    "showFooter": true,
+    "children": [
+      {
+        "id": "10",
+        "title": "FIT SERVICE",
+        "slug": "fit-service"
+      },
+      {
+        "id": "20",
+        "title": "ЦСКА АРЕНА",
+        "slug": "cska"
+      },
+      {
+        "id": "30",
+        "title": "PaySwap"
+      },
+      {
+        "id": "40",
+        "title": "Electrocars RUS"
+      },
+      {
+        "id": "50",
+        "title": "Прометей"
+      },
+      {
+        "id": "60",
+        "title": "Skringo"
+      },
+      {
+        "id": "70",
+        "title": "Open Teleport"
+      },
+      {
+        "id": "80",
+        "title": "Профсоюз работников АДА"
+      },
+      {
+        "id": "90",
+        "title": "Blogger X"
+      },
+      {
+        "id": "100",
+        "title": "EPR-система социальной службы"
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "name": "Услуги",
+    "url": "/#services",
+    "showHeader": true,
+    "showFooter": true,
+    "children": [
+      {
+        "id": "0",
+        "title": "Дизайн сайта"
+      },
+      {
+        "id": "1",
+        "title": "UX-аудит"
+      },
+      {
+        "id": "2",
+        "title": "Редизайн"
+      },
+      {
+        "id": "3",
+        "title": "NO CODE РАЗРАБОТКА",
+        "slug": "no-code"
+      },
+      {
+        "id": "4",
+        "title": "Айдентика",
+        "slug": "identity"
+      },
+      {
+        "id": "5",
+        "title": "Дизайн промо-материалов",
+      },
+      {
+        "id": "6",
+        "title": "Аутстафф дизайнеров"
+      },
+      {
+        "id": "7",
+        "title": "Дизайн-поддержка"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Работать у нас",
+    "url": "/vacancies",
+    "showHeader": true,
+    "showFooter": true
+  },
+  {
+    "id": "4",
+    "name": "О нас",
+    "url": "/about",
+    "showHeader": true,
+    "showFooter": true
+  }
+]

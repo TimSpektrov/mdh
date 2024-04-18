@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "label": "Для новых проектов",
+    "email": "mail@mdh.one"
+  },
+  {
+    "id": 2,
+    "label": "Для сотрудничества и рекламы",
+    "email": "design@mdh.one"
+  },
+  {
+    "id": 3,
+    "label": "Для резюме",
+    "email": "talent@mdh.one"
+  }
+]

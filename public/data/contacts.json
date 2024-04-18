@@ -1,0 +1,28 @@
+[
+  {
+    "id": 0,
+    "name": "+7 (926) 187 25 73",
+    "url": "tel:+79261872573",
+    "showHeader": true,
+    "showFooter": true
+  },
+  {
+    "id": 1,
+    "name": "mail@mdh.one",
+    "url": "mailto:mail@mdh.one",
+    "showHeader": true,
+    "showFooter": true
+  },
+  {
+    "id": 2,
+    "name": "Москва, Большая Якиманка, 26",
+    "showHeader": false,
+    "showFooter": true
+  },
+  {
+    "id": 3,
+    "name": "Ессентуки, ул. Фридриха Энгельса 38А LADA Family",
+    "showHeader": false,
+    "showFooter": true
+  }
+]

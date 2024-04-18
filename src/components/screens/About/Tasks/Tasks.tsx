@@ -2,11 +2,8 @@ import { FC } from 'react';
 import { TasksProps } from './Tasks.props';
 import Image from 'next/image';
 import { Title, Text } from "@/components/ui/Typography";
-
-import data from '@json/data.json'
 import patternImg from './assets/pattern.svg'
 import style from './Tasks.module.scss';
-import parse from 'html-react-parser';
 import { NewTypography } from '@/components/ui/NewTypography';
 
 export const Tasks: FC<TasksProps> = ({ list, title }) => {

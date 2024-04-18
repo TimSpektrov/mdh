@@ -1,0 +1,1682 @@
+{
+  "emails": [
+    {
+      "id": "1",
+      "label": "Для новых проектов",
+      "email": "mail@mdh.one"
+    },
+    {
+      "id": "2",
+      "label": "Для сотрудничества и рекламы",
+      "email": "design@mdh.one"
+    },
+    {
+      "id": "3",
+      "label": "Для резюме",
+      "email": "talent@mdh.one"
+    }
+  ],
+  "navigation": [
+    {
+      "id": "0",
+      "name": "Наши работы",
+      "url": "/works",
+      "showHeader": true,
+      "showFooter": true
+    },
+    {
+      "id": "1",
+      "name": "Услуги",
+      "url": "/#services",
+      "showHeader": true,
+      "showFooter": true
+    },
+    {
+      "id": "3",
+      "name": "Работать у нас",
+      "url": "/vacancies",
+      "showHeader": true,
+      "showFooter": true
+    },
+    {
+      "id": "4",
+      "name": "О нас",
+      "url": "/about",
+      "showHeader": true,
+      "showFooter": true
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "title": "Дизайн продукта",
+      "desc": "Создадим дизайн-макет для сайта или приложения. Эстетически привлекательный и понятный пользователю."
+    },
+    {
+      "id": "2",
+      "title": "UX-аудит",
+      "desc": "Протестируем приложение или сайт и предоставим рекомендации по улучшению пользовательского опыта.",
+      "slug": "ux-audit"
+    },
+    {
+      "id": "3",
+      "title": "Редизайн",
+      "desc": "Заменим устаревший интерфейс, улучшим юзабилити сайта и презентуем ваш бренд по-новому.",
+      "slug": "redesign"
+    },
+    {
+      "id": "4",
+      "title": "NO CODE РАЗРАБОТКА",
+      "desc": "Разработаем приложение или сайт для быстрого запуска. Без программного кода.",
+      "slug": "no-code"
+    },
+    {
+      "id": "5",
+      "title": "Айдентика",
+      "desc": "Разработаем лого и визуальный стиль. Поможем заявить о бренде громче и расти быстрее.",
+      "slug": "identity"
+    },
+    {
+      "id": "6",
+      "title": "Дизайн промо-материалов",
+      "desc": "Раскроем ценность бизнеса для ваших пользователей и партнеров. Создадим дизайн креативов, презентаций и др.",
+      "slug": "design-promo-materials"
+    },
+    {
+      "id": "7",
+      "title": "Аутстафф дизайнеров",
+      "desc": "Предоставим специалиста для работы над вашим проектом. Поможем сэкономить до 30% на HR-расходах."
+    },
+    {
+      "id": "8",
+      "title": "Дизайн-поддержка",
+      "desc": "Разработаем приложение или сайт со сложной структурой и богатым функционалом."
+    }
+  ],
+  "works": [
+    {
+      "id": "10",
+      "title": "FITSERVICE",
+      "desc": "Сайт о промоакциях самой крупной сети автосервисов на территории СНГ. Формирование удобного каталога акций и понятных пользователю форм заявки на услуги",
+      "tags": [
+        {
+          "id": "0",
+          "name": "Приложение"
+        }
+      ],
+      "image": "fit-service.webp",
+      "light": true,
+      "showHome": true,
+      "showAbout": true,
+      "showDesign": false,
+      "published": true,
+      "slug": "fit-service",
+      "pageContent": [
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Клиент",
+            "content": [
+              {
+                "desc": "<p>Fit Service — самая крупная сеть автосервисов на&nbsp;территории СНГ.</p>"
+              }
+            ],
+            "list": [
+              {
+                "title": "146 городов",
+                "desc": "<span>от Санкт-Петербурга до Алматы</span>"
+              },
+              {
+                "title": "по&nbsp;версии Forbes",
+                "desc": "<span>Самая выгодная франшиза России за 2021 год</span>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": false,
+            "full": true,
+            "images": [
+              {
+                "image": "/assets/images/work/fit-service/webp/screen-0.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Проект",
+            "content": [
+              {
+                "desc": "<p>Клиент обратился к&nbsp;нам, чтобы получить раздел на&nbsp;сайте, объединяющий промокампании сервиса (а&nbsp;их&nbsp;немало). Требовались: главная страница c&nbsp;каталогом акций, типовая страница для каждой акции и&nbsp;панель администрирования, чтобы можно было обновлять действующие кампании и&nbsp;легко и&nbsp;непринужденно создавать страницы для новых.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": false,
+            "full": false,
+            "images": [
+              {
+                "image": "/assets/images/work/fit-service/webp/screen-1.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Решение",
+            "content": [
+              {
+                "desc": "<p>Чтобы представить на&nbsp;одном ресурсе все промоакции Fit Service, мы&nbsp;решили создать в&nbsp;рамках одного поддомена страницы для отдельных акций, объединенные единым визуальным стилем, и&nbsp;карту с&nbsp;локализацией для пользователя. Каждый салон смог реализовывать свое промо с&nbsp;помощью баннеров или QR-кодов, которые ведут на&nbsp;конкретную страницу. А&nbsp;пользователь получил возможность быстро найти то, что ему нужно.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": true,
+            "full": false,
+            "images": [
+              {
+                "image": "/assets/images/work/fit-service/webp/screen-2.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Главная страница",
+            "content": [
+              {
+                "desc": "<p>В верхнем правом углу пользователь видит свой город (если геолокация сработала неточно, его можно поменять). Ниже&nbsp;— слайдер с&nbsp;баннерами популярных и&nbsp;сезонных акций. Там можно сразу найти что-нибудь для себя и&nbsp;записаться на&nbsp;нужную акцию. Под слайдером&nbsp;— карта с&nbsp;выбором автосервисов города с&nbsp;возможностью посмотреть их&nbsp;в&nbsp;виде списка. Еще ниже&nbsp;— фильтр по&nbsp;услугам и&nbsp;карточки с&nbsp;предложениями. В&nbsp;самом низу страницы есть обратная связь с&nbsp;помощью мессенджеров. Просто и&nbsp;удобно.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": true,
+            "full": false,
+            "images": [
+              {
+                "image": "/assets/images/work/fit-service/webp/screen-3.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Страницы акций",
+            "content": [
+              {
+                "desc": "<p>На странице промоакции можно найти баннер с&nbsp;кнопкой записи и&nbsp;подробное описание акции. Ниже&nbsp;— форма записи, каунтер (чтобы пользователь не&nbsp;упустил свой шанс), блок «Подробнее о&nbsp;Fit Service» и&nbsp;кросс-сейл-предложения.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": false,
+            "images": [
+              {
+                "image": "/assets/images/work/fit-service/webp/screen-4.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Форма заявки",
+            "content": [
+              {
+                "desc": "<p>Мы проработали простую и&nbsp;понятную форму заявки. Пользователь выбирает услуги, марку и&nbsp;модель авто, дату и&nbsp;время, а&nbsp;также ближайший автосервис (если вдруг ошибся в&nbsp;выборе на&nbsp;главной странице). После он&nbsp;подтверждает заказ с&nbsp;помощью SMS, и&nbsp;информация сразу попадает в&nbsp;базу 1С. Там ее&nbsp;обрабатывает модератор. Такая автоматизация позволяет облегчить работу отдела продаж и&nbsp;ускорить процессы записи, подтверждения заказа и&nbsp;оформления заявки. Каждому клиенту мы&nbsp;предлагаем подключиться к&nbsp;выгодной бонусной программе. Ведь все любят бонусы, верно?</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": false,
+            "images": [
+              {
+                "image": "/assets/images/work/fit-service/webp/screen-5.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Страница 404",
+            "content": [
+              {
+                "desc": "<p>Добавили красивую страницу с&nbsp;ошибкой 404, если срок акции истек. Здесь&nbsp;же&nbsp;мы&nbsp;говорим пользователю о&nbsp;том, что не&nbsp;все потеряно: он&nbsp;может посмотреть другие акции и&nbsp;найти что-нибудь для себя.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": false,
+            "images": [
+              {
+                "image": "/assets/images/work/fit-service/webp/screen-6.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Что мы сделали",
+            "content": [
+              {
+                "title": "<span>Мобильная версия</span>",
+                "desc": "<p>Создали и&nbsp;мобильную версию сайта, чтобы клиент мог прямо в&nbsp;пути найти ближайший салон и&nbsp;нужную услугу. Мы&nbsp;сохранили весь функционал веб-версии и&nbsp;не&nbsp;забыли о&nbsp;функции обратной связи, чтобы было комфортно обращаться к&nbsp;оператору.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "GalleryBlock",
+          "blockShow": true,
+          "block": {
+            "direction": "horizontal",
+            "variant": "dark",
+            "images": [
+              {
+                "image": "/assets/images/work/fit-service/webp/Fit_Service_Mobile_1.webp"
+              },
+              {
+                "image": "/assets/images/work/fit-service/webp/Fit_Service_Mobile_2.webp"
+              },
+              {
+                "image": "/assets/images/work/fit-service/webp/Fit_Service_Mobile_3.webp"
+              },
+              {
+                "image": "/assets/images/work/fit-service/webp/Fit_Service_Mobile_4.webp"
+              },
+              {
+                "image": "/assets/images/work/fit-service/webp/Fit_Service_Mobile_5.webp"
+              },
+              {
+                "image": "/assets/images/work/fit-service/webp/Fit_Service_Mobile_6.webp"
+              },
+              {
+                "image": "/assets/images/work/fit-service/webp/Fit_Service_Mobile_7.webp"
+              },
+              {
+                "image": "/assets/images/work/fit-service/webp/Fit_Service_Mobile_8.webp"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "title": "Результат",
+            "content": [
+              {
+                "desc": "<p>Клиент получил удобный и&nbsp;функциональный сайт, который систематизирует его промоакции. С&nbsp;помощью созданного нами шаблона акционной страницы заказчик может без труда дополнять линейку акций и&nbsp;обновлять существующие, а&nbsp;далее рекламировать их&nbsp;в&nbsp;удобном формате. Система записи на&nbsp;акцию стала автоматизированной. Все промопредложения сервиса оказались в&nbsp;одном разделе сайта. Пользователям стало удобно искать нужные им&nbsp;акции в&nbsp;своем городе, пользуясь картами, списками и&nbsp;фильтрами.</p><p>Сайт привлекает внимание и&nbsp;позволяет пользователям решить свои задачи, а&nbsp;заодно узнать о&nbsp;других полезных услугах. Все это оптимизирует ресурсы бизнеса, а&nbsp;самое главное&nbsp;— повышает лояльность и&nbsp;интерес клиента к&nbsp;бренду.</p>"
+              }
+            ],
+            "data": [
+              {
+                "title": "Год",
+                "desc": "2022"
+              },
+              {
+                "title": "Срок выполнения",
+                "desc": "2 месяца"
+              },
+              {
+                "title": "Цены на подобные проекты",
+                "desc": "от 300 000 ₽"
+              },
+              {
+                "title": "Список услуг",
+                "desc": "Дизайн, Разработка"
+              }
+            ]
+          }
+        }
+      ],
+      "pageHero": {
+        "blockShow": true,
+        "autoImage": "/assets/images/work/fit-service/hero/fit-service-auto.png",
+        "images": [
+          {
+            "image": "/assets/images/work/fit-service/hero/fit-service-home-1.jpg"
+          },
+          {
+            "image": "/assets/images/work/fit-service/hero/fit-service-home-2.jpg"
+          },
+          {
+            "image": "/assets/images/work/fit-service/hero/fit-service-home-3.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "20",
+      "title": "ЦСКА АРЕНА",
+      "desc": "UX-аудит и редизайн сайта одной из крупнейших спортивных площадок в России. Улучшение user flow, создание контентных страниц и системы продажи билетов. Результат — ежегодное удвоение продаж.",
+      "tags": [
+        {
+          "id": "0",
+          "name"  : "Сайт"
+        }
+      ],
+      "image": "cska.webp",
+      "light": true,
+      "showHome": true,
+      "showAbout": true,
+      "showDesign": false,
+      "published": true,
+      "slug": "cska",
+      "seoTitle": "Работы по сайту площадки «ЦСКА Арена» - проекты студии MDH",
+      "seoDesc": "Ознакомьтесь с нашей работой по сайту площадки «ЦСКА Арена».",
+      "pageContent": [
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Клиент",
+            "content": [
+              {
+                "desc": "«ЦСКА Арена» — одна из&nbsp;крупнейших российских площадок для&nbsp;спортивных событий, концертов и&nbsp;деловых мероприятий."
+              }
+            ],
+            "list": [
+              {
+                "title": "Вместимость",
+                "desc": "<span>19 200 гостей</span>"
+              },
+              {
+                "title": "по версии Sport Business Awards",
+                "desc": "<span>Лучшая ледовая арена года-2019</span>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": false,
+            "full": false,
+            "images": [
+              {
+                "image": "/assets/images/work/cska/webp/cska_001.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Проект",
+            "content": [
+              {
+                "desc": "<p>В&nbsp;2021&nbsp;году клиент пришёл с&nbsp;запросом: добавить новые шрифты и&nbsp;градиент провести редизайн сайта «ЦСКА Арены». Там&nbsp;размещаются афиша, новости и&nbsp;онлайн-касса с&nbsp;билетами на&nbsp;события. С&nbsp;2019&nbsp;года сайт не&nbsp;обновлялся. Требовалось привести площадку в&nbsp;соответствие актуальному брендбуку.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "BeforeAfterBlock",
+          "blockShow": true,
+          "block": {
+            "firstImage": "/assets/images/work/cska/webp/cska-after.webp",
+            "secondImage": "/assets/images/work/cska/webp/cska-before.webp"
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Мы&nbsp;пообщались с&nbsp;клиентом и&nbsp;провели UX-аудит продукта. И&nbsp;стало ясно, что&nbsp;главная проблема&nbsp;— не&nbsp;в&nbsp;дизайне. Сайт «не&nbsp;работал»: пользователь просто не&nbsp;мог&nbsp;решить свои задачи&nbsp;— например, купить билет. И&nbsp;уходил с&nbsp;сайта. Скорее всего, навсегда."
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": true,
+            "full": false,
+            "images": [
+              {
+                "image": "/assets/images/work/cska/webp/cska_02.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Что мы сделали",
+            "content": [
+              {
+                "title": "<span>Анализ user flow</span>",
+                "desc": "<p>Протестировали пользовательский путь. Придумали, как его улучшить, чтобы пользователю было комфортно и&nbsp;приятно.</p>"
+              },
+              {
+                "title": "<span>Редизайн главной страницы</span>",
+                "desc": "<p>Обновили главную страницу согласно брендбуку. Она&nbsp;стала выглядеть красивее и&nbsp;современнее, не&nbsp;будем скромничать. А&nbsp;ещё&nbsp;на&nbsp;ней&nbsp;появился call-to-action, удерживающий человека на&nbsp;сайте.</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": true,
+            "full": false,
+            "images": [
+              {
+                "image": "/assets/images/work/cska/webp/cska_03.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Создание удобной системы продажи билетов",
+            "content": [
+              {
+                "desc": "<p>Спроектировали навигацию по&nbsp;арене, чтобы пользователь мог выбрать, куда он&nbsp;покупает билет. Появились возможность выбирать место в&nbsp;разных типах секторов, а&nbsp;также усовершенствованная корзина. Теперь в&nbsp;нее можно добавлять несколько покупок, будь то&nbsp;билеты на&nbsp;разные события или подарочные сертификаты.</p><p>Адаптировали новые опции покупки билетов для мобильной версии сайта (о&nbsp;ней мы&nbsp;еще расскажем далее)</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": false,
+            "full": false,
+            "images": [
+              {
+                "image": "/assets/images/work/cska/webp/cska_04.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Редизайн контентных страниц",
+            "content": [
+              {
+                "desc": "<p>Сделали удобнее всю&nbsp;навигацию по&nbsp;сайту и&nbsp;переработали страницы:</p><ul><li><b>афиша</b></li><li><b>календарь аренды льда</b></li><li><b>лаунж</b></li><li><b>события</b></li></ul>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "SliderBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "images": [
+              {
+                "image": "/assets/images/work/cska/webp/slide-1.webp"
+              },
+              {
+                "image": "/assets/images/work/cska/webp/slide-2.webp"
+              },
+              {
+                "image": "/assets/images/work/cska/webp/slide-3.webp"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "title": "Создали страницы-шаблоны, на&nbsp;основе которых клиент может создавать новые. Даже&nbsp;без&nbsp;дизайнеров!"
+          }
+        },
+        {
+          "blockType": "ImageBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "dark",
+            "reverse": false,
+            "full": false,
+            "images": [
+              {
+                "image": "/assets/images/work/cska/webp/cska_05.webp",
+                "alt": ""
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "TextBlock",
+          "blockShow": true,
+          "block": {
+            "variant": "light",
+            "content": [
+              {
+                "title": "Обновление мобильной версии",
+                "desc": "<p>Оптимизировали версию для мобильных устройств. Благодаря этому пользователям стало комфортно ей пользоваться</p>"
+              }
+            ],
+            "feedback": [
+              {
+                "name": "Ярослав",
+                "position": "Специалист по внедрению цифровых продуктов в «ЦСКА Арене»",
+                "text": "<p>В&nbsp;2020&nbsp;году 60% пользователей приходило с&nbsp;мобильных устройств. Теперь <strong><span>цифра увеличилась до&nbsp;85%</span></strong></p><p>Наконец, сформировалась аудитория. Продаж с&nbsp;мобильных устройств до&nbsp;редизайна не&nbsp;было вообще</p>"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "GalleryBlock",
+          "blockShow": true,
+          "block": {
+            "direction": "vertical",
+            "variant": "dark",
+            "images": [
+              {
+                "image": "/assets/images/work/cska/webp/phone-1.webp"
+              },
+              {
+                "image": "/assets/images/work/cska/webp/phone-2.webp"
+              },
+              {
+                "image": "/assets/images/work/cska/webp/phone-3.webp"
+              },
+              {
+                "image": "/assets/images/work/cska/webp/phone-4.webp"
+              },
+              {
+                "image": "/assets/images/work/cska/webp/phone-5.webp"
+              },
+              {
+                "image": "/assets/images/work/cska/webp/phone-6.webp"
+              },
+              {
+                "image": "/assets/images/work/cska/webp/phone-7.webp"
+              },
+              {
+                "image": "/assets/images/work/cska/webp/phone-8.webp"
+              },
+              {
+                "image": "/assets/images/work/cska/webp/phone-9.webp"
+              }
+            ]
+          }
+        },
+        {
+          "blockType": "InfoBlock",
+          "blockShow": true,
+          "block": {
+            "title": "Результат",
+            "content": [
+              {
+                "desc": "<p>Сайт стал приносить пользу бизнесу и целевой аудитории. Он стал интересным и живым. Постоянно появляются обновления, которые клиент может дорабатывать уже без нашего участия.</p>"
+              }
+            ],
+            "list": [
+              {
+                "title": "Конверсия увеличилась",
+                "desc": "с <span>8%</span> в 2021 году<br>до <span>30%</span> в 2023 году"
+              },
+              {
+                "title": "Продажи удваиваются",
+                "desc": "<span>каждый год</span>"
+              }
+            ],
+            "data": [
+              {
+                "title": "Год",
+                "desc": "2021"
+              },
+              {
+                "title": "Срок выполнения",
+                "desc": "4 месяца"
+              },
+              {
+                "title": "Цены на подобные проекты",
+                "desc": "от 500 000 ₽"
+              },
+              {
+                "title": "Список услуг",
+                "desc": "редизайн, UX-аудит"
+              }
+            ]
+          }
+        }
+      ],
+      "pageHero": {
+        "blockShow": true,
+        "background": "/assets/images/work/cska/hero/cska-hero.png",
+        "variant": "light",
+        "imageFront": "/assets/images/work/cska/hero/cska-flip-front.jpg",
+        "imageBack": "/assets/images/work/cska/hero/cska-flip-back.jpg"
+      }
+    },
+    {
+      "id": "30",
+      "title": "PaySwap",
+      "desc": "Криптовалютный кошелёк для проведения любых операций с криптовалютой. Один кошелёк для всего: хранение, обмен, покупка, продажа — актуальность курсов валют гарантируется.",
+      "tags": [
+        {
+          "id": "0",
+          "name": "Приложение"
+        },
+        {
+          "id": "1",
+          "name": "Сайт"
+        },
+        {
+          "id": "2",
+          "name": "Айдентика"
+        }
+      ],
+      "image": "payswap-new.webp",
+      "light": true,
+      "showHome": true,
+      "showAbout": false,
+      "showIdentity": true,
+      "showDesign": true,
+      "published": false,
+      "slug": "payswap"
+    },
+    {
+      "id": "40",
+      "title": "Electrocars RUS",
+      "desc": "Приложение для зарядки электромобилей. Удобный просмотр ближайших станций, построение маршрута по карте, бронирование и оплата через приложение.",
+      "tags": [
+        {
+          "id": "0",
+          "name": "Приложение"
+        }
+      ],
+      "image": "electrocars-rus.webp",
+      "light": false,
+      "showHome": true,
+      "showAbout": false,
+      "showDesign": true,
+      "published": false,
+      "slug": "electrocars-rus"
+    },
+    {
+      "id": "50",
+      "title": "Прометей",
+      "desc": "Сайт и айдентика для лингвистического клуба, который организует групповые занятия для детей и немножко для взрослых",
+      "tags": [
+        {
+          "id": "0",
+          "name": "Айдентика"
+        },
+        {
+          "id": "1",
+          "name": "No-code разработка"
+        }
+      ],
+      "image": "prometej.webp",
+      "light": false,
+      "showHome": true,
+      "published": false,
+      "slug": "prometej"
+    },
+    {
+      "id": "60",
+      "title": "Skringo",
+      "desc": "Российский стартап, который связывает продавцов и покупателей на рынке товаров премиального сегмента.",
+      "tags": [
+        {
+          "id": "0",
+          "name": "Приложение"
+        },
+        {
+          "id": "1",
+          "name": "Айдентика"
+        }
+      ],
+      "image": "skringo.webp",
+      "light": false,
+      "showHome": true,
+      "showAbout": true,
+      "showDesign": true,
+      "published": false,
+      "slug": "skringo"
+    },
+    {
+      "id": "70",
+      "title": "Open Teleport",
+      "desc": "Первый в мире крупный маркетплейс, специализирующийся на аренде и продаже спутников и телепортов.",
+      "tags": [
+        {
+          "id": "0",
+          "name": "Сайт"
+        }
+      ],
+      "image": "open-teleport.webp",
+      "light": true,
+      "published": false,
+      "slug": "open-teleport"
+    },
+    {
+      "id": "80",
+      "title": "Профсоюз работников АДА",
+      "desc": "Спектакль внутри мобильного приложения. По задумке режиссёра слушатель спектакля должен перемещаться между локациями и делать отметки об их посещении в профсоюзном билете.",
+      "tags": [
+        {
+          "id": "0",
+          "name": "Приложение"
+        },
+        {
+          "id": "1",
+          "name": "Айдентика"
+        }
+      ],
+      "image": "profsoyuz-rabotnikov-ada.webp",
+      "light": false,
+      "showHome": true,
+      "showIdentity": true,
+      "published": false,
+      "slug": "profsoyuz-rabotnikov-ada"
+    },
+    {
+      "id": "90",
+      "title": "Blogger X",
+      "desc": "Приложение поможет блогеру наладить более тесный контакт со своей аудиторией. С помощью мессенджера можно пообщаться с подписчиками, узнать, какой контент их интересует и продвинуть свой мерч.",
+      "tags": [
+        {
+          "id": "0",
+          "name": "Приложение"
+        }
+      ],
+      "image": "blogger-x.webp",
+      "light": false,
+      "published": false,
+      "slug": "blogger-x"
+    },
+    {
+      "id": "100",
+      "title": "ERP-система социальной службы",
+      "desc": "Система, которая позволяет хранить данные о сотрудниках и клиентах, планировать трудовой график и учитывать отработанное время.",
+      "tags": [
+        {
+          "id": "0",
+          "name": "Приложение"
+        },
+        {
+          "id": "1",
+          "name": "Айдентика"
+        }
+      ],
+      "image": "epr-sistema-socialnoj-sluzhby.webp",
+      "light": false,
+      "showAbout": true,
+      "showIdentity": true,
+      "showDesign": true,
+      "published": false,
+      "slug": "erp-sistema-socialnoj-sluzhby"
+    }
+  ],
+  "vacancies": [
+    {
+      "id": "1",
+      "title": "UI/UX дизайнер",
+      "desc": "Наш дизайнер — человек с хорошим чувством вкуса и отличными навыками использования инструментов. Умеет совмещать эстетику с функциональностью и удобством использования интерфейса. Крутой исследователь, который кропотливо прорабатывает пользовательские сценарии и думает о том, как люди будут использовать продукт.",
+      "short_desc": "",
+      "conditions": "<ul><li>Профильное образование или множество курсов по дизайну интерфейсов.</li><li>Опыт работы в студии или продукте от 2 лет.</li><li>Figma, AE, AI.</li><li>Понимание того, как работает код и вёрстка.</li><li>Опыт работы с Тильдой или подобными конструкторами сайтов приветствуется.</li></ul>",
+      "offers": "<ul><li>Интересные проекты с крупными компаниями и нестандартные проекты со стартапами.</li><li>Корпоративные уроки английского языка.</li><li>Внутрикомандные воркшопы и курсы по дизайну.</li><li><strong><em>К отклику на вакансию добавь пару слов о себе и портфолио своих работ. Будь готов выполнить тестовое задание.</em></strong></li></ul>",
+      "image": "/assets/images/vacancies/designer.jpg",
+      "slug": "ui-ux-designer",
+      "published": true
+    },
+    {
+      "id": "2",
+      "title": "Ведущий контент-маркетолог",
+      "desc": "Наш контент-маркетолог — человек, имеющий хорошее представление о работе контент-маркетинга и как с его помощью можно продвигать продукт. Умеет самостоятельно писать тексты и ставить задачи по текстам другим. На высоком уровне выстраивает коммуникацию как с публикой, так и внутри коллектива. Несёт ответственность за свои решения и всегда нацелен на результат.",
+      "short_desc": "",
+      "conditions": "<ul><li>Имеете опыт работы в SMM и/или маркетинге от 2х лет в Digital-агентстве</li><li>Искренне заинтересованы в развитии собственного скилла</li><li>Умеете грамотно излагать свои мысли в устной и письменной форме</li><li>Понимаете алгоритмы работы социальных сетей и следите за трендами в SMM</li><li>Понимаете, с какой целью вы создаете контент и каким он должен быть.</li><li>Есть управленческий опыт и/или готов развиваться в сторону руководящей позиции</li><li>Будем рады видеть тебя частью нашей команды!</li></ul>",
+      "offers": "",
+      "image": "/assets/images/vacancies/marketer.jpg",
+      "slug": "head-of-content",
+      "published": true
+    },
+    {
+      "id": "3",
+      "title": "Менеджер проектов",
+      "desc": "Наш менеджер — это человек с крутыми организационными и коммуникативными навыками, проактивный и внимательный, всегда на связи и крайне быстро справляется с любыми задачами. Многозадачность и высокая скорость работы без потери качества — его идеальная среда обитания (не для слабонервных, ага). А также:<br><br>1. Разбирается в дизайне на хорошем уровне: может дать оценку как визуальной составляющей продукта (имеет некоторую насмотренность), так и подойти к нему с точки зрения аналитики;<br>2. Знает о своём проекте всё до мелочей: от условий договора до даты отпуска специалиста и ближайшей оплаты от клиента;<br>3.В идеале — может общаться с разработчиками и вести несложные проекты по разработке.",
+      "short_desc": "Наш менеджер — это человек с крутыми организационными и коммуникативными навыками, проактивный и внимательный, всегда на связи и крайне быстро справляется с любыми задачами. Многозадачность и высокая скорость работы без потери качества — его идеальная среда обитания (не для слабонервных, ага).",
+      "conditions": "<ul><li>грамотная постановка задач специалистам, умение планировать и распределять их загрузку;</li><li>талант доводить дела до конца и соблюдать дедлайны, а ещё помогать соблюдать дедлайны другим;</li><li>высокий уровень владения устной и письменной речью;</li><li>ответственность, внимательность и даже немного педантичность;</li><li>аккуратное ведение документации проекта, планов, таблиц, смет, договоров и проч.</li></ul>",
+      "offers": "<ul><li>Интересные проекты с крупными компаниями, государственным сектором, зарубежными стартапами</li><li>Работу в команде высококлассных специалистов</li><li>Корпоративные занятия английским языком</li><li>Помощь в покупке оборудования</li><li>Внутрикомандные воркшопы и курсы повышения квалификации</li></ul>",
+      "image": "/assets/images/vacancies/manager.jpg",
+      "slug": "project-manager",
+      "published": true
+    }
+  ],
+  "rates": [
+    {
+      "id": "0",
+      "uniqueId": "9",
+      "name": "Лайт",
+      "desc": "Для тех, кому нужно быстрое решение",
+      "price": 60000,
+      "popular": false,
+      "term": "5 дней",
+      "volume": "10-15 страниц брендбука",
+      "structure": [
+        {
+          "id": "0",
+          "name": "Логотип (1 вариант)",
+          "locked": false
+        },
+        {
+          "id": "1",
+          "name": "Фирменный цвет",
+          "locked": false
+        },
+        {
+          "id": "2",
+          "name": "Фирменный шрифт",
+          "locked": false
+        },
+        {
+          "id": "3",
+          "name": "Примеры использования на носителях",
+          "locked": false
+        },
+        {
+          "id": "4",
+          "name": "Фирменная графика",
+          "locked": true
+        },
+        {
+          "id": "5",
+          "name": "Индивидуальное руководство по использованию фирменного стиля и элементов айдентики.",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "uniqueId": "10",
+      "name": "Стандарт",
+      "desc": "Разработка фирменной айдентики",
+      "price": 120000,
+      "popular": true,
+      "term": "14 дней",
+      "volume": "25-30 страниц брендбука",
+      "structure": [
+        {
+          "id": "0",
+          "name": "Логотип (до 3- х вариантов)",
+          "locked": false
+        },
+        {
+          "id": "1",
+          "name": "Фирменная цветовая палитра",
+          "locked": false
+        },
+        {
+          "id": "2",
+          "name": "Набор фирменных шрифтов",
+          "locked": false
+        },
+        {
+          "id": "3",
+          "name": "Примеры использования на носителях",
+          "locked": false
+        },
+        {
+          "id": "4",
+          "name": "Фирменная графика",
+          "locked": true
+        },
+        {
+          "id": "5",
+          "name": "Индивидуальное руководство по использованию фирменного стиля и элементов айдентики.",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "uniqueId": "11",
+      "name": "Премиум",
+      "desc": "Целостный визуальный образ бренда",
+      "price": 200000,
+      "popular": false,
+      "term": "35 дней",
+      "volume": "50-60 страниц брендбука",
+      "structure": [
+        {
+          "id": "0",
+          "name": "Логотип (до 3- х вариантов + комментарии)",
+          "locked": false
+        },
+        {
+          "id": "1",
+          "name": "Фирменная цветовая палитра",
+          "locked": false
+        },
+        {
+          "id": "2",
+          "name": "Набор фирменных шрифтов",
+          "locked": false
+        },
+        {
+          "id": "3",
+          "name": "Примеры использования на носителях",
+          "locked": false
+        },
+        {
+          "id": "4",
+          "name": "Фирменная графика",
+          "locked": false
+        },
+        {
+          "id": "5",
+          "name": "Индивидуальное руководство по использованию фирменного стиля и элементов айдентики.",
+          "locked": false
+        }
+      ]
+    }
+  ],
+  "socials": [
+    {
+      "id": 0,
+      "name": "WhatsApp",
+      "url": "https://wa.me/79261872573",
+      "showHeader": true,
+      "showFeedback": true,
+      "showFooter": true
+    },
+    {
+      "id": 1,
+      "name": "Telegram",
+      "url": "https://t.me/mdh_design",
+      "showHeader": true,
+      "showFeedback": true,
+      "showFooter": true
+    },
+    {
+      "id": 2,
+      "name": "Behance",
+      "url": "https://www.behance.net/make_digital_history/",
+      "showHeader": false,
+      "showFeedback": true,
+      "showFooter": true
+    },
+    {
+      "id": 3,
+      "name": "Vkontakte",
+      "url": "https://vk.com/makedigitalhistory/",
+      "showHeader": false,
+      "showFeedback": false,
+      "showFooter": true
+    },
+    {
+      "id": 4,
+      "name": "Telegram_bot",
+      "url": "https://t.me/mdh_sales_bot",
+      "showHeader": true,
+      "showFeedback": false,
+      "showFooter": false
+    },
+    {
+      "id": 5,
+      "name": "vc.ru",
+      "url": "https://vc.ru/u/1366736-make-digital-history",
+      "showHeader": false,
+      "showFeedback": false,
+      "showFooter": true
+    }
+  ],
+
+  "services_pages" : {
+    "design-promo-materials": {
+      "meta": {
+        "title": "",
+        "description": ""
+      },
+      "hero": {
+        "title": "дизайн промо-<br>материалов",
+        "description": "<span>Создадим</span>  целостный визуальный образ вашего бренда: от дизайна визиток до оформления социальных сетей.  <span>Поможем</span>  пользователям запомнить и полюбить ваш продукт."
+      },
+      "advantages": {
+        "image": {
+          "url": "/assets/images/advantages/promo-mat.jpg",
+          "alt": "ПРОВОДИМ, ПОДГОТВАЛИВАЕМ, СОЗДАЕМ"
+        },
+        "items": [
+          {
+            "id": 1,
+            "title": "ПРОВОДИМ",
+            "description": "интервью, изучаем ваш брендбук и требования к стилю, шрифтам, контенту"
+          },
+          {
+            "id": 2,
+            "title": "ПОДГОТВАЛИВАЕМ",
+            "description": "материалы к печати, учитывая особенности продукта и требования типографии"
+          },
+          {
+            "id": 3,
+            "title": "СОЗДАЕМ",
+            "description": "дизайн нужных элементов и материалов в рамках вашего корпоративного стиля"
+          }
+        ]
+      },
+      "workList": {
+        "title": "Оформляем графические и печатные материалы",
+        "items": [
+          {
+            "id": 1,
+            "title": "Визитки",
+            "img1": "/assets/images/promo-mat/1-1.jpg",
+            "img2": "/assets/images/promo-mat/1-2.jpg"
+          },
+          {
+            "id": 2,
+            "title": "Постеры",
+            "img1": "/assets/images/promo-mat/2-1.jpg",
+            "img2": "/assets/images/promo-mat/2-2.jpg"
+          },
+          {
+            "id": 3,
+            "title": "Блокноты",
+            "img2": "/assets/images/promo-mat/3-2.jpg"
+          },
+          {
+            "id": 4,
+            "title": "Фирменные бланки",
+            "img1": "/assets/images/promo-mat/4-1.jpg",
+            "img2": "/assets/images/promo-mat/4-2.jpg"
+          },
+          {
+            "id": 5,
+            "title": "Конверты",
+            "img1": "/assets/images/promo-mat/5-1.jpg",
+            "img2": "/assets/images/promo-mat/5-2.jpg"
+          },
+          {
+            "id": 6,
+            "title": "Презентации для пользователей",
+            "img1": "/assets/images/promo-mat/6-1.jpg",
+            "img2": "/assets/images/promo-mat/6-2.jpg"
+          },
+          {
+            "id": 7,
+            "title": "Видео-ролики и презентации для инвесторов",
+            "img2": "/assets/images/promo-mat/7-2.jpg"
+          },
+          {
+            "id": 8,
+            "title": "Профиль бизнеса в социальных сетях",
+            "img2": "/assets/images/promo-mat/8-2.jpg"
+          }
+        ]
+      },
+      "work": {
+        "items": [
+          {
+            "id": "30",
+            "title": "PaySwap",
+            "desc": "Криптовалютный кошелёк для проведения любых операций с криптовалютой. Один кошелёк для всего: хранение, обмен, покупка, продажа — актуальность курсов валют гарантируется.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Приложение"
+              },
+              {
+                "id": "1",
+                "name": "Сайт"
+              },
+              {
+                "id": "2",
+                "name": "Айдентика"
+              }
+            ],
+            "image": "/assets/images/work/payswap-2.png",
+            "light": true,
+            "showHome": true,
+            "showAbout": true,
+            "showIdentity": true,
+            "showDesign": true,
+            "published": false,
+            "slug": "payswap"
+          },
+          {
+            "id": "80",
+            "title": "Профсоюз работников АДА",
+            "desc": "Спектакль внутри мобильного приложения. По задумке режиссёра слушатель спектакля должен перемещаться между локациями и делать отметки об их посещении в профсоюзном билете.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Приложение"
+              },
+              {
+                "id": "1",
+                "name": "Айдентика"
+              }
+            ],
+            "image": "/assets/images/work/profsoyuz-rabotnikov-ada.png",
+            "light": false,
+            "showHome": true,
+            "showIdentity": true,
+            "published": true,
+            "slug": "profsoyuz-rabotnikov-ada"
+          },
+          {
+            "id": "60",
+            "title": "Skringo",
+            "desc": "Российский стартап, который связывает продавцов и покупателей на рынке товаров премиального сегмента.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Приложение"
+              },
+              {
+                "id": "1",
+                "name": "Айдентика"
+              }
+            ],
+            "image": "/assets/images/work/skringo.png",
+            "light": false,
+            "showHome": true,
+            "showAbout": true,
+            "showDesign": true,
+            "published": false,
+            "slug": "skringo"
+          },
+          {
+            "id": "70",
+            "title": "Open Teleport",
+            "desc": "Первый в мире крупный маркетплейс, специализирующийся на аренде и продаже спутников и телепортов.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Сайт"
+              }
+            ],
+            "image": "/assets/images/work/open-teleport.jpg",
+            "light": true,
+            "published": false,
+            "slug": "open-teleport"
+          }
+        ]
+      }
+    },
+    "ux-audit": {
+      "meta": {
+        "title": "",
+        "description": ""
+      },
+      "hero": {
+        "title": "UX-аудит",
+        "description": "<span>Проводим</span>  аудит вашего мобильного приложения или сайта. <span>Анализируем</span>  скорость и отказоустойчивость, удобство навигации и отзывчивость интерфейса.  <span>Предоставляем</span>  экспертные рекомендации для улучшения пользовательского опыта."
+      },
+      "advantages": {
+        "image": {
+          "url": "/assets/images/advantages/audit.jpg",
+          "alt": "Иссдледуем, Анализируем, выявляем"
+        },
+        "items": [
+          {
+            "id": 1,
+            "title": "Исследуем",
+            "description": "бизнес, проводим базовый или глубинный анализ рынка и конкурентов"
+          },
+          {
+            "id": 2,
+            "title": "Анализируем",
+            "description": "предоставленные вами данные: показатели, метрики и статистику"
+          },
+          {
+            "id": 3,
+            "title": "Выявляем",
+            "description": "проблемные зоны в интерфейсе и формируем гипотезы для их устранения"
+          }
+        ]
+      },
+      "stages": {
+        "title": "Как проходит UX-аудит",
+        "items": [
+          {
+            "id": 1,
+            "title": "Брифинг",
+            "description": "<ul><li>Определяем цель и задачи проекта </li><li>Изучаем рынок, внутренние процессы и возможности бизнеса</li><li>Погружаемся в проблему и ограничения продукта</li></ul>"
+          },
+          {
+            "id": 2,
+            "title": "Аналитическое исследование",
+            "description": "<ul><li>Анализируем поле конкурентов и отбираем наиболее релевантных </li><li>Анализируем текущее состояние вашего продукта</li><li>Исследуем аудиторию и ключевые метрики </li><li>Анализируем почему логика продукта выстроена именно так, а не иначе</li></ul>"
+          },
+          {
+            "id": 3,
+            "title": "Аудит и формирование гипотез",
+            "description": "<ul><li>Ищем узкие места в юзерфлоу </li><li>Проверяем интерфейс на соответствие запроса аудитории и бизнеса </li><li>Выстраиваем гипотезы о вариантах улучшения пользовательского опыта</li></ul>"
+          },
+          {
+            "id": 4,
+            "title": "Проектирование",
+            "description": "Иллюстрируем гипотезы прототипами интерфейсов в множестве вариаций"
+          },
+          {
+            "id": 5,
+            "title": "Отчетность и презентация",
+            "description": "<ul><li>Формируем документацию отчета </li><li>Презентуем отчет на встрече с вами</li></ul>"
+          }
+        ]
+      },
+      "work": {
+        "items": [
+          {
+            "id": "30",
+            "title": "PaySwap",
+            "desc": "Криптовалютный кошелёк для проведения любых операций с криптовалютой. Один кошелёк для всего: хранение, обмен, покупка, продажа — актуальность курсов валют гарантируется.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Приложение"
+              },
+              {
+                "id": "1",
+                "name": "Сайт"
+              },
+              {
+                "id": "2",
+                "name": "Айдентика"
+              }
+            ],
+            "image": "payswap-2.png",
+            "light": true,
+            "showHome": true,
+            "showAbout": true,
+            "showIdentity": true,
+            "showDesign": true,
+            "published": false,
+            "slug": "payswap"
+          },
+          {
+            "id": "80",
+            "title": "Профсоюз работников АДА",
+            "desc": "Спектакль внутри мобильного приложения. По задумке режиссёра слушатель спектакля должен перемещаться между локациями и делать отметки об их посещении в профсоюзном билете.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Приложение"
+              },
+              {
+                "id": "1",
+                "name": "Айдентика"
+              }
+            ],
+            "image": "profsoyuz-rabotnikov-ada.png",
+            "light": false,
+            "showHome": true,
+            "showIdentity": true,
+            "published": true,
+            "slug": "profsoyuz-rabotnikov-ada"
+          },
+          {
+            "id": "60",
+            "title": "Skringo",
+            "desc": "Российский стартап, который связывает продавцов и покупателей на рынке товаров премиального сегмента.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Приложение"
+              },
+              {
+                "id": "1",
+                "name": "Айдентика"
+              }
+            ],
+            "image": "skringo.png",
+            "light": false,
+            "showHome": true,
+            "showAbout": true,
+            "showDesign": true,
+            "published": false,
+            "slug": "skringo"
+          }
+        ]
+      }
+    },
+    "redesign": {
+      "meta": {
+        "title": "",
+        "description": ""
+      },
+      "hero": {
+        "title": "Редизайн",
+        "description": "<span>Обновим</span>  дизайн, стиль коммуникации и функционал продукта. <span>Внедрим</span>  новые механики взаимодействия с аудиторией.  <span>Поможем</span> бренду выделиться, а бизнесу — масштабироваться."
+      },
+      "advantages": {
+        "video": {
+          "url": "/assets/video/cases.mp4",
+          "poster_url": "/assets/advantages/redesign.jpg"
+        },
+        "items": [
+          {
+            "id": 1,
+            "title": "Дизайн",
+            "description": "Создадим новый стиль, который привлечет пользователей и выделит вас на фоне конкурентов"
+          },
+          {
+            "id": 2,
+            "title": "Юзабилити",
+            "description": "Перестроим логику продукта, чтобы пользователи могли быстро найти нужную информацию"
+          },
+          {
+            "id": 3,
+            "title": "Функционал",
+            "description": "Внедрим новые опции, адаптируем проект под меняющиеся запросы рынка и пользователей"
+          }
+        ]
+      },
+      "stages": {
+        "items": [
+          {
+            "id": 1,
+            "title": "Работаем",
+            "description": "в рамках вашего фирменного стиля, сохраняя привычные пользователям элементы"
+          },
+          {
+            "id": 2,
+            "title": "Исследуем",
+            "description": "продукт, находим недоработки и предлагаем новые дизайн-решения"
+          },
+          {
+            "id": 3,
+            "title": "Изучаем",
+            "description": "потребности и поведение пользователей, плавно модифицируем ваш продукт"
+          },
+          {
+            "id": 4,
+            "title": "Предложим",
+              "description": "подходящие технические решения, чтобы оптимизировать работу сайта или приложения"
+          }
+        ]
+      },
+      "feedback": {
+        "title": "<span>Предложим</span>  новые идеи и решения для редизайна вашего продукта"
+      },
+      "work": {
+        "items": [
+          {
+            "id": "30",
+            "title": "PaySwap",
+            "desc": "Криптовалютный кошелёк для проведения любых операций с криптовалютой. Один кошелёк для всего: хранение, обмен, покупка, продажа — актуальность курсов валют гарантируется.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Приложение"
+              },
+              {
+                "id": "1",
+                "name": "Сайт"
+              },
+              {
+                "id": "2",
+                "name": "Айдентика"
+              }
+            ],
+            "image": "payswap-2.png",
+            "light": true,
+            "showHome": true,
+            "showAbout": true,
+            "showIdentity": true,
+            "showDesign": true,
+            "published": false,
+            "slug": "payswap"
+          },
+          {
+            "id": "80",
+            "title": "Профсоюз работников АДА",
+            "desc": "Спектакль внутри мобильного приложения. По задумке режиссёра слушатель спектакля должен перемещаться между локациями и делать отметки об их посещении в профсоюзном билете.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Приложение"
+              },
+              {
+                "id": "1",
+                "name": "Айдентика"
+              }
+            ],
+            "image": "profsoyuz-rabotnikov-ada.png",
+            "light": false,
+            "showHome": true,
+            "showIdentity": true,
+            "published": true,
+            "slug": "profsoyuz-rabotnikov-ada"
+          },
+          {
+            "id": "60",
+            "title": "Skringo",
+            "desc": "Российский стартап, который связывает продавцов и покупателей на рынке товаров премиального сегмента.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Приложение"
+              },
+              {
+                "id": "1",
+                "name": "Айдентика"
+              }
+            ],
+            "image": "skringo.png",
+            "light": false,
+            "showHome": true,
+            "showAbout": true,
+            "showDesign": true,
+            "published": false,
+            "slug": "skringo"
+          },
+          {
+            "id": "70",
+            "title": "Open Teleport",
+            "desc": "Первый в мире крупный маркетплейс, специализирующийся на аренде и продаже спутников и телепортов.",
+            "tags": [
+              {
+                "id": "0",
+                "name": "Сайт"
+              }
+            ],
+            "image": "open-teleport.jpg",
+            "light": true,
+            "published": false,
+            "slug": "open-teleport"
+          }
+        ]
+      }
+    }
+  },
+  "pages-content": {
+    "about-page" : {
+      "meta": {
+        "title": "MDH - студия дизайна в Москве",
+        "description": "Для нас дизайн продукта — больше, чем картинки, — это целостный проект, в котором продумывается всё: уникальный стиль, эстетическое впечатление, функциональность и удобство использования."
+      },
+      "hero": {
+        "title": "mdh",
+        "description": "это <span>дизайн жизни,</span> в&nbsp;которой мы все будем жить завтра",
+        "list": [
+          {
+            "id": 1,
+            "title": "Освобождающий время",
+            "description": "Веб-сервисы и мобильные продукты упрощают и берут на себя выполнение почти любых рабочих и личных задач"
+          },
+          {
+            "id": 2,
+            "title": "Решающий проблемы",
+            "description": "У каждого из вас есть ресурсы, которыми вы пользуетесь каждый день и без которых не представляете вашу реальность"
+          },
+          {
+            "id": 3,
+            "title": "меняющий мир",
+            "description": "Мы понимаем, что продукты и сервисы, которые придумываются и воплощаются сегодня значительным образом меняют повседневность"
+          }
+        ]
+      },
+      "proposal-first": {
+        "left": [
+          "<h2><span>Мы хотим,</span> чтобы цифровые продукты действительно работали и стали частью вашей жизни</h2>",
+          "<p>Для нас дизайн продукта — больше, чем картинки, — это целостный проект, в котором продумывается всё: уникальный стиль, эстетическое впечатление, функциональность и удобство использования.</p>"
+        ],
+        "right": {
+          "url": "/assets/images/about/about-content.jpg",
+          "alt": ""
+        }
+      },
+      "proposal-second": {
+        "left": [
+          "<h2><span>А что делать,</span> если ещё нет продукта, который нужен именно вам?</h2>",
+          "<h3>Вы можете создать его сами!</h3>",
+          "<p>MDH существует для тех, кто не ждёт, пока его историю напишет кто-то, а пишет её сам. Все ваши самые неожиданные, невероятные и смелые решения и идеи найдут воплощение в нашей совместной работе.</p><p>Даже если у вас есть просто идея будущего продукта и ясное понимание, что он нужен вам и другим людям — мы поможем в воплощении вашей задумки в реальность.</p>",
+          "<h3>Мы верим в то, что идеи наших клиентов заслуживают того, чтобы войти в цифровую историю.</h3>",
+          "<p>Главное, что вы — становитесь полноценным участником процесса. Мы всегда готовы вместе с вами «докрутить» концепцию продукта и предусмотреть все детали для грамотного воплощения замысла.</p>"
+        ],
+        "right": {
+          "url": "/assets/images/about/about-faq.jpg",
+          "alt": ""
+        }
+      },
+      "tasks": {
+        "title": "Трансформация и развитие вашего бизнеса — <span>наша задача</span>",
+        "items": [
+          {
+            "id": "1",
+            "title": "Стартап",
+            "desc": "В процессе воплощения в жизнь идеи всей своей жизни? Делимся нашей экспертизой в проектировании продукта и создаём оптимальное решение для старта.",
+            "image": "/assets/images/tasks/tasks-icon-1.svg"
+          },
+          {
+            "id": "2",
+            "title": "Новое направление",
+            "desc": "Нашли возможность для расширения на основе нового цифрового продукта? Проанализируем, как ваша задумка вписывается в рынок и сделаем продукт, открывающий новые горизонты для развития.",
+            "image": "/assets/images/tasks/tasks-icon-2.svg"
+          },
+          {
+            "id": "3",
+            "title": "Оптимизация бизнес-процессов",
+            "desc": "Вы из тех, кто всегда держит руку на пульсе и непрерывно занимается улучшением своего бизнеса? Погружаемся в детали ваших процессов и проектируем продукт, отвечающий новым вызовам",
+            "image": "/assets/images/tasks/tasks-icon-3.svg"
+          },
+          {
+            "id": "4",
+            "title": "Освобождающий время",
+            "desc": "Веб-сервисы и мобильные продукты упрощают и берут на себя выполнение почти любых рабочих и личных задач",
+            "image": "/assets/images/tasks/tasks-icon-4.svg"
+          },
+          {
+            "id": "5",
+            "title": "Решающий проблемы",
+            "desc": "У каждого из вас есть ресурсы, которыми вы пользуетесь каждый день и без которых не представляете вашу реальность",
+            "image": "/assets/images/tasks/tasks-icon-5.svg"
+          }
+        ]
+      },
+      "our-target": {
+        "title": "<span>Наша цель —</span> создать цифровой продукт, с&nbsp;помощью которого ваш идеальный образ будущего станет реальностью"
+      },
+      "goal": {
+        "title": "<span>Мы убеждены,</span> что&nbsp;по-настоящему значимый продукт создаётся в&nbsp;особой атмосфере",
+        "list": [
+          {
+            "id": 1,
+            "title": "Заинтересованные специалисты",
+            "description": "Делимся нашей экспертизой в&nbsp;проектировании продукта и&nbsp;создаём оптимальное решение для&nbsp;старта."
+          },
+          {
+            "id": 2,
+            "title": "Участие клиента в&nbsp;проекте",
+            "description": "Делимся нашей экспертизой в проектировании продукта и создаём оптимальное решение для старта."
+          },
+          {
+            "id": 3,
+            "title": "ДОВОЛЬНЫЕ ПОЛЬЗОВАТЕЛИ",
+            "description": "Делимся нашей экспертизой в&nbsp;проектировании продукта и&nbsp;создаём оптимальное решение для&nbsp;старта."
+          }
+        ]
+      },
+      "works_title": "<span>Это мир,</span> который создала команда MDH. И мы готовы помочь создать ваш мир, вашу цифровую историю"
+    }
+  }
+}
