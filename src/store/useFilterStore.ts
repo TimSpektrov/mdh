@@ -5,7 +5,7 @@ interface FilterState {
   showFilter: boolean;
   openFilter: () => void;
   closeFilter: () => void;
-  filterPosition: number
+  filterPosition: any
   setFilterPosition: (num: any) => void
 }
 
