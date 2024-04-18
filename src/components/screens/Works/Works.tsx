@@ -32,8 +32,9 @@ export const Works: FC<WorksProps> = (props) => {
   useEffect(() => {
     scroll(
       (progress) => {
-        setFilterPosition(progress.y.targetOffset);
-        progress.y.current > progress.y.targetOffset
+        const {targetOffset, current} = progress.y
+        setFilterPosition(targetOffset);
+        current > targetOffset
           ? openFilter()
           : closeFilter();
       },
