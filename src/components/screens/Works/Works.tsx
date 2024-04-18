@@ -9,7 +9,7 @@ import { Feedback } from '@/components/ui/Feedback';
 import { HorisontalScrollFilter } from '@/components/ui/HorisontalScrollFilter';
 import { useSearchParams } from 'next/navigation';
 import { IWork } from '@/types/IWork';
-import { scroll } from 'framer-motion';
+import { scroll } from 'framer-motion/dom';
 import { useFilterStore } from '@/store/useFilterStore';
 
 export const Works: FC<WorksProps> = (props) => {
@@ -30,17 +30,22 @@ export const Works: FC<WorksProps> = (props) => {
   });
 
   useEffect(() => {
-    scroll(
-      ({y}) => {
-        const targetOffset:number = y.targetOffset
-        setFilterPosition(targetOffset);
-      
-        y.current > targetOffset
-          ? openFilter()
-          : closeFilter();
-      },
-      { target: filterRef.current }
-    );
+    setTimeout(() => {
+      scroll(
+
+        (progress) => {
+          const y = progress.y as any
+          const targetOffset:number = y.targetOffset
+          setFilterPosition(targetOffset);
+        
+          y.current > targetOffset
+            ? openFilter()
+            : closeFilter();
+        },
+        { target: filterRef.current }
+      );
+    },1000)
+    
   }, [closeFilter, openFilter, setFilterPosition]);
 
   return (
