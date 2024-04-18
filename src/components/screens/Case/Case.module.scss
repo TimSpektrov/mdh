@@ -1,0 +1,53 @@
+@import '@/styles/helpers/vars.scss';
+
+.beforeAfterSlider {
+  background-color: $light;
+  aspect-ratio: 16/10;
+
+  img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 62%;
+  }
+
+  & > div {
+    height: 100%;
+  }
+  .before-after-slider__delimiter-icon {
+    cursor: ew-resize !important;
+  }
+}
+
+.result {
+  position: relative;
+  overflow: hidden;
+
+  &Pattern {
+    @include bp-min(md) {
+      background-image: url('./assets/images/result-pattern.svg');
+      background-repeat: no-repeat;
+      background-size: 1323 auto;
+      background-position: 0 -100px;
+      position: absolute;
+      bottom: 40px;
+      left: 652px;
+      width: 1323px;
+      height: 455px;
+    }
+
+    @include bp-min(xl) {
+      bottom: 60px;
+      left: -925px;
+    }
+    
+    @include bp-min(xxl) {
+      left: -738px;
+    }
+    
+    @include bp-min(xxxl) {
+      left: -682px;
+      bottom: 140px;
+    }
+  }
+}

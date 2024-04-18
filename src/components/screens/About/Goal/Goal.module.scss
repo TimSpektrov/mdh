@@ -1,0 +1,93 @@
+@import '@/styles/helpers/vars.scss';
+@import '@/styles/helpers/mixins.scss';
+
+.section {
+  @include container;
+
+  @include bp-max(xl) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @include bp-min(xl){
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  h2 {
+    text-align: center;
+
+    @include bp-max(md) {
+      margin-bottom: 40px;
+    }
+    @include bp-min(md) {
+      margin-bottom: 48px;
+    }
+    @include bp-min(lg){
+      margin-bottom: 60px;
+    }
+
+    span {
+      color:$orange;
+    }
+  }
+  h3 {
+    @include bp-max(xl) {
+      margin-bottom: 16px;
+    }
+    @include bp-min(xl){
+      margin-bottom: 24px;
+      max-width: 400px;
+    }
+  }
+}
+
+.list {
+  display: grid;
+  @include bp-max(xl){
+    gap: 32px;
+  }
+  @include bp-min(xl){
+    gap: 36px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include bp-min(xxxl){
+    gap: 90px;
+  }
+}
+
+.item {
+  &-num {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    margin-bottom: .5em;
+    font-family: $secondaryFont;
+    font-weight: 700;
+    line-height: 140%;
+    color: $orange;
+
+    @include bp-max(md) {
+      font-size: 25px;
+    }
+    @include bp-min(md) {
+      font-size: 32px;
+    }
+    @include bp-min(xl){
+      font-size: 48px;
+    }
+  }
+}
+
+.delimiter {
+  position: relative;
+  flex-grow: 1;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    width: 100%;
+    height: 1px;
+    background-color: $orange;
+  }
+}

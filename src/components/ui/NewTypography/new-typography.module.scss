@@ -1,0 +1,59 @@
+@import '/src/styles/helpers/vars';
+@import '/src/styles/helpers/mixins';
+
+.h1, .h2,.h3, .h4, .h5, .h6 {
+  margin: 0;
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  text-transform: uppercase;
+}
+
+.h2 {
+  @include bp-max(md) {
+    font-size: 24px;
+  }
+  @include bp-min(md) {
+    font-size: 26px;
+  }
+  @include bp-min(xl) {
+    font-size: 38px;
+  }
+}
+
+.h3 {
+  @include bp-max(md) {
+    font-size: 18px;
+  }
+  @include bp-min(md) {
+    font-size: 22px;
+  }
+  @include bp-min(xl) {
+    font-size: 24px;
+  }
+}
+
+.h4 {
+  @include bp-max(md) {
+    font-size: 18px;
+  }
+  @include bp-min(md) {
+    font-size: 18px;
+  }
+  @include bp-min(xl) {
+    font-size: 20px;
+  }
+}
+
+.p {
+  font-family: $thirdFont;
+  font-weight: 400;
+  line-height: 140%;
+  @include bp-max(md) {
+    font-size: 16px;
+  }
+  @include bp-min(md) {
+    font-size: 18px;
+  }
+}

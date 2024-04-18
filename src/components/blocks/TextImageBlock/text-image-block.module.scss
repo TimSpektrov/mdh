@@ -1,0 +1,196 @@
+@import '@/styles/helpers/vars.scss';
+@import '@/styles/helpers/mixins.scss';
+.section {
+  display: flex;
+  @include container;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+
+  @include bp-max(md){
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  @include bp-min(md){
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @include bp-min(xl){
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  @include bp-max(xxl){
+    flex-direction: column;
+  }
+  @include bp-min(xxl){
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+      flex: 0 0 calc(50% - 30px);
+    }
+  }
+}
+
+.right {
+  align-self: flex-start;
+  position: relative;
+  z-index: 1;
+
+  @include bp-max(xxl) {
+    width: 100%;
+  }
+  @include bp-min(xxl) {
+    height: 600px;
+  }
+
+  @include bp-max(xxl){
+    order: -1;
+  }
+
+  .image {
+    filter: grayscale(100%);
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+
+    @include bp-max(md) {
+      height: 400px;
+    }
+    @include bp-min(md) {
+      height: 500px;
+    }
+    @include bp-min(xxl) {
+      height: 600px;
+    }
+  }
+}
+
+.left {
+  // Variants
+  h1, h2, h3, h4 {
+    font-family: $secondaryFont;
+    font-weight: 700;
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 25px;
+    line-height: 140%;
+    text-transform: uppercase;
+    @include bp-min(md) {
+      font-size: 32px;
+    }
+    @include bp-min(xl) {
+      font-size: 48px;
+    }
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 140%;
+    text-transform: uppercase;
+    @include bp-min(md) {
+      font-size: 26px;
+    }
+    @include bp-min(xl) {
+      font-size: 38px;
+    }
+
+    span {
+      color: $orange;
+    }
+  }
+
+  h3 {
+    margin-top: 1.6em;
+    font-size: 18px;
+    line-height: 140%;
+    text-transform: uppercase;
+    @include bp-min(md) {
+      font-size: 22px;
+    }
+    @include bp-min(xl) {
+      font-size: 24px;
+    }
+  }
+
+  h4 {
+    font-size: 16px;
+    line-height: 140%;
+    @include bp-min(md) {
+      font-size: 18px;
+    }
+    @include bp-min(xl) {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 1em;
+    line-height: 1.4;
+    @include bp-min(xl) {
+      font-size: 18px;
+    }
+  }
+}
+
+.btn-group {
+  padding-top: 16px;
+}
+
+.about-first-page {
+  background-color: $white3;
+  color: $black;
+  .pattern-bg {
+    @include bp-min(xxl){
+      display: none;
+    }
+    @include bp-max(xxl){
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        //width: 75%;
+        //height: 0;
+        //padding-top: 75%;
+        background-image: url(/assets/images/about/proposal-pattern.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top left;
+        translate: -60% -25%;
+        mix-blend-mode: difference;
+        pointer-events: none;
+        rotate: 90deg;
+
+        @include bp-max(md) {
+          height: 570px;
+          width: 570px;
+        }
+        @include bp-min(md) {
+          height: 800px;
+          width: 800px;
+        }
+      }
+    }
+  }
+}
+
+.about-second-page {
+  background-color: $black;
+  color: $white3;
+
+  p {
+    color: $gray-1;
+  }
+}
+
+

@@ -1,0 +1,88 @@
+@import '@/styles/helpers/vars';
+.advantages {
+  background-color: $white;
+  &__container {
+    display: grid;
+    align-items: center;
+    gap: 24px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    @include bp-min(md) {
+      gap: 36px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    @include bp-min(lg) {
+      padding-bottom: 36px;
+    }
+    @include bp-min(xl) {
+      padding-top: 120px;
+      padding-bottom: 120px;
+      grid-template-columns: 1fr 630px;
+    }
+    @include bp-min(xxl) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include bp-min(xxxl) {
+      gap: 60px;
+    }
+  }
+}
+
+.audit-page-img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+  @include bp-max(xs) {
+    aspect-ratio: 1.25;
+  }
+  @include bp-min(xs) {
+    aspect-ratio: 1.4;
+  }
+  @include bp-min(md) {
+    height: 500px;
+  }
+  @include bp-min(xl) {
+    height: 400px;
+  }
+  @include bp-min(xxl) {
+    height: 500px;
+  }
+  @include bp-min(xxxl) {
+    height: 600px;
+  }
+}
+
+.redesign-video {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+  @include bp-max(xs) {
+    aspect-ratio: 1.25;
+  }
+  @include bp-min(xs) {
+    aspect-ratio: 16 / 9;
+  }
+  @include bp-min(xl) {
+    height: 400px;
+  }
+  @include bp-min(xxl) {
+    height: 500px;
+  }
+  @include bp-min(xxxl) {
+    height: 600px;
+  }
+}
+
+.promo-materials-page {
+  .advantages {
+    &__container {
+      @include bp-min(xl) {
+        grid-template-columns: 1fr 725px;
+      }
+    }
+  }
+}

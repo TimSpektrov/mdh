@@ -1,0 +1,83 @@
+@import '@/styles/helpers/vars';
+
+
+.TextHero {
+  :root {
+    --text-hero: transparent;
+  }
+  margin: 0;
+  font-family: $thirdFont;
+  line-height: 1.6em;
+}
+
+.rubik {
+  font-family: $thirdFont;
+}
+
+.grandis {
+  font-family: $baseFont;
+}
+
+.grandis-extended {
+  font-family: $secondaryFont;
+}
+
+.h1 {
+  font-size: 25px;
+  line-height: 140%;
+  text-transform: uppercase;
+  @include bp-min(md) {
+    font-size: 32px;
+  }
+  @include bp-min(xl) {
+    font-size: 48px;
+  }
+}
+
+.h2 {
+  font-size: 24px;
+  line-height: 140%;
+  text-transform: uppercase;
+  @include bp-min(md) {
+    font-size: 26px;
+  }
+  @include bp-min(xl) {
+    font-size: 38px;
+  }
+
+  span {}
+}
+
+.h3 {
+  font-size: 18px;
+  line-height: 140%;
+  text-transform: uppercase;
+  @include bp-min(md) {
+    font-size: 22px;
+  }
+  @include bp-min(xl) {
+    font-size: 24px;
+  }
+}
+
+.h4 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  @include bp-min(md) {
+    font-size: 18px;
+  }
+  @include bp-min(xl) {
+    font-size: 20px;
+  }
+}
+
+.p {
+  font-weight: 400;
+  @include bp-max(xl) {
+    font-size: 20px;
+  }
+  @include bp-min(xl) {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,315 @@
+@import '@/styles/helpers/vars';
+
+.wrap {
+  background-color: $light;
+  padding: 24px 16px 48px;
+
+  @include bp-min(md) {
+    padding: 24px 36px 48px;
+  }
+
+  @include bp-min(xl) {
+    position: relative;
+    padding: 112px 36px 0;
+    margin-bottom: 64px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      height: 64px;
+      background-color: $light;
+      z-index: 3;
+    }
+  }
+
+  @include bp-min(xxl) {
+    padding: 64px 36px 0;
+  }
+
+  @include bp-min(xxxl) {
+    padding: 64px 191px 0;
+  }
+}
+
+.inner {
+  background-color: $white;
+  display: grid;
+  grid-template-rows: auto 279px;
+  border-radius: 8px;
+  
+  @include bp-min(sm) {
+    grid-template-rows: auto 336px;
+  }
+  
+  @include bp-min(md) {
+    border-radius: 16px;
+    grid-template-rows: auto 314px;
+  }
+  
+  @include bp-min(lg) {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  @include bp-min(xl) {
+    grid-template-rows: minmax(359px, auto);
+    gap: 8px;
+  }
+
+  @include bp-min(xl) {
+    grid-template-rows: minmax(334px, auto);
+  }
+}
+
+.body {
+  padding: 24px 16px 0;
+  display: grid;
+  gap: 32px;
+  justify-items: start;
+
+  @include bp-min(md) {
+    padding: 64px 36px 0;
+  }
+  
+  @include bp-min(lg) {
+    padding: 64px 0 64px 36px;
+    align-content: start;
+  }
+
+  @include bp-min(xl) {
+    align-content: center;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 16px;
+
+  .title {
+    font-family: $secondaryFont;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase;
+
+    @include bp-min(md) {
+      font-size: 22px;
+    }
+
+    @include bp-min(xl) {
+      font-size: 24px;
+    }
+
+    span {
+      color: $orange;
+    }
+  }
+
+  .desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    @include bp-min(xl) {
+      font-size: 18px;
+    }
+  }
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+
+  @include bp-min(lg) {
+    overflow: visible;
+  }
+
+  .phone {
+    background-image: url(./assets/phone.svg);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: 0 0;
+    background-size: 100% auto;
+    position: absolute;
+    width: 165px;
+    top: 32px;
+    right: 5px;
+    z-index: 2;
+    filter: drop-shadow(0px 2.489471912384033px 82.15258026123047px rgba(0, 0, 0, 0.10));
+
+    @include bp-min(sm) {
+      width: 204px;
+      right: 50%;
+      transform: translateX(50%);
+      top: 50px;
+    }
+
+    @include bp-min(md) {
+      width: 230px;
+      top: 48px;
+    }
+
+    @include bp-min(lg) {
+      width: 276px;
+      height: 420px;
+      top: initial;
+      bottom: 0;
+      right: initial;
+      left: 204px;
+      transform: none;
+    }
+
+    @include bp-min(xl) {
+      height: calc(100% + 46px);
+      top: -46px;
+      bottom: 0;
+      left: calc(50% - 36px);
+      transform: translateX(-50%);
+    }
+  }
+
+  .msg_1,
+  .msg_2 {
+    background-color: rgba($white, 0.5);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    box-shadow: 7px 7px 20px 0px rgba($black, 0.2);
+    backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    position: absolute;
+    z-index: 3;
+  }
+
+  .msg_1 {
+    background-image: url(./assets/msg-1.svg);
+    top: 69px;
+    right: 94px;
+    width: 200px;
+    height: 84.8px;
+
+    @include bp-min(sm) {
+      top: 134px;
+      right: initial;
+      left: calc(50% + 27px);
+    }
+
+    @include bp-min(md) {
+      width: 290px;
+      height: 121px;
+      top: 101px;
+      left: calc(50% + 10px);
+    }
+
+    @include bp-min(lg) {
+      top: initial;
+      bottom: 177px;
+      left: 0;
+    }
+
+    @include bp-min(xl) {
+      bottom: initial;
+      top: 92px;
+      left: calc(50% + 6px);
+    }
+
+    @include bp-min(xxxl) {
+      top: 62px;
+    }
+  }
+
+  .msg_2 {
+    background-image: url(./assets/msg-2.svg);
+    top: 169px;
+    right: 60px;
+    width: 200px;
+    height: 77.6px;
+
+    @include bp-min(sm) {
+      top: 202px;
+      right: calc(50% + 13px);
+    }
+
+    @include bp-min(md) {
+      width: 290px;
+      height: 110.7px;
+      top: 191px;
+      right: calc(50% + 10px);
+    }
+
+    @include bp-min(lg) {
+      top: initial;
+      bottom: 48.3px;
+      right: initial;
+      left: 58px;
+    }
+
+    @include bp-min(xl) {
+      bottom: initial;
+      left: initial;
+      right: calc(50% + 30px);
+      top: 249px;
+    }
+
+    @include bp-min(xxxl) {
+      top: 192px;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 8px;
+
+    @include bp-min(md) {
+      border-radius: 16px;
+    }
+
+    &::before {
+      content: "";
+      width: 267px;
+      height: 267px;
+      position: absolute;
+      right: -73px;
+      bottom: -183.8px;
+      border-radius: 50%;
+      opacity: 0.3;
+      background: linear-gradient(0deg, #BC1B32 0%, rgba(188, 27, 50, 0.00) 100%);
+
+      @include bp-min(sm) {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: -135px;
+      }
+
+      @include bp-min(md) {
+        width: 399px;
+        height: 399px;
+        bottom: -229px;
+      }
+
+      @include bp-min(lg) {
+        background: linear-gradient(-90deg, #BC1B32 0%, rgba(188, 27, 50, 0.00) 100%);
+        transform: none;
+        left: 92px;
+        right: initial;
+        bottom: -119px;
+      }
+
+      @include bp-min(xl) {
+        left: calc(50% - 286px);
+        right: initial;
+        bottom: initial;
+        top: 96px;
+      }
+    }
+  }
+}

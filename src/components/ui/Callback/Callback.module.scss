@@ -1,0 +1,239 @@
+@import '@/styles/helpers/vars';
+
+.callback {
+  display: grid;
+  justify-items: center;
+  padding: 0 16px;
+  background: $light;
+
+  @include bp-min(md) {
+    padding: 0 36px;
+  }
+
+  @include bp-min(xxxl) {
+    padding: 0 191px;
+  }
+}
+
+.inner {
+  background-color: #fff;
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 8px;
+  width: 100%;
+
+  @include bp-min(sm) {
+    gap: 36px;
+    padding: 24px 36px;
+  }
+
+  @include bp-min(xxl) {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 0;
+  }
+}
+
+.heading {
+  display: grid;
+  gap: 8px 16px;
+  
+  @include bp-max(sm) {
+    text-align: center;
+  }
+  
+  @include bp-min(md) {
+    grid-template-columns: minmax(200px, 1fr) 410px;
+  }
+  
+  @include bp-min(xl) {
+    grid-template-columns: 1fr;
+  }
+  
+  @include bp-min(xxl) {
+    padding-right: 36px;
+  }
+}
+
+.form {
+  display: grid;
+  gap: 16px 8px;
+
+  @include bp-min(sm) {
+    grid-template-columns: auto 174px;
+  }
+  
+  .input {
+    height: 48px;
+    padding: 12px 16px;
+  
+    @include bp-min(sm) {
+      height: 51px;
+    }
+
+    @include bp-min(xl) {
+      height: 59px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+  
+  .btn {
+    background-color: $black;
+    color: $light;
+    min-width: auto;
+
+    &:disabled {
+      opacity: 1;
+    }
+
+    @include bp-min(sm) {
+      height: 51px;
+    }
+
+    @include bp-min(xl) {
+      height: 59px;
+    }
+  }
+}
+
+.light {
+  background: $light;
+}
+
+.dark {
+  background: $black;
+}
+
+.light-dark {
+  background: linear-gradient(180deg, $light 50%, $black 50%);
+}
+
+.dark-light {
+  background: linear-gradient(180deg, $black 50%, $light 50%);
+}
+
+.no-code-page {
+  background-image: linear-gradient($white 50%,$black 50%);
+  .inner {
+    background-color: $white1;
+    border-radius: 20px;
+
+    @include bp-max(md) {
+      padding: 24px;
+    }
+
+    @include bp-min(md) {
+      padding: 36px;
+    }
+
+    @include bp-min(xl) {
+      padding: 36px 60px;
+      gap: 20px;
+    }
+    @include bp-min(xxl) {
+      gap: 20px;
+    }
+  }
+
+  .heading {
+    span {
+      color: $orange;
+    }
+    p {
+      font-family: $thirdFont;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 25.2px */
+      @include bp-max(xl) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .input {
+    padding: 16px 24px;
+    border-radius: 16px;
+  }
+  .btn {
+    background-color: $orange;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-family: $secondaryFont;
+    flex: 0 0 auto;
+    &:hover {
+      background-color: $orange--hover !important;
+    }
+  }
+}
+
+.promo-materials-page {
+  background-image: linear-gradient($white1 50%,$black 50%);
+  .inner {
+    background-color: $white;
+    border-radius: 20px;
+
+    @include bp-max(md) {
+      padding: 24px;
+    }
+
+    @include bp-min(md) {
+      padding: 36px;
+    }
+
+    @include bp-min(xl) {
+      padding: 36px 60px;
+    }
+  }
+
+  .heading {
+
+    span {
+      color: currentColor;
+    }
+    p {
+      font-family: $thirdFont;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 25.2px */
+    }
+  }
+  .form {
+    display: flex;
+  }
+
+  .input {
+    padding: 16px 24px;
+    border-radius: 16px;
+    @include bp-min(xl) {
+      height: 51px;
+    }
+    @include bp-min(xxl) {
+      height: 59px;
+    }
+  }
+  .btn {
+    background-color: $yellow;
+    color: $black;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-family: $secondaryFont;
+    flex: 0 0 auto;
+    &:hover {
+      color: $black !important;
+
+    }
+  }
+}
+
+.promo-materials-page {
+  button {
+    background-color: #F8CD12 !important;
+    &:hover {
+      background-color: #F5B90A !important;
+    }
+  }
+}

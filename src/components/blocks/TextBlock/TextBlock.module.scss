@@ -1,0 +1,211 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrap {
+  display: grid;
+  gap: 40px;
+  align-items: start;
+  padding: 48px 16px;
+
+  @include bp-min(md) {
+    padding: 80px 36px;
+  }
+  
+  @include bp-min(xl) {
+    gap: 60px;
+    padding: 120px 36px;
+  }
+  
+  
+  @include bp-min(xxxl) {
+    padding: 120px 191px;
+
+  }
+
+  &.light {
+    background-color: $light;
+    color: $black;
+  }
+
+  &.dark {
+    background-color: $black;
+    color: $light;
+  }
+}
+
+.body {
+  display: grid;
+  gap: 40px;
+  align-items: start;
+
+  @include bp-min(xl) {
+    gap: 80px;
+  }
+}
+
+.title {
+  font-size: 18px;
+  font-family: $secondaryFont;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+  @include bp-min(md) {
+    font-size: 22px;
+  }
+  
+  @include bp-min(xl) {
+    font-size: 38px;
+  }
+}
+
+.content {
+  line-height: 1.4;
+  display: grid;
+  gap: 24px;
+  align-items: start;
+
+  @include bp-min(xl) {
+    gap: 60px;
+  }
+
+  &Item {
+    display: grid;
+    gap: 8px;
+    align-items: start;
+
+    &Title {
+      font-family: $secondaryFont;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include bp-min(md) {
+        font-size: 22px;
+      }
+      
+      @include bp-min(xl) {
+        font-size: 24px;
+      }
+    }
+
+    &Desc {
+      font-size: 16px;
+      max-width: 1118px;
+      
+      @include bp-min(xl) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.feedback {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+
+  @include bp-min(xl) {
+    gap: 60px;
+  }
+
+  &Item {
+    display: grid;
+    gap: 24px;
+    align-items: start;
+    
+    @include bp-min(md) {
+      gap: 44px;
+    }
+    
+    @include bp-min(lg) {
+      grid-template-columns: 272px 1fr;
+      gap: 60px;
+    }
+
+    @include bp-min(xl) {
+      grid-template-columns: 425px 1fr;
+      gap: 80px;
+    }
+  }
+}
+
+.user {
+  display: grid;
+  gap: 4px;
+  align-items: start;
+
+  @include bp-min(xl) {
+    gap: 8px;
+  }
+
+  &Name {
+    font-family: $secondaryFont;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 700;
+
+    @include bp-min(md) {
+      font-size: 18px;
+    }
+    
+    @include bp-min(xl) {
+      font-size: 20px;
+    }
+  }
+
+  &Position {
+    color: $gray-2;
+    font-size: 16px;
+    line-height: 1.4;
+
+    @include bp-min(xl) {
+      font-size: 18px;
+    }
+  }
+}
+
+.text {
+  font-family: $secondaryFont;
+  line-height: 1.4;
+  font-size: 16px;
+  padding-left: 26px;
+  position: relative;
+
+  &::before {
+    background-image: url('/assets/images/svg/quote.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 26px;
+    height: 20px;
+
+    @include bp-min(md) {
+      top: -20px;
+    }
+  }
+
+  b, strong {
+    font-weight: 700;
+  }
+
+  p {
+    font-size: inherit;
+    line-height: inherit;
+
+    & + p {
+      margin-top: 16px * 1.4;
+      
+      @include bp-min(xl) {
+        margin-top: 18px * 1.4;
+      }
+    }
+  }
+
+  span {
+    color: $orange;
+  }
+}

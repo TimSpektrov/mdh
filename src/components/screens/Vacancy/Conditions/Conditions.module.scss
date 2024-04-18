@@ -1,0 +1,77 @@
+@import '@/styles/helpers/vars';
+
+.wrapper {
+  background-color: $light;
+  align-items: start;
+  display: grid;
+  gap: 48px;
+  padding: 48px 16px;
+
+  @include bp-min(md) {
+    padding: 60px 36px;
+  }
+
+  @include bp-min(xl) {
+    padding: 60px 36px 120px;
+  }
+
+  @include bp-min(xxl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-min(xxxl) {
+    gap: 60px;
+    padding: 60px 191px 120px;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 24px;
+
+  @include bp-min(lg) {
+    max-width: 888px;
+  }
+
+  @include bp-min(xl) {
+    gap: 36px;
+  }
+}
+
+.title {
+  color: $orange;
+}
+
+.desc {
+  color: $black;
+  p {
+    font-size: 16px;
+    line-height: 1.4;
+    @include bp-min(xl) {
+      font-size: 18px;
+    }
+    &+p {
+      margin-top: 8px;
+      @include bp-min(xl) {
+        margin-top: 12px;
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    li {
+      color: $black;
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 4px;
+
+      @include bp-min(md) {
+        margin-bottom: 8px;
+      }
+
+      @include bp-min(xl) {
+        font-size: 18px;
+      }
+    }
+  }
+}

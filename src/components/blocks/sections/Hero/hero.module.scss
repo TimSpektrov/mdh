@@ -1,0 +1,186 @@
+@import '@/styles/helpers/vars';
+@import '@/styles/helpers/mixins';
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+
+  @include bp-min(xxl) {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  &__indent {
+
+    position: relative;
+    background-color: $black;
+    background-image: url(assets/img/bg.svg);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: cover;
+
+    @include bp-max(xxl) {
+      height: 262px;
+    }
+    @include bp-min(xxl) {
+      height: 418px;
+      flex-grow: 1;
+    }
+  }
+  &__title {
+    margin: 0;
+    color: $Neutral-White-1;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 100%;
+    font-family: $secondaryFont;
+      & > div {
+        @include container;
+
+        &:first-child {
+          background-color: $black;
+        }
+        &:not(:first-child) {
+          background-color: $Neutral-White-1;
+          color: $black;
+          overflow: hidden;
+        }
+      }
+
+    @include bp-max(sm) {
+      font-size: 40px;
+    }
+    @include bp-min(sm) {
+      font-size: 56px;
+    }
+    @include bp-min(md) {
+      font-size: 70px;
+    }
+    @include bp-min(lg) {
+      font-size: 100px;
+    }
+    @include bp-min(xxl) {
+      font-size: 120px;
+    }
+    @include bp-min(xxxl) {
+      font-size: 140px;
+    }
+
+  }
+
+  &__description {
+    background-color: $Neutral-White-1;
+    color: $black;
+    &-wrapper {
+      @include container;
+
+      @include bp-max(xl) {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+      @include bp-min(xl) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+    }
+    &-text {
+      font-family: $thirdFont;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 35.2px */
+
+      span {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        margin-inline: .15em;
+        &:before {
+          content: '';
+          position: absolute;
+          top: .15em;
+          bottom: .15em;
+          left: -.3em;
+          right: -.3em;
+          border-radius: .8em;
+          z-index: -1;
+        }
+      }
+
+      @include bp-max(md) {
+        font-size: 18px;
+      }
+      @include bp-min(md) {
+        font-size: 20px;
+      }
+      @include bp-min(xl) {
+        font-size: 22px;
+      }
+      @include bp-min(xl) {
+        max-width: 770px;
+      }
+    }
+  }
+}
+
+.audit-page {
+  .hero__description-wrapper {
+
+    @include bp-min(xl) {
+      background-image: url(assets/img/hero-bg.svg);
+      background-size: 790px;
+      background-repeat: no-repeat;
+      background-position: 840px 0;
+    }
+
+    @include bp-min(xxxl) {
+      background-position: right top;
+    }
+  }
+  .hero__description-text {
+    span:before {
+      background-color: $peach;
+    }
+  }
+}
+
+.redesign-page {
+  .hero__description-text {
+    span:before {
+      background-color: $yellow2;
+    }
+  }
+}
+
+.no-code-page {
+  .hero {
+    background-color: $black;
+
+    &__indent {
+      background-image: url(assets/img/no-code_bg.svg);
+    }
+  }
+  .hero__description-text {
+    span:before {
+      background-color: $peach;
+    }
+  }
+}
+
+.promo-materials-page {
+  .hero__indent {
+    background-image: url(assets/img/promo-mat_bg.svg);
+  }
+  .hero__title {
+    @include bp-max(sm) {
+      font-size: 38px;
+      & > div {
+        padding-inline: 15px;
+      }
+    }
+  }
+  .hero__description-text {
+    span:before {
+      background-color: $yellow2;
+    }
+  }
+}

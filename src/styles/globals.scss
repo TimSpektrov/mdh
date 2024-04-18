@@ -1,0 +1,603 @@
+@import './helpers/vars';
+@import './helpers/mixins';
+
+:root {
+  --app-height: 100%;
+  --app-scrollbar: #e4e3dd;
+  --app-scrollbar-thumb: #e2591c;
+}
+
+//- Сделаем viewport великим снова! (привет, IE10) http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+@at-root {
+  @-ms-viewport {
+    width: device-width;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  /* Firefox - «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-color: var(--app-scrollbar-thumb) var(--app-scrollbar);
+  /* Firefox - толщина */
+  scrollbar-width: thin;
+}
+
+html, body {
+  overscroll-behavior: none;
+}
+
+html {
+  height: -webkit-fill-available;
+  // --scroll-behavior: smooth;
+  // scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: $bodyBgColor;
+  color: $baseColor;
+  font-family: $baseFont;
+  font-size: $baseSize;
+  font-weight: 300;
+  line-height: $baseSize * 1.5;
+  word-break: break-word;
+  margin: 0;
+  padding: 0;
+  // scroll-behavior: smooth;
+  width: 100%;
+  min-height: 100%;
+  min-height: -webkit-fill-available;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+[tabindex='-1']:focus {
+  outline: none !important;
+}
+
+//- Коррекция для кликабельных элементов с указанной ролью в iOS
+[role='button'] {
+  cursor: pointer;
+}
+
+//- Мы любим Сафари (на самом деле, нет).
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+a,
+button,
+[role='button'],
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation; //- Стилевая коррекция 300ms задержки (для поддерживающих браузеров)
+  margin: 0; //- Убираем margin в Firefox и Safari
+}
+
+button,
+input {
+  overflow: visible; //- Покажем торчащее в Edge
+  text-transform: none; //- Уберём наследование text transform в Firefox
+}
+
+//- Коррекция проблем стилизации для Safari
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+  appearance: button;
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+//- Коррекция для Mobile Safari (https://github.com/twbs/bootstrap/issues/11266)
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
+  appearance: listbox;
+  -webkit-appearance: listbox;
+}
+
+textarea {
+  overflow: auto; //- Удаление верт. скролла в IE.
+  resize: vertical; //- Правильное изменение размеров
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+svg {
+  fill: currentColor;
+
+  a &,
+  button & {
+    pointer-events: none; //- Мы любим Edge, это браузер! (почти)
+  }
+
+  &:not(:root) {
+    overflow: hidden; //- Скрыть выступающее за границы в IE
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+  &:not([src]):not([srcset]) {
+    visibility: hidden;
+  }
+}
+
+a {
+  background-color: transparent;
+  transition: color 0.3s;
+}
+
+hr {
+  box-sizing: content-box; //- Проблема Firefox
+  height: 0; //- Проблема Firefox
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: 0;
+  border-top: 1px solid $gray-1;
+  overflow: visible; //- Проблема Edge и IE
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-family: $baseFont;
+  font-weight: 700;
+  line-height: 1.2;
+  color: currentColor;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+address {
+  font-style: normal;
+}
+
+ul,
+ol {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+li {
+  line-height: inherit;
+}
+
+.small,
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 80%;
+}
+
+.mark,
+mark {
+  background: rgba($orange, 0.3);
+  padding: 0.1em 0.3em;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+blockquote {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+p {
+  margin: 0;
+}
+
+// samp,
+code,
+kbd,
+pre {
+  font-family: $baseFont--monospace;
+}
+
+code {
+  padding: 0.06em 0.3em;
+  color: $dark;
+  background-color: rgba($black, 0.08);
+  border-radius: 4px;
+}
+
+kbd {
+  padding: 0.06em 0.3em;
+  color: $light;
+  background-color: $gray-1;
+  border-radius: 3px;
+
+  kbd {
+    padding: 0;
+  }
+}
+
+pre {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  overflow-x: auto;
+  tab-size: 2;
+  background-color: rgba($black, 0.08);
+
+  code {
+    background: transparent;
+  }
+}
+
+#__next,.wrapper {
+  font-family: $baseFont;
+  display: flex;
+  flex-direction: column;
+  transition: $modalTransition;
+  height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+  overflow-x: hidden;
+}
+
+.main {
+  will-change: transform
+}
+
+header,
+footer {
+  flex: 0 0 auto;
+}
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 4px;
+  /* ширина для вертикального скролла */
+  height: 4px;
+  /* высота для горизонтального скролла */
+  background-color: var(--app-scrollbar);
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: var(--app-scrollbar-thumb);
+  border-radius: 4px;
+}
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+  display: none;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  display: none;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+  display: none;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+  display: none;
+}
+
+.invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px; 
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  font-size: 0;
+  line-height: 0;
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  text-decoration: none;
+  padding-bottom: 4px;
+  margin-bottom: -4px;
+  overflow: hidden;
+  &::after {
+    position: absolute;
+    background-color: $orange;
+    content: '';
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    transition: width 300ms ease-out;
+  }
+  &:hover {
+    color: $orange;
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+	.column {
+		grid-column: span 12;
+		@for $i from 1 through 11 {
+			&--#{$i} {
+				grid-column: auto/span $i;
+			}
+		}
+	
+		@each $bpi, $bps in $bp {
+			@media (min-width: $bps) {
+				@for $i from 1 through 12 {
+					&--#{$bpi}-#{$i} {
+						grid-column: auto/span $i;
+					}
+				}
+			}
+		}
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 24px;
+	width: 100%;
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 8px;
+		width: 100%;
+	}
+
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 24px;
+		width: 100%;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 31px;
+		text-transform: uppercase;
+		color: $black;
+	}
+
+	&__group {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 10px;
+		width: 100%;
+	}
+  
+	&__btn {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 16px;
+	}
+  
+  .accept {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    color: $black;
+    opacity: 0.5;
+    transition: opacity 300ms ease;
+  
+    &:hover {
+      opacity: 1;
+    }
+  
+    a {
+      color: inherit;
+      text-decoration: underline;
+  
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}
+
+.cursor {
+  background-image: url('/assets/images/svg/cursor-default.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 1000;
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: transform .5s ease, opacity .3s ease, visibility .3s ease, background-image .3s ease-in-out;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform .5s ease, opacity .5s ease, visibility .3s ease, background-image .3s ease-in-out;
+  }
+
+  &.disabled {
+    background-image: url('/assets/images/svg/cursor-disabled.svg');
+  }
+
+  &.active {
+    background-image: url('/assets/images/svg/cursor-active.svg');
+  }
+}
+
+.container {
+  @include container;
+}
+
+.advantages {
+  &-bottom {
+    @include bp-min(md) {
+      padding-bottom: 100px;
+    }
+  }
+}
+
+section.works-container { // section чтобы перебить селектор
+  background-color: $black;
+
+  @include bp-max(xl) {
+    padding-bottom: 48px;
+  }
+  @include bp-max(md) {
+    padding-top: 48px;
+    padding-inline: 16px;
+  }
+  @include bp-min(md) {
+    padding-top: 60px;
+    padding-inline: 36px;
+  }
+
+  @include bp-min(xl) {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  @include bp-min(xxl) {
+    padding-bottom: 120px;
+  }
+
+  .works-item {
+    &:nth-child(4) {
+      display: none; // добавлен чтобы не переписывать компонент WorkList и не ломалась верстка при нечётном количестве элементов
+    }
+
+    @include bp-min(md) {
+      &:nth-child(4n + 1) {
+        grid-column: span 12;
+      }
+      &:nth-child(4n + 2) {
+        grid-column: span 6;
+      }
+      &:nth-child(4n + 3) {
+        grid-column: span 6;
+      }
+    }
+    @include bp-min(xxl) {
+      &:nth-child(4n + 1) {
+        grid-column: span 12;
+      }
+      &:nth-child(4n + 2) {
+        grid-column: span 5;
+      }
+      &:nth-child(4n + 3) {
+        grid-column: span 7;
+      }
+    }
+
+    @include bp-min(xxxl) {
+      &:nth-child(3n + 1) {
+        grid-column: span 12;
+      }
+      &:nth-child(3n + 2) {
+        grid-column: span 4;
+      }
+      &:nth-child(3n + 3) {
+        grid-column: span 8;
+      }
+    }
+  }
+}

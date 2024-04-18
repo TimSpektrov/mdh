@@ -1,0 +1,73 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrap {
+  display: grid;
+  gap: 24px;
+  grid-template-rows: minmax(auto, 184px) auto;
+  align-items: center;
+  align-content: center;
+  background-color: $black;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 120px;
+
+  @include bp-min(sm) {
+    grid-template-rows: minmax(auto, 284px) auto;
+  }
+  
+  @include bp-min(md) {
+    grid-template-rows: minmax(auto, 377px) auto;
+    padding-bottom: 80px;
+  }
+
+  @include bp-min(lg) {
+    grid-template-rows: minmax(auto, 471px) auto;
+  }
+  
+  @include bp-min(xl) {
+    grid-template-rows: minmax(auto, 589px) auto;
+  }
+
+  @include bp-min(xxl) {
+    grid-template-rows: minmax(auto, 707px) auto;
+  }
+
+  @include bp-min(xxxl) {
+    grid-template-rows: minmax(auto, 752px) auto;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+
+  .title {
+    color: $gray-1;
+    text-align: center;
+  }
+}
+
+.pattern {
+  color: #282828;
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    transform: scale(1.16);
+
+    @include bp-min(xxl) {
+      transform: scale(1.25);
+    }
+  }
+}

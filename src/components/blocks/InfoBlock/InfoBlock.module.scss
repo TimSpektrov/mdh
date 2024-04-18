@@ -1,0 +1,247 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrap {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+  padding: 48px 16px;
+
+  @include bp-min(md) {
+    padding: 80px 36px;
+  }
+  
+  @include bp-min(xl) {
+    gap: 60px;
+    padding: 120px 36px;
+    &:not(.wide) {
+      grid-template-columns: 330px 1fr;
+    }
+  }
+  
+  
+  @include bp-min(xxxl) {
+    gap: 80px;
+    padding: 120px 191px;
+    &:not(.wide) {
+      grid-template-columns: 340px 1fr;
+    }
+
+  }
+
+  &.light {
+    background-color: $light;
+    color: $black;
+  }
+
+  &.dark {
+    background-color: $black;
+    color: $light;
+
+    .other {
+      color: $light;
+    }
+  }
+
+  &.brighter {
+    &.light {
+      background-color: #F0EFEA;
+    }
+  }
+}
+
+.title {
+  font-size: 18px;
+  font-family: $secondaryFont;
+  font-weight: 700;
+  line-height: 140%;
+  text-transform: uppercase;
+
+  @include bp-min(md) {
+    font-size: 22px;
+  }
+  
+  @include bp-min(xl) {
+    font-size: 24px;
+  }
+
+  span {
+    color: $orange;
+  }
+
+  &Large {
+    text-align: center;
+  }
+}
+
+.body {
+  line-height: 1.4;
+  font-weight: 400;
+  display: grid;
+  gap: 40px;
+  align-items: start;
+
+  @include bp-min(xl) {
+    gap: 60px;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+
+  @include bp-min(xl) {
+    gap: 60px;
+  }
+
+  &Item {
+    display: grid;
+    gap: 12px;
+    align-items: start;
+
+    &Title {
+      font-family: $secondaryFont;
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 700;
+
+      @include bp-min(md) {
+        font-size: 18px;
+      }
+      
+      @include bp-min(xl) {
+        font-size: 20px;
+      }
+
+      span {
+        color: $orange;
+      }
+    }
+  
+    &Desc {
+      font-size: 16px;
+
+      span {
+        color: $orange;
+      }
+
+      b, strong {
+        font-weight: 700;
+      }
+
+      p + p {
+        margin-top: 16px * 1.4;
+
+        @include bp-min(xl) {
+          margin-top: 18px * 1.4;
+        }
+      }
+
+      ul {
+        margin-top: 12px;
+        margin-bottom: 12px;
+      }
+
+      @include bp-min(xl) {
+        font-size: 18px;
+      }
+    }
+  }
+
+}
+
+.list {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+
+  @include bp-min(xl) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 20px;
+  }
+
+  @include bp-min(xxxl) {
+    gap: 60px 80px;
+  }
+
+  &Item {
+    display: grid;
+    gap: 8px;
+    align-items: start;
+
+    &Title {
+      font-size: 16px;
+
+      @include bp-min(xl) {
+        font-size: 18px;
+      }
+      
+      span {
+        color: $orange;
+      }
+    }
+  
+    &Desc {
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include bp-min(md) {
+        font-size: 22px;
+      }
+      
+      @include bp-min(xl) {
+        font-size: 24px;
+      }
+      span {
+        font-family: $secondaryFont;
+        color: $orange;
+      }
+    }
+  }
+
+}
+
+.data {
+  background-color: #E4E3DD;
+  list-style: none;
+  margin: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 8px;
+
+  @include bp-min(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    padding: 24px 36px;
+  }
+
+  &Item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &Title {
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    &Desc {
+      font-family: $secondaryFont;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+
+      @include bp-min(md) {
+        font-size: 18px;
+      }
+      
+      @include bp-min(md) {
+        font-size: 20px;
+      }
+    }
+  }
+}

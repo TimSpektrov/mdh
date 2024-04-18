@@ -1,0 +1,128 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrapper {
+  background-color: $black;
+  background-image: url('assets/pattern.png');
+  background-size: 1152px auto;
+  background-position: center -5px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 350px;
+  margin-bottom: -2px;
+
+  @include bp-min(md) {
+    background-size: 1054px auto;
+    background-position: center 0;
+    padding-top: 313px;
+  }
+
+  @include bp-min(lg) {
+    background-size: 100% auto;
+  }
+  
+  @include bp-min(xl) {
+    padding-top: 100px;
+    height: 100vh;
+    min-height: 640px;
+    max-height: 768px;
+  }
+  
+  @include bp-min(xxl) {
+    max-height: 1080px;
+    min-height: 700px;
+  }
+}
+
+.title {
+  font-size: 0;
+  line-height: 0;
+}
+
+.top, .bottom {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include bp-min(md) {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+.top {
+  align-items: flex-start;
+  justify-content: flex-end;
+  
+  .title {
+    color: $light;
+    svg {
+      width: auto;
+      height: 42px;
+      margin-bottom: -1px;
+
+      @include bp-min(md) {
+        height: 49px;
+      }
+      @include bp-min(xl) {
+        height: 111px;
+      }
+    }
+  }
+}
+
+.bottom {
+  background-color: $light;
+  gap: 30px;
+  padding-top: 18px;
+  padding-bottom: 24px;
+
+  @include bp-min(md) {
+    padding-top: 20px;
+  }
+
+  @include bp-min(xl) {
+    gap: 24px;
+    padding-top: 46px;
+    padding-bottom: 60px;
+  }
+
+  @include bp-min(xxl) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 171px
+  }
+  
+  .title {
+    color: $black;
+    svg {
+      width: auto;
+      height: 44px;
+
+      @include bp-min(md) {
+        height: 49px;
+      }
+      
+      @include bp-min(xl) {
+        height: 117px;
+      }
+    }
+  }
+
+  .desc {
+    max-width: 328px;
+
+    @include bp-min(md) {
+      max-width: 465px;
+    }
+
+    @include bp-min(xxl) {
+      max-width: 600px;
+    }
+  }
+}

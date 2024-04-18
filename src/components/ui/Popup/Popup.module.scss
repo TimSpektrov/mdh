@@ -1,0 +1,141 @@
+@import '@/styles/helpers/vars';
+
+.wrap {
+  font-family: $baseFont;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba($black, 30%);
+  z-index: 5;
+}
+
+.popup {
+  background-color: $white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 320px;
+  padding: 24px;
+  border-radius: 16px;
+  transform-origin: 50% 50%;
+  z-index: 10;
+
+  @include bp-min(md) {
+    padding: 36px;
+    width: 430px;
+  }
+}
+
+.close {
+  color: $gray-1;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.heading {
+  color: $black-2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  font-family: $secondaryFont;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+
+  @include bp-min(md) {
+    font-size: 18px;
+  }
+  
+  @include bp-min(xl) {
+    font-size: 20px;
+  }
+}
+
+.content {
+  font-size: 16px;
+  line-height: 1.4;
+  @include bp-min(xl) {
+    font-size: 18px;
+  }
+  p {
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+.mint {
+  color: $mint;
+}
+
+.orange {
+  color: $orange;
+}
+
+.loader {
+  width: 24px;
+  height: 24px;
+  transform-origin: center center;
+  animation: rotate 3s linear infinite reverse;
+  
+  &Path {
+    stroke-linecap: round;
+  }
+  
+  &Path2 {
+    transform-origin: center center;
+    animation: dash 3s linear infinite reverse;
+  }
+  
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 0 62;
+      transform: rotate(0deg);
+    }
+    
+    50% {
+      stroke-dasharray: 62 62;
+      transform: rotate(-360deg);
+    }
+    51% {
+      stroke-dasharray: 62 62;
+      transform: rotate(0deg);
+    }
+
+    100% {
+      stroke-dasharray: 0 62;
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+}

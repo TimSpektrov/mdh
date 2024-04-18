@@ -1,0 +1,73 @@
+@import '@/styles/helpers/vars.scss';
+
+.works {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  background-color: $light;
+
+  @include bp-min(md) {
+    gap: 36px;
+  }
+}
+
+.list {
+	grid-auto-rows: 397px;
+	gap: 16px;
+	
+	@include bp-min(md) {
+		grid-auto-rows: 500px;
+	}
+	
+	@include bp-min(xl) {
+		grid-auto-rows: 650px;
+	}
+	
+	@include bp-min(xxl) {
+		grid-auto-rows: 740px;
+	}
+
+	@include bp-min(xxxl) {
+		grid-auto-rows: 900px;
+	}
+
+  .wide {
+    grid-column: span 12 !important;
+  }
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  @include bp-min(md) {
+    justify-content: flex-end;
+    gap: 36px;
+  }
+
+  .btn {
+    font-weight: 500;
+
+    @include bp-min(xl) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+
+    @include bp-min(xxxl) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+}
+
+.dark {
+  background-color: $black;
+  .btn {
+    color: $light;
+    &::before, &::after {
+      background-color: $light;
+    }
+  }
+}

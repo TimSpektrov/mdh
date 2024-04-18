@@ -1,0 +1,133 @@
+@import '@/styles/helpers/vars.scss';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  background-color: $black;
+
+  @include bp-min(md) {
+    gap: 36px;
+    padding-inline: 36px;
+  }
+  @include bp-max(md) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  @include bp-min(md) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @include bp-min(xl) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+.list {
+    display: grid;
+	grid-auto-rows: 397px;
+	gap: 16px;
+	
+	@include bp-min(md) {
+      grid-auto-rows: 400px;
+	}
+    @include bp-min(md) {
+      grid-auto-rows: 500px;
+      grid-template-columns: 1fr 1fr;
+	}
+	
+	@include bp-min(xl) {
+      grid-auto-rows: 600px;
+      grid-template-columns: 608px 1fr 608px;
+	}
+
+	@include bp-min(xxl) {
+	  grid-auto-rows: 900px;
+	}
+}
+
+.item {
+  border-radius: 16px;
+  @include bp-min(xl) {
+    &:nth-child(4n + 2) {
+      grid-column: span 2;
+    }
+    &:nth-child(4n + 3) {
+      grid-column: span 2;
+    }
+  }
+
+
+  &.wide {
+    &:nth-child(4n) {
+      grid-column: span 2;
+    }
+    &:nth-child(4n + 1) {
+      grid-column: span 1;
+    }
+    &:nth-child(4n + 2) {
+      grid-column: span 1;
+    }
+    &:nth-child(4n + 3) {
+      grid-column: span 2;
+    }
+
+    &:nth-child(1) {
+      grid-column: span 3;
+    }
+    &:nth-child(2) {
+      grid-column: span 1;
+    }
+    &:nth-child(3) {
+      grid-column: span 2;
+    }
+  }
+
+  &.one {
+    &:nth-child(1) {
+      @include bp-min(md) {
+        grid-column: span 2;
+      }
+      @include bp-min(xl) {
+        grid-column: span 3;
+      }
+    }
+  }
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  @include bp-min(md) {
+    justify-content: flex-end;
+    gap: 36px;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: $secondaryFont;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center;
+
+    color: $white;
+    text-decoration: underline;
+    text-underline-offset: .4em;
+
+    @include bp-max(md) {
+      font-size: 18px;
+    }
+    @include bp-min(md) {
+      font-size: 24px;
+    }
+
+    @include bp-min(xxxl) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+}

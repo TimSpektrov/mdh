@@ -1,0 +1,172 @@
+@import '@/styles/helpers/vars.scss';
+@import '@/styles/helpers/mixins.scss';
+
+$gapL: 40px; // xxxl
+$gapM: 30px; // xxxl - xl
+$gapS: 20px; // xl - 0
+
+$bRadius: 16px;
+.section {
+  overflow: hidden;
+  background-color: $white;
+
+  @include bp-max(md) {
+    aspect-ratio: 1 / 3.2;
+  }
+
+  @include bp-min(md) {
+    height: 651px;
+  }
+  @include bp-min(xxl) {
+    height: 816px;
+  }
+  @include bp-min(xxxl) {
+    height: 982px;
+  }
+}
+
+.parallax {
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: fit-content;
+  @include bp-max(md) {
+
+  }
+  @include bp-min(md) {
+    grid-template-columns: 1fr 580px 1fr;
+    display: grid;
+  }
+
+  @include bp-max(xl) {
+    gap: $gapS;
+  }
+  @include bp-min(xl) {
+    grid-template-columns: 1fr 676px 1fr;
+    gap: $gapM;
+  }
+  @include bp-min(xxxl) {
+    grid-template-columns: 1fr 916px 1fr;
+    gap: $gapL;
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  @include bp-max(xl) {
+    gap: $gapS;
+  }
+  @include bp-min(xl) {
+    gap: $gapM;
+  }
+  @include bp-min(xxxl) {
+    gap: $gapL;
+  }
+
+  &-container {
+    @include bp-max(md) {
+      display: none;
+    }
+    @include bp-min(md) {
+      display: flex;
+      //flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+    display: flex;
+    @include bp-max(xl) {
+      gap: $gapS;
+    }
+    @include bp-min(xl) {
+      gap: $gapM;
+    }
+    @include bp-min(xxxl) {
+      gap: $gapL;
+    }
+  }
+
+  h2 {
+    grid-column: span 2;
+      padding: 16px;
+      text-align: center;
+      span {
+        color: $orange;
+      }
+  }
+
+  .img{
+    width: 100%;
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-top: auto;
+    }
+  }
+}
+
+.img {
+  border-radius: $bRadius;
+  overflow: hidden;
+  object-fit: cover;
+  border: 8px solid $white2;
+}
+
+.left,
+.right {
+  @include bp-max(md) {
+    display: none;
+  }
+  @include bp-min(md) {
+    display: grid;
+  }
+  @include bp-max(xl) {
+    grid-template-columns: repeat(2, 189px);
+    gap: $gapS;
+  }
+  @include bp-min(xl) {
+    grid-template-columns: repeat(2, 255px);
+    gap: $gapM;
+  }
+  @include bp-min(xxxl) {
+    grid-template-columns: repeat(2, 322px);
+    gap: $gapL;
+  }
+}
+
+  @include bp-max(xl) {
+    .left > div:nth-child(odd),
+    .right > div:nth-child(even) {
+      translate: 0 calc(50% + $gapS / 2);
+    }
+  }
+  @include bp-min(xl) {
+    .left > div:nth-child(odd),
+    .right > div:nth-child(even) {
+      translate: 0 calc(50% + $gapM / 2);
+    }
+  }
+  @include bp-min(xxxl) {
+    .left > div:nth-child(odd),
+    .right > div:nth-child(even) {
+      translate: 0 calc(50% + $gapL / 2);
+    }
+  }
+
+.mobile-container {
+  @include bp-max(md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $gapS;
+    & > div:first-child {
+      grid-column: span 2;
+    }
+  }
+  @include bp-min(md) {
+    display: none;
+  }
+}

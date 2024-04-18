@@ -1,0 +1,107 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrapper {
+  background-color: $black;
+  color: $light;
+  height: 472px;
+  padding: 48px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  @include bp-min(sm) {
+    height: 300px;
+  }
+  @include bp-min(md) {
+    height: auto;
+    padding: 48px 36px;
+    flex-direction: row;
+  }
+  @include bp-min(xl) {
+    padding: 80px 36px;
+  }
+}
+
+.pattern {
+  width: 270px;
+  height: 368px;
+  position: absolute;
+  top: -61px;
+  right: -27px;
+  transform: scale(-1, 1);
+  mix-blend-mode: difference;
+  z-index: 2;
+  pointer-events: none;
+
+  @include bp-min(sm) {
+    top: -78px;
+    right: -45px;
+  }
+
+  @include bp-min(md) {
+    width: 391px;
+    height: 530px;
+    right: unset;
+    left: 0;
+    top: 50%;
+    transform: scale(1) translateY(-50%);
+  }
+
+  @include bp-min(lg) {
+    width: 446px;
+    height: 605px;
+  }
+
+  @include bp-min(xl) {
+    width: 538px;
+    height: 730px;
+  }
+
+  @include bp-min(xxl) {
+    width: 528px;
+    height: 716px;
+  }
+
+  svg {
+    display: block;
+    height: inherit;
+    path {
+      fill: currentColor;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 264px;
+  position: relative;
+  pointer-events: none;
+  z-index: 3;
+  @include bp-min(sm) {
+    max-width: 480px;
+  }
+  @include bp-min(md) {
+    gap: 24px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    max-width: calc(100% / 12 * 6 - 16px);
+  }
+}
+
+.title, .desc {
+  overflow: hidden;
+  span {
+    display: inline-block;
+  }
+}
+
+.link {
+  position: absolute;
+  inset: 0;
+}
+.btn {
+  pointer-events: all;
+}

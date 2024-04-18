@@ -1,0 +1,87 @@
+@import '@/styles/helpers/vars';
+
+.wrapper {
+  background-color: $black;
+  background-image: url('assets/vacancies-pattern.png');
+  background-size: 1437px auto;
+  background-repeat: no-repeat;
+  background-position: -177px -51px;
+  color: $light;
+  display: grid;
+  align-items: end;
+  padding-top: 203px;
+  padding-bottom: 60px;
+
+  @include bp-min(sm) {
+    background-position: -103px 0;
+    padding-top: 295px;
+  }
+
+  @include bp-min(md) {
+    background-size: 1591px auto;
+    background-position: 0 -53px;
+    padding-top: 238px;
+  }
+
+  @include bp-min(lg) {
+    padding-top: 269px;
+  }
+
+  @include bp-min(xl) {
+    background-size: 2473px auto;
+    background-position: -57px -49px;
+    padding-top: 453px;
+  }
+
+  @include bp-min(xxl) {
+    background-position: 36px -49px;
+    padding-top: 539px;
+  }
+
+  @include bp-min(xxxl) {
+    background-position: 212px -49px;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 24px 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include bp-min(md) {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  @include bp-min(lg) {
+    .title {
+      max-width: 791px;
+    }
+    
+    .subtitle {
+      max-width: 842px;
+    }
+  }
+
+  @include bp-min(xl) {
+    .title {
+      max-width: 961px;
+    }
+  }
+
+  @include bp-min(xxl) {
+    grid-template-columns: 961px 1fr;
+    align-items: end;
+
+    .subtitle {
+      max-width: 561px;
+    }
+  }
+
+  @include bp-min(xxxl) {
+    grid-template-columns: minmax(auto, 961px) minmax(391px, 1fr);
+    padding-left: 191px;
+    padding-right: 191px;
+  }
+}

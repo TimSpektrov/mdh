@@ -1,0 +1,71 @@
+$black: #000000;
+$black-2: #151515;
+$dark: #1c1f2b;
+
+$white: #ffffff;
+$white1: #F7F6F1;
+$white2: #f0efea;
+$white3: #e4e3dd;
+$white4: #E1E1E1;
+$white-hover: #F9DED2;
+
+$light: #e4e3dd;
+$Neutral-White-1: #F7F6F1;
+$Neutral-Gray: #BFBFBF;
+
+$gray-1: #999999;
+$gray-2: #696969;
+
+$peach: #ffc79f;
+$yellow: #F8CD12;
+$yellow2: #fbe06a;
+$yellow-hover: #F5B90A;
+$orange: #e2591c;
+$orange--hover: #cc4b11;
+
+$mint: #43BCBC;
+
+$red: #CD3930;
+
+$modalTransition: transform 400ms ease-out;
+
+$bp: (
+  xs: 360px,
+  sm: 576px,
+  md: 768px,
+  lg: 960px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1536px
+) !default;
+
+@mixin bp-min($b) {
+  @if map-has-key($bp, $b) {
+    @media (min-width: map-get($bp, $b)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$b}`. " + "Available breakpoints are: #{map-keys($bp)}.";
+  }
+}
+
+@mixin bp-max($b) {
+  @if map-has-key($bp, $b) {
+    $bp-size: map-get($bp, $b) - 0.02;
+    @media (max-width: $bp-size) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$b}`. " + "Available breakpoints are: #{map-keys($bp)}.";
+  }
+}
+
+$baseFont: var(--font-grandis);
+$secondaryFont: var(--font-grandis-extended);
+$thirdFont: var(--font-rubik);
+$baseFont--monospace: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+  Courier New, monospace;
+$baseSize: 14px;
+$baseLineHeight: 1.5;
+$baseColor: $black;
+$bodyBgColor: $light;

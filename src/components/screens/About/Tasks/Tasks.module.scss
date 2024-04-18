@@ -1,0 +1,200 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: $black;
+  color: $light;
+  gap: 24px 16px;
+  position: relative;
+  padding: 24px 16px 48px;
+  overflow: hidden;
+
+  @include bp-min(md) {
+    gap: 36px;
+    padding: 30px 36px 60px;
+  }
+
+  @include bp-min(lg) {
+    padding: 30px 36px 120px;
+  }
+  
+  @include bp-min(xl) {
+    padding: 60px 36px 120px;
+  }
+  
+  @include bp-min(xxxl) {
+    padding: 60px 191px 120px;
+  }
+}
+
+.pattern {
+  position: absolute;
+  right: -551px;
+  bottom: -317px;
+  width: 739px;
+  height: 739px;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 1;
+
+  @include bp-min(sm) {
+    right: -524px;
+    bottom: -304px;
+  }
+
+  @include bp-min(md) {
+    width: 875px;
+    height: 875px;
+    right: -539px;
+    bottom: -174px;
+  }
+
+  @include bp-min(lg) {
+    width: 1454px;
+    height: 1454px;
+    right: -1022px;
+    bottom: -424px;
+  }
+
+  @include bp-min(xl) {
+    right: -1028px;
+    bottom: -374px;
+  }
+
+  @include bp-min(xxl) {
+    right: -998px;
+    bottom: -447px;
+  }
+
+  @include bp-min(xxxl) {
+    right: -873px;
+    bottom: -414px;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.heading {
+  display: block;
+}
+
+.title {
+  max-width: 916px;
+
+  span {
+    color: $orange;
+  }
+}
+
+.list {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include bp-min(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+}
+
+.item {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  position: relative;
+
+  &::before, &::after {
+    background-color: #373737;
+    content: '';
+    position: absolute;
+  }
+
+  &::before {
+    bottom: -16px;
+    height: 1px;
+    width: 100%;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &:last-child {
+    &::before {
+      display: none;
+    }
+  }
+
+  @include bp-min(md) {
+    gap: 24px;
+    flex: 0 0 50%;
+    padding: 24px;
+    &::before {
+      bottom: 0;
+    }
+
+    &::after {
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+    }
+
+    &:nth-child(2n - 1) {
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  @include bp-min(xl) {
+    padding: 36px;
+
+    &::after {
+      top: 36px;
+      right: 0;
+      width: 1px;
+      height: calc(100% - 72px);
+    }
+  }
+
+  @include bp-min(xxl) {
+    flex-basis: calc(100% / 3);
+
+    &:nth-child(3n)::after {
+      display: none;
+    }
+
+    &:nth-child(3n - 2)::after,
+    &:nth-child(3n - 1)::after {
+      display: block;
+    }
+
+    &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.content {
+  display: grid;
+  gap: 8px;
+
+  @include bp-min(md) {
+    gap: 24px;
+  }
+}

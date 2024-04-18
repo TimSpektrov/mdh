@@ -1,0 +1,68 @@
+@import '@/styles/helpers/vars.scss';
+
+.slider {
+  background-color: $light;
+
+  &Track {
+    background-color: $light;
+    display: grid;
+    min-width: max-content;
+    gap: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    @include bp-min(md) {
+      grid-template-columns: repeat(3, 72vw);
+      padding-left: 36px;
+      padding-right: 36px;
+    }
+
+    @include bp-min(lg) {
+      grid-template-columns: repeat(3, 767px);
+      gap: 10px;
+    }
+    
+    @include bp-min(xl) {
+      grid-template-columns: repeat(3, 57.5vw);
+      gap: 10px;
+    }
+    
+    @include bp-min(xxl) {
+      grid-template-columns: repeat(3, 1227px);
+      gap: 16px;
+    }
+
+    &.dark {
+      background-color: $black;
+    }
+    &.light {
+      background-color: $light;
+    }
+  }
+
+  &Item {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 4px;
+
+    @include bp-min(sm) {
+      border-radius: 8px;
+    }
+    
+    @include bp-min(lg) {
+      border-radius: 10px;
+    }
+    
+    @include bp-min(xxl) {
+      border-radius: 16px;
+    }
+
+    img {
+      display: block;
+      object-fit: contain;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

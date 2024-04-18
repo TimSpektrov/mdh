@@ -1,0 +1,49 @@
+@import '@/styles/helpers/vars';
+
+.file {
+  position: relative;
+  &:hover {
+    .label:not(span) {
+      color: $orange;
+    }
+  }
+}
+
+.label {
+  position: relative;
+  font-family: $baseFont;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 150%;
+  padding-left: 20px;
+  cursor: pointer;
+  transition: color 300ms ease-out;
+  span {
+    color: $gray-1;
+  }
+  &::after {
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    background-image: url('/assets/images/svg/clip.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    content: '';
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+
+  &:focus+label {
+    color: $orange;
+  }
+}

@@ -1,0 +1,39 @@
+image: docker:dind
+
+variables:
+  IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_SLUG-$CI_COMMIT_SHORT_SHA
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build --pull -t $IMAGE_NAME .
+    - docker push $IMAGE_NAME
+  tags:
+    - docker
+
+deploy-dev:
+  stage: deploy
+  before_script:
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - apk add --no-cache git bash
+    - ssh-keyscan -p 7999 gitlab.secreate.dev > ~/.ssh/known_hosts
+    - git config --global user.email "gitlab@secreate.io"
+    - git config --global user.name "GitlabCI"
+    - git clone ssh://git@gitlab.secreate.dev:7999/devteam/mpv-secreate-mdh/manifests.git
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - cd manifests/production/front/
+    - sed -i "s|image:.*|image:\ ${IMAGE_NAME}|" deployment.yml
+    - git add deployment.yml && git commit -m "$CI_PROJECT_NAME image version updated on $CI_BUILD_REF_SLUG-$CI_COMMIT_SHORT_SHA" && git push -u origin
+  tags:
+    - docker
+  only:
+    - master

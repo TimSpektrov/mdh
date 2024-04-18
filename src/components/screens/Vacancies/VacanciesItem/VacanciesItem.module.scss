@@ -1,0 +1,124 @@
+@import '@/styles/helpers/vars';
+
+.item {
+  background: $white2;
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  padding: 24px 16px;
+  border-radius: 4px;
+
+  @include bp-min(md) {
+    background-color: transparent;
+    position: relative;
+    gap: 16px;
+    padding: 0;
+    border: 0;
+  }
+
+  &:hover {
+    .line {
+      &Arrow {
+        &::before {
+          left: 0;
+          right: initial;
+          width: 100%;
+          transition: width 300ms ease-out 300ms;
+        }
+  
+        &::after {
+          left: initial;
+          right: 0;
+          width: 0%;
+          transition: width 300ms ease-out;
+        }
+      }
+    }
+  }
+}
+
+.title {
+
+  .line {
+    display: none;
+  }
+
+  @include bp-min(md) {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    span:not(.line) {
+      display: inline-block;
+    }
+
+    .line {
+      display: block;
+      flex: 1 1 auto;
+      height: 7px;
+      margin-left: 18px;
+      position: relative;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 1px;
+        height: 7px;
+      }
+
+      &::before {
+        background-image:
+          url('/assets/images/svg/triangle.svg'),
+          url('/assets/images/svg/pixel.svg');
+        background-size: contain, auto;
+        background-position: right center, center;
+        background-repeat: no-repeat, repeat-x;
+        right: 0;
+        width: 0%;
+        transition: width 300ms ease-out;
+      }
+
+      &::after {
+        background-image: url('/assets/images/svg/pixel.svg');
+        background-size: auto;
+        background-position: center;
+        background-repeat: repeat-x;
+        left: 0;
+        width: 100%;
+        transition: width 0 ease-out 300ms;
+      }
+    }
+  }
+}
+
+.desc {
+
+  @include bp-min(lg) {
+    max-width: 888px;
+  }
+
+  @include bp-min(xl) {
+    font-size: 18px;
+  }
+}
+
+.link {
+  color: $orange;
+  font-family: $baseFont;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-decoration: none;
+
+  @include bp-min(md) {
+    font-size: 0;
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+  }
+
+  &::before, &::after {
+    display: none;
+  }
+}

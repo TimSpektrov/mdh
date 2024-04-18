@@ -1,0 +1,143 @@
+@import '@/styles/helpers/vars';
+
+.wrapper {
+  background-color: $black;
+  color: $light;
+  background-image: url('/assets/images/identity/pattern.svg');
+  background-repeat: no-repeat;
+  background-size: 1612px auto;
+  background-position: center -159px;
+  display: grid;
+  position: relative;
+
+  @include bp-min(xl) {
+    height: 100vh;
+    align-content: end;
+    min-height: 640px;
+    max-height: 768px;
+  }
+  
+  @include bp-min(xxl) {
+    background-size: 2066px auto;
+    min-height: 700px;
+    max-height: 1080px;
+  }
+
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  height: 380px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include bp-min(sm) {
+    height: 396px;
+  }
+  
+  @include bp-min(md) {
+    height: 388px;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+  
+  @include bp-min(lg) {
+    height: 401px;
+  }
+  
+  @include bp-min(xxl) {
+    height: 570px;
+  }
+}
+
+.title {
+  font-family: $secondaryFont;
+  font-weight: 700;
+  font-size: 9.8vw;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+  bottom: -1.67vw;
+
+  @include bp-min(sm) {
+    font-size: 56px;
+    bottom: -10px;
+  }
+  
+  @include bp-min(md) {
+    font-size: 70px;
+    bottom: -12px;
+  }
+  
+  @include bp-min(lg) {
+    font-size: 100px;
+    bottom: -16px;
+  }
+  
+  @include bp-min(xxl) {
+    font-size: 120px;
+    bottom: -19px;
+  }
+  
+  @include bp-min(xxxl) {
+    font-size: 140px;
+    bottom: -22px;
+  }
+}
+
+.subtitle {
+  @include bp-min(xl) {
+    font-size: 26px;
+  }
+  @include bp-min(xxl) {
+    font-size: 38px;
+    max-width: 789px;
+  }
+}
+
+.bottom {
+  background-color: $light;
+  color: $black;
+  display: grid;
+  gap: 16px 36px;
+  padding: 24px 16px 48px;
+  
+  @include bp-min(sm) {
+    padding: 28px 16px 48px;
+  }
+  
+  @include bp-min(md) {
+    padding: 32px 36px 48px;
+  }
+  
+  @include bp-min(lg) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 38px 36px 48px;
+  }
+  @include bp-min(xl) {
+    grid-template-columns: 1fr minmax(666px, 1fr);
+  }
+  
+  @include bp-min(xxl) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 46px 36px 48px;
+  }
+  
+  @include bp-min(xxxl) {
+    padding: 40px 36px 80px;
+  }
+}
+
+.desc {
+  ul {
+    margin: 0;
+    display: grid;
+    gap: 6px;
+
+    @include bp-min(md) {
+      gap: 12px;
+    }
+  }
+}

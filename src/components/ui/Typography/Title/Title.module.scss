@@ -1,0 +1,90 @@
+@import '@/styles/helpers/vars';
+
+// Variants
+.h1, .h2, .h3, .h4 {
+  font-family: $secondaryFont;
+  font-weight: 700;
+}
+
+.h1 {
+  font-size: 25px;
+  line-height: 140%;
+  text-transform: uppercase;
+  @include bp-min(md) {
+    font-size: 32px;
+  }
+  @include bp-min(xl) {
+    font-size: 48px;
+  }
+}
+
+.h2 {
+  font-size: 24px;
+  line-height: 140%;
+  text-transform: uppercase;
+  @include bp-min(md) {
+    font-size: 26px;
+  }
+  @include bp-min(xl) {
+    font-size: 38px;
+  }
+}
+
+.h3 {
+  font-size: 18px;
+  line-height: 140%;
+  text-transform: uppercase;
+  @include bp-min(md) {
+    font-size: 22px;
+  }
+  @include bp-min(xl) {
+    font-size: 24px;
+  }
+}
+
+.h4 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  @include bp-min(md) {
+    font-size: 18px;
+  }
+  @include bp-min(xl) {
+    font-size: 20px;
+  }
+}
+
+.subline {
+  font-family: $secondaryFont;
+  font-size: 16px;
+  line-height: 1.4;
+  @include bp-min(md) {
+    font-size: 22px;
+  }
+}
+
+// Colors
+.light {
+  color: $light;
+}
+.dark {
+  color: $black;
+}
+.white {
+  color: $white;
+}
+.orange {
+  color: $orange;
+}
+
+// Span Accent
+.orange {
+  span {
+    color: $orange;
+  }
+}
+.mint {
+  span {
+    color: $mint;
+  }
+}

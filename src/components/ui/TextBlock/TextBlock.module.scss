@@ -1,0 +1,153 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrapper, .body, .content, .desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.wrapper {
+  gap: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include bp-min(md) {
+    padding-left: 36px;
+    padding-right: 36px;
+    gap: 36px;
+  }
+  
+  @include bp-min(xl) {
+    gap: 60px;
+  }
+
+  @include bp-min(xxxl) {
+    padding-left: 191px;
+    padding-right: 191px;
+  }
+
+  &>.title {
+    flex: 0 0 100%;
+  }
+}
+
+.media {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+
+  @include bp-min(md) {
+    height: 500px;
+  }
+  
+  @include bp-min(xl) {
+    height: 600px;
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.grayscale {
+    filter: grayscale(1);
+  }
+
+}
+
+.body {
+  gap: 36px;
+}
+
+.content {
+  gap: 24px;
+}
+
+.title {
+  overflow: hidden;
+}
+
+.desc {
+  gap: 16px;
+}
+
+// Цвет блока
+
+.dark {
+  background-color: $black;
+}
+
+.light {
+  background-color: $light;
+}
+
+// Внутренние отступы
+
+.p-small,
+.p-medium,
+.p-large {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include bp-min(md) {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+}
+
+.p-medium,
+.p-large {
+  @include bp-min(xl) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.p-large {
+  @include bp-min(xxl) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+// Изображение
+
+.img-left, .img-right {
+  @include bp-min(xl) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .media, .body {
+      flex: 0 0 calc(50% - 30px);
+    }
+  }
+  .body {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+.img-right, .img-bottom {
+  @include bp-min(xl) {
+    .media {
+      order: 1;
+    }
+    .body {
+      order: 0;
+    }
+  }
+}
+.img-top, .img-left {
+  @include bp-min(xl) {
+    .media {
+      order: 0;
+    }
+    .body {
+      order: 1;
+    }
+  }
+}

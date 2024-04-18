@@ -1,0 +1,31 @@
+@import '@/styles/helpers/vars';
+
+.wrapper {
+  background-color: $light;
+  padding: 48px 16px;
+
+  @include bp-min(md) {
+    padding: 48px 36px;
+  }
+
+  @include bp-min(xl) {
+    padding: 120px 36px;
+  }
+
+  @include bp-min(xxxl) {
+    padding: 120px 191px;
+  }
+}
+
+.list {
+  display: grid;
+  gap: 24px;
+
+  @include bp-min(md) {
+    gap: 36px;
+  }
+
+  @include bp-min(xl) {
+    gap: 60px;
+  }
+}

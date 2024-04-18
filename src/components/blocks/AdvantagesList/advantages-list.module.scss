@@ -1,0 +1,74 @@
+@import '@/styles/helpers/vars';
+$border: 1px solid $Neutral-Gray;
+.advantages-list {
+  display: grid;
+
+  @include bp-min(md) {
+    grid-template-columns: 1fr 1fr;
+    height: fit-content;
+  }
+
+  &__item {
+    @include bp-max(md) {
+      padding: 24px 16px;
+      border-left: $border;
+      &:not(:last-child) {
+        border-bottom: $border;
+      }
+    }
+
+    @include bp-min(md) {
+      padding: 36px;
+      &:nth-last-child(n+2) {
+        border-bottom: $border;
+      }
+      &:nth-child(-n+2) {
+        border-bottom: $border;
+      }
+      &:nth-child(odd) {
+        border-right: $border;
+      }
+      &:nth-child(even) {
+        translate: 0 50%;
+      }
+    }
+
+  }
+
+  &__description {
+    font-family: $thirdFont;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 25.2px */
+    @include bp-max(md) {
+      font-size: 16px;
+    }
+    @include bp-min(md) {
+      font-size: 18px;
+    }
+  }
+}
+
+.advantages-list__item {
+  h3 {
+    color: $orange;
+    margin-bottom: 8px;
+    white-space: nowrap;
+  }
+}
+
+.redesign-page {
+  .advantages-list__item {
+    h3{
+      color: $black;
+    }
+  }
+}
+
+.promo-materials-page {
+  .advantages-list__item {
+    h3 {
+      color: $black;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrap {
+  overflow: hidden;
+  
+  &.vertical {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 24px;
+    gap: 48px;
+
+    @include bp-min(sm) {
+      padding: 32px 36px;
+      gap: 36px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include bp-min(md) {
+      padding: 43px 50px;
+      gap: 50px;
+    }
+
+    @include bp-min(lg) {
+      padding: 53px 60px;
+      gap: 60px;
+    }
+
+    @include bp-min(xl) {
+      padding: 67px;
+      gap: 67px;
+    }
+
+    @include bp-min(xxl) {
+      padding: 80px;
+      gap: 80px;
+    }
+    
+    @include bp-min(xxxl) {
+      gap: 120px 80px;
+    }
+  }
+
+  &.horizontal {
+    overflow-x: auto;
+    
+    .track {
+      display: grid;
+      align-items: center;
+      min-width: max-content;
+      gap: 3vw;
+      padding: 15vw 7vw;
+    }
+
+    .image {
+      width: 21vw;
+      position: relative;
+      &:nth-child(4n + 2) {
+        top: -20%;
+      }
+      &:nth-child(4n + 3) {
+        bottom: -10%;
+      }
+      &:nth-child(4n) {
+        top: -5%;
+      }
+      
+    }
+  }
+
+  &.dark {
+    background-color: $black;
+  }
+  &.light {
+    background-color: $light;
+  }
+}

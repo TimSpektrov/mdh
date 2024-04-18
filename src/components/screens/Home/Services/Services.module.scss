@@ -1,0 +1,182 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrapper {
+  padding: 0 16px 48px;
+  position: relative;
+  background-color: $light;
+  overflow: hidden;
+
+  @include bp-min(md) {
+    padding: 48px 36px;
+  }
+
+  @include bp-min(xxl) {
+    padding: 120px 36px;
+  }
+  
+  @include bp-min(xxxl) {
+    padding: 80px 191px;
+  }
+
+  &::before {
+    content: '';
+    background-color: $black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 23px;
+    z-index: 1;
+
+    @include bp-min(sm) {
+      height: 93px;
+    }
+
+    @include bp-min(md) {
+      display: none;
+    }
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px 16px;
+  position: relative;
+  z-index: 2;
+
+  @include bp-min(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-min(md) {
+    gap: 0 16px;
+  }
+
+  @include bp-min(xl) {
+    gap: 0 48px;
+  }
+}
+
+.service {
+  background-color: $white2;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  border-radius: 4px;
+  position: relative;
+
+  @include bp-min(md) {
+    padding: 24px 0;
+    background-color: transparent;
+
+    .desc {
+      padding-right: 36px;
+      gap: 8px;
+    }
+  }
+
+  .title {
+    overflow: hidden;
+
+    @include bp-min(xl) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    span:not(.line) {
+      display: inline-block;
+    }
+  }
+
+  .desc {
+    max-width: 499px;
+  }
+
+  .line {
+    display: none;
+    flex: 1 1 auto;
+    height: 7px;
+    margin-left: 18px;
+    position: relative;
+
+    @include bp-min(xl) {
+      display: block;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: 7px;
+    }
+
+    &::before {
+      background-image: url('/assets/images/svg/triangle.svg'),
+        url('/assets/images/svg/pixel.svg');
+      background-size: contain, auto;
+      background-position: right center, center;
+      background-repeat: no-repeat, repeat-x;
+      right: 0;
+      width: 0%;
+      transition: width 300ms ease-out;
+    }
+
+    &::after {
+      background-image: url('/assets/images/svg/pixel.svg');
+      background-size: auto;
+      background-position: center;
+      background-repeat: repeat-x;
+      left: 0;
+      width: 100%;
+      transition: width 0 ease-in-out 300ms;
+    }
+  }
+
+  .link {
+    color: $orange;
+    font-size: 12px;
+    line-height: 15px;
+
+    @include bp-min(xl) {
+      font-size: 0;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      position: absolute;
+      top: 24px;
+      right: 0;
+      left: 0;
+      bottom: 24px;
+
+      @include bp-min(md) {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .line {
+      &Arrow {
+        &::before {
+          left: 0;
+          right: initial;
+          width: 100%;
+          transition: width 300ms ease-out 300ms;
+        }
+
+        &::after {
+          left: initial;
+          right: 0;
+          width: 0%;
+          transition: width 300ms ease-out;
+        }
+      }
+    }
+  }
+}

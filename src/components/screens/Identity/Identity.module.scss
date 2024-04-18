@@ -1,0 +1,66 @@
+@import '@/styles/helpers/vars';
+
+.works {
+  padding: 48px 16px;
+
+  @include bp-min(md) {
+    padding: 60px 36px;
+  }
+
+  @include bp-min(xl) {
+    padding: 120px 36px;
+  }
+
+  .worksItem {
+    @include bp-min(md) {
+      grid-column: span 6;
+      &:nth-child(6n + 1), &:nth-child(6n + 4) {
+        grid-column: span 12;
+      }
+    }
+    
+    @include bp-min(xxl) {
+      &:nth-child(6n + 2), &:nth-child(6n) {
+        grid-column: span 5;
+      }
+      &:nth-child(6n + 3), &:nth-child(6n + 5) {
+        grid-column: span 7;
+      }
+    }
+
+    @include bp-min(xxxl) {
+      &:nth-child(6n + 2), &:nth-child(6n) {
+        grid-column: span 4;
+      }
+      &:nth-child(6n + 3), &:nth-child(6n + 5) {
+        grid-column: span 8;
+      }
+    }
+  }
+
+}
+
+.callback {
+  background-color: inherit;
+  input {
+    background-color: #fff;
+  }
+}
+
+.complex {
+  &Inner {
+    padding: 48px 16px;
+
+    @include bp-min(md) {
+      padding: 48px 36px;
+    }
+
+    @include bp-min(xl) {
+      padding: 60px 36px;
+    }
+
+    @include bp-min(xxxl) {
+      padding: 60px 191px;
+    }
+  }
+}

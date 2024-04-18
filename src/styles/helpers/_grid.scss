@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+	.column {
+		grid-column: span 12;
+		@for $i from 1 through 11 {
+			&--#{$i} {
+				grid-column: auto/span $i;
+			}
+		}
+	
+		@each $bpi, $bps in $bp {
+			@media (min-width: $bps) {
+				@for $i from 1 through 12 {
+					&--#{$bpi}-#{$i} {
+						grid-column: auto/span $i;
+					}
+				}
+			}
+		}
+	}
+}

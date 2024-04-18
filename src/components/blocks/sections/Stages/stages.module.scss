@@ -1,0 +1,69 @@
+@import '@/styles/helpers/vars.scss';
+@import '@/styles/helpers/mixins.scss';
+.section {
+  background-color: $white1;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  @include bp-max(md) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-inline: 16px;
+    gap: 36px;
+  }
+  @include bp-max(xl){
+    text-align: center;
+  }
+  @include bp-min(md) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-inline: 36px;
+    gap: 36px;
+  }
+  @include bp-min(lg) {
+    padding-inline: 110px;
+    gap: 36px;
+  }
+
+  @include bp-min(xl) {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    padding-inline: 130px;
+    gap: 48px;
+  }
+  @include bp-min(xxl) {
+    padding-inline: 150px;
+  }
+  @include bp-min(xxxl) {
+    padding-inline: 190px;
+  }
+}
+
+.title {
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 53.2px */
+  text-transform: uppercase;
+  margin: 0;
+  @include bp-max(md) {
+    font-size: 20px;
+  }
+  @include bp-min(md) {
+    font-size: 26px;
+  }
+  @include bp-min(xl) {
+    font-size: 38px;
+  }
+}
+
+.no-code-page {
+  .container {
+    @include bp-min(xl) {
+      padding-bottom: 120px;
+    }
+  }
+}

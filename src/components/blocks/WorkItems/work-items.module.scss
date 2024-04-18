@@ -1,0 +1,116 @@
+@import '/src/styles/helpers/vars';
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 33.6px */
+  text-transform: uppercase;
+  font-family: $secondaryFont;
+  border-bottom: 1px solid $Neutral-Gray;
+
+  @include bp-max(md) {
+    gap: 16px;
+    padding: 36px 0;
+    font-size: 18px;
+  }
+  @include bp-min(md) {
+    gap: 36px;
+    padding: 48px 0;
+    font-size: 22px;
+  }
+  @include bp-min(xl) {
+    gap: 48px;
+    font-size: 24px;
+  }
+
+  &-num {
+    border-radius: 50%;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: $peach;
+    color: $black;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 25.2px */
+    text-transform: uppercase;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+
+    @include bp-max(md) {
+      width: 36px;
+      height: 36px;
+      font-size: 16px;
+    }
+    @include bp-min(md) {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+    @include bp-min(xl) {
+      .item:hover & {
+        background-color: $orange;
+        color: $white;
+      }
+    }
+  }
+}
+
+@include bp-max(xl){
+  .img-1,
+  .img-2 {
+    display: none
+  }
+}
+@include bp-min(xl){
+  .img-1,
+  .img-2 {
+    position: absolute;
+    height: auto;
+    translate: 0 -30%;
+    opacity: 0;
+    border-radius: 16px;
+    transition: opacity .3s linear, translate .5s linear, rotate .5s linear;
+
+    pointer-events: none;
+    z-index: 1;
+    .item:hover & {
+      opacity: 1;
+      translate: 0 -50%;
+      transition: opacity .5s linear, translate .5s cubic-bezier(1, -0.23, 0.01, 1.36), rotate .5s cubic-bezier(1, -0.23, 0.01, 1.36);
+    }
+  }
+
+  .img-2 {
+    top: 50%;
+    right: 0;
+    width: 39%;
+    min-width: 387px;
+  }
+
+  .img-1 {
+    top: 108%;
+    right: 39%;
+    width: 15%;
+    rotate: 0deg;
+    .item:hover & {
+      rotate: -9deg;
+    }
+  }
+}
+
+.promo-materials-page {
+  .item-num {
+    background-color: $yellow;
+    color: $black;
+  }
+
+  @include bp-min(xl) {
+    .item:hover .item-num {
+      background-color: $yellow-hover;
+      color: $black;
+    }
+  }
+}

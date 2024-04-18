@@ -1,0 +1,131 @@
+@import '@/styles/helpers/vars';
+@import '@/styles/helpers/mixins';
+.section {
+  position: relative;
+  background-color: $white;
+  @include container;
+  @include bp-max(md) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  @include bp-min(md) {
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
+
+  @include bp-min(xl) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  & h2 {
+    @include bp-max(md) {
+      margin-bottom: 36px;
+    }
+    @include bp-min(md) {
+      margin-bottom: 48px;
+    }
+    @include bp-min(xl) {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.container {
+  display: grid;
+  gap: 16px;
+  @include bp-min(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  border-radius: 20px;
+  background-color: $white1;
+
+  @include bp-max(xl) {
+    padding: 48px 40px 48px 48px;
+  }
+  @include bp-min(xl) {
+    padding: 60px 40px 60px 60px;
+  }
+
+  @include bp-min(xl) {
+    background-repeat: no-repeat;
+    //background-size: contain;
+
+    &:nth-child(1) {
+      @include bp-min(xl) {
+        background-image: url('./assets/images/redesign1.svg');
+      }
+      @include bp-min(xxl) {
+        background-image: url('./assets/images/redesign1s.svg');
+      }
+    }
+    &:nth-child(2) {
+      @include bp-min(xl) {
+        background-image: url('./assets/images/redesign2.svg');
+      }
+      @include bp-min(xxl) {
+        background-image: url('./assets/images/redesign2s.svg');
+      }
+    }
+    &:nth-child(3) {
+      @include bp-min(xl) {
+        background-image: url('./assets/images/redesign3.svg');
+      }
+      @include bp-min(xxl) {
+        background-image: url('./assets/images/redesign3s.svg');
+      }
+    }
+    &:nth-child(4) {
+      @include bp-min(xl) {
+        background-image: url('./assets/images/redesign4.svg');
+      }
+      @include bp-min(xxl) {
+        background-image: url('./assets/images/redesign4s.svg');
+      }
+    }
+    &:nth-child(1){
+      background-position: right bottom;
+    }
+    &:nth-child(3) {
+      background-position: right top;
+    }
+    &:nth-child(2) {
+      background-position: left bottom;
+    }
+    &:nth-child(4) {
+      background-position: left top;
+    }
+  }
+}
+
+.card-description {
+  font-family: $thirdFont;
+  font-size: 24px;
+  line-height: 140%;
+  font-weight: 400;
+}
+
+.redesign-page.section {
+  padding-top: 0;
+
+  .card {
+    background-size: contain;
+  }
+}
+
+.no-code-page {
+  h3 {
+    color: $orange;
+  }
+  .card {
+    padding: 60px;
+  }
+}
+

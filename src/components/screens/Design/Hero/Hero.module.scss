@@ -1,0 +1,190 @@
+@import '@/styles/helpers/vars';
+
+.wrap {
+  background-color: $black;
+  background-image: url('/assets/images/design/pattern.svg');
+  background-size: 555px auto;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  @include bp-min(sm) {
+    background-size: 784px auto;
+  }
+  
+  @include bp-min(md) {
+    background-size: 1054px auto;
+  }
+  
+  @include bp-min(lg) {
+    background-size: 1201px auto;
+  }
+  
+  @include bp-min(xl) {
+    background-size: 100% auto;
+  }
+
+  @include bp-min(xl) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+    min-height: 640px;
+    max-height: 768px;
+  }
+
+  @include bp-min(xxl) {
+    min-height: 700px;
+    max-height: 1080px;
+  }
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 238px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include bp-min(sm) {
+    min-height: 285px;
+  }
+  
+  @include bp-min(md) {
+    min-height: 426px;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+
+  @include bp-min(xl) {
+    min-height: 395px;
+    flex: 1 0 auto;
+  }
+  
+  @include bp-min(xxl) {
+    min-height: 588px;
+  }
+  
+  @include bp-min(xxxl) {
+    min-height: 677px;
+  }
+
+  .title {
+    gap: 6px;
+    margin-bottom: -2px;
+
+    @include bp-min(md) {
+      gap: 12px
+    }
+
+    @include bp-min(xxl) {
+      margin-bottom: -4px;
+    }
+
+    &__wrap:first-child {
+      height: 53px;
+
+      @include bp-min(md) {
+        height: 106px;
+      }
+
+      @include bp-min(xxl) {
+        height: 138px;
+      }
+
+      @include bp-min(xxxl) {
+        height: 148px;
+      }
+    }
+    &__wrap:last-child {
+      height: 35px;
+
+      @include bp-min(md) {
+        height: 71px;
+      }
+      
+      @include bp-min(xxl) {
+        height: 92px;
+      }
+
+      @include bp-min(xxxl) {
+        height: 102px;
+      }
+    }
+  }
+}
+
+.bottom {
+  background-color: $light;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 15px 16px 24px;
+
+  @include bp-min(md) {
+    gap: 24px;
+    padding: 31px 36px 40px;
+  }
+
+  @include bp-min(xxl) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 36px 60px;
+  }
+
+  @include bp-min(xxxl) {
+    gap: 16px;
+  }
+
+  .title {
+    @include bp-min(xxxl) {
+      flex: 1 0 861px;
+    }
+    &__wrap {
+      height: 43px;
+
+      @include bp-min(md) {
+        height: 87px;
+      }
+      
+      @include bp-min(xxl) {
+        height: 112px;
+      }
+
+      @include bp-min(xxxl) {
+        height: 121px;
+      }
+    }
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  &__wrap {
+    overflow: hidden;
+
+    svg {
+      object-fit: contain;
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+.desc {
+  @include bp-min(xl) {
+    max-width: 651px;
+  }
+  
+  @include bp-min(xxl) {
+    max-width: 561px;
+  }
+
+  @include bp-min(xxxl) {
+    max-width: none;
+  }
+}

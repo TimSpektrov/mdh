@@ -1,0 +1,122 @@
+@import '@/styles/helpers/vars';
+
+.wrapper {
+  background-color: $light;
+  position: relative;
+}
+
+.inner {
+  display: grid;
+  gap: 48px;
+  padding: 48px 16px 24px;
+  position: relative;
+  z-index: 1;
+
+  @include bp-min(md) {
+    gap: 80px;
+    padding: 80px 36px 40px;
+  }
+
+  @include bp-min(xxl) {
+    padding: 120px 36px 60px;
+    gap: 120px;
+  }
+
+  @include bp-min(xxxl) {
+    padding: 120px 191px;
+  }
+}
+
+.heading {
+  display: grid;
+  gap: 24px;
+
+  @include bp-min(xl) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .desc {
+    display: grid;
+    align-items: start;
+    justify-items: start;
+    gap: 24px;
+  }
+}
+
+.title {
+  @include bp-min(xl) {
+    padding-right: 38px;
+  }
+
+  @include bp-min(xxl) {
+    padding-right: 48px;
+  }
+}
+
+.list {
+  display: grid;
+  @include bp-min(lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.item {
+  display: grid;
+  align-items: start;
+  justify-items: start;
+  gap: 24px;
+  padding: 36px 24px;
+
+  @include bp-min(md) {
+    justify-items: center;
+    padding: 48px;
+
+    .name, .desc {
+      text-align: center;
+    }
+  }
+
+  &:first-child {
+    background-color: $white2;
+    color: $black;
+
+    .media {
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &:last-child {
+    background-color: $black;
+    color: $light;
+    .name {
+      color: $light;
+    }
+    .desc {
+      color: $light;
+    }
+  }
+
+}
+.media {
+  width: auto;
+  height: 100px;
+
+  @include bp-min(md) {
+    height: 140px;
+  }
+
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 16px;
+
+  @include bp-min(md) {
+    justify-items: center;
+  }
+}

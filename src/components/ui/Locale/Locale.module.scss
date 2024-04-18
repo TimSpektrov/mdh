@@ -1,0 +1,44 @@
+@import '@/styles/helpers/vars.scss';
+
+.lang {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 24px;
+	position: relative;
+
+	&::before {
+		content: '/';
+		font-family: $secondaryFont;
+		font-size: 16px;
+		line-height: 20px;
+		color: $gray-1;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.item {
+  font-family: $secondaryFont;
+  font-size: 16px;
+  line-height: 140%;
+  text-decoration: none;
+  color: $gray-1;
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+  width: 25px;
+  position: relative;
+  transition: border .3s ease-out;
+  &:hover:not(.is-active) {
+    color: $light;
+    font-weight: 700;
+  }
+}
+
+.active {
+  font-weight: 700;
+  color: $light;
+}

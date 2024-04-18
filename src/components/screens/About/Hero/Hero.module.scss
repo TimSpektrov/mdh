@@ -1,0 +1,173 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrapper {
+  background-color: $black;
+  background-image: url('/assets/images/about/pattern.svg');
+  background-repeat: no-repeat;
+  background-size: 929px auto;
+  background-position: calc(100% + 663px) -394px;
+  color: $light;
+  display: grid;
+  align-content: flex-end;
+  min-height: var(--app-height);
+  max-height: 1080px;
+  gap: 48px;
+  padding: 240px 16px 48px;
+
+  @include bp-min(sm) {
+    background-position: calc(100% + 596px) -427px;
+  }
+
+  @include bp-min(md) {
+    background-size: 1207px auto;
+    background-position: calc(100% + 804px) -489px;
+    padding: 240px 36px 60px;
+  }
+  
+  @include bp-min(lg) {
+    // background-size: 912px auto;
+    // background-position: calc(100% + 598px) -250px;
+    padding: 200px 36px 60px;
+  }
+  
+  @include bp-min(xl) {
+    background-size: 1227px auto;
+    background-position: calc(100% + 822px) -413px;
+    padding: 140px 36px 80px;
+  }
+  
+  @include bp-min(xxl) {
+    background-position: calc(100% + 842px) -335px;
+    padding: 200px 36px 80px;
+  }
+  
+  @include bp-min(xxxl) {
+    background-size: 1733px auto;
+    background-position: calc(100% + 1186px) -588px;
+    padding: 250px 191px 60px;
+  }
+}
+
+.heading {
+  display: grid;
+  justify-items: start;
+  gap: 16px;
+}
+
+.title {
+  font-family: $secondaryFont;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+
+  @include bp-min(md) {
+    font-size: 100px;
+  }
+
+  span {
+    display: inline-block;
+  }
+}
+
+.subtitle {
+  color: $light;
+  overflow: hidden;
+  line-height: 130%;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: $secondaryFont;
+
+  @include bp-min(sm) {
+    max-width: 544px;
+  }
+
+  @include bp-max(md) {
+    font-size: 24px;
+  }
+  @include bp-min(md) {
+    max-width: 440px;
+    font-size: 26px;
+  }
+
+  @include bp-min(xl) {
+    max-width: 648px;
+    font-size: 48px;
+  }
+
+  @include bp-min(xxxl) {
+    letter-spacing: 0.02em;
+    max-width: 713px;
+  }
+
+  span {
+    color: $orange;
+  }
+}
+
+.list {
+  padding: 16px 0;
+
+  @include bp-min(sm) {
+    padding: 22px 0;
+  }
+  
+  @include bp-min(md) {
+    padding: 36px 0;
+  }
+  @include bp-min(md) {
+    padding: 36px 0;
+  }
+}
+
+.item {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 16px 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #373737;
+
+    @include bp-min(xl) {
+      border-bottom: 0;
+      border-right: 1px solid #373737;
+    }
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  @include bp-min(md) {
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  @include bp-min(xl) {
+    gap: 24px;
+    padding: 0 36px;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.name {
+  overflow: hidden;
+}
+
+.desc {
+  color: $gray-1;
+}
