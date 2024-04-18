@@ -6,7 +6,7 @@ interface FilterState {
   openFilter: () => void;
   closeFilter: () => void;
   filterPosition: number
-  setFilterPosition: (num: number) => void
+  setFilterPosition: (num: any) => void
 }
 
 export const useFilterStore = create<FilterState>()(
