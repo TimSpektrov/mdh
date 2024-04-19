@@ -57,19 +57,15 @@ export const Works: FC<WorksProps> = (props) => {
 
   useEffect(() => {
     scroll(
-      (progress: IScrollInfo) => {
-
-        const y = progress.y
-        const targetOffset:number = y.targetOffset
+      (progress) => {
+        const targetOffset:number = progress.y.targetOffset;
         setFilterPosition(targetOffset);
-      
-        y.current > targetOffset
+        progress.y.current > targetOffset
           ? openFilter()
           : closeFilter();
       },
-      { target: filterRef.current } as IScrollOptions
+      { target: filterRef.current }
     );
-    
   }, [closeFilter, openFilter, setFilterPosition]);
 
   return (
