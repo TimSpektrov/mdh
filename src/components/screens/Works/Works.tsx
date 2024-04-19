@@ -9,7 +9,7 @@ import { Feedback } from '@/components/ui/Feedback';
 import { HorisontalScrollFilter } from '@/components/ui/HorisontalScrollFilter';
 import { useSearchParams } from 'next/navigation';
 import { IWork } from '@/types/IWork';
-import { scroll } from 'framer-motion';
+import { scroll as worksScroll } from 'framer-motion';
 import { useFilterStore } from '@/store/useFilterStore';
 
 interface IAxisScrollInfo {
@@ -56,7 +56,7 @@ export const Works: FC<WorksProps> = (props) => {
   });
 
   useEffect(() => {
-    scroll(
+    worksScroll(
       (info) => {
         const targetOffset = info.y.targetOffset;
         setFilterPosition(targetOffset);
