@@ -22,7 +22,6 @@ export const Goal: FC<GoalProps> = ({title, list}) => {
                 <div className={style.delimiter} />
               </div>
 
-
               <NewTypography text={title} variant={'h3'} tag={'h3'}/>
               <NewTypography text={description} variant={'p'} tag={'p'}/>
             </div>

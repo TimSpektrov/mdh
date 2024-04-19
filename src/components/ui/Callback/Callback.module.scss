@@ -58,7 +58,7 @@
 
 .form {
   display: grid;
-  gap: 16px 8px;
+  gap: 8px;
 
   @include bp-min(sm) {
     grid-template-columns: auto 174px;

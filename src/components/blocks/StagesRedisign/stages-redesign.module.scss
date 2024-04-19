@@ -18,12 +18,15 @@
     padding-bottom: 120px;
   }
 
-  & h2 {
+  h2 {
     @include bp-max(md) {
       margin-bottom: 36px;
     }
     @include bp-min(md) {
       margin-bottom: 48px;
+    }
+    @include bp-max(xl) {
+      text-align: center;
     }
     @include bp-min(xl) {
       margin-bottom: 60px;
@@ -47,8 +50,11 @@
   border-radius: 20px;
   background-color: $white1;
 
-  @include bp-max(xl) {
-    padding: 48px 40px 48px 48px;
+  @include bp-max(md) {
+    padding: 36px 24px;
+  }
+  @include bp-min(md) {
+    padding: 48px;
   }
   @include bp-min(xl) {
     padding: 60px 40px 60px 60px;
@@ -107,9 +113,17 @@
 
 .card-description {
   font-family: $thirdFont;
-  font-size: 24px;
   line-height: 140%;
   font-weight: 400;
+  @include bp-max(md) {
+    font-size: 18px;
+  }
+  @include bp-min(md) {
+    font-size: 22px;
+  }
+  @include bp-min(lx) {
+    font-size: 24px;
+  }
 }
 
 .redesign-page.section {
@@ -123,9 +137,6 @@
 .no-code-page {
   h3 {
     color: $orange;
-  }
-  .card {
-    padding: 60px;
   }
 }
 

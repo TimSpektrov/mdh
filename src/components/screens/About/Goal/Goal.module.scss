@@ -50,6 +50,11 @@
     gap: 36px;
     grid-template-columns: repeat(3, 1fr);
   }
+  @include bp-min(xxl){
+    @include bp-max(xxxl){
+      padding-inline: 100px;
+    }
+  }
   @include bp-min(xxxl){
     gap: 90px;
   }
@@ -74,6 +79,12 @@
     }
     @include bp-min(xl){
       font-size: 48px;
+    }
+  }
+  p {
+    color: #373737;
+    @include bp-max(xl) {
+      font-size: 16px;
     }
   }
 }

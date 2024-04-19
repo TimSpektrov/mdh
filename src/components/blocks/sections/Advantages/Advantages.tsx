@@ -33,9 +33,20 @@ const fadeInVariant = {
 export const Advantages: FC<IAdvantages> = ({ specificClass = 'page', left, right }) => {
   // const custom = specificClass === 'audit-page' || specificClass === 'redesign-page' ? 4 : 0;
   let custom= 0;
-  if (isMobile && (specificClass === 'audit-page' || specificClass === 'redesign-page')) {
-    custom = 4;
+  if (isMobile) {
+   switch (specificClass) {
+     case 'audit-page':
+     case 'redesign-page':
+       custom = 4;
+       break;
+     case 'promo-materials-page':
+       custom = 5;
+       break;
+     default:
+       custom = 0;
+   }
   }
+
   return (
     <motion.section
       className={cn(styles.advantages, styles[specificClass])}
