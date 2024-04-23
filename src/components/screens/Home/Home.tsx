@@ -32,7 +32,7 @@ export const Home: FC<HomeProps> = ({ works, services }) => {
               "name": "Приложение"
             }
           ],
-          "image": "fit-service.webp",
+          "image": "/assets/images/work/fit-service.webp",
           "light": true,
           "showHome": true,
           "showAbout": true,
@@ -50,7 +50,7 @@ export const Home: FC<HomeProps> = ({ works, services }) => {
               "name": "Сайт"
             }
           ],
-          "image": "cska.webp",
+          "image": "/assets/images/work/cska.webp",
           "light": true,
           "showHome": true,
           "showAbout": true,
@@ -78,7 +78,7 @@ export const Home: FC<HomeProps> = ({ works, services }) => {
               "name": "Айдентика"
             }
           ],
-          "image": "payswap-new.webp",
+          "image": "/assets/images/work/payswap-new.webp",
           "light": true,
           "showHome": true,
           "showAbout": false,
@@ -97,7 +97,7 @@ export const Home: FC<HomeProps> = ({ works, services }) => {
               "name": "Приложение"
             }
           ],
-          "image": "electrocars-rus.webp",
+          "image": "/assets/images/work/electrocars-rus.webp",
           "light": false,
           "showHome": true,
           "showAbout": false,
@@ -119,7 +119,7 @@ export const Home: FC<HomeProps> = ({ works, services }) => {
               "name": "No-code разработка"
             }
           ],
-          "image": "prometej.webp",
+          "image": "/assets/images/work/prometej.webp",
           "light": false,
           "showHome": true,
           "published": false,
@@ -139,7 +139,7 @@ export const Home: FC<HomeProps> = ({ works, services }) => {
               "name": "Айдентика"
             }
           ],
-          "image": "skringo.webp",
+          "image": "/assets/images/work/skringo.webp",
           "light": false,
           "showHome": true,
           "showAbout": true,
@@ -161,7 +161,7 @@ export const Home: FC<HomeProps> = ({ works, services }) => {
               "name": "Айдентика"
             }
           ],
-          "image": "profsoyuz-rabotnikov-ada.webp",
+          "image": "/assets/images/work/profsoyuz-rabotnikov-ada.webp",
           "light": false,
           "showHome": true,
           "showIdentity": true,

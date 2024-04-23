@@ -8,8 +8,8 @@ import parse from 'html-react-parser';
 
 export const Complex: FC<ComplexProps> = ({ title, data, wrapClass, innerClass, columnClass }) => {
 
-  const oneColumnData = data?.filter(({ column }) => column === 1)
-  const twoColumnData = data?.filter(({ column }) => column === 2)
+  const oneColumnData = data.filter((item, i) => i % 2 === 0)
+  const twoColumnData = data.filter((item, i) => i % 2 === 1)
 
   return (
     <section className={cn(style.wrapper, wrapClass)}>
@@ -17,21 +17,21 @@ export const Complex: FC<ComplexProps> = ({ title, data, wrapClass, innerClass, 
         <Title accent='mint' color='light'>{parse(title)}</Title>
         <div className={style.grid}>
           <div className={cn(style.column, columnClass)}>
-            {oneColumnData?.map(({ id, name, desc }) => (
+            {oneColumnData?.map(({ id, title, description }) => (
               <div key={id} className={style.item}>
                 <div className={style.content}>
-                  <Title variant='h3' className={style.name}>{name}</Title>
-                  <Text color='light'>{desc}</Text>
+                  <Title variant='h3' className={style.name}>{title}</Title>
+                  <Text color='light'>{description}</Text>
                 </div>
               </div>
             ))}
           </div>
           <div className={cn(style.column, columnClass)}>
-            {twoColumnData?.map(({ id, name, desc }) => (
+            {twoColumnData?.map(({ id, title, description }) => (
               <div key={id} className={style.item}>
                 <div className={style.content}>
-                  <Title variant='h3' className={style.name}>{name}</Title>
-                  <Text color='light'>{desc}</Text>
+                  <Title variant='h3' className={style.name}>{title}</Title>
+                  <Text color='light'>{description}</Text>
                 </div>
               </div>
             ))}

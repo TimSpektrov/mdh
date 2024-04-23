@@ -1,25 +1,22 @@
-import { NextPage, GetStaticProps } from 'next';
+import { NextPage } from 'next';
 import { Works, WorksProps } from '@/components/screens/Works';
 
-import data from '@json/data.json';
+import { usePageDateStore } from '@/store/usePageDataStore';
+import { useEffect } from 'react';
+import { WORKS_URL } from '@/helpers/apiRequests';
 
-const WorksPage: NextPage<WorksProps> = ({ works }) => {
-  return <Works works={works} />;
+const WorksPage: NextPage<WorksProps> = () => {
+  const {content, fetchData } = usePageDateStore(state => ({
+    content: state.content,
+    fetchData: state.fetchData,
+  }))
+  useEffect(() => {
+    fetchData(WORKS_URL, 'works')
+  }, []);
+
+  console.log(content?.works);
+  if(!content?.works) return  null
+  return <Works works={content.works} />;
 };
 
 export default WorksPage;
-
-export const getStaticProps: GetStaticProps = async () => {
-  // if (process.env.PAGE_NOT_FOUND) {
-  //   return {
-  //     notFound: true,
-  //   }
-  // }
-
-  return {
-    props: {
-      works: data?.works
-    },
-    revalidate: 30
-  };
-};

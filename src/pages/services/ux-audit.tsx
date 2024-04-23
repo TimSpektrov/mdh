@@ -18,38 +18,38 @@ const UxAuditPage: NextPage = () => {
       fetchData: state.fetchData,
     }))
     useEffect(() => {
-      fetchData(AUDIT_URL)
+      fetchData(AUDIT_URL, 'audit')
     }, []);
 
-  if(!content) return  null
+  if(!content?.audit) return  null
   return (
     <>
       <Head>
-        <title>{content.meta.title}</title>
-        <meta name="description" content={content.meta.description} />
+        <title>{content.audit.meta.title}</title>
+        <meta name="description" content={content.audit.meta.description} />
       </Head>
 
       <Hero
         specificClass={'audit-page'}
-        title={content.hero.title}
-        description={content.hero.description}
+        title={content.audit.hero.title}
+        description={content.audit.hero.description}
       />
       <Advantages
         specificClass={'audit-page'}
         left={(
           <Image
             className={styles['audit-page-img']}
-            src={content.advantage_image.url}
-            alt={content.advantage_image.alt}
+            src={content.audit.advantage_image.url}
+            alt={content.audit.advantage_image.alt}
             width={1920}
             height={1080}
           />)}
-        right={content.advantage_list}
+        right={content.audit.advantage_list}
       />
-      <Stages specificClass={'audit-page'} list={content.stages.stage_items} title={content.stages.title}/>
-      <CardRates content={content.card_rates} />
+      <Stages specificClass={'audit-page'} list={content.audit.stages.stage_items} title={content.audit.stages.title}/>
+      <CardRates content={content.audit.card_rates} />
       <NewWorksList
-        works={content.works}
+        works={content.audit.works}
         specificClass={'audit-page'}
         writeBtn
         moreBtn

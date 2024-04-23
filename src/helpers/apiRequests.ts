@@ -7,9 +7,12 @@ export const TAGS_URL = '/api/tags/'
 export const WORKS_URL = '/api/works/'
 
 export const AUDIT_URL = '/api/audit'
+export const IDENTITY_URL = '/api/identity'
 export const REDESIGN_URL = '/api/redesign'
 export const NOCODE_URL = '/api/nocode'
-export const VACANCIES_URL = '/api/audit'
+export const DESIGN_FULL_CYCLE_URL = '/api/integrated-design'
+export const DESIGN_PROMO_MATERIALS_URL = '/api/design-promo'
+export const VACANCIES_URL = '/api/vacancies'
 
 export const api = axios.create({
   baseURL: BASE_URL

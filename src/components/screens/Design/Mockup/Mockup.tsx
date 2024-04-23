@@ -6,15 +6,16 @@ import style from './Mockup.module.scss';
 import mockupImg from './assets/mockup.png'
 import { Text, Title } from '@/components/ui/Typography';
 
-export const Mockup: FC<MockupProps> = (props) => {
+export const Mockup: FC<MockupProps> = ({ props }) => {
+  const {title, description, image_url, image_alt} = props
   return (
     <div className={style.wrapper}>
       <div className={style.media}>
-        <Image src={mockupImg} width={mockupImg.width} height={mockupImg.height} alt='Анализируем рынок и ваш бизнес' sizes='100vw, 50vw'/>
+        <Image src={image_url} width={mockupImg.width} height={mockupImg.height} alt={image_alt} sizes='100vw, 50vw'/>
       </div>
       <div className={style.content}>
-        <Title>Анализируем рынок и ваш бизнес</Title>
-        <Text>Создаём дизайн и представляем полностью готовый для использования продукт</Text>
+        <Title>{title}</Title>
+        <Text>{description}</Text>
       </div>
     </div>
   );

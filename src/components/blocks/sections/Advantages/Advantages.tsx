@@ -31,7 +31,6 @@ const fadeInVariant = {
 };
 
 export const Advantages: FC<IAdvantages> = ({ specificClass = 'page', left, right }) => {
-  // const custom = specificClass === 'audit-page' || specificClass === 'redesign-page' ? 4 : 0;
   let custom= 0;
   if (isMobile) {
    switch (specificClass) {

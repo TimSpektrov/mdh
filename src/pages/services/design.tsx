@@ -1,19 +1,22 @@
-import { GetStaticProps, NextPage } from "next";
-import { Design, DesignProps } from "@/components/screens/Design";
-import data from '@json/data.json'
+import { NextPage } from "next";
+import { Design } from "@/components/screens/Design";
+import { usePageDateStore } from '@/store/usePageDataStore';
+import { useEffect } from 'react';
+import { DESIGN_FULL_CYCLE_URL } from '@/helpers/apiRequests';
 
 
-const DesignPage: NextPage<DesignProps> = ({ works }) => {
-  return <Design works={works}/>;
+const DesignPage: NextPage = () => {
+  const {content, fetchData } = usePageDateStore(state => ({
+    content: state.content,
+    fetchData: state.fetchData,
+  }))
+  useEffect(() => {
+    fetchData(DESIGN_FULL_CYCLE_URL, 'designFull')
+  }, []);
+
+  if(!content?.designFull) return  null
+
+  return <Design content={content.designFull}/>;
 }
  
 export default DesignPage;
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      works: data?.works?.filter(work => work.showDesign === true)
-    },
-    revalidate: 60
-  }
-}

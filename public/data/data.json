@@ -104,7 +104,7 @@
           "name": "Приложение"
         }
       ],
-      "image": "fit-service.webp",
+      "image": "/assets/images/work/fit-service.webp",
       "light": true,
       "showHome": true,
       "showAbout": true,
@@ -420,7 +420,7 @@
           "name"  : "Сайт"
         }
       ],
-      "image": "cska.webp",
+      "image": "/assets/images/work/cska.webp",
       "light": true,
       "showHome": true,
       "showAbout": true,
@@ -751,7 +751,7 @@
           "name": "Айдентика"
         }
       ],
-      "image": "payswap-new.webp",
+      "image": "/assets/images/work/payswap-new.webp",
       "light": true,
       "showHome": true,
       "showAbout": false,
@@ -770,7 +770,7 @@
           "name": "Приложение"
         }
       ],
-      "image": "electrocars-rus.webp",
+      "image": "/assets/images/work/electrocars-rus.webp",
       "light": false,
       "showHome": true,
       "showAbout": false,
@@ -792,7 +792,7 @@
           "name": "No-code разработка"
         }
       ],
-      "image": "prometej.webp",
+      "image": "/assets/images/work/prometej.webp",
       "light": false,
       "showHome": true,
       "published": false,
@@ -812,7 +812,7 @@
           "name": "Айдентика"
         }
       ],
-      "image": "skringo.webp",
+      "image": "/assets/images/work/skringo.webp",
       "light": false,
       "showHome": true,
       "showAbout": true,
@@ -830,7 +830,7 @@
           "name": "Сайт"
         }
       ],
-      "image": "open-teleport.webp",
+      "image": "/assets/images/work/open-teleport.webp",
       "light": true,
       "published": false,
       "slug": "open-teleport"
@@ -849,7 +849,7 @@
           "name": "Айдентика"
         }
       ],
-      "image": "profsoyuz-rabotnikov-ada.webp",
+      "image": "/assets/images/work/profsoyuz-rabotnikov-ada.webp",
       "light": false,
       "showHome": true,
       "showIdentity": true,
@@ -866,7 +866,7 @@
           "name": "Приложение"
         }
       ],
-      "image": "blogger-x.webp",
+      "image": "/assets/images/work/blogger-x.webp",
       "light": false,
       "published": false,
       "slug": "blogger-x"
@@ -885,7 +885,7 @@
           "name": "Айдентика"
         }
       ],
-      "image": "epr-sistema-socialnoj-sluzhby.webp",
+      "image": "/assets/images/work/epr-sistema-socialnoj-sluzhby.webp",
       "light": false,
       "showAbout": true,
       "showIdentity": true,

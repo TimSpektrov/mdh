@@ -1,8 +1,8 @@
 interface Data {
   id: number
-  name: string
-  desc: string
-  column: number
+  title: string
+  description: string
+  column?: number
 }
 
 export interface ComplexProps {

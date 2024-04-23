@@ -52,5 +52,5 @@ export interface IRate {
   term: string;
   volume: string;
   structure: IRateStructure[];
-  uniqueId: string;
+  uniqueId: number;
 }

@@ -9,38 +9,50 @@ import styles from '@/components/blocks/sections/Advantages/advantages.module.sc
 import Head from 'next/head';
 import { NewFooterFeedback } from 'src/components/ui/NewFooterFeedback';
 import { NewWorksList } from '@/components/ui/NewWorksList';
-import data from '@json/data.json'
+import { usePageDateStore } from '@/store/usePageDataStore';
+import { useEffect } from 'react';
+import { DESIGN_PROMO_MATERIALS_URL } from '@/helpers/apiRequests';
 
 const DesignPromoMaterials: NextPage<any> = () => {
-  const content = data.services_pages['design-promo-materials']
+  // const content = data.services_pages['design-promo-materials']
+  const {content, fetchData } = usePageDateStore(state => ({
+    content: state.content,
+    fetchData: state.fetchData,
+  }))
+  useEffect(() => {
+    fetchData(DESIGN_PROMO_MATERIALS_URL, 'design-promo-materials')
+  }, []);
+
+  console.log(content);
+  if(!content || !content['design-promo-materials']) return  null
   return (
     <>
       <Head>
-        <title>{content.meta.title}</title>
-        <meta name="description" content={content.meta.description} />
+        <title>{content['design-promo-materials'].meta.title}</title>
+        <meta name="description" content={content['design-promo-materials'].meta.description} />
       </Head>
-      <Hero title={content.hero.title} description={content.hero.description} specificClass={'promo-materials-page'} />
+      <Hero title={content['design-promo-materials'].hero.title} description={content['design-promo-materials'].hero.description} specificClass={'promo-materials-page'} />
       <Advantages
         left={(
           <Image
             width={1920}
             height={1080}
             className={styles['audit-page-img']}
-            src={content.advantages.image.url}
-            alt={content.advantages.image.alt}
+            src={content['design-promo-materials'].advantages.image.url}
+            alt={content['design-promo-materials'].advantages.image.alt}
           />
        )}
-        right={content.advantages.items}
+        right={content['design-promo-materials'].advantages.items}
         specificClass={'promo-materials-page'}
       />
-      <WorksList
-        list={content.workList.items}
-        title={content.workList.title}
-        specificClass={'promo-materials-page'}
-      />
+        <WorksList
+          list={content['design-promo-materials'].type_site.items}
+          title={content['design-promo-materials'].type_site.title}
+          specificClass={'promo-materials-page'}
+        />
       <Callback className={style.callback} specificClass={'promo-materials-page'}/>
       <NewWorksList
-        works={content.work.items}
+        works={content['design-promo-materials'].works}
         specificClass={'promo-materials-page'}
         writeBtn
         moreBtn
@@ -51,11 +63,3 @@ const DesignPromoMaterials: NextPage<any> = () => {
 }
 
 export default DesignPromoMaterials;
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   return {
-//     props: {
-//       content: data.services_pages['design-promo-materials']
-//     },
-//   }
-// }

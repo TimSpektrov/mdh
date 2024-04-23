@@ -29,7 +29,7 @@ const variant = {
 
 export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, image, tags, className, slug, light, published }, ref) => {
 
-  const workImage = `/assets/images/work/${image}`
+  // const workImage = `/assets/images/work/${image}`
 
   const caseRef = useRef(null)
 
@@ -85,7 +85,7 @@ export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, i
         <div className={style.img}>
           <motion.div className={style.imgInner} variants={variant} >
             <Image
-              src={workImage}
+              src={image}
               alt=''
               quality={100}
               width={1224}

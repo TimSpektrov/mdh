@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="983aaf48-7f53-4c0b-b35d-a1bc2ba75f05" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/public/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/data/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/sections/Advantages/Advantages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/sections/Advantages/Advantages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/blocks/sections/Hero/hero.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/sections/Hero/hero.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Design/Design.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Design/Design.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Design/Design.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Design/Design.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Design/Hero/Hero.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Design/Hero/Hero.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Design/Hero/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Design/Hero/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Design/Mockup/Mockup.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Design/Mockup/Mockup.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Design/Mockup/Mockup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Design/Mockup/Mockup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Design/Proposal/Proposal.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Design/Proposal/Proposal.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Design/Proposal/Proposal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Design/Proposal/Proposal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Design/Steps/Steps.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Design/Steps/Steps.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Design/Steps/Steps.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Design/Steps/Steps.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Identity/Identity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Identity/Identity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/NoCode/NoCode.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/NoCode/NoCode.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Vacancies/Vacancies.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Vacancies/Vacancies.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/Vacancies/Vacancies.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/Vacancies/Vacancies.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Complex/Complex.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Complex/Complex.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Complex/Complex.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Complex/Complex.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Work/Work.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Work/Work.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/apiRequests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/apiRequests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/design-promo-materials.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/services/design-promo-materials.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/design.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/services/design.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/identity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/services/identity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/no-code.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/services/no-code.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/redesign.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/services/redesign.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/ux-audit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/services/ux-audit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/vacancies/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/vacancies/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/works/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/works/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/usePageDataStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/usePageDataStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/type.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2fJxQXC5e7miKWrtAvOd67WGTby" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/github/secreate/mdh",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\github\\secreate\\mdh\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="983aaf48-7f53-4c0b-b35d-a1bc2ba75f05" name="Changes" comment="" />
+      <created>1713532966522</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713532966522</updated>
+      <workItem from="1713532967713" duration="432000" />
+      <workItem from="1713858643635" duration="632000" />
+      <workItem from="1713860463752" duration="975000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

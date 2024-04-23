@@ -1,5 +1,6 @@
 import { IVacancy } from "@/types/type";
 
 export interface VacanciesProps {
-  vacancies: IVacancy[]
+  vacancies: IVacancy[];
+  content: any;
 }

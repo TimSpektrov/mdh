@@ -5,7 +5,7 @@ import { Hero } from './Hero';
 import { VacanciesList } from './VacanciesList';
 import { Feedback } from '@/components/ui/Feedback';
 
-export const Vacancies: FC<VacanciesProps> = ({ vacancies }) => {
+export const Vacancies: FC<VacanciesProps> = ({  vacancies }) => {
   const [feedbackTitle, setFeedbackTitle] = useState('')
   const [feedbackDesc, setFeedbackDesc] = useState('')
 

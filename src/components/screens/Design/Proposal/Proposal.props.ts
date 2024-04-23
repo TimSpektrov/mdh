@@ -1,14 +1,11 @@
-import { ImageLoader, ImageProps, StaticImageData } from "next/image"
-
 interface DataType {
-  id: number
-  name: string
-  desc: string
-  image: StaticImageData | string
+  title: string
+  description: string
+  image: string
 }
 
 export interface ProposalProps {
-  title: React.ReactNode
-  desc: string
+  title: string
+  description: string
   data: DataType[]
 };

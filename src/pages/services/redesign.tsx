@@ -11,12 +11,12 @@ const RedesignPage: NextPage = () => {
     fetchData: state.fetchData,
   }))
   useEffect(() => {
-    fetchData(REDESIGN_URL)
+    fetchData(REDESIGN_URL, 'redesign')
   }, []);
 
-  if(!content) return  null
+  if(!content?.redesign) return  null
 
-  return <Redesign content={content} />;
+  return <Redesign content={content.redesign} />;
 }
 
 export default RedesignPage;
