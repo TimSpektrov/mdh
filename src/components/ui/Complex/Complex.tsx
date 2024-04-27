@@ -4,7 +4,7 @@ import cn from 'classnames'
 import { Text, Title } from '@/components/ui/Typography';
 
 import style from './Complex.module.scss';
-import parse from 'html-react-parser';
+import { addNbspParse } from '@/helpers';
 
 export const Complex: FC<ComplexProps> = ({ title, data, wrapClass, innerClass, columnClass }) => {
 
@@ -14,7 +14,7 @@ export const Complex: FC<ComplexProps> = ({ title, data, wrapClass, innerClass, 
   return (
     <section className={cn(style.wrapper, wrapClass)}>
       <div className={cn(style.inner, innerClass)}>
-        <Title accent='mint' color='light'>{parse(title)}</Title>
+        <Title accent='mint' color='light'>{addNbspParse(title)}</Title>
         <div className={style.grid}>
           <div className={cn(style.column, columnClass)}>
             {oneColumnData?.map(({ id, title, description }) => (

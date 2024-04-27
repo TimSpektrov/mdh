@@ -13,6 +13,8 @@ export const NOCODE_URL = '/api/nocode'
 export const DESIGN_FULL_CYCLE_URL = '/api/integrated-design'
 export const DESIGN_PROMO_MATERIALS_URL = '/api/design-promo'
 export const VACANCIES_URL = '/api/vacancies'
+export const HOME_URL = '/api/main'
+export const ABOUT_US_URL = '/api/aboutus'
 
 export const api = axios.create({
   baseURL: BASE_URL

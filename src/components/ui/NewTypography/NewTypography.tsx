@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import styles from './new-typography.module.scss'
-import parse from 'html-react-parser';
-import { addNbsp } from '@/helpers';
+import { addNbspParse } from '@/helpers';
 
 interface INewTypography {
   text: string;
@@ -12,6 +11,6 @@ export const NewTypography: FC<INewTypography> = ({ text, tag = 'p', variant = '
   const Tag = tag;
 
   return (
-    <Tag className={styles[variant]}>{parse(addNbsp(text))}</Tag>
+    <Tag className={styles[variant]}>{addNbspParse(text)}</Tag>
   )
 }

@@ -3,7 +3,7 @@ import { Title, Text } from '@/components/ui/Typography';
 import cn from 'classnames';
 import { motion } from 'framer-motion';
 import style from './Hero.module.scss';
-import parse from 'html-react-parser';
+import { addNbspParse } from '@/helpers';
 
 interface IHeroItem{
   id: number;
@@ -80,8 +80,8 @@ export const Hero: FC<IHero> = ({title, description, list = [], specificClass = 
     >
       <h1 className='invisible'>О нас</h1>
       <div className={style.heading}>
-        <motion.h1 className={style.title} variants={titleVariant}>{parse(title)}</motion.h1>
-        <motion.p className={style.subtitle} variants={subtitleVariant}>{parse(description)}</motion.p>
+        <motion.h1 className={style.title} variants={titleVariant}>{addNbspParse(title)}</motion.h1>
+        <motion.p className={style.subtitle} variants={subtitleVariant}>{addNbspParse(description)}</motion.p>
       </div>
       {list.length > 0 && (
         <div className={style.list + ' grid'}>

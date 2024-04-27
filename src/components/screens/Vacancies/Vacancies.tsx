@@ -5,10 +5,12 @@ import { Hero } from './Hero';
 import { VacanciesList } from './VacanciesList';
 import { Feedback } from '@/components/ui/Feedback';
 
-export const Vacancies: FC<VacanciesProps> = ({  vacancies }) => {
+export const Vacancies: FC<VacanciesProps> = ({  content, vacancies }) => {
   const [feedbackTitle, setFeedbackTitle] = useState('')
   const [feedbackDesc, setFeedbackDesc] = useState('')
 
+  const vacancy = content;
+  // console.log(vacancies[0], vacancy && vacancy[0]);
   useEffect(() => {
     if (vacancies && vacancies.length > 0) {
       setFeedbackTitle('НЕ&nbsp;НАШЛИ подходящую ВАКАНСИЮ')
@@ -26,7 +28,7 @@ export const Vacancies: FC<VacanciesProps> = ({  vacancies }) => {
         <meta name="description" content="Вакансии дизайнера от студии дизайна MDH. Мы создаём условия для развития, совершенствования и реализации творческого и профессионального потенциала." />
       </Head>
       <Hero />
-      {(vacancies && vacancies.length > 0) && <VacanciesList data={vacancies} />}
+      {vacancy?.length > 0 && <VacanciesList data={vacancy} />}
       <Feedback title={feedbackTitle} desc={feedbackDesc} />
     </>
   );

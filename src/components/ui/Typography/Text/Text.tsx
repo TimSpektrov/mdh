@@ -4,7 +4,12 @@ import cn from 'classnames'
 import styles from './Text.module.scss';
 
 export const Text: FC<TextProps> = ({
-  children, className, color, tag, variant, style
+  children,
+  className,
+  color,
+  tag,
+  variant,
+  style
 }) => {
   const classes = cn(
     variant ? styles[`${variant}`] : styles.main,

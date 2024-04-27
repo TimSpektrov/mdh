@@ -32,9 +32,7 @@ $bRadius: 16px;
   left: 50%;
   translate: -50% -50%;
   width: fit-content;
-  @include bp-max(md) {
 
-  }
   @include bp-min(md) {
     grid-template-columns: 1fr 580px 1fr;
     display: grid;
@@ -70,16 +68,15 @@ $bRadius: 16px;
   }
 
   &-container {
-    @include bp-max(md) {
       display: none;
-    }
+    //@include bp-max(md) {
+    //}
     @include bp-min(md) {
       display: flex;
       //flex-direction: column;
       justify-content: center;
       align-items: stretch;
     }
-    display: flex;
     @include bp-max(xl) {
       gap: $gapS;
     }
@@ -93,11 +90,11 @@ $bRadius: 16px;
 
   h2 {
     grid-column: span 2;
-      padding: 16px;
-      text-align: center;
-      span {
-        color: $orange;
-      }
+    padding: 16px;
+    text-align: center;
+    span {
+      color: $orange;
+    }
   }
 
   .img{
@@ -118,9 +115,9 @@ $bRadius: 16px;
 
 .left,
 .right {
-  @include bp-max(md) {
     display: none;
-  }
+  //@include bp-max(md) {
+  //}
   @include bp-min(md) {
     display: grid;
   }
@@ -158,14 +155,14 @@ $bRadius: 16px;
   }
 
 .mobile-container {
-  @include bp-max(md) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $gapS;
     & > div:first-child {
       grid-column: span 2;
     }
-  }
+  //@include bp-max(md) {
+  //}
   @include bp-min(md) {
     display: none;
   }

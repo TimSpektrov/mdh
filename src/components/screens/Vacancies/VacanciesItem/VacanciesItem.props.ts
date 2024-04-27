@@ -4,4 +4,5 @@ export interface VacanciesItemProps {
   short_desc?: string;
   slug?: string;
   className?: string;
+  id?: number;
 }

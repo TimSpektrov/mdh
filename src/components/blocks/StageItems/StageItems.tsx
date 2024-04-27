@@ -1,10 +1,8 @@
 import { CSSProperties, FC, useEffect, useState } from 'react';
 import styles from './stage-items.module.scss'
 import cn from 'classnames';
-import parse from 'html-react-parser';
 import { motion } from 'framer-motion';
-import { addNbsp } from '@/helpers';
-import { log } from 'next/dist/server/typescript/utils';
+import { addNbspParse } from '@/helpers';
 
 export interface IStageItems {
   list: IStageItem[];
@@ -67,7 +65,7 @@ export const StageItems: FC<IStageItems> = ({ list, specificClass = 'page' }) =>
     <div className={cn(styles.container, styles[specificClass])} style={{ '--columns': columns } as CSSProperties}>
       <div className={styles.overlay}>
          <div className={styles.overlay__item}></div>
-         {parseList.map((item, i) => (
+         {parseList.map((_, i) => (
            <div
              key={i}
              className={styles.overlay__item}
@@ -98,7 +96,7 @@ export const StageItems: FC<IStageItems> = ({ list, specificClass = 'page' }) =>
               key={item.id}
             >
               <div className={styles.stage__heading} onClick={() => handleAccordion(index)}>
-                {parse(addNbsp(item.title))}
+                {addNbspParse(item.title)}
                 <div
                     role='button'
                     tabIndex={0}
@@ -130,7 +128,7 @@ export const StageItems: FC<IStageItems> = ({ list, specificClass = 'page' }) =>
                   styles.stage__content,
                   { [styles['stage__content-last']] : index === columns - 1 }
                 )}>
-                  {parse(addNbsp(item.description))}
+                  {addNbspParse(item.description)}
                 </div>
               </motion.div>
             </div>

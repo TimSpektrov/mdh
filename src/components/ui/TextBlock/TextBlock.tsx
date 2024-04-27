@@ -5,11 +5,9 @@ import cn from 'classnames'
 import { Text, Title } from '@/components/ui/Typography';
 import { Button } from '@/components/ui';
 import { useModalStore } from '@/store/useModalStore'
-import parse from 'html-react-parser';
-
 import { motion } from 'framer-motion';
-
 import style from './TextBlock.module.scss';
+import { addNbspParse } from '@/helpers';
 
 const imageVariant = {
   hidden: {
@@ -103,7 +101,7 @@ export const TextBlock: FC<TextBlockProps> = ({
         <Title className={cn(style.title, titleClass)} variant='h2' color={textColor} accent='orange'>
           {data?.title && (
             <motion.div variants={titleVariant}>
-              {parse(data?.title)}
+              {addNbspParse(data?.title)}
             </motion.div>
           )}
         </Title>
@@ -124,7 +122,7 @@ export const TextBlock: FC<TextBlockProps> = ({
           {titlePosition === 'content' && (
             <Title variant='h2' color={textColor} accent='orange' className={cn(style.title, titleClass)}>
               <motion.div variants={textVariants}>
-                {data?.title && parse(data?.title)}
+                {data?.title && addNbspParse(data?.title)}
               </motion.div>
             </Title>
           )}

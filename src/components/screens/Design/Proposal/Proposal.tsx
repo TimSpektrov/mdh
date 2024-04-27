@@ -6,7 +6,7 @@ import { Text, Title } from '@/components/ui/Typography';
 import { useModalStore } from '@/store/useModalStore';
 
 import style from './Proposal.module.scss';
-import parse from 'html-react-parser';
+import { addNbspParse } from '@/helpers';
 
 export const Proposal: FC<ProposalProps> = ({ title, description, data }) => {
   const toggleModal = useModalStore(state => state.toggleModal)
@@ -15,7 +15,7 @@ export const Proposal: FC<ProposalProps> = ({ title, description, data }) => {
     <section className={style.wrapper}>
       <div className={style.inner}>
         <div className={style.heading}>
-          <Title accent='mint' className={style.title}>{parse(title)}</Title>
+          <Title accent='mint' className={style.title}>{addNbspParse(title)}</Title>
           <div className={style.desc}>
             <Text tag='span'>{description}</Text>
             <Button color='orange' onClick={toggleModal}>Работать с нами</Button>

@@ -6,9 +6,7 @@ import { Social, Emails } from '@/components/ui';
 import { Field, TextArea, FieldFile } from '@/components/ui/Form'
 import { Title, Text } from '@/components/ui/Typography'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import parse from 'html-react-parser';
 import { isMobile } from 'react-device-detect';
-
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -16,6 +14,7 @@ import { usePopupStore } from "@/store/usePopapStore";
 import btnStyle from '@/components/ui/Button/Button.module.scss'
 import style from './Feedback.module.scss';
 import { useContactsDateStore } from '@/store/useContextDataStore';
+import { addNbspParse } from '@/helpers';
 
 
 // Основной компонент
@@ -146,8 +145,8 @@ export const FeedbackContent: FC<FeedbackProps> = ({ title, desc }) => {
       <div className={style.top}>
         {title && desc ?
           <div className={style.heading}>
-            <Title variant='h1'>{parse(title)}</Title>
-            <Text className={style.desc}>{parse(desc)}</Text>
+            <Title variant='h1'>{addNbspParse(title)}</Title>
+            <Text className={style.desc}>{addNbspParse(desc)}</Text>
           </div>
           :
           <div className={style.heading}>

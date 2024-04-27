@@ -1,12 +1,11 @@
 import { FC } from 'react';
 import cn from 'classnames';
 import styles from './text-image-block.module.scss'
-import parse from 'html-react-parser';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui';
 import { useModalStore } from '@/store/useModalStore';
-import { addNbsp } from '@/helpers';
+import { addNbspParse } from '@/helpers';
 
 const imageVariant = {
   hidden: {
@@ -45,15 +44,13 @@ const groupVariants = {
   }
 }
 interface ITextImageBlock {
-  left: string[];
-  right: {
-    url: string;
-    alt: string;
-  };
+  text: string[];
+  url: string;
+  alt: string;
   specificClass: string;
   buttonModal?: boolean;
 }
-export const TextImageBlock: FC<ITextImageBlock> = ({left, right, specificClass, buttonModal = false}) => {
+export const TextImageBlock: FC<ITextImageBlock> = ({text, url, alt, specificClass, buttonModal = false}) => {
   const [toggleModal] = useModalStore(state => [state.toggleModal])
   return (
     <motion.section
@@ -63,13 +60,13 @@ export const TextImageBlock: FC<ITextImageBlock> = ({left, right, specificClass,
       viewport={{ amount: .5, once: true }}
     >
       <motion.div className={styles.left} variants={groupVariants}>
-        {left.map((item,i) =>(
+        {text.map((item,i) =>(
           <motion.div
             className={styles['content-item']}
             key={i}
             variants={textVariants}
           >
-            {parse(addNbsp(item))}
+            {addNbspParse(item)}
           </motion.div>
       ))}
         {buttonModal && (<motion.div variants={textVariants} className={styles['btn-group']}>
@@ -85,8 +82,8 @@ export const TextImageBlock: FC<ITextImageBlock> = ({left, right, specificClass,
           viewport={{ amount: .5, once: true }}
         >
           <Image className={styles.image}
-            src={right.url}
-            alt={right.alt}
+            src={url}
+            alt={alt}
             width={1124}
             height={750}
           />

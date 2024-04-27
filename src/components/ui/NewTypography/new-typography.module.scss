@@ -12,7 +12,7 @@
 
 .h2 {
   @include bp-max(md) {
-    font-size: 24px;
+    font-size: 20px;
   }
   @include bp-min(md) {
     font-size: 26px;

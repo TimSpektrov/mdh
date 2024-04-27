@@ -1,9 +1,8 @@
 import { FC } from 'react';
 import cn from 'classnames';
 import styles from './stages.module.scss';
-import { IStageItem, IStageItems, StageItems } from '@/components/blocks/StageItems/StageItems';
+import { IStageItem, StageItems } from '@/components/blocks/StageItems/StageItems';
 import { NewTypography } from '@/components/ui/NewTypography/NewTypography';
-import { addNbsp } from '@/helpers';
 
 export interface IStages {
     title?: string;

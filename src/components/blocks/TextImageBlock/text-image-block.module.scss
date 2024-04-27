@@ -97,10 +97,6 @@
     @include bp-min(xl) {
       font-size: 38px;
     }
-
-    span {
-      color: $orange;
-    }
   }
 
   h3 {
@@ -135,7 +131,12 @@
       font-size: 18px;
     }
   }
+  span {
+    color: $orange;
+  }
 }
+
+
 
 .btn-group {
   padding-top: 16px;

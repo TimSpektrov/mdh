@@ -8,15 +8,13 @@ import { Goal } from './Goal';
 import { WorksList } from '@/components/ui/WorksList';
 import { Feedback } from '@/components/ui/Feedback';
 
-import patternImg from '@img/about/pattern.svg'
 import logoImg from '@img/logo.svg'
 import style from './About.module.scss';
 import { TextImageBlock } from '@/components/blocks/TextImageBlock';
 import { OurTarget } from '@/components/blocks/sections/OurTarget';
-import parse from 'html-react-parser';
 import { NewTypography } from '@/components/ui/NewTypography';
 
-export const About: FC<any> = ({ content, works }) => {
+export const About: FC<any> = ({ content }) => {
 
   return (
     <>
@@ -31,21 +29,23 @@ export const About: FC<any> = ({ content, works }) => {
         list={content.hero.list}
       />
       <TextImageBlock
-        left={content['proposal-first'].left}
-        right={content['proposal-first'].right}
+        text={content['proposal-first'].text.split('\r\n')}
+        url={content['proposal-first'].url}
+        alt={content['proposal-first'].alt}
         specificClass={'about-first-page'}
         buttonModal
       />
       <div className={style['pattern-bg']}></div>
       <TextImageBlock
-        left={content['proposal-second'].left}
-        right={content['proposal-second'].right}
+        text={content['proposal-second'].text.split('\r\n')}
+        url={content['proposal-second'].url}
+        alt={content['proposal-second'].alt}
         specificClass={'about-second-page'}
       />
 
       <Tasks title={content.tasks.title} list={content.tasks.items} />
 
-      <OurTarget title={content['our-target'].title} />
+      <OurTarget title={content['our_target'].title} />
 
       <Goal title={content.goal.title} list={content.goal.list} />
       
@@ -55,7 +55,7 @@ export const About: FC<any> = ({ content, works }) => {
           <Image src={logoImg} alt='' width={logoImg.width} height={logoImg.height} />
         </div>
       </section>
-      <WorksList dark works={works} wrapClass={style.works} itemClass={style.worksItem} />
+      <WorksList dark works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
       <Feedback/>
     </>
   );

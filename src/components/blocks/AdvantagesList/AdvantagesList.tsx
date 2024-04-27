@@ -1,6 +1,8 @@
 import styles from './advantages-list.module.scss'
 import cn from 'classnames';
 import { NewTypography } from '@/components/ui/NewTypography';
+import { addNbspParse } from '@/helpers';
+
 export interface TAdvantagesItem {
   title: string;
   description: string;
@@ -25,9 +27,7 @@ export const AdvantagesList = ({ list, specificClass }: TAdvantagesList) => {
           key={item.id}
         >
           <NewTypography text={item.title} variant={'h3'} tag={'h3'} />
-          {/*<NewTypography text={item.description} variant={'p'} tag={'p'} />*/}
-
-          <p className={styles['advantages-list__description']}>{ item.description }</p>
+          <p className={styles['advantages-list__description']}>{ addNbspParse(item.description) }</p>
         </div>))}
     </div>
   )

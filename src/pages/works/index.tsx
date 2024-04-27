@@ -10,6 +10,7 @@ const WorksPage: NextPage<WorksProps> = () => {
     content: state.content,
     fetchData: state.fetchData,
   }))
+
   useEffect(() => {
     fetchData(WORKS_URL, 'works')
   }, []);

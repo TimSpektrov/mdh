@@ -20,8 +20,8 @@ const UxAuditPage: NextPage = () => {
     useEffect(() => {
       fetchData(AUDIT_URL, 'audit')
     }, []);
-
   if(!content?.audit) return  null
+
   return (
     <>
       <Head>
@@ -47,6 +47,7 @@ const UxAuditPage: NextPage = () => {
         right={content.audit.advantage_list}
       />
       <Stages specificClass={'audit-page'} list={content.audit.stages.stage_items} title={content.audit.stages.title}/>
+      {/*<Stages specificClass={'audit-page'} list={test} title={content.audit.stages.title}/>*/}
       <CardRates content={content.audit.card_rates} />
       <NewWorksList
         works={content.audit.works}
@@ -60,11 +61,3 @@ const UxAuditPage: NextPage = () => {
 }
 
 export default UxAuditPage;
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   return {
-//     props: {
-//       content: data.services_pages['design-promo-materials']
-//     },
-//   }
-// }

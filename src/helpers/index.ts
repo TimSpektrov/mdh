@@ -1,3 +1,5 @@
+import parse from 'html-react-parser';
+
 /**
  * Генерация случайных id
 */
@@ -19,4 +21,8 @@ export const addNbsp = (value: string) => {
   } else {
     return value;
   }
+}
+
+export const addNbspParse = (value: string) => {
+  return parse(addNbsp(value))
 }

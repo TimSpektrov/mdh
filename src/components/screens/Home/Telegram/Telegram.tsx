@@ -3,7 +3,7 @@ import { TelegramProps } from "."
 import { Button } from "@/components/ui";
 
 import style from "./Telegram.module.scss"
-import parse from 'html-react-parser';
+import { addNbspParse } from '@/helpers';
 
 export const Telegram: FC<TelegramProps> = ({title, description, textButton = 'Подписаться'}) => {
   return (
@@ -11,8 +11,8 @@ export const Telegram: FC<TelegramProps> = ({title, description, textButton = '�
       <div className={style.inner}>
         <div className={style.body}>
           <div className={style.content}>
-            <div className={style.title}>{parse(title)}</div>
-            <div className={style.desc}>{parse(description)}</div>
+            <div className={style.title}>{addNbspParse(title)}</div>
+            <div className={style.desc}>{addNbspParse(description)}</div>
           </div>
           <Button secondary color="white" href="https://t.me/red_design" target="_blank">{textButton}</Button>
         </div>

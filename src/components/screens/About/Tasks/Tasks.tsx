@@ -17,10 +17,10 @@ export const Tasks: FC<TasksProps> = ({ list, title }) => {
         <NewTypography text={title} variant={'h2'}  />
       </div>)}
       <div className={style.list}>
-        {list.map(({ id, desc, image, title }) => (
+        {list.map(({ id, desc, image, title }, i) => (
           <div className={style.item} key={id}>
             <div className={style.icon}>
-              <Image src={image} alt={''} fill />
+              <Image src={image ? image : `/assets/images/tasks/tasks-icon-${i + 1}.svg`} alt={''} fill />
             </div>
             <div className={style.content}>
               <Title variant='h3' color='light'>{title}</Title>

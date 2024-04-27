@@ -178,8 +178,8 @@
     transition: background-color .2s;
 
     @include bp-min(xl) {
-      min-width: 370px;
-      width: calc(100% + 20px);
+      //min-width: 370px;
+      width: calc(100% + 50px);
       left: 50%;
       transform: translateX(-50%);
 

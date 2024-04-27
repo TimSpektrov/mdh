@@ -1,10 +1,8 @@
 import { FC } from 'react';
 import { HeroProps } from '.';
 import { Title, Text } from '@/components/ui/Typography'
-
-
 import style from './Hero.module.scss';
-import parse from 'html-react-parser';
+import { addNbspParse } from '@/helpers';
 
 export const Hero: FC<HeroProps> = ({title, description, itemList}) => {
   return (
@@ -14,7 +12,7 @@ export const Hero: FC<HeroProps> = ({title, description, itemList}) => {
         <div className={style.title}>{title}</div>
       </div>
       <div className={style.bottom}>
-        <Title variant='h2' accent='mint' className={style.subtitle}>{parse(description)}</Title>
+        <Title variant='h2' accent='mint' className={style.subtitle}>{addNbspParse(description)}</Title>
         <Text tag='div' className={style.desc}>
           {itemList && itemList?.length > 0 && (<ul>
             {itemList.map((item, i) => (

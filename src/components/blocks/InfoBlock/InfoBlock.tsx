@@ -1,11 +1,10 @@
 import { FC } from "react";
 import { InfoBlockProps } from ".";
 import cn from 'classnames';
-import parse from "html-react-parser";
 import { motion } from 'framer-motion';
 import { useRouter } from "next/router";
-
 import style from './InfoBlock.module.scss';
+import { addNbspParse } from '@/helpers';
 
 const fadeInUpVariant = {
   hidden: {
@@ -48,7 +47,7 @@ export const InfoBlock: FC<InfoBlockProps> = ({ variant, title, content, list, d
           transition={{ duration: 0.9, ease: 'backInOut' }}
           className={titleClasses}
           key={router.query + title}
-        >{parse(title)}</motion.div>
+        >{addNbspParse(title)}</motion.div>
       }
       {(content || list || data) &&
         <div className={style.body}>
@@ -64,7 +63,7 @@ export const InfoBlock: FC<InfoBlockProps> = ({ variant, title, content, list, d
                       viewport={{ amount: 'some', once: true, margin: '50px' }}
                       className={style.contentItemTitle}
                       key={router.query + item.title}
-                    >{parse(item.title)}</motion.div>
+                    >{addNbspParse(item.title)}</motion.div>
                   }
                   {item.desc &&
                     <motion.div
@@ -74,7 +73,7 @@ export const InfoBlock: FC<InfoBlockProps> = ({ variant, title, content, list, d
                       viewport={{ amount: 'some', once: true, margin: '50px' }}
                       className={style.contentItemDesc}
                       key={router.query + item.desc}
-                    >{parse(item.desc)}</motion.div>
+                    >{addNbspParse(item.desc)}</motion.div>
                   }
                 </div>
               ))}
@@ -92,7 +91,7 @@ export const InfoBlock: FC<InfoBlockProps> = ({ variant, title, content, list, d
                       viewport={{ amount: 'some', once: true, margin: '50px' }}
                       className={style.listItemTitle}
                       key={router.query + item.title}
-                    >{parse(item.title)}</motion.div>
+                    >{addNbspParse(item.title)}</motion.div>
                   }
                   {item.desc &&
                     <motion.div
@@ -102,7 +101,7 @@ export const InfoBlock: FC<InfoBlockProps> = ({ variant, title, content, list, d
                       viewport={{ amount: 'some', once: true, margin: '50px' }}
                       className={style.listItemDesc}
                       key={router.query + item.desc}
-                    >{parse(item.desc)}</motion.div>
+                    >{addNbspParse(item.desc)}</motion.div>
                   }
                 </div>
               ))}

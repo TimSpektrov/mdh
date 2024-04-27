@@ -4,13 +4,13 @@ import TariffItem from './TariffItem';
 import { Title, Text } from '@/components/ui/Typography';
 
 import style from './Tariff.module.scss';
-import parse from 'html-react-parser';
+import { addNbspParse } from '@/helpers';
 
 export const Tariff: FC<TariffProps> = ({ title, description, rates, discount }) => {
   return (
     <section className={style.wrapper}>
       <div className={style.heading}>
-        <Title accent='mint' color='light'>{parse(title)}</Title>
+        <Title accent='mint' color='light'>{addNbspParse(title)}</Title>
         <Text color='light'>{description}</Text>
       </div>
       {discount &&

@@ -1,8 +1,7 @@
 import styles from './hero.module.scss'
-import parse from 'html-react-parser';
 import cn from 'classnames';
 import { motion } from 'framer-motion';
-import { addNbsp } from '@/helpers';
+import { addNbspParse } from '@/helpers';
 interface IHero {
   title: string;
   description: string;
@@ -35,6 +34,7 @@ const animDescription = {
 
 export const Hero = ({ title, description, specificClass = 'page'}: IHero) => {
   const arrTitle = title.split('<br>') // для стилизации 2х и более строк
+
   return (
     <motion.section
       className={cn(styles.hero, styles[specificClass])}
@@ -61,7 +61,7 @@ export const Hero = ({ title, description, specificClass = 'page'}: IHero) => {
             variants={animDescription}
             custom={arrTitle.length + 2}
           >
-            {(parse(addNbsp(description)))}
+            {addNbspParse(description)}
           </motion.p>
         </div>
       </div>

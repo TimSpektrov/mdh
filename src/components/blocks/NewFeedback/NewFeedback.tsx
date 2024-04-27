@@ -7,8 +7,7 @@ import axios from 'axios';
 import { usePopupStore } from '@/store/usePopapStore';
 import { useRouter } from 'next/router';
 import inputStyle from '@/components/ui/Form/Field/Field.module.scss';
-import { addNbsp } from '@/helpers';
-import parse from 'html-react-parser';
+import { addNbspParse } from '@/helpers';
 
 interface INewFeedback {
   title: string;
@@ -67,9 +66,8 @@ export const NewFeedback: FC<INewFeedback> = ({title, color}) => {
     <section className={styles.section}>
       <div className={cn('container', styles.container)}>
         <div className={styles.content}>
-          {/*<TextHero text={title} tag={'h2'} size={'h2'} font={'grandis-extended'} />*/}
-          <h2 className={styles.title}>{parse(addNbsp(title))}</h2>
-          <p className={styles.description}>Оставьте контакты и наш менеджер свяжется с вами для консультации</p>
+          <h2 className={styles.title}>{addNbspParse(title)}</h2>
+          <p className={styles.description}>{addNbspParse('Оставьте контакты и наш менеджер свяжется с вами для консультации')}</p>
           <form
             className={cn(styles.form)}
             onSubmit={formik.handleSubmit}

@@ -3,8 +3,7 @@ import styles from './card-rates.module.scss'
 import cn from 'classnames';
 import check from '@img/svg/check.svg'
 import { motion } from 'framer-motion';
-import { addNbsp } from '@/helpers';
-import parse from 'html-react-parser';
+import { addNbspParse } from '@/helpers';
 import { useModalStore } from '@/store/useModalStore';
 
 export const CardRates: FC<any> = ({content}) => {
@@ -44,7 +43,7 @@ export const CardRates: FC<any> = ({content}) => {
               onClick={() => handleClickButton(i)}
               onMouseEnter={() => handleHoverButton(i)}
               onMouseLeave={() => handleLeaveButton()}
-            >{item.audit_type}</motion.button>
+            >{addNbspParse(item.audit_type)}</motion.button>
           ))}
         </div>
 
@@ -56,22 +55,22 @@ export const CardRates: FC<any> = ({content}) => {
             transition={{ duration: 1 }}
             key={activeButton}
           >
-            <h2 className={styles.content__title}>{parse(addNbsp(content[activeButton].title))}</h2>
-            <p className={styles.content__description}>{parse(addNbsp(content[activeButton].description))}</p>
+            <h2 className={styles.content__title}>{addNbspParse(content[activeButton].title)}</h2>
+            <p className={styles.content__description}>{addNbspParse(content[activeButton].description)}</p>
             <ul className={styles.content__list}>
               <li className={styles.content__item}>
                 <div className={cn(styles['content__item-img'], styles['content__item-img-watch'])}></div>
                 <span className={styles['content__item-text']}>
-                <span className={styles['content__item-text-bold']}>Срок: </span>
-                  {parse(addNbsp(content[activeButton].term))}
-              </span>
+                  <span className={styles['content__item-text-bold']}>Срок: </span>
+                  {addNbspParse(content[activeButton].term)}
+                </span>
               </li>
               <li className={styles.content__item}>
                 <div className={cn(styles['content__item-img'], styles['content__item-img-book'])}></div>
                 <span className={styles['content__item-text']}>
-                <span className={styles['content__item-text-bold']}>Результат: </span>
-                  {parse(addNbsp(content[activeButton].result))}
-              </span>
+                  <span className={styles['content__item-text-bold']}>Результат: </span>
+                  {addNbspParse(content[activeButton].result)}
+                </span>
               </li>
             </ul>
           </motion.div>
@@ -90,22 +89,22 @@ export const CardRates: FC<any> = ({content}) => {
           </h3>
           <ul className={styles.advanced__list}>
             <div className={styles['advanced__list-container']}>
-              {advanced.filter((el:string, i:number) => i < advanced.length / 2).map((item:string, i: number) => (
+              {advanced.filter((_:string, i:number) => i < advanced.length / 2).map((item:string, i: number) => (
                 <li className={styles.advanced__item} key={`${activeButton}-${i}`}>
                   <div className={styles['advanced__item-img']} style={{backgroundImage:check.src}}></div>
                   <span className={styles['advanced__item-text']}>
-                {parse(addNbsp(item))}
-              </span>
+                    {addNbspParse(item)}
+                  </span>
                 </li>
               ))}
             </div>
             <div className={styles['advanced__list-container']}>
-              {advanced.filter((el:string, i: number) => i >= advanced.length / 2).map((item:string, i: number) => (
+              {advanced.filter((_:string, i: number) => i >= advanced.length / 2).map((item:string, i: number) => (
                 <li className={styles.advanced__item} key={`${activeButton}-${i}`}>
                   <div className={styles['advanced__item-img']} style={{backgroundImage:check.src}}></div>
                   <span className={styles['advanced__item-text']}>
-                {parse(addNbsp(item))}
-              </span>
+                    {addNbspParse(item)}
+                  </span>
                 </li>
               ))}
             </div>

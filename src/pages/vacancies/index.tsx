@@ -15,8 +15,6 @@ const VacanciesPage: NextPage<VacanciesProps> = ({ vacancies }) => {
     fetchData(VACANCIES_URL, 'vacancy')
   }, []);
 
-  console.log(content);
-
   if(!content?.vacancy) return  null
   return <Vacancies content={content.vacancy} vacancies={vacancies}/>;
 }

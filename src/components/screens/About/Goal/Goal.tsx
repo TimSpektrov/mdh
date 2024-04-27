@@ -1,9 +1,6 @@
 import { FC } from 'react';
 import { GoalProps } from '.';
-import { Title, Text } from '@/components/ui/Typography';
-import cn from 'classnames'
 import style from './Goal.module.scss';
-import parse from 'html-react-parser';
 import { NewTypography } from '@/components/ui/NewTypography';
 
 

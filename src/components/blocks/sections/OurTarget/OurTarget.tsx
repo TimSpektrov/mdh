@@ -16,7 +16,8 @@ import img12 from './assets/images/12.jpg'
 import img13 from './assets/images/13.jpg'
 import img14 from './assets/images/14.jpg'
 import { NewTypography } from '@/components/ui/NewTypography';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
+import { isMobile } from 'react-device-detect';
 
 interface IOurTarget {
   title: string;
@@ -39,24 +40,39 @@ const imgAnimation = {
 
 export const OurTarget:FC<IOurTarget> = ({title}) => {
   const ref= useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start']
-  })
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
-  const translateY = useTransform(scrollYProgress, [0, 1], ['-15%', '15%'])
+  // const parallax = useTransform([x, y], ([x, y]) => ({
+  //   x: x * 50,
+  //   y: y * 50,
+  // }));
+  // const { scrollYProgress } = useScroll({
+  //   target: ref,
+  //   offset: ['start end', 'end start']
+  // })
 
+  // const translateY = useTransform(scrollYProgress, [0, 1], ['-15%', '15%'])
+
+
+  const handleClick = () => {
+    // console.log(parallax.current)
+  }
   return (
     <motion.section
       className={styles.section}
       ref={ref}
       initial='hidden'
       whileInView='visible'
-      viewport={{ amount: .8, once: true }}
+      viewport={{ amount: isMobile ? .5 : .8, once: true }}
+      onMouseMove={(e) => {
+        x.set(e.clientX);
+        y.set(e.clientY);
+      }}
     >
 
-      <motion.div className={styles.parallax} style={{
-        y: translateY,
+      <motion.div onClick={handleClick} className={styles.parallax} style={{
+        // ...parallax,
       }}>
         <div className={styles.left}>
           <motion.div variants={imgAnimation} custom={3}>

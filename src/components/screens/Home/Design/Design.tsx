@@ -24,7 +24,11 @@ const fadeInVariant = {
   })
 }
 
-export const Design: FC<DesignProps> = ({ title, description, textButton = 'Как это работает'}) => {
+export const Design: FC<DesignProps> = ({
+  title,
+  description,
+  textButton = 'Как это работает'
+}) => {
 
   const pathName = useRouter()
 

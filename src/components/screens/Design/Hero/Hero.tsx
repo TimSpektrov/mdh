@@ -3,7 +3,7 @@ import { HeroProps } from '.';
 import { Title } from '@/components/ui/Typography';
 
 import style from './Hero.module.scss';
-import parse from 'html-react-parser';
+import { addNbspParse } from '@/helpers';
 
 export const Hero: FC<HeroProps> = ({title, description}) => {
   return (
@@ -25,7 +25,7 @@ export const Hero: FC<HeroProps> = ({title, description}) => {
             <svg width="721" height="139" viewBox="0 0 721 139" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M109.959.48v88.96h12.48v49.28h-27.36V112H.04V.48h27.52v88.96h54.88V.48h27.52zM231.098.48h45.76V112h-27.52V25.6h-4.32l-52 86.4h-45.76V.48h27.52v86.56h4.16L231.098.48zM424.58 112h-30.56L363.3 65.6h-28.96V112h-27.52V.48h27.52v42.56h31.04L393.06.48h30.24l-36.16 55.2L424.58 112zM466.914.48h100.64V112h-27.52V23.04h-45.6V44c0 24.107-4.267 41.867-12.8 53.28-8.427 11.413-21.653 17.12-39.68 17.12V91.84c8.64-.747 14.933-4.907 18.88-12.48 4.053-7.573 6.08-19.36 6.08-35.36V.48zM720.224 112h-27.84l-7.84-23.68h-59.04l-7.84 23.68h-28L626.784.48h56.48L720.224 112zm-72.96-88.96-14.24 42.88h44l-14.24-42.88h-15.52z" fill="#000"/></svg>
           </div>
         </div>
-        <Title variant='subline' className={style.desc}>{parse(description)}</Title>
+        <Title variant='subline' className={style.desc}>{addNbspParse(description)}</Title>
       </div>
     </div>
   );

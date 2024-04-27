@@ -1,8 +1,7 @@
 import styles from './text-hero.module.scss';
-import parse from 'html-react-parser';
 import cn from 'classnames';
 import { FC } from 'react';
-import { addNbsp } from '@/helpers';
+import { addNbspParse } from '@/helpers';
 
 interface ITextHero {
   text: string;
@@ -14,13 +13,12 @@ export const TextHero: FC<ITextHero> = ({text, size = 'p', tag = 'div', font = '
   const Tag = tag;
 
   return (
-      // <Tag className={styles['hero__description-text']} style={{'--colorSpan':color} as Partial<IHero>}>{parse(description)}</Tag>
       <Tag
         className={cn(
           styles['TextHero'],
           styles[font],
           styles[size]
           )}
-      >{parse(addNbsp(text))}</Tag>
+      >{addNbspParse(text)}</Tag>
   )
 }

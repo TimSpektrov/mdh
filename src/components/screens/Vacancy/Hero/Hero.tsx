@@ -3,9 +3,9 @@ import { HeroProps } from '.';
 import { Button } from '@/components/ui';
 import Image from 'next/image';
 import { Text, Title } from '@/components/ui/Typography';
-import parse from 'html-react-parser';
 
 import style from './Hero.module.scss';
+import { addNbspParse } from '@/helpers';
 
 export const Hero: FC<HeroProps> = ({ title, desc, image }) => {
   const scrollToFeedback = () => {
@@ -23,7 +23,7 @@ export const Hero: FC<HeroProps> = ({ title, desc, image }) => {
       <div className={style.body}>
         <div className={style.content}>
           <Title variant="h2">{title}</Title>
-          <Text>{desc && parse(desc)}</Text>
+          <Text>{desc && addNbspParse(desc)}</Text>
         </div>
         <Button color="orange" href="#feedback" onClick={scrollToFeedback}>
           Откликнуться на вакансию

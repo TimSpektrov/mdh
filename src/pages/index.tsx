@@ -1,20 +1,22 @@
-import { GetStaticProps, NextPage } from 'next';
+import { NextPage } from 'next';
 import { Home, HomeProps } from '@/components/screens/Home'
-import data from '@json/data.json'
+import { usePageDateStore } from '@/store/usePageDataStore';
+import { useEffect } from 'react';
+import { HOME_URL } from '@/helpers/apiRequests';
 
-const HomePage: NextPage<HomeProps> = ({ works, services }) => {
-  return <Home works={works} services={services} />
+const HomePage: NextPage<HomeProps> = () => {
+  const {content, fetchData } = usePageDateStore(state => ({
+    content: state.content,
+    fetchData: state.fetchData,
+  }))
+  useEffect(() => {
+    fetchData(HOME_URL, 'home')
+  }, []);
+
+  if(!content?.home) return  null
+
+  console.log(content.home);
+  return <Home content={content.home} />
 }
 
 export default HomePage;
-
-export const getStaticProps: GetStaticProps = async () => {
-  
-  return {
-    props: {
-      works: data?.works?.filter(work => work.showHome === true),
-      services: data?.services
-    },
-    revalidate: 30
-  }
-}

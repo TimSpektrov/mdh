@@ -3,7 +3,7 @@ export interface IResponseError {
 }
 
 export interface IVacancy {
-  id: string;
+  id: string | number;
   title: string;
   desc: string;
   short_desc?: string;

@@ -4,7 +4,6 @@ import cn from 'classnames';
 import { Text, Title } from '@/components/ui/Typography';
 import style from './VacanciesItem.module.scss';
 import Link from 'next/link';
-import parse from 'html-react-parser';
 
 export const VacanciesItem: FC<VacanciesItemProps> = ({
   title,

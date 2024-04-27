@@ -5,7 +5,7 @@ import style from './Structure.module.scss';
 import structereImg from '@img/identity/structure.png'
 import Image from 'next/image';
 import { Text, Title } from '@/components/ui/Typography';
-import parse from 'html-react-parser';
+import { addNbspParse } from '@/helpers';
 
 const data = [
   {
@@ -35,17 +35,17 @@ export const Structure: FC<StructureProps> = ({title, image, items}) => {
         </div>
         <div className={style.content}>
           <Title color='light' accent='mint' className={style.title}>
-            {parse(title)}
+            {addNbspParse(title)}
           </Title>
           <div className={style.list}>
             {items && items.map((item, index) => (
               <div key={index} className={style.item}>
                 <div className={style.count}>{(`${index + 1}`.padStart(2, '0'))}</div>
                 <div className={style.name}>
-                  <Title color='light' variant='h3'>{parse(item.title)}</Title>
+                  <Title color='light' variant='h3'>{addNbspParse(item.title)}</Title>
                   <span className={style.line} />
                 </div>
-                <Text color='light' tag='p' variant='main'>{parse(item.description)}</Text>
+                <Text color='light' tag='p' variant='main'>{addNbspParse(item.description)}</Text>
               </div>
             ))}
           </div>
