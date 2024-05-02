@@ -11,15 +11,9 @@ export const CardRates: FC<any> = ({content}) => {
   const [activeHover, setActiveHover] = useState(0);
   const [toggleModal] = useModalStore((state) => [state.toggleModal]);
 
-  console.log(content);
   const handleClickButton = (num: number) => {
     setActiveButton(num)
-  }
-  const handleHoverButton = (num: number) => {
     setActiveHover(num)
-  }
-  const handleLeaveButton = () => {
-    setActiveHover(activeButton);
   }
 
   const advanced = content[activeButton].when.split('\r\n')
@@ -42,8 +36,6 @@ export const CardRates: FC<any> = ({content}) => {
                 {[styles['heading-btn-active']]: activeButton === i}
               )}
               onClick={() => handleClickButton(i)}
-              onMouseEnter={() => handleHoverButton(i)}
-              onMouseLeave={() => handleLeaveButton()}
             >{addNbspParse(item.audit_type)}</motion.button>
           ))}
         </div>

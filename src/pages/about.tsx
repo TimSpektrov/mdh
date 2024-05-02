@@ -1,9 +1,8 @@
-import { NextPage, GetStaticProps } from "next";
+import { NextPage } from "next";
 import { About } from "@/components/screens/About";
-import data from '@json/data.json'
 import { usePageDateStore } from '@/store/usePageDataStore';
 import { useEffect } from 'react';
-import { ABOUT_US_URL, AUDIT_URL } from '@/helpers/apiRequests';
+import { ABOUT_US_URL } from '@/helpers/apiRequests';
 
 const AboutPage: NextPage<any> = () => {
   const {content, fetchData } = usePageDateStore(state => ({
@@ -21,13 +20,13 @@ const AboutPage: NextPage<any> = () => {
 
 export default AboutPage;
 
-export const getStaticProps: GetStaticProps = async () => {
-
-  return {
-    props: {
-      works: data?.works?.filter(work => work.showAbout === true),
-      content: data['pages-content']['about-page']
-    },
-    revalidate: 30
-  }
-}
+// export const getStaticProps: GetStaticProps = async () => {
+//
+//   return {
+//     props: {
+//       works: data?.works?.filter(work => work.showAbout === true),
+//       content: data['pages-content']['about-page']
+//     },
+//     revalidate: 30
+//   }
+// }

@@ -80,6 +80,11 @@
     cursor: pointer;
     font-weight: 400;
     z-index: 1;
+    transition: color .2s ease-in-out;
+
+    &:hover:not(.heading-btn-active) {
+      color: $orange--hover;
+    }
 
     @include bp-max(md) {
       font-size: 14px;
