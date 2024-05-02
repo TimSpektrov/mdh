@@ -15,7 +15,6 @@ const HomePage: NextPage<HomeProps> = () => {
 
   if(!content?.home) return  null
 
-  console.log(content.home);
   return <Home content={content.home} />
 }
 

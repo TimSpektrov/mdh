@@ -49,7 +49,7 @@ const DesignPromoMaterials: NextPage<any> = () => {
           title={content.designPromo.type_site.title}
           specificClass={'promo-materials-page'}
         />
-      <NewCallback className={style.callback} specificClass={'promo-materials-page'}/>
+      <NewCallback specificClass={'promo-materials-page'}/>
       <NewWorksList
         works={content.designPromo.works}
         specificClass={'promo-materials-page'}

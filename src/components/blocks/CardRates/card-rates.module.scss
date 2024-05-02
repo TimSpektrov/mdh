@@ -106,7 +106,6 @@
 
   @include bp-min(xxl) {
     background-image: url("./assets/img/bg.svg");
-    //background-size: 100%;
     background-position: right bottom;
     background-repeat: no-repeat;
   }
@@ -208,6 +207,14 @@
     padding: 12px 36px;
   }
 
+  @include bp-min(xl) {
+    @include bp-max(xxl) {
+      background-image: url("./assets/img/bg.svg");
+      background-position: right bottom;
+      background-repeat: no-repeat;
+    }
+  }
+
   &__title {
     margin-top: 0;
     font-family: $secondaryFont;
@@ -232,16 +239,24 @@
     margin-bottom: 0;
     padding: 0;
     list-style: none;
+    display: grid;
+    gap: 20px;
 
     @include bp-min(xxl) {
-      display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 24px 20px;
     }
   }
   &__item {
     display: flex;
     gap: .5em;
-    margin-bottom: 1em;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+      @include bp-min(xxl) {
+        margin-bottom: 24px;
+      }
+    }
 
     @include bp-max(md) {
       font-size: 16px;

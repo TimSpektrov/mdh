@@ -237,7 +237,6 @@ export const Home: FC<any> = ({content}) => {
       }
     }
 
-  console.log(content.design.textButton);
   return (
     <>
       <Head>

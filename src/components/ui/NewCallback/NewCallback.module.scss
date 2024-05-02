@@ -16,16 +16,27 @@
 }
 
 .inner {
-  background-color: #fff;
+  background-color: $white;
   display: grid;
-  gap: 24px;
+  gap: 20px;
   padding: 24px;
-  border-radius: 8px;
   width: 100%;
+  border-radius: 20px;
 
   @include bp-min(sm) {
-    gap: 36px;
     padding: 24px 36px;
+  }
+
+  @include bp-max(md) {
+    padding: 24px;
+  }
+
+  @include bp-min(md) {
+    padding: 36px;
+  }
+
+  @include bp-min(xl) {
+    padding: 36px 60px;
   }
 
   @include bp-min(xxl) {
@@ -38,6 +49,18 @@
 .heading {
   display: grid;
   gap: 8px 16px;
+
+  p {
+    font-family: $thirdFont;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 25.2px */
+
+    @include bp-max(xl) {
+      font-size: 16px;
+    }
+  }
   
   @include bp-max(sm) {
     text-align: center;
@@ -66,7 +89,8 @@
   
   .input {
     height: 48px;
-    padding: 12px 16px;
+    padding: 16px 24px;
+    border-radius: 16px;
   
     @include bp-min(sm) {
       height: 51px;
@@ -78,15 +102,21 @@
       padding-right: 24px;
     }
   }
-  
-  .btn {
-    background-color: $black;
-    color: $light;
-    min-width: auto;
 
-    &:disabled {
-      opacity: 1;
-    }
+  .btn {
+    background-color: $yellow;
+    color: $black;
+    padding: 16px 24px;
+    border-radius: 16px;
+    font-family: $secondaryFont;
+    flex: 0 0 auto;
+    border: none;
+    line-height: 1.25;
+    cursor: pointer;
+    transition-property: color, opacity, background-color, border;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    font-size: 16px;
 
     @include bp-min(sm) {
       height: 51px;
@@ -118,122 +148,35 @@
   background-image: linear-gradient($white 50%,$black 50%);
   .inner {
     background-color: $white1;
-    border-radius: 20px;
-
-    @include bp-max(md) {
-      padding: 24px;
-    }
-
-    @include bp-min(md) {
-      padding: 36px;
-    }
-
-    @include bp-min(xl) {
-      padding: 36px 60px;
-      gap: 20px;
-    }
-    @include bp-min(xxl) {
-      gap: 20px;
-    }
   }
 
   .heading {
     span {
       color: $orange;
     }
-    p {
-      font-family: $thirdFont;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 140%; /* 25.2px */
-      @include bp-max(xl) {
-        font-size: 16px;
-      }
-    }
   }
 
-  .input {
-    padding: 16px 24px;
-    border-radius: 16px;
-  }
   .btn {
+    color: $white;
     background-color: $orange;
-    padding: 16px 24px;
-    border-radius: 16px;
-    font-family: $secondaryFont;
-    flex: 0 0 auto;
     &:hover {
-      background-color: $orange--hover !important;
+      background-color: $orange--hover;
     }
   }
 }
 
 .promo-materials-page {
   background-image: linear-gradient($white1 50%,$black 50%);
-  .inner {
-    background-color: $white;
-    border-radius: 20px;
-
-    @include bp-max(md) {
-      padding: 24px;
-    }
-
-    @include bp-min(md) {
-      padding: 36px;
-    }
-
-    @include bp-min(xl) {
-      padding: 36px 60px;
-    }
-  }
 
   .heading {
-
     span {
       color: currentColor;
     }
-    p {
-      font-family: $thirdFont;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 140%; /* 25.2px */
-    }
-  }
-  .form {
-    display: flex;
-  }
-
-  .input {
-    padding: 16px 24px;
-    border-radius: 16px;
-    @include bp-min(xl) {
-      height: 51px;
-    }
-    @include bp-min(xxl) {
-      height: 59px;
-    }
   }
   .btn {
-    background-color: $yellow;
-    color: $black;
-    padding: 16px 24px;
-    border-radius: 16px;
-    font-family: $secondaryFont;
-    flex: 0 0 auto;
+    background-color: #F8CD12;
     &:hover {
-      color: $black !important;
-
-    }
-  }
-}
-
-.promo-materials-page {
-  button {
-    background-color: #F8CD12 !important;
-    &:hover {
-      background-color: #F5B90A !important;
+      background-color: #F5B90A ;
     }
   }
 }

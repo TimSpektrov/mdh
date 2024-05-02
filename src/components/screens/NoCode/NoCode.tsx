@@ -5,7 +5,7 @@ import style from './NoCode.module.scss';
 import { WorksList } from '@/components/blocks/sections/WorksList/WorksList';
 import { Stages } from '@/components/blocks/sections/Stages';
 import { StagesRedesign } from '@/components/blocks/StagesRedisign';
-import { Callback } from '@/components/ui/Callback';
+import { NewCallback } from '@/components/ui/NewCallback';
 import { NewWorksList} from '@/components/ui/NewWorksList';
 import { NewFooterFeedback } from 'src/components/ui/NewFooterFeedback';
 
@@ -37,8 +37,7 @@ export const NoCode: FC<any> = ({content}) => {
         specificClass={'no-code-page'}
         title={content.stages_development.title}
       />
-      <Callback
-        className={style.callback}
+      <NewCallback
         specificClass={'no-code-page'}
       />
       <NewWorksList

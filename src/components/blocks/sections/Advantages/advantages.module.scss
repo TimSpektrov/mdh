@@ -13,9 +13,6 @@
       padding-top: 60px;
       padding-bottom: 60px;
     }
-    @include bp-min(lg) {
-      padding-bottom: 36px;
-    }
     @include bp-min(xl) {
       padding-top: 120px;
       padding-bottom: 120px;
@@ -81,7 +78,13 @@
   .advantages {
     &__container {
       @include bp-min(xl) {
-        grid-template-columns: 1fr 725px;
+        grid-template-columns: 41% 56%;
+      }
+      @include bp-min(xxl) {
+        grid-template-columns: 49% 50%;
+      }
+      @include bp-min(xxxl) {
+        grid-template-columns: 48% 48%;
       }
     }
   }

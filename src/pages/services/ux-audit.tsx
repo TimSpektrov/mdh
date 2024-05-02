@@ -48,7 +48,7 @@ const UxAuditPage: NextPage = () => {
       />
       <Stages specificClass={'audit-page'} list={content.audit.stages.stage_items} title={content.audit.stages.title}/>
       {/*<Stages specificClass={'audit-page'} list={test} title={content.audit.stages.title}/>*/}
-      <CardRates content={content.audit.card_rates} />
+      <CardRates content={content.audit.card_rates.reverse()} />
       <NewWorksList
         works={content.audit.works}
         specificClass={'audit-page'}

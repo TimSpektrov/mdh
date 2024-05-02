@@ -323,11 +323,3 @@
     translate: 0 -20px;
   }
 }
-
-.no-code-page {
-  .stage__heading {
-    @include bp-min(xxxl) {
-      width: 430px;
-    }
-  }
-}

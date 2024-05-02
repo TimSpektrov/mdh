@@ -15,7 +15,6 @@ const WorksPage: NextPage<WorksProps> = () => {
     fetchData(WORKS_URL, 'works')
   }, []);
 
-  console.log(content?.works);
   if(!content?.works) return  null
   return <Works works={content.works} />;
 };

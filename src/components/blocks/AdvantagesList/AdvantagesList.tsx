@@ -2,6 +2,7 @@ import styles from './advantages-list.module.scss'
 import cn from 'classnames';
 import { NewTypography } from '@/components/ui/NewTypography';
 import { addNbspParse } from '@/helpers';
+import { log } from 'next/dist/server/typescript/utils';
 
 export interface TAdvantagesItem {
   title: string;
@@ -14,6 +15,7 @@ export interface TAdvantagesList {
   specificClass: string;
 }
 export const AdvantagesList = ({ list, specificClass }: TAdvantagesList) => {
+  console.log(list    );
   return (
     <div
       className={cn(
@@ -26,7 +28,7 @@ export const AdvantagesList = ({ list, specificClass }: TAdvantagesList) => {
           className={styles['advantages-list__item']}
           key={item.id}
         >
-          <NewTypography text={item.title} variant={'h3'} tag={'h3'} />
+          <NewTypography text={item.title} variant={'h4'} tag={'h3'} />
           <p className={styles['advantages-list__description']}>{ addNbspParse(item.description) }</p>
         </div>))}
     </div>

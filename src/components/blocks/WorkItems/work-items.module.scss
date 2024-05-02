@@ -44,6 +44,10 @@
       height: 36px;
       font-size: 16px;
     }
+    @include bp-max(sm) {
+      width: 30px;
+      height: 30px;
+    }
     @include bp-min(md) {
       width: 40px;
       height: 40px;
@@ -73,9 +77,7 @@
     opacity: 0;
     border-radius: 16px;
     transition: opacity .3s linear, translate .5s linear, rotate .5s linear;
-
     pointer-events: none;
-    z-index: 1;
     .item:hover & {
       opacity: 1;
       translate: 0 -50%;
@@ -86,8 +88,9 @@
   .img-2 {
     top: 50%;
     right: 0;
-    width: 39%;
+    width: 39.4%;
     min-width: 387px;
+    z-index: 1;
   }
 
   .img-1 {
@@ -95,6 +98,7 @@
     right: 39%;
     width: 15%;
     rotate: 0deg;
+    z-index: 2;
     .item:hover & {
       rotate: -9deg;
     }
@@ -103,7 +107,7 @@
 
 .promo-materials-page {
   .item-num {
-    background-color: $yellow;
+    background-color: $yellow2;
     color: $black;
   }
 

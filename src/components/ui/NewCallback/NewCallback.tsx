@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import cn from 'classnames'
-import { Title, Text } from '../Typography';
+import { Text } from '../Typography';
 import { Field } from '../Form';
 import { useRouter } from 'next/router';
 
@@ -9,24 +9,19 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { usePopupStore } from "@/store/usePopapStore";
 
-import btnStyle from '@/components/ui/Button/Button.module.scss'
 import style from './NewCallback.module.scss';
 import { NewTypography } from '@/components/ui/NewTypography';
-import { addNbsp } from '@/helpers';
-import parse from 'html-react-parser';
+import { addNbsp, addNbspParse } from '@/helpers';
 
 export interface CallbackProps {
   background?: 'dark' | 'light' | 'light-dark' | 'dark-light';
-  className?: string;
   specificClass?: string;
 }
-export const NewCallback: FC<CallbackProps> = ({ background, className, specificClass = 'page' }) => {
-
+export const NewCallback: FC<CallbackProps> = ({ background, specificClass = 'page' }) => {
   const phoneRegExp = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{5,6}$/;
   const [pagePath, setPagePath] = useState('')
   const [pageTitle, setPageTitle] = useState('')
   const { isSending, isSuccess, isWarning, closePopup } = usePopupStore()
-
   const { asPath } = useRouter()
 
   useEffect(() => {
@@ -80,10 +75,10 @@ export const NewCallback: FC<CallbackProps> = ({ background, className, specific
 
   return (
     <div className={classes}>
-      <div className={cn(style.inner, className)}>
+      <div className={cn(style.inner)}>
         <div className={style.heading}>
           <NewTypography text={'Остались <span>вопросы?</span>'} variant={'h2'} tag={'h2'} />
-          <Text>{parse(addNbsp('Оставьте свои контакты и мы свяжемся с вами, чтобы помочь в выборе оптимального тарифа'))}</Text>
+          <Text>{addNbspParse('Оставьте свои контакты и мы свяжемся с вами, чтобы помочь в выборе оптимального тарифа')}</Text>
         </div>
         <form className={style.form} onSubmit={formik.handleSubmit} autoComplete="off">
           <Field
@@ -98,7 +93,7 @@ export const NewCallback: FC<CallbackProps> = ({ background, className, specific
             placeholder="Введите номер телефона"
             textError={formik.errors.phoneNumber}
           />
-          <button className={cn(btnStyle.btn, btnStyle['btn--secondary'], btnStyle['btn--large'], style.btn)} type='submit'>Отправить</button>
+          <button className={cn(style.btn)} type='submit'>Отправить</button>
         </form>
       </div>
     </div>

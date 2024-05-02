@@ -11,6 +11,7 @@ export const CardRates: FC<any> = ({content}) => {
   const [activeHover, setActiveHover] = useState(0);
   const [toggleModal] = useModalStore((state) => [state.toggleModal]);
 
+  console.log(content);
   const handleClickButton = (num: number) => {
     setActiveButton(num)
   }
