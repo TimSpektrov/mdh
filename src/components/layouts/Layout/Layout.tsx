@@ -28,11 +28,13 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 0
   useEffect(() => { setMobile(isMobile) }, [])
 
-  const { fetchContacts } = useContactsDateStore(state => ({
+  const { fetchContacts, loadingData } = useContactsDateStore(state => ({
     fetchContacts: state.fetchContacts,
+    loadingData: state.loading
   }))
-  const {loading } = usePageDateStore(state => ({
+  const {loading, content} = usePageDateStore(state => ({
     loading: state.loading,
+    content: state.content,
   }))
   useEffect(() => {
     fetchContacts()
@@ -40,7 +42,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <Loader loader={loading} />
+      <Loader loader={loading || loadingData || !content} />
       <DynamicPopup className={Grandis.variable} />
       <DynamicCursor />
       <div className="wrapper">

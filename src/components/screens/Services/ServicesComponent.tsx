@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { FC } from 'react';
 import { ServicesComponentProps } from '.';
-import { Feedback } from '@/components/ui/Feedback';
+import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
 
 export const ServicesComponent: FC<ServicesComponentProps> = () => {
   return (
@@ -10,7 +10,7 @@ export const ServicesComponent: FC<ServicesComponentProps> = () => {
         <title>Услуги</title>
         <meta name="description" content="Описание страницы со списком услуг" />
       </Head>
-      <Feedback/>
+      <NewFooterFeedback />
     </>
   );
 };

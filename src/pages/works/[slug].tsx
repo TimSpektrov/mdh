@@ -6,7 +6,7 @@ import { IWork } from '@/types/IWork';
 import data from '@json/data.json';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HorisontalScrollNavigation } from '@/components/ui/HorisontalScrollNavigation';
-import { Feedback } from '@/components/ui/Feedback';
+import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
 
 interface IParams extends ParsedUrlQuery {
   slug?: string;
@@ -28,7 +28,7 @@ const WorkPage: NextPage<IWork> = (props: IWork) => {
         </motion.div>
       </AnimatePresence>
       <HorisontalScrollNavigation key={'scrollNavBottom'} position="bottom" />
-      <Feedback />
+      <NewFooterFeedback />
     </>
   );
 };

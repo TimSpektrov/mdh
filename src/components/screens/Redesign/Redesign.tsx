@@ -8,8 +8,6 @@ import { NewFeedback } from '@/components/blocks/NewFeedback';
 import { setUppercase } from '@/helpers';
 import { NewWorksList } from '@/components/ui/NewWorksList';
 import { NewFooterFeedback } from 'src/components/ui/NewFooterFeedback';
-import { Feedback } from 'src/components/ui/Feedback';
-import { log } from 'next/dist/server/typescript/utils';
 
 export const Redesign: FC<any> = ({content}) => {
   const secondColor = '#fbe06a'

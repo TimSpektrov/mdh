@@ -20,10 +20,6 @@ export const Footer = forwardRef<HTMLDivElement, FooterProps>(({}, ref) => {
 
   const social = contacts?.social_media ? Object.entries(contacts.social_media).filter(item=> item[1]) : [];
 
-
-
-
-
   return (
     <footer className={style.wrapper} ref={ref}>
       <Logo className={style.logo} width={190} height={36} />

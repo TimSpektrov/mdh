@@ -9,7 +9,7 @@ import { Proposal } from './Proposal';
 import { WorksList } from '@/components/ui/WorksList';
 import { Callback } from '@/components/ui/Callback';
 import style from './Design.module.scss';
-import { Feedback } from '@/components/ui/Feedback';
+import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
 
 export const Design: FC<any> = ({ content }) => {
 
@@ -50,7 +50,7 @@ export const Design: FC<any> = ({ content }) => {
       />
       <Callback background='light-dark'/>
       <WorksList dark works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
-      <Feedback/>
+      <NewFooterFeedback/>
     </>
   );
 };

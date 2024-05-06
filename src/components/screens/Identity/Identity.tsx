@@ -6,9 +6,9 @@ import { Complex } from '@/components/ui/Complex';
 import { WorksList } from '@/components/ui/WorksList';
 import { Tariff } from './Tariff';
 import { Callback } from '@/components/ui/Callback';
-import { Feedback } from '@/components/ui/Feedback';
 import style from './Identity.module.scss'
 import { IRate } from '@/types/type';
+import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
 
 export const Identity: FC<any> = ({content}) => {
   return (
@@ -27,7 +27,7 @@ export const Identity: FC<any> = ({content}) => {
       <Tariff title={content.tariff.title} rates={content.tariff.rates.sort((a: IRate, b: IRate) => a.uniqueId - b.uniqueId)} description={content.tariff.description} />
       <Callback background='light' className={style.callback} />
       <WorksList dark={true} works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
-      <Feedback/>
+      <NewFooterFeedback />
     </>
   );
 };

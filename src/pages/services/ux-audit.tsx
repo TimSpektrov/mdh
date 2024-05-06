@@ -56,7 +56,7 @@ const UxAuditPage: NextPage = () => {
         moreBtn
       />
       <NewFooterFeedback />
-    </> 
+    </>
   );
 }
 

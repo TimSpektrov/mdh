@@ -1,12 +1,11 @@
 import { FC } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Title } from '@/components/ui/Typography';
 import { Hero } from './Hero';
 import { Tasks } from './Tasks';
 import { Goal } from './Goal';
 import { WorksList } from '@/components/ui/WorksList';
-import { Feedback } from '@/components/ui/Feedback';
+import { NewFooterFeedback } from 'src/components/ui/NewFooterFeedback';
 
 import logoImg from '@img/logo.svg'
 import style from './About.module.scss';
@@ -56,7 +55,7 @@ export const About: FC<any> = ({ content }) => {
         </div>
       </section>
       <WorksList dark works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
-      <Feedback/>
+      <NewFooterFeedback />
     </>
   );
 };

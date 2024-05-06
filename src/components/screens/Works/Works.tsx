@@ -5,12 +5,12 @@ import { Hero } from './Hero';
 import { WorksList } from '@/components/ui/WorksList';
 
 import style from './Works.module.scss';
-import { Feedback } from '@/components/ui/Feedback';
 import { HorisontalScrollFilter } from '@/components/ui/HorisontalScrollFilter';
 import { useSearchParams } from 'next/navigation';
 import { IWork } from '@/types/IWork';
 import { scroll } from 'framer-motion';
 import { useFilterStore } from '@/store/useFilterStore';
+import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
 
 export const Works: FC<WorksProps> = (props) => {
   const filterRef = useRef<any>(null);
@@ -20,7 +20,7 @@ export const Works: FC<WorksProps> = (props) => {
   );
 
   const works: IWork[] = [];
-  props.works.filter((el, ind) => {
+  props.works.filter((el) => {
     el?.tags?.filter((tag) => {
       if (searchParam.get('tag') === tag.name) {
         works.push(el);
@@ -57,7 +57,7 @@ export const Works: FC<WorksProps> = (props) => {
         wrapClass={style.works}
         itemClass={style.worksItem}
       />
-      <Feedback />
+      <NewFooterFeedback />
     </>
   );
 };
