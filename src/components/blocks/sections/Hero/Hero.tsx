@@ -9,14 +9,14 @@ interface IHero {
 }
 
 const animTitle = {
-  hidden: { y: '1.15em' },
+  hidden: { y: '120%' },
   visible: (custom: number) => ({
     y: '.16em',
     transition: { delay: custom * 0.4, easy: 'circOut', duration: 1 }
   })
 }
 const animTitle2 = {
-  hidden: { y: '100%' },
+  hidden: { y: '101%' },
   visible: (custom: number) => ({
     y: '.13em',
     transition: { delay: custom * 0.4, easy: 'circOut', duration: 1 }

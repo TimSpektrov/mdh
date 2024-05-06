@@ -81,7 +81,7 @@
     .item:hover & {
       opacity: 1;
       translate: 0 -50%;
-      transition: opacity .5s linear, translate .5s cubic-bezier(1, -0.23, 0.01, 1.36), rotate .5s cubic-bezier(1, -0.23, 0.01, 1.36);
+      transition: opacity .2s ease, translate .3s cubic-bezier(1, -0.23, 0.01, 1.36), rotate .3s cubic-bezier(1, -0.23, 0.01, 1.36);
     }
   }
 
@@ -95,7 +95,7 @@
 
   .img-1 {
     top: 108%;
-    right: 39%;
+    right: 39.4%;
     width: 15%;
     rotate: 0deg;
     z-index: 2;

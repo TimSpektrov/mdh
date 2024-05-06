@@ -42,12 +42,15 @@
   }
   @include bp-min(xl) {
     gap: 22px;
+    @include bp-max(xxl) {
+      background-image: url("./assets/img/bg.svg");
+      background-position: right bottom;
+      background-repeat: no-repeat;
+    }
   }
   @include bp-min(xxl) {
     padding: 48px;
     gap: 36px;
-  }
-  @include bp-min(xxl) {
     max-width: 1226px;
     margin-inline: auto;
   }
@@ -154,7 +157,7 @@
     margin-bottom: 0;
     padding: 0;
     list-style: none;
-    max-width: 750px;
+    max-width: 790px;
   }
 
   &__item {
@@ -210,14 +213,6 @@
   }
   @include bp-min(md) {
     padding: 12px 36px;
-  }
-
-  @include bp-min(xl) {
-    @include bp-max(xxl) {
-      background-image: url("./assets/img/bg.svg");
-      background-position: right bottom;
-      background-repeat: no-repeat;
-    }
   }
 
   &__title {

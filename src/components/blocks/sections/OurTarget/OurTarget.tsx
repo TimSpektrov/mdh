@@ -16,7 +16,6 @@ import img13 from './assets/images/13.jpg'
 import img14 from './assets/images/14.jpg'
 import { NewTypography } from '@/components/ui/NewTypography';
 import { motion, MotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
-import { isMobile } from 'react-device-detect';
 import { OurTargetAnimImage } from '@/components/blocks/sections/OurTarget/OurTargetAmimImage/OurTargetAnimImage';
 
 interface IOurTarget {

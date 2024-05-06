@@ -11,7 +11,7 @@
   }
 
   @include bp-min(xxxl) {
-    padding: 0 191px;
+    padding: 0 9.9%;
   }
 }
 
@@ -23,12 +23,12 @@
   width: 100%;
   border-radius: 20px;
 
-  @include bp-min(sm) {
-    padding: 24px 36px;
-  }
 
   @include bp-max(md) {
     padding: 24px;
+  }
+  @include bp-max(sm) {
+    padding: 36px 24px;
   }
 
   @include bp-min(md) {

@@ -178,8 +178,8 @@
     transition: background-color .2s;
 
     @include bp-min(xl) {
-      //min-width: 370px;
-      width: calc(100% + 50px);
+      min-width: 370px;
+      width: calc(100% + 120px);
       left: 50%;
       transform: translateX(-50%);
 
@@ -189,6 +189,12 @@
           opacity: 1;
         }
       }
+    }
+    @include bp-min(xxl) {
+      width: calc(100% + 140px);
+    }
+    @include bp-min(xxl) {
+      width: calc(100% + 60px);
     }
   }
 

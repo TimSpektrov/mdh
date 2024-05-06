@@ -89,7 +89,7 @@
   text-transform: uppercase;
 
   @include bp-max(md) {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 12px;
   }
   @include bp-min(md) {

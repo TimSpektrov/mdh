@@ -176,7 +176,13 @@
     @include bp-max(sm) {
       font-size: 38px;
       & > div {
-        padding-inline: 15px;
+        padding-inline: 13px;
+      }
+      @media screen and (max-width: 360px) {
+        font-size: 34px;
+        & > div {
+          padding-inline: 12px;
+        }
       }
     }
   }
