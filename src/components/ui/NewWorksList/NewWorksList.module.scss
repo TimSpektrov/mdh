@@ -6,6 +6,7 @@
   gap: 24px;
   position: relative;
   background-color: $black;
+  color: $white3;
 
   @include bp-min(md) {
     gap: 36px;
@@ -101,6 +102,7 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  color: inherit;
 
   @include bp-min(md) {
     justify-content: flex-end;
@@ -113,10 +115,15 @@
     font-weight: 400;
     line-height: 120%;
     text-align: center;
-
-    color: $white3;
-    text-decoration: underline;
+    //text-decoration: underline;
     text-underline-offset: .4em;
+    color: $white3;
+
+    &:before,
+    &:after {
+      background-color: currentColor;
+    }
+
 
     @include bp-max(md) {
       font-size: 18px;
@@ -129,5 +136,24 @@
       font-size: 24px;
       line-height: 31px;
     }
+  }
+}
+
+.home-page {
+  &.section {
+    background-color: $white3;
+    color: $black;
+  }
+  .btn {
+    color: $black;
+  }
+}
+.works-page {
+  &.section {
+    background-color: $white3;
+    color: $black;
+  }
+  .btn {
+    color: $black;
   }
 }

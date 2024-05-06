@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Hero } from './Hero';
 import { Tasks } from './Tasks';
 import { Goal } from './Goal';
-import { WorksList } from '@/components/ui/WorksList';
+import { NewWorksList } from '@/components/ui/NewWorksList';
 import { NewFooterFeedback } from 'src/components/ui/NewFooterFeedback';
 
 import logoImg from '@img/logo.svg'
@@ -54,7 +54,11 @@ export const About: FC<any> = ({ content }) => {
           <Image src={logoImg} alt='' width={logoImg.width} height={logoImg.height} />
         </div>
       </section>
-      <WorksList dark works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
+      <NewWorksList
+        works={content.works}
+        specificClass={'about-page'}
+        writeBtn
+      />
       <NewFooterFeedback />
     </>
   );

@@ -8,6 +8,7 @@ import { Services } from './Services'
 import style from './Home.module.scss'
 import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
 import { Telegram } from './Telegram'
+import { NewWorksList } from '@/components/ui/NewWorksList';
 
 export const Home: FC<any> = ({content}) => {
 
@@ -25,7 +26,11 @@ export const Home: FC<any> = ({content}) => {
         <meta name="description" content={content.meta.description} />
       </Head>
       <Hero title={content.hero.title} description={content.hero.description} />
-      <WorksList works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
+      <NewWorksList
+        works={content.works}
+        specificClass={'home-page'}
+        writeBtn
+      />
       <Design title={content.design.title} description={content.design.description} />
       <Services services={content.services} />
       <Telegram title={content.telegram.title} description={data.telegram.description} />

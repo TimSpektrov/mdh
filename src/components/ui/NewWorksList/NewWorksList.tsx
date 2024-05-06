@@ -52,7 +52,7 @@ const fadeInVariant = {
   }
 };
 
-export const NewWorksList: FC<INewWorksList> = ({ works, specificClass, writeBtn, moreBtn = 'page'
+export const NewWorksList: FC<INewWorksList> = ({ works, specificClass = 'page', writeBtn, moreBtn
 }) => {
   const toggleModal = useModalStore((state) => state.toggleModal);
 

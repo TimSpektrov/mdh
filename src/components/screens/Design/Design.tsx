@@ -10,6 +10,7 @@ import { WorksList } from '@/components/ui/WorksList';
 import { Callback } from '@/components/ui/Callback';
 import style from './Design.module.scss';
 import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
+import { NewWorksList } from '@/components/ui/NewWorksList';
 
 export const Design: FC<any> = ({ content }) => {
 
@@ -49,7 +50,11 @@ export const Design: FC<any> = ({ content }) => {
         data={content.proposal.items}
       />
       <Callback background='light-dark'/>
-      <WorksList dark works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
+      <NewWorksList
+        works={content.works}
+        specificClass={'full-design-page'}
+        writeBtn
+      />
       <NewFooterFeedback/>
     </>
   );

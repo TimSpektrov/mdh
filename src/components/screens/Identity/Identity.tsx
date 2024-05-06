@@ -9,6 +9,7 @@ import { Callback } from '@/components/ui/Callback';
 import style from './Identity.module.scss'
 import { IRate } from '@/types/type';
 import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
+import { NewWorksList } from '@/components/ui/NewWorksList';
 
 export const Identity: FC<any> = ({content}) => {
   return (
@@ -26,7 +27,11 @@ export const Identity: FC<any> = ({content}) => {
       />
       <Tariff title={content.tariff.title} rates={content.tariff.rates.sort((a: IRate, b: IRate) => a.uniqueId - b.uniqueId)} description={content.tariff.description} />
       <Callback background='light' className={style.callback} />
-      <WorksList dark={true} works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
+      <NewWorksList
+        works={content.works}
+        specificClass={'identity-page'}
+        writeBtn
+      />
       <NewFooterFeedback />
     </>
   );

@@ -11,6 +11,7 @@ import { IWork } from '@/types/IWork';
 import { scroll } from 'framer-motion';
 import { useFilterStore } from '@/store/useFilterStore';
 import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
+import { NewWorksList } from '@/components/ui/NewWorksList';
 
 export const Works: FC<WorksProps> = (props) => {
   const filterRef = useRef<any>(null);
@@ -19,6 +20,7 @@ export const Works: FC<WorksProps> = (props) => {
     (state) => [state.openFilter, state.closeFilter, state.setFilterPosition]
   );
 
+  console.log('props', props);
   const works: IWork[] = [];
   props.works.filter((el) => {
     el?.tags?.filter((tag) => {
@@ -52,10 +54,9 @@ export const Works: FC<WorksProps> = (props) => {
       <div ref={filterRef}>
         <HorisontalScrollFilter variant="light" />
       </div>
-      <WorksList
-        works={searchParam.get('tag') === null ? props.works : works}
-        wrapClass={style.works}
-        itemClass={style.worksItem}
+      <NewWorksList
+        works={props.works}
+        specificClass={'works-page'}
       />
       <NewFooterFeedback />
     </>

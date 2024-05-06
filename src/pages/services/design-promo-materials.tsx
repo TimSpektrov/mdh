@@ -1,7 +1,6 @@
 import { NextPage } from 'next';
 import { Hero } from 'src/components/blocks/sections/Hero';
 import { WorksList } from '@/components/blocks/sections/WorksList/WorksList';
-import style from '@/components/screens/NoCode/NoCode.module.scss';
 import { NewCallback } from '@/components/ui/NewCallback';
 import { Advantages } from '@/components/blocks/sections/Advantages';
 import Image from 'next/image';
