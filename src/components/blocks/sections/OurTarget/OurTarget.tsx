@@ -62,13 +62,17 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
     setY(moveY / offsetFactor )
   }
 
+  console.log(window.innerHeight * .8 * (-1));
   return (
     <motion.section
       className={styles.section}
       ref={ref}
       initial='hidden'
       whileInView='visible'
-      viewport={{ amount: isMobile ? .3 : .8, once: true }}
+      viewport={{
+        amount: window.innerWidth > 767 ? .8 : 0.4,
+        once: true,
+    }}
       onMouseMove={(e: React.MouseEvent) => handleMouseMove(e)}
     >
 
