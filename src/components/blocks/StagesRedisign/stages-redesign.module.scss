@@ -62,7 +62,7 @@
 
   @include bp-min(xl) {
     background-repeat: no-repeat;
-    //background-size: contain;
+    background-size: 400px;
 
     &:nth-child(1) {
       @include bp-min(xl) {
@@ -109,6 +109,10 @@
       background-position: left top;
     }
   }
+
+  @include bp-min(xl) {
+    background-size: 470px;
+  }
 }
 
 .card-description {
@@ -128,10 +132,6 @@
 
 .redesign-page.section {
   padding-top: 0;
-
-  .card {
-    background-size: contain;
-  }
 }
 
 .no-code-page {

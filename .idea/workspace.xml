@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1da4383-ea6c-4a1c-86ea-d900241717ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/CardRates/card-rates.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/CardRates/card-rates.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/NewFeedback/new-feedback.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/NewFeedback/new-feedback.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/StageItems/stage-items.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/StageItems/stage-items.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/WorkItems/work-items.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/WorkItems/work-items.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/sections/Advantages/advantages.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/sections/Advantages/advantages.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/sections/Hero/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/sections/Hero/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/sections/Hero/hero.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/sections/Hero/hero.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/blocks/sections/OurTarget/OurTarget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/blocks/sections/OurTarget/OurTarget.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/NewCallback/NewCallback.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/NewCallback/NewCallback.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/helpers/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/helpers/_mixins.scss" afterDir="false" />
-    </list>
+    <list default="true" id="f1da4383-ea6c-4a1c-86ea-d900241717ea" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +51,7 @@
       <updated>1714202503542</updated>
       <workItem from="1714202505028" duration="822000" />
       <workItem from="1714634406873" duration="332000" />
-      <workItem from="1714981016794" duration="3018000" />
+      <workItem from="1714981016794" duration="3707000" />
     </task>
     <servers />
   </component>
