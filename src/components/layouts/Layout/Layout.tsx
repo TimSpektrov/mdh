@@ -23,9 +23,6 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
   const [mobile, setMobile] = useState(false)
   const { route } = useRouter()
   const spring = { mass: 0.3, stiffness: 190, damping: 28, restDelta: .001, restSpeed: 20 }
-
-  // useEffect(() => { setLoader(false) }, [])
-0
   useEffect(() => { setMobile(isMobile) }, [])
 
   const { fetchContacts, loadingData } = useContactsDateStore(state => ({
@@ -42,7 +39,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <Loader loader={loading || loadingData || !content} />
+      <Loader loader={loading || loadingData || (!content && route !== '/services/product-design')} />
       <DynamicPopup className={Grandis.variable} />
       <DynamicCursor />
       <div className="wrapper">

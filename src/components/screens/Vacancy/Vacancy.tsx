@@ -14,6 +14,7 @@ export const Vacancy: FC<VacancyProps> = ({ data }) => {
     setFeedbackDesc('Заполните анкету и&nbsp;приложите резюме или&nbsp;прикрепите ссылки на&nbsp;ваше портфолио, чтобы мы смогли подробно ознакомиться с&nbsp;уровнем ваших профессиональных навыков')
   }, [])
 
+  console.log(data);
   return (
     <>
       <Head>

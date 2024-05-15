@@ -20,7 +20,6 @@ export const Works: FC<WorksProps> = (props) => {
     (state) => [state.openFilter, state.closeFilter, state.setFilterPosition]
   );
 
-  console.log('props', props);
   const works: IWork[] = [];
   props.works.filter((el) => {
     el?.tags?.filter((tag) => {

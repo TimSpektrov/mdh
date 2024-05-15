@@ -15,7 +15,6 @@ export interface TAdvantagesList {
   specificClass: string;
 }
 export const AdvantagesList = ({ list, specificClass }: TAdvantagesList) => {
-  console.log(list    );
   return (
     <div
       className={cn(

@@ -13,7 +13,6 @@ export const VacanciesItem: FC<VacanciesItemProps> = ({
   className
 }) => {
   const classes = cn(style.item, className);
-
   return (
     <div className={classes}>
       <Title className={style.title} variant="h3">

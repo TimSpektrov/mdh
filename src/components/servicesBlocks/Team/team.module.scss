@@ -1,0 +1,101 @@
+@import '@/styles/helpers/vars';
+@import '@/styles/helpers/mixins';
+.section {
+  // min-height: 100vh;
+  background-color: $white;
+  height: 200vh;
+  @include container();
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  h2 {
+    margin-bottom: 60px;
+    text-align: center;
+    span {
+      color: $orange;
+    }
+  }
+}
+.inner {
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+}
+.card, .card-last{
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  width: 30%;
+}
+
+.label,
+.label-new,
+.label-last {
+  position: relative;
+  display: inline-block;
+  padding: 16px 24px;
+  margin-bottom: 60px;
+  border-radius: 3em;
+  background-color: $peach;
+  font-family: $secondaryFont;
+  color: $black;
+  font-size: 24px;
+  white-space: nowrap;
+  border: 1px solid $peach;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    translate: -50% 50%;
+    rotate: 45deg;
+    background-color: $peach;
+  }
+  box-sizing: border-box;
+}
+
+.label-new {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 10;
+  overflow: hidden;
+}
+.img {
+  position: relative;
+  width: 100%;
+   padding-top: 100%;
+}
+.circle,
+.orange {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.circle {
+  stroke-width: 5px;
+}
+
+.orange {
+  stroke-width: 6px;
+  stroke-dasharray: calc(3.5 * 100% / var(--length)) calc(3.5 * 100%);
+  animation: rotateAnimation 2.5s infinite linear 0.5s;
+}
+
+@keyframes rotateAnimation {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}

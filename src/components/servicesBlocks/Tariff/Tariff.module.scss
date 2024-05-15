@@ -1,0 +1,159 @@
+@import '@/styles/helpers/vars';
+
+.wrapper {
+  background-color: $black;
+  padding: 48px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include bp-min(md) {
+    padding: 48px 36px 60px;
+  }
+
+  @include bp-min(xl) {
+    gap: 60px;
+    padding: 60px 36px;
+  }
+  
+  @include bp-min(xl) {
+    padding: 60px 36px 120px;
+  }
+  
+  @include bp-min(xxxl) {
+    padding: 120px 191px;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 916px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 3;
+
+  @include bp-min(md) {
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  position: relative;
+  z-index: 3;
+  
+  @include bp-min(md) {
+    gap: 48px;
+  }
+  
+  @include bp-min(xl) {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  
+  @include bp-min(xxl) {
+    gap: 24px;
+  }
+}
+
+.discount {
+  // height: 66px;
+  height: 24vw;
+  position: relative;
+  z-index: 2;
+
+  @include bp-min(sm) {
+    height: 115px;
+  }
+
+  @include bp-min(md) {
+    height: 125px;
+  }
+  
+  .label {
+    position: absolute;
+    right: 0px;
+    bottom: 12px;
+    width: 136px;
+    height: auto;
+    transform: rotate(12deg);
+    z-index: 2;
+
+    @include bp-min(sm) {
+      width: 205px;
+      bottom: 20px;
+    }
+    
+    @include bp-min(lg) {
+      width: 227px;
+      bottom: 23px;
+    }
+    
+    @include bp-min(xl) {
+      width: 246px;
+      bottom: 23px;
+    }
+
+    svg {
+      display: block;
+      fill: none;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .percent {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    @include bp-min(sm) {
+      top: -10px;
+    }
+    
+    @include bp-min(md) {
+      top: -35px;
+    }
+    
+    @include bp-min(lg) {
+      top: -14px;
+    }
+
+    @include bp-min(xl) {
+      top: -82px;
+      width: 92%;
+    }
+    
+    @include bp-min(xxxl) {
+      top: -90px;
+      width: 93%;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      path {
+        fill: url(#lingrad-1);
+        @include bp-min(sm) {
+          fill: url(#lingrad-2);
+        }
+      }
+
+    }
+  }
+}

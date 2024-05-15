@@ -1,7 +1,6 @@
 import { FC } from "react";
 import Head from "next/head";
 import { Hero } from 'src/components/blocks/sections/Hero';
-import style from './NoCode.module.scss';
 import { WorksList } from '@/components/blocks/sections/WorksList/WorksList';
 import { Stages } from '@/components/blocks/sections/Stages';
 import { StagesRedesign } from '@/components/blocks/StagesRedisign';

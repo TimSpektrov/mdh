@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { Hero } from './Hero';
 import { Structure } from "./Structure";
 import { Complex } from '@/components/ui/Complex';
-import { WorksList } from '@/components/ui/WorksList';
 import { Tariff } from './Tariff';
 import { Callback } from '@/components/ui/Callback';
 import style from './Identity.module.scss'

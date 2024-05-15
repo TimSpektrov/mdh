@@ -227,7 +227,12 @@ export const MotionFeedback: FC<FeedbackProps> = ({ title, desc }) => {
 
   const ref = useRef<HTMLDivElement>(null)
 
-  const { scrollYProgress } = useScroll({ layoutEffect: false, target: ref, offset: ["start end", "end end"] });
+  const { scrollYProgress } = useScroll(
+    {
+      layoutEffect: false,
+      target: ref,
+      offset: ["start end", "end end"]
+    });
   const spring = { mass: 0.3, stiffness: 190, damping: 28, restDelta: .001, restSpeed: 20 }
   const scrollY = useSpring(scrollYProgress, spring);
   const yPosition = useTransform(scrollY, [1, 0], ['0%', '-100%']);

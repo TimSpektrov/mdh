@@ -39,5 +39,10 @@ next-env.d.ts
 /.vscode/
 .vscode
 
+/.idea/
+.idea
+
 #Other
 package-lock.json
+.idea/workspace.xml
+/.idea

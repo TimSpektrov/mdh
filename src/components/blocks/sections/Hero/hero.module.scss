@@ -192,3 +192,11 @@
     }
   }
 }
+
+.product-design-page {
+  .hero__description-text {
+    span:before {
+      background-color: $peach;
+    }
+  }
+}

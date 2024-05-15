@@ -5,17 +5,16 @@ import { VacanciesItem } from '../VacanciesItem';
 import { Logo } from '@/components/ui';
 
 export const VacanciesList: FC<VacanciesListProps> = ({ data }) => {
-  console.log(data);
   return (
     <section className={style.wrapper}>
       <div className={style.list}>
-        {(data || []).map((vacancy) => (
+        {data.map(({ desc, id,  short_desc, slug, title}) => (
           <VacanciesItem
-            key={vacancy.id}
-            title={vacancy.title}
-            desc={vacancy.desc}
-            short_desc={vacancy.short_desc}
-            slug={vacancy.slug}
+            key={id}
+            title={title}
+            desc={desc}
+            short_desc={short_desc}
+            slug={slug}
           />
         ))}
       </div>

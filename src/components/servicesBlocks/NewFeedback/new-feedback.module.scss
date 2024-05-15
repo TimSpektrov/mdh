@@ -1,0 +1,234 @@
+@import '@/styles/helpers/vars';
+.section {
+  background-color: $white1;
+
+  @include bp-max(sm) {
+    background-image: url(./assets/new-feedback2.svg);
+    background-size: 273px;
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  @include bp-min(md) {
+    background-image: url(./assets/bg-l.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  @include bp-min(md) {
+    background-position: -180px 50%;
+    background-size: 480px;
+  }
+  @include bp-min(lg) {
+    background-position: -70px 50%;
+  }
+  @include bp-min(xl) {
+  }
+  @include bp-min(xxl) {
+    background-size: 660px;
+  }
+  @include bp-min(xxxl) {
+    background-size: 885px;
+  }
+}
+
+.container {
+  @include bp-max(sm) {
+    padding-top: 180px;
+    padding-bottom: 48px;
+  }
+  @include bp-min(sm) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  @include bp-min(md) {
+   display: flex;
+    justify-content: flex-end;
+  }
+  @include bp-min(lg) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  @include bp-min(xl) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  @include bp-min(xxxl) {
+    padding-inline: 150px;
+  }
+}
+
+.content {
+  //display: flex;
+  //flex-direction: column;
+  //align-items: stretch;
+  //gap: 20px;
+
+  @include bp-min(md) {
+    width: 460px;
+  }
+  @include bp-min(lg) {
+    width: 510px;
+    gap: 15px;
+  }
+  @include bp-min(xl) {
+    width: 750px;
+    gap: 30px
+  }
+  @include bp-min(xxl) {
+    width: 58%;
+  }
+  @include bp-min(xxxl) {
+    width: 56%;
+  }
+}
+
+.title {
+  margin: 0;
+  font-family: $secondaryFont;
+  line-height: 140%;
+  text-transform: uppercase;
+
+  @include bp-max(md) {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  @include bp-min(md) {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+  @include bp-min(xl) {
+    font-size: 38px;
+    margin-bottom: 24px;
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin-inline: .15em;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -.3em;
+      right: -.3em;
+      border-radius: .8em;
+      z-index: -1;
+      background-color: $yellow2;
+    }
+  }
+}
+
+.description {
+  font-family: $thirdFont;
+  font-size: 18px;
+  line-height: 1.4em;
+  font-weight: 400;
+  @include bp-max(md) {
+    margin-bottom: 20px;
+  }
+  @include bp-min(md) {
+    margin-bottom: 20px;
+  }
+  @include bp-min(xl) {
+    margin-bottom: 40px;
+  }
+}
+
+.form {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 8px;
+
+  @include bp-max(sm) {
+    flex-direction: column;
+  }
+
+  &-item {
+    padding: 16px;
+    border-radius: 16px;
+    font-family: $secondaryFont;
+    font-size: 16px;
+    line-height: 1.25em;
+
+    @include bp-min(xl) {
+      padding: 20px 24px;
+    }
+  }
+}
+
+.input-container {
+  position: relative;
+  flex-grow: 2;
+  @include bp-min(xxl) {
+    max-width: 535px;
+  }
+}
+
+.input {
+  width: 100%;
+  background-color: $white3;
+  color: $black;
+  border: 1px solid transparent;
+  transition: border .2s;
+  box-sizing: border-box;
+  &::placeholder {
+    color: $gray-1;
+  }
+  &:hover {
+    border: 1px solid rgba(153, 153, 153, 0.20);
+  }
+  &:focus {
+    border: 1px solid $white-hover;
+    box-shadow: 0 0 0 1px $white-hover;
+  }
+
+  //&::-webkit-contacts-auto-fill-button {
+  //  visibility: hidden;
+  //  display: none !important;
+  //  pointer-events: none;
+  //  position: absolute;
+  //  right: 0;
+  //}
+
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}
+
+.submit {
+
+  border: 1px solid $yellow;
+  background-color: $yellow;
+  color: $black;
+  cursor: pointer;
+  transition: .2s background-color;
+
+  @include bp-min(lg) {
+    min-width: 147px;
+  }
+  @include bp-min(xl) {
+    min-width: 206px;
+  }
+
+  &:hover {
+    background-color: $yellow-hover;
+  }
+  &:focus {
+    background-color: $yellow-hover;
+    box-shadow: 0 0 0 1px $yellow-hover;
+  }
+
+
+}

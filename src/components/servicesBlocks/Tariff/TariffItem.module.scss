@@ -1,0 +1,200 @@
+@import '@/styles/helpers/vars';
+
+.wrap {
+  background-color: $black;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+  max-width: 544px;
+  padding: 36px 16px 24px;
+  border: 1px solid $mint;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  
+  @include bp-min(md) {
+    max-width: 500px;
+    padding: 48px 24px 36px;
+  }
+  
+  @include bp-min(xl) {
+    padding: 36px 24px;
+  }
+
+  @include bp-min(xxl) {
+    padding: 48px 36px;
+  }
+
+  &:hover {
+    .btn {
+      background-color: $mint;
+      color: $white;
+      &:hover {
+        background-color: $mint;
+      }
+    }
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgb(#373737, 0.4);
+
+  @include bp-min(sm) {
+    align-items: center;
+    text-align: center;
+  }
+
+  @include bp-min(md) {
+    gap: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.desc {
+  max-width: 254px;
+
+  @include bp-min(md) {
+    max-width: 100%;
+  }
+  
+  @include bp-min(xl) {
+    max-width: 254px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+
+  @include bp-min(md) {
+    gap: 16px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include bp-min(md) {
+      gap: 12px;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+
+      .icon {
+        color: $mint;
+        flex: 0 0 auto;
+      }
+
+      &.locked {
+        opacity: 0.2;
+
+        .icon {
+          color: $light;
+        }
+      }
+    }
+  }
+}
+
+.price {
+  font-family: $secondaryFont;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+
+  @include bp-min(sm) {
+    align-items: center;
+  }
+
+  &Current {
+    color: $mint;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+  
+    @include bp-min(xl) {
+      font-size: 48px;
+      line-height: 61px;
+    }
+  }
+  &Old {
+    color: $gray-1;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: 500;
+    position: relative;
+
+    &::before {
+      background-color: $gray-1;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 105%;
+      height: 2px;
+      transform: translate(-50%, -50%) rotate(6deg);
+    }
+  }
+}
+
+.btn {
+  background-color: $light;
+  color: $black;
+  width: 100%;
+  min-width: auto !important;
+}
+
+.label {
+  background-color: $mint;
+  color: $white;
+  padding: 6px 16px 2px;
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  border-radius: 50px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.popular {
+  background-color: $black-2;
+  border: 1px solid $mint;
+}

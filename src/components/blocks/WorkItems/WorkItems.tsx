@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from './work-items.module.scss'
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import cn from 'classnames';
 export interface IWorkItem {
   id: number;

@@ -1,46 +1,31 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { ParsedUrlQuery } from 'querystring';
+import { NextPage } from 'next';
 import { Vacancy } from '@/components/screens/Vacancy';
-import { IVacancy } from '@/types/type';
 
-import data from '@json/data.json'
+import { useRouter } from 'next/router';
+import { usePageDateStore } from '@/store/usePageDataStore';
+import { useEffect } from 'react';
+import { VACANCIES_URL } from '@/helpers/apiRequests';
 
-interface IParams extends ParsedUrlQuery {
-  slug?: string;
-}
+const VacancyPage: NextPage = () => {
+  const {query} = useRouter()
+  const slug = query.slug as string
 
-const VacancyPage: NextPage<IVacancy> = (props: IVacancy) => {
+  console.log(query);
+  const {content, fetchData } = usePageDateStore(state => ({
+    content: state.content,
+    fetchData: state.fetchData,
+  }))
+
+  useEffect(() => {
+    fetchData(VACANCIES_URL + '/' + slug, slug )
+  }, []);
+
+  if(!content || !content[slug]) return  null
   return (
     <>
-      <Vacancy data={props} />
+      <Vacancy data={content[slug]} />
     </>
   );
 };
 
 export default VacancyPage;
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: data.vacancies.map((vacancy) => ({
-      params: { slug: vacancy.slug }
-    })),
-    fallback: false
-  };
-};
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { slug } = context.params as IParams;
-
-  const props = data.vacancies.find((vacancy) => slug === vacancy.slug);
-
-  if (!props?.published) {
-    return {
-      notFound: true
-    };
-  }
-
-  return {
-    props,
-    revalidate: 60
-  };
-};

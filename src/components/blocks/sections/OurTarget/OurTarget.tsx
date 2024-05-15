@@ -61,7 +61,6 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
     setY(moveY / offsetFactor )
   }
 
-  console.log(window.innerHeight * .8 * (-1));
   return (
     <motion.section
       className={styles.section}
