@@ -14,3 +14,16 @@ export const Hero: FC<HeroProps> = () => {
     </section>
   );
 };
+
+
+const content = {
+  meta: {
+    title: 'Дизайн продукта',
+    description: 'Анализируем рынок и ваш бизнес.'
+  },
+  hero: {
+    title: 'Дизайн<br>продукта',
+    description: '<span>Анализируем</span> рынок и ваш бизнес. <span>Создаем</span> дизайн и <span>представляем</span> полностью готовый для использования продукт.'
+  },
+}
+
