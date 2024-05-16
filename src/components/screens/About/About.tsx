@@ -13,7 +13,7 @@ import { Feedback } from '@/components/oldComponents/Feedback';
 import { WorksList } from '@/components/oldComponents/WorksList';
 
 export const About: FC<any> = ({ content }) => {
-
+  console.log(content);
   return (
     <>
       <Head>

@@ -48,7 +48,7 @@ export const Redesign: FC<any> = ({content}) => {
       {/*  writeBtn*/}
       {/*  moreBtn*/}
       {/*/>*/}
-      <WorksList works={content.audit.works} dark moreBtn writeBtn />
+      <WorksList works={content.works} dark moreBtn writeBtn />
       <Feedback />
     </>
   )

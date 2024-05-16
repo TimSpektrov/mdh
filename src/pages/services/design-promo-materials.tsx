@@ -55,7 +55,7 @@ const DesignPromoMaterials: NextPage<any> = () => {
       {/*  writeBtn*/}
       {/*  moreBtn*/}
       {/*/>*/}
-      <WorksList works={content.audit.works} dark moreBtn writeBtn />
+      <WorksList works={content.designPromo.works} dark moreBtn writeBtn />
       <Feedback />
     </>
   )

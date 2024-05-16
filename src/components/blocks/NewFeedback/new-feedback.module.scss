@@ -6,7 +6,7 @@
     background-image: url(./assets/new-feedback2.svg);
     background-size: 273px;
     background-repeat: no-repeat;
-    background-position: right top;
+    //background-position: right top;
   }
 
   @include bp-min(md) {
@@ -28,6 +28,7 @@
   }
   @include bp-min(xxxl) {
     background-size: 885px;
+    background-position: -200px 50%;
   }
 }
 
