@@ -2,7 +2,7 @@ import { CSSProperties, FC, useEffect, useState } from 'react';
 import styles from './stage-items.module.scss'
 import cn from 'classnames';
 import { motion } from 'framer-motion';
-import { addNbspParse } from '@/helpers';
+import { addNbspParse, toHtmlList } from '@/helpers';
 
 export interface IStageItems {
   list: IStageItem[];
@@ -49,15 +49,10 @@ export const StageItems: FC<IStageItems> = ({ list, specificClass = 'page' }) =>
 
   const parseList = list
     .map(item => {
-    const descr = item.description.split('\r\n');
-    const description = descr.length > 1
-      ? (`<ul>${descr.map(str => '<li>' + str + '</li>').join('')}</ul>`)
-      : ('<p>' + descr[0] + '</p>')
-
       return ({
         id: item.id,
         title: item.title,
-        description,
+        description: toHtmlList(item.description),
       })
   })
 

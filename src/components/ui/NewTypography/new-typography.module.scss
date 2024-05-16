@@ -10,6 +10,17 @@
   text-transform: uppercase;
 }
 
+.h1 {
+  @include bp-max(md) {
+    font-size: 24px;
+  }
+  @include bp-min(md) {
+    font-size: 32px;
+  }
+  @include bp-min(xxl) {
+    font-size: 48px;
+  }
+}
 .h2 {
   @include bp-max(md) {
     font-size: 20px;

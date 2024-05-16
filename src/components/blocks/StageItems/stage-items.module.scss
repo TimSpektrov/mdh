@@ -306,7 +306,16 @@
     pointer-events: none;
 
     &-last {
-      translate: 50% -20px;
+      right: 0;
+      @include bp-min(xl) {
+        translate: calc(0% + 110px) -20px;
+      }
+      @include bp-min(xxl) {
+        translate: calc(0% + 125px) -20px;
+      }
+      @include bp-min(xxxl) {
+        translate: calc(0% + 160px) -20px;
+      }
     }
   }
 

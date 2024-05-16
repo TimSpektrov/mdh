@@ -7,7 +7,6 @@ import { useSearchParams } from 'next/navigation';
 import { IWork } from '@/types/IWork';
 import { scroll } from 'framer-motion';
 import { useFilterStore } from '@/store/useFilterStore';
-import { NewWorksList } from '@/components/ui/NewWorksList';
 import { Feedback } from '@/components/oldComponents/Feedback';
 import { WorksList } from '@/components/oldComponents/WorksList';
 import style from './Works.module.scss'

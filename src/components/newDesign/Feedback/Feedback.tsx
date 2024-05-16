@@ -16,6 +16,7 @@ import { usePopupStore } from "@/store/usePopapStore";
 import data from '@json/data.json';
 import btnStyle from '@/components/ui/Button/Button.module.scss'
 import style from './Feedback.module.scss';
+import { NewTypography } from '@/components/ui/NewTypography';
 
 // Основной компонент
 export const Feedback: FC<FeedbackProps> = ({ title, desc }) => {
@@ -116,7 +117,7 @@ export const FeedbackContent: FC<FeedbackProps> = ({ title, desc }) => {
           </div>
           :
           <div className={style.heading}>
-            <Title variant='h1'>Расскажите нам о&nbsp;своем проекте</Title>
+            <NewTypography text={'Расскажите нам о&nbsp;своем проекте'} variant={'h1'} tag={'h2'} />
             <Social color='dark' links={socials} className={style.social} />
           </div>
         }
@@ -157,13 +158,15 @@ export const FeedbackContent: FC<FeedbackProps> = ({ title, desc }) => {
               />
             </div>
           </div>
-          <div className={`form__footer ${style.form__footer}`}>
+          <div className={style.form__footer}>
             <div className="form__group">
-              <FieldFile />
+              <div className={cn( style['form__file-container'])}>
+                <FieldFile />
+              </div>
             </div>
             <div className="form__group">
               <div className={`form__btn ${style.form__btn}`}>
-                <button className={cn(btnStyle.btn, btnStyle['btn--secondary'], btnStyle['btn--large'], btnStyle['btn--white'], style.btn)} type='submit'>Отправить</button>
+                <button className={cn(btnStyle.btn, btnStyle['btn--secondary'], btnStyle['btn--white'], style.btn)} type='submit'>Отправить</button>
                 <div className={style.accept}>Нажимая на кнопку, вы соглашаетесь с <a href='#'>политикой конфиденциальности</a></div>
               </div>
             </div>

@@ -76,8 +76,12 @@
 .form {
   flex: 1;
 
+  @include bp-max(md) {
+    gap: 10px;
+  }
   @include bp-min(md) {
-    gap: 16px;
+    gap: 24px;
+    max-width: 250px;
     
     .form__body {
       gap: 16px;
@@ -88,7 +92,22 @@
     }
   }
 
+  @include bp-min(lg) {
+    max-width: 100%;
+  }
+
+  @include bp-min(xxl) {
+    gap: 16px;
+  }
+
   .form__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    @include bp-max(xl) {
+      flex-direction: column;
+    }
     button.btn {
       border-radius: 16px;
       font-size: 16px;
@@ -101,7 +120,7 @@
     }
   }
 
-  @include bp-min(xxl) {
+  @include bp-min(xl) {
     .form__footer {
       flex-direction: row;
       justify-content: space-between;
@@ -129,26 +148,19 @@
   }
 }
 
+.form__file-container {
+  @include bp-min(xl) {
+    height: 52px;
+    display: flex;
+    align-items: center;
+  }
+}
+
 .emails {
   @include bp-min(md) {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-  }
-  a {
-    font-weight: 400;
-    line-height: 1.2;
-    font-size: 18px;
-
-    @include bp-min(md) {
-      font-size: 24px;
-      line-height: 31px;
-    }
-
-    @include bp-min(xl) {
-      font-size: 36px;
-      line-height: 46px;
-    }
   }
 }
 
@@ -159,7 +171,7 @@
     display: flex;
     gap: 20px;
   }
-  @include bp-min(xl) {
+  @include bp-min(xxl) {
     flex-direction: row;
     gap: 37px;
   }

@@ -32,3 +32,10 @@ export const bigItemWork = (number: number) => {
   if(number % 2 === 0) return number
   return (Math.floor(number / 4) * 4)
 }
+
+export const toHtmlList = (str: string) => {
+  const arr = str.split('\r\n');
+  return arr.length > 1 ?
+    ('<ul>' + (arr.map((str) => '<li>' + str + '</li>').join('')) + '</ul>') :
+    ('<p>' + arr[0] + '</p>')
+}

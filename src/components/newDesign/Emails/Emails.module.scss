@@ -21,11 +21,6 @@
   font-size: 12px;
   line-height: 1.2;
   color: $gray-2;
-
-  @include bp-min(md) {
-    font-size: 18px;
-    line-height: 1.5;
-  }
   
   @include bp-min(xxl) {
     font-size: 18px;
@@ -36,9 +31,17 @@
 .link {
   font-family: $secondaryFont;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.4;
   color: $black;
+  line-height: 1.2;
+  font-size: 18px;
+
+  @include bp-min(md) {
+    font-size: 24px;
+  }
+
+  @include bp-min(xl) {
+    font-size: 36px;
+  }
   &:hover {
     color: $orange;
   }
