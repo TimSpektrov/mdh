@@ -1,12 +1,12 @@
 import { FC } from "react";
 import Head from "next/head";
 import { Hero } from 'src/components/blocks/sections/Hero';
-import { WorksList } from '@/components/blocks/sections/WorksList/WorksList';
+import { WorksList as WorkListSection } from '@/components/blocks/sections/WorksList/WorksList';
 import { Stages } from '@/components/blocks/sections/Stages';
 import { StagesRedesign } from '@/components/blocks/StagesRedisign';
 import { NewCallback } from '@/components/ui/NewCallback';
-import { NewWorksList} from '@/components/ui/NewWorksList';
-import { NewFooterFeedback } from 'src/components/ui/NewFooterFeedback';
+import { Feedback } from '@/components/newDesign/Feedback';
+import { WorksList } from '@/components/newDesign/WorksList';
 
 export const NoCode: FC<any> = ({content}) => {
 
@@ -22,7 +22,7 @@ export const NoCode: FC<any> = ({content}) => {
         title={content.hero.title}
         description={content.hero.description}
       />
-      <WorksList
+      <WorkListSection
         title={content.type_site.title}
         list={content.type_site.items}
       />
@@ -39,13 +39,14 @@ export const NoCode: FC<any> = ({content}) => {
       <NewCallback
         specificClass={'no-code-page'}
       />
-      <NewWorksList
-        works={content.works}
-        specificClass={'no-code-page'}
-        writeBtn
-        moreBtn
-      />
-      <NewFooterFeedback />
+      {/*<NewWorksList*/}
+      {/*  works={content.works}*/}
+      {/*  specificClass={'no-code-page'}*/}
+      {/*  writeBtn*/}
+      {/*  moreBtn*/}
+      {/*/>*/}
+      <WorksList works={content.audit.works} dark moreBtn writeBtn />
+      <Feedback />
     </>
   );
 }

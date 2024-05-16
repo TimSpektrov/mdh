@@ -1,0 +1,31 @@
+@import '@/styles/helpers/vars.scss';
+
+.social {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	width: max-content;
+	
+  &Item {
+		font-family: $secondaryFont;
+		font-size: 16px;
+		line-height: 20px;
+		text-transform: uppercase;
+    
+	}
+  
+  .dark {
+    color: $black;
+    &:hover {
+      color: $orange;
+    }
+  }
+  
+  .light {
+    color: $light;
+    &:hover {
+      color: $orange;
+    }
+  }
+}

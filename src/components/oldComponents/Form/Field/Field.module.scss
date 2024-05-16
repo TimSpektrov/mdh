@@ -1,0 +1,77 @@
+@import '@/styles/helpers/vars.scss';
+
+.input {
+  position: relative;
+  width: 100%;
+
+  input {
+    font-family: $baseFont;
+    color: $black;
+    background-color: $light;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 300;
+    height: 64px;
+    padding: 20px 24px;
+    border: 1px solid rgba($gray-1, 0);
+    border-radius: 4px;
+    width: 100%;
+    transition: box-shadow 300ms ease-in-out, border .3s ease-in-out;
+
+    &::-webkit-contacts-auto-fill-button {
+      visibility: hidden;
+      display: none !important;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    /* Firefox */
+    &[type=number] {
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+
+    &:hover {
+      border: 1px solid rgba($gray-1, 0.2);
+    }
+    
+    &:focus,
+    &:focus-visible {
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba($orange, 0.2);
+    }
+
+
+    &:hover,
+    &:focus {
+      &::placeholder {
+        color: $gray-2;
+      }
+    }
+
+    &::placeholder {
+      color: $gray-1;
+    }
+  }
+
+}
+
+.error {
+  color: $red;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 400;
+  position: absolute;
+  left: 24px;
+  top: 0;
+  pointer-events: none;
+  z-index: 1;
+}

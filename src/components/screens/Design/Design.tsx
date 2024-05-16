@@ -6,11 +6,10 @@ import { Mockup } from './Mockup';
 import { Complex } from '@/components/ui/Complex';
 import { Steps } from './Steps';
 import { Proposal } from './Proposal';
-import { WorksList } from '@/components/ui/WorksList';
 import { Callback } from '@/components/ui/Callback';
 import style from './Design.module.scss';
-import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
 import { NewWorksList } from '@/components/ui/NewWorksList';
+import { Feedback } from '@/components/oldComponents/Feedback';
 
 export const Design: FC<any> = ({ content }) => {
 
@@ -55,7 +54,7 @@ export const Design: FC<any> = ({ content }) => {
         specificClass={'full-design-page'}
         writeBtn
       />
-      <NewFooterFeedback/>
+      <Feedback/>
     </>
   );
 };

@@ -7,8 +7,8 @@ import { Tariff } from './Tariff';
 import { Callback } from '@/components/ui/Callback';
 import style from './Identity.module.scss'
 import { IRate } from '@/types/type';
-import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
 import { NewWorksList } from '@/components/ui/NewWorksList';
+import { Feedback } from '@/components/oldComponents/Feedback';
 
 export const Identity: FC<any> = ({content}) => {
   return (
@@ -31,7 +31,7 @@ export const Identity: FC<any> = ({content}) => {
         specificClass={'identity-page'}
         writeBtn
       />
-      <NewFooterFeedback />
+      <Feedback />
     </>
   );
 };

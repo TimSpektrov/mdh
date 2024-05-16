@@ -49,6 +49,8 @@
 	}
 }
 
+
+// не использовано
 .item {
   border-radius: 16px;
   @include bp-min(xl) {
@@ -60,42 +62,6 @@
     }
   }
 
-
-  &.wide {
-    &:nth-child(4n) {
-      grid-column: span 2;
-    }
-    &:nth-child(4n + 1) {
-      grid-column: span 1;
-    }
-    &:nth-child(4n + 2) {
-      grid-column: span 1;
-    }
-    &:nth-child(4n + 3) {
-      grid-column: span 2;
-    }
-
-    &:nth-child(1) {
-      grid-column: span 3;
-    }
-    &:nth-child(2) {
-      grid-column: span 1;
-    }
-    &:nth-child(3) {
-      grid-column: span 2;
-    }
-  }
-
-  &.one {
-    &:nth-child(1) {
-      @include bp-min(md) {
-        grid-column: span 2;
-      }
-      @include bp-min(xl) {
-        grid-column: span 3;
-      }
-    }
-  }
 }
 
 .btnGroup {
@@ -139,16 +105,7 @@
   }
 }
 
-.home-page {
-  &.section {
-    background-color: $white3;
-    color: $black;
-  }
-  .btn {
-    color: $black;
-  }
-}
-.works-page {
+.light {
   &.section {
     background-color: $white3;
     color: $black;

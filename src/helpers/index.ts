@@ -26,3 +26,9 @@ export const addNbsp = (value: string) => {
 export const addNbspParse = (value: string) => {
   return parse(addNbsp(value))
 }
+
+//  расчёт индекса большого элемента работ
+export const bigItemWork = (number: number) => {
+  if(number % 2 === 0) return number
+  return (Math.floor(number / 4) * 4)
+}

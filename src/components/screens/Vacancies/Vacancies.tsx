@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { VacanciesProps } from '.';
 import { Hero } from './Hero';
 import { VacanciesList } from './VacanciesList';
-import { NewFooterFeedback } from '@/components/ui/NewFooterFeedback';
+import { Feedback } from '@/components/oldComponents/Feedback';
 
 export const Vacancies: FC<VacanciesProps> = ({  content }) => {
   const [feedbackTitle, setFeedbackTitle] = useState('')
@@ -28,7 +28,7 @@ export const Vacancies: FC<VacanciesProps> = ({  content }) => {
       </Head>
       <Hero />
       {vacancies?.length > 0 && <VacanciesList data={vacancies} />}
-      <NewFooterFeedback title={feedbackTitle} desc={feedbackDesc} />
+      <Feedback title={feedbackTitle} desc={feedbackDesc} />
     </>
   );
 };

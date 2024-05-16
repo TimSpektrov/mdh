@@ -1,0 +1,174 @@
+@import '@/styles/helpers/vars.scss';
+
+.container {
+  background-color: $white2;
+  position: relative;
+  z-index: -1;
+}
+
+.wrapper {
+  background-color: $white2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 48px;
+  padding: 48px 16px;
+  will-change: transform;
+
+  @include bp-min(md) {
+    gap: 64px;
+    padding: 48px 36px;
+  }
+
+  @include bp-min(xxl) {
+    gap: 80px;
+    padding: 80px 36px;
+  }
+
+  @include bp-min(xxxl) {
+    padding: 80px 191px;
+  }
+}
+
+.heading {
+  flex: 1;
+
+  .desc {
+    margin-top: 16px;
+  }
+
+  .social {
+    margin-top: 48px;
+  }
+}
+
+.desc {
+  color: $gray-2;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+
+  @include bp-min(md) {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  @include bp-min(xxxl) {
+    gap: 100px;
+  }
+}
+
+.form {
+  flex: 1;
+
+  @include bp-min(md) {
+    gap: 16px;
+    
+    .form__body {
+      gap: 16px;
+    }
+    
+    .form__btn {
+      gap: 8px;
+    }
+  }
+
+  .form__footer {
+    .btn {
+      &:disabled {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include bp-min(xxl) {
+    .form__footer {
+      flex-direction: row;
+      justify-content: space-between;
+      
+      .form__group {
+        max-width: max-content;
+      }
+      
+      .btn {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 7px 20px;
+        max-width: 100%;
+        min-width: auto;
+      }
+    }
+    .form__attachment .form__input-label {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .accept {
+      font-size: 10px;
+      line-height: 12px;
+    }
+    .form__btn {
+      max-width: 240px;
+      align-self: flex-end;
+    }
+  }
+}
+
+.emails {
+  @include bp-min(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  a {
+    font-weight: 400;
+    line-height: 1.2;
+    font-size: 18px;
+
+    @include bp-min(md) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+
+    @include bp-min(xl) {
+      font-size: 36px;
+      line-height: 46px;
+    }
+  }
+}
+
+.social {
+  display: none;
+  gap: 12px;
+  @include bp-min(md) {
+    display: flex;
+    gap: 20px;
+  }
+  @include bp-min(xl) {
+    flex-direction: row;
+    gap: 48px;
+  }
+}
+
+.subtitle {
+  @include bp-min(md) {
+    display: none;
+  }
+}
+
+.bottom {
+  display: grid;
+  gap: 36px;
+  .contacts {
+    display: grid;
+    gap: 36px;
+  }
+  .social {
+    display: flex;
+    @include bp-min(md) {
+      display: none;
+    }
+  }
+}

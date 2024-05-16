@@ -6,8 +6,8 @@ import styles from '@/components/blocks/sections/Advantages/advantages.module.sc
 import { StagesRedesign } from '@/components/blocks/StagesRedisign';
 import { NewFeedback } from '@/components/blocks/NewFeedback';
 import { setUppercase } from '@/helpers';
-import { NewWorksList } from '@/components/ui/NewWorksList';
-import { NewFooterFeedback } from 'src/components/ui/NewFooterFeedback';
+import { Feedback } from '@/components/newDesign/Feedback';
+import { WorksList } from '@/components/newDesign/WorksList';
 
 export const Redesign: FC<any> = ({content}) => {
   const secondColor = '#fbe06a'
@@ -42,13 +42,14 @@ export const Redesign: FC<any> = ({content}) => {
       />
       <StagesRedesign list={content.stages.items} specificClass={'redesign-page'} />
       <NewFeedback title={setUppercase(content.feedback.title)} color={secondColor} />
-      <NewWorksList
-        works={content.works}
-        specificClass={'redesign-page'}
-        writeBtn
-        moreBtn
-      />
-      <NewFooterFeedback />
+      {/*<NewWorksList*/}
+      {/*  works={content.works}*/}
+      {/*  specificClass={'redesign-page'}*/}
+      {/*  writeBtn*/}
+      {/*  moreBtn*/}
+      {/*/>*/}
+      <WorksList works={content.audit.works} dark moreBtn writeBtn />
+      <Feedback />
     </>
   )
 }

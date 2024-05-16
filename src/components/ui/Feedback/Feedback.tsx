@@ -16,7 +16,6 @@ import style from './Feedback.module.scss';
 import { useContactsDateStore } from '@/store/useContextDataStore';
 import { addNbspParse } from '@/helpers';
 
-
 // Основной компонент
 export const Feedback: FC<FeedbackProps> = ({ title, desc }) => {
 

@@ -12,7 +12,8 @@ interface INewWorksList {
   works: IWork[];
   specificClass: string;
   writeBtn?: boolean;
-  moreBtn?: boolean
+  moreBtn?: boolean;
+
 }
 
 const slideUpVariant = {

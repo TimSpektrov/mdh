@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 import { Loader } from '@/components/ui/Loader';
 import { Header } from '@/components/ui/Header';
-import { Footer } from '@/components/ui/Footer';
+import { Footer } from '@/components/newDesign/Footer';
 
 import { ScrollerMotion } from 'scroller-motion';
 import { isMobile } from 'react-device-detect';
@@ -39,7 +39,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <Loader loader={loading || loadingData || (!content && route !== '/services/product-design')} />
+      <Loader loader={loading || loadingData || (!content && route !== '/services/product-design' && route !== '/contact')} />
       <DynamicPopup className={Grandis.variable} />
       <DynamicCursor />
       <div className="wrapper">

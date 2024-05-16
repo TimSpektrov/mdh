@@ -1,0 +1,20 @@
+@import '@/styles/helpers/vars.scss';
+.tags {
+	display: inline-flex;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	gap: 8px;
+}
+.tag {
+  font-family: $thirdFont;
+  font-weight: 400;
+  background: rgba($black, 0.4);
+  border-radius: 4px;
+  color: $light;
+  font-size: 12px;
+  line-height: 1.2;
+  text-transform: lowercase;
+  padding: 2px 8px;
+}

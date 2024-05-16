@@ -1,0 +1,61 @@
+@import '@/styles/helpers/vars.scss';
+.burger {
+  background-color: transparent;
+  border: 0;
+  width: 48px;
+  height: 48px;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  
+  @include bp-min(md) {
+    height: 62px;
+    width: 62px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: $light;
+    width: 32px;
+    height: 2px;
+    left: 50%;
+    transform-origin: center;
+    transform: translate3d(-50%, 0, 0) rotate(0);
+    will-change: top, width, transform;
+    transition: top 300ms ease 500ms, transform 300ms ease, width 500ms ease;
+  }
+
+  &::before {
+    top: calc(50% - 3px);
+  }
+
+  &::after {
+    top: calc(50% + 3px);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  
+}
+
+
+.active {
+  &::before,
+  &::after {
+    top: 50%;
+    transition: top 500ms ease, transform 300ms ease 700ms,
+      width 300ms ease 300ms;
+  }
+
+  &::before {
+    transform: translate3d(-50%, 0, 0) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate3d(-50%, 0, 0) rotate(-45deg);
+  }
+}

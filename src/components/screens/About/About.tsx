@@ -4,14 +4,13 @@ import Image from 'next/image';
 import { Hero } from './Hero';
 import { Tasks } from './Tasks';
 import { Goal } from './Goal';
-import { NewWorksList } from '@/components/ui/NewWorksList';
-import { NewFooterFeedback } from 'src/components/ui/NewFooterFeedback';
-
 import logoImg from '@img/logo.svg'
 import style from './About.module.scss';
 import { TextImageBlock } from '@/components/blocks/TextImageBlock';
 import { OurTarget } from '@/components/blocks/sections/OurTarget';
 import { NewTypography } from '@/components/ui/NewTypography';
+import { Feedback } from '@/components/oldComponents/Feedback';
+import { WorksList } from '@/components/oldComponents/WorksList';
 
 export const About: FC<any> = ({ content }) => {
 
@@ -54,12 +53,13 @@ export const About: FC<any> = ({ content }) => {
           <Image src={logoImg} alt='' width={logoImg.width} height={logoImg.height} />
         </div>
       </section>
-      <NewWorksList
-        works={content.works}
-        specificClass={'about-page'}
-        writeBtn
-      />
-      <NewFooterFeedback />
+      {/*<NewWorksList*/}
+      {/*  works={content.works}*/}
+      {/*  specificClass={'about-page'}*/}
+      {/*  writeBtn*/}
+      {/*/>*/}
+      <WorksList dark works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
+      <Feedback />
     </>
   );
 };

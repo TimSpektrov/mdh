@@ -1,0 +1,136 @@
+@import '@/styles/helpers/vars.scss';
+
+.wrapper {
+  background-color: $light;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 64px;
+  width: 100%;
+  border: 1px solid rgba(153, 153, 153, 0);
+  border-radius: 4px;
+  padding: 17px 24px;
+  cursor: default;
+  position: relative;
+
+  .overlay {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  &:hover {
+    border: 1px solid rgba(153, 153, 153, 0.2);
+    .placeholder,
+    .toggle {
+      color: $gray-2;
+    }
+  }
+
+  &.open {
+    box-shadow: 0 0 0 2px rgb(226 89 28 / 20%);
+    &:hover {
+      outline: none;
+    }
+    .placeholder,
+    .toggle {
+      color: $gray-2;
+    }
+  }
+}
+
+.placeholder {
+  color: $gray-1;
+  font-size: 16px;
+  line-height: 1;
+  flex: 1 1 auto;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  border: 1px solid rgba(105, 105, 105, 0.2);
+  padding: 3px 7px;
+  border-radius: 4px;
+  position: relative;
+  z-index: 3;
+
+  .icon {
+    cursor: pointer;
+  }
+}
+
+.toggle {
+  color: $gray-1;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.list {
+  background-color: $light;
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  border-radius: 4px;
+  width: 100%;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+  box-shadow: 
+    rgba($black, 0.2) 0px 2px 4px -1px,
+    rgba($black, 0.14) 0px 4px 5px 0px,
+    rgba($black, 0.12) 0px 1px 10px 0px;
+  &.show {
+    pointer-events: all;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.item {
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  padding-left: 24px;
+  padding-right: 24px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba($black, .05);
+  }
+
+  .checkbox {
+    color: $light;
+  }
+}
+
+
+@keyframes fadeIn {
+	from {
+		transform: scale(0.9);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}

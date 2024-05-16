@@ -19,14 +19,3 @@ const AboutPage: NextPage<any> = () => {
 }
 
 export default AboutPage;
-
-// export const getStaticProps: GetStaticProps = async () => {
-//
-//   return {
-//     props: {
-//       works: data?.works?.filter(work => work.showAbout === true),
-//       content: data['pages-content']['about-page']
-//     },
-//     revalidate: 30
-//   }
-// }

@@ -45,4 +45,3 @@ next-env.d.ts
 #Other
 package-lock.json
 .idea/workspace.xml
-/.idea

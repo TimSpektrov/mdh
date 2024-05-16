@@ -1,0 +1,61 @@
+@import '@/styles/helpers/vars';
+
+.editor {
+  width: 100%;
+  position: relative;
+
+  textarea {
+    font-family: $secondaryFont;
+    color: $black;
+    background-color: $light;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 300;
+    padding: 16px;
+    border: 1px solid rgba($gray-1, 0);
+    border-radius: 16px;
+    width: 100%;
+    transition: box-shadow 300ms ease;
+    min-height: 140px;
+    //resize: none;
+    overflow-y: hidden;
+    resize: vertical;
+
+    @include bp-min(xl) {
+      padding: 20px 24px;
+    }
+
+    &:hover {
+      border: 1px solid rgba($gray-1, 0.2);
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba($orange, 0.2);
+    }
+
+    &:hover,
+    &:focus {
+      &::placeholder {
+        color: $gray-2;
+      }
+    }
+    &::placeholder {
+      color: $gray-1;
+    }
+  }
+}
+
+.characterCounter {
+  color: $gray-1;
+  font-size: 11px;
+
+  position: absolute;
+  z-index: 3;
+  right: 24px;
+  bottom: 6px;
+  &Max {
+    color: $red;
+  }
+}

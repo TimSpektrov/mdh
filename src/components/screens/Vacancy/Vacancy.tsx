@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Hero } from './Hero';
 import { Conditions } from './Conditions';
 import { VacancyProps } from '.';
-import { NewFooterFeedback } from 'src/components/ui/NewFooterFeedback';
+import { Feedback } from '@/components/oldComponents/Feedback';
 
 export const Vacancy: FC<VacancyProps> = ({ data }) => {
   const [feedbackTitle, setFeedbackTitle] = useState('')
@@ -27,7 +27,7 @@ export const Vacancy: FC<VacancyProps> = ({ data }) => {
         image={data.image}
       />
       <Conditions conditions={data.conditions} offers={data.offers} />
-      <NewFooterFeedback title={feedbackTitle} desc={feedbackDesc}/>
+      <Feedback title={feedbackTitle} desc={feedbackDesc} />
     </>
   );
 };

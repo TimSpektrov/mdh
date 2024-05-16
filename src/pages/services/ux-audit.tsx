@@ -6,11 +6,12 @@ import { Stages } from '@/components/blocks/sections/Stages/Stages';
 import { CardRates } from '@/components/blocks/CardRates';
 import styles from '@/components/blocks/sections/Advantages/advantages.module.scss'
 import Head from 'next/head';
-import { NewFooterFeedback } from 'src/components/ui/NewFooterFeedback';
 import { NewWorksList } from '@/components/ui/NewWorksList';
 import { useEffect } from 'react';
 import { usePageDateStore } from '@/store/usePageDataStore';
 import { AUDIT_URL } from '@/helpers/apiRequests';
+import { Feedback } from '@/components/newDesign/Feedback';
+import { WorksList } from '@/components/newDesign/WorksList';
 
 const UxAuditPage: NextPage = () => {
   const {content, fetchData } = usePageDateStore(state => ({
@@ -49,13 +50,14 @@ const UxAuditPage: NextPage = () => {
       <Stages specificClass={'audit-page'} list={content.audit.stages.stage_items} title={content.audit.stages.title}/>
       {/*<Stages specificClass={'audit-page'} list={test} title={content.audit.stages.title}/>*/}
       <CardRates content={content.audit.card_rates.reverse()} />
-      <NewWorksList
-        works={content.audit.works}
-        specificClass={'audit-page'}
-        writeBtn
-        moreBtn
-      />
-      <NewFooterFeedback />
+      {/*<NewWorksList*/}
+      {/*  works={content.audit.works}*/}
+      {/*  specificClass={'audit-page'}*/}
+      {/*  writeBtn*/}
+      {/*  moreBtn*/}
+      {/*/>*/}
+      <WorksList works={content.audit.works} dark moreBtn writeBtn />
+      <Feedback />
     </>
   );
 }
