@@ -14,6 +14,23 @@ import { WorksList } from '@/components/oldComponents/WorksList';
 
 export const About: FC<any> = ({ content }) => {
   console.log(content);
+  const list = [
+    {
+      "id": 1,
+      "title": "Освобождающий время",
+      "description": "Веб-сервисы и мобильные продукты упрощают и берут на себя выполнение почти любых рабочих и личных задач"
+    },
+    {
+      "id": 2,
+      "title": "Решающий проблемы",
+      "description": "У каждого из вас есть ресурсы, которыми вы пользуетесь каждый день и без которых не представляете вашу реальность"
+    },
+    {
+      "id": 3,
+      "title": "меняющий мир",
+      "description": "Мы понимаем, что продукты и сервисы, которые придумываются и воплощаются сегодня значительным образом меняют повседневность"
+    }
+  ]
   return (
     <>
       <Head>
@@ -24,7 +41,7 @@ export const About: FC<any> = ({ content }) => {
         specificClass={'about-page'}
         title={content.hero.title}
         description={content.hero.description}
-        list={content.hero.list}
+        list={list}
       />
       <TextImageBlock
         text={content['proposal-first'].text.split('\r\n')}
