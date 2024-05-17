@@ -90,7 +90,7 @@ export const NewWork = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc
               height={900}
             />
           </motion.div>
-          <div className={style.label}>Скоро</div>
+          {!published && (<div className={style.label}>Скоро</div>)}
 
         </div>
         <div className={style.content}>

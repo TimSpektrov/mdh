@@ -64,26 +64,26 @@
 }
 
 // Colors
-.light {
+.color-light {
   color: $light;
 }
-.dark {
+.color-dark {
   color: $black;
 }
-.white {
+.color-white {
   color: $white;
 }
-.orange {
+.color-orange {
   color: $orange;
 }
 
 // Span Accent
-.orange {
+.accent-orange {
   span {
     color: $orange;
   }
 }
-.mint {
+.accent-mint {
   span {
     color: $mint;
   }

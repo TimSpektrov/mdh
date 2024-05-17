@@ -15,6 +15,7 @@ import { usePopupStore } from "@/store/usePopapStore";
 import btnStyle from '@/components/ui/Button/Button.module.scss'
 import style from './NewFooterFeedback.module.scss';
 import { useContactsDateStore } from '@/store/useContextDataStore';
+import { addNbspParse } from '@/helpers';
 
 export interface INewFeedback {
   id?: string
@@ -181,7 +182,7 @@ export const NewFooterFeedback: FC<INewFeedback> = ({ title, desc }) => {
                 <div className={cn('form__group', style.form__group)}>
                   <div className={`form__btn ${style.form__btn}`}>
                     <button className={cn(btnStyle.btn, btnStyle['btn--secondary'], btnStyle['btn--large'], btnStyle['btn--white'], style.btn)} type='submit'>Отправить</button>
-                    <div className="accept">Нажимая на кнопку, вы соглашаетесь с <a href='#'>политикой конфиденциальности</a></div>
+                    <div className="accept">{addNbspParse('Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>')}</div>
                   </div>
                 </div>
               </div>

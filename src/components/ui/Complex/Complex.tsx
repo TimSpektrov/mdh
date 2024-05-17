@@ -21,7 +21,7 @@ export const Complex: FC<ComplexProps> = ({ title, data, wrapClass, innerClass, 
               <div key={id} className={style.item}>
                 <div className={style.content}>
                   <Title variant='h3' className={style.name}>{title}</Title>
-                  <Text color='light'>{description}</Text>
+                  <Text color='light'>{addNbspParse(description)}</Text>
                 </div>
               </div>
             ))}
@@ -31,7 +31,7 @@ export const Complex: FC<ComplexProps> = ({ title, data, wrapClass, innerClass, 
               <div key={id} className={style.item}>
                 <div className={style.content}>
                   <Title variant='h3' className={style.name}>{title}</Title>
-                  <Text color='light'>{description}</Text>
+                  <Text color='light'>{addNbspParse(description)}</Text>
                 </div>
               </div>
             ))}

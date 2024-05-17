@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { WorksListProps } from '.';
 import cn from 'classnames';
-import { MotionWork } from '@/components/ui/Work';
+import { MotionWork } from '@/components/oldComponents/Work';
 import { Button } from '@/components/ui';
 import { motion } from 'framer-motion';
 
@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import { useModalStore } from '@/store/useModalStore';
 
 import style from './WorksList.module.scss';
+import { useRouter } from 'next/router';
 
 const slideUpVariant = {
   hidden: {
@@ -55,6 +56,7 @@ export const WorksList: FC<WorksListProps> = ({
 }) => {
   const toggleModal = useModalStore((state) => state.toggleModal);
   const pathName = usePathname();
+  const route = useRouter()
 
   return (
     <section className={cn(style.works, dark && style.dark, wrapClass)}>
@@ -90,16 +92,17 @@ export const WorksList: FC<WorksListProps> = ({
         variants={fadeInVariant}
         viewport={{ amount: 1, once: true }}
       >
-        {pathName !== '/works' && (
-          <>
-            <Button className={style.btn} onClick={toggleModal}>
-              Написать нам
-            </Button>
-            {/* <Button className={style.btn} onClick={() => route.push('/works', {scroll: true})}>
+        <>
+          <Button className={style.btn} onClick={toggleModal}>
+            Написать нам
+          </Button>
+          {pathName !== '/works' && (
+            <Button className={style.btn} onClick={() => route.push('/works')}>
               Смотреть все
-            </Button> */}
-          </>
-        )}
+            </Button>
+          )}
+        </>
+
       </motion.div>
     </section>
   );

@@ -19,6 +19,7 @@ import { usePopupStore } from "@/store/usePopapStore";
 import btnStyle from '@/components/ui/Button/Button.module.scss'
 import style from "./Modal.module.scss";
 import { Icon } from "../Icon";
+import { addNbspParse } from '@/helpers';
 
 export const Modal: FC<ModalProps> = ({className}) => {
 
@@ -166,7 +167,7 @@ export const Modal: FC<ModalProps> = ({className}) => {
             <div className="form__group">
               <div className="form__btn">
                 <button className={cn(btnStyle.btn, btnStyle['btn--secondary'], btnStyle['btn--large'], btnStyle['btn--white'], style.btn)} type='submit'>Отправить</button>
-                <div className={cn('accept', style.form__accept)}>Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></div>
+                <div className={cn('accept', style.form__accept)}>{addNbspParse('Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>')}</div>
               </div>
             </div>
           </div>

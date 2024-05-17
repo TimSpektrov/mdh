@@ -6,6 +6,7 @@ import { Text, Title } from '@/components/ui/Typography';
 
 import style from './Steps.module.scss';
 import designStyle from './../Design.module.scss';
+import { addNbspParse } from '@/helpers';
 
 export const Steps: FC<StepsProps> = ({ data, title, image_url, image_alt }) => {
   return (
@@ -25,7 +26,7 @@ export const Steps: FC<StepsProps> = ({ data, title, image_url, image_alt }) => 
                   <span>{title}</span>
                   <span className={style.stepLine}></span>
                 </Title>
-                <Text className={style.stepDesc}>{description}</Text>
+                <Text className={style.stepDesc}>{addNbspParse(description)}</Text>
               </div>
             ))}
           </div>

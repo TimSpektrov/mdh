@@ -29,7 +29,7 @@ export const Proposal: FC<ProposalProps> = ({ title, description, data }) => {
               </div>
               <div className={style.content}>
                 <Title variant='h3' className={style.name}>{title}</Title>
-                <Text className={style.desc}>{description}</Text>
+                <Text className={style.desc}>{addNbspParse(description)}</Text>
               </div>
             </div>
           ))}

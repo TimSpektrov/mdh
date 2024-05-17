@@ -11,9 +11,9 @@ import { OurTarget } from '@/components/blocks/sections/OurTarget';
 import { NewTypography } from '@/components/ui/NewTypography';
 import { Feedback } from '@/components/oldComponents/Feedback';
 import { WorksList } from '@/components/oldComponents/WorksList';
+import patternImg from '@img/about/pattern.svg'
 
 export const About: FC<any> = ({ content }) => {
-  console.log(content);
   const list = [
     {
       "id": 1,
@@ -43,6 +43,7 @@ export const About: FC<any> = ({ content }) => {
         description={content.hero.description}
         list={list}
       />
+      <div className={style.proposal}>
       <TextImageBlock
         text={content['proposal-first'].text.split('\r\n')}
         url={content['proposal-first'].url}
@@ -50,12 +51,15 @@ export const About: FC<any> = ({ content }) => {
         specificClass={'about-first-page'}
         buttonModal
       />
-      <div className={style['pattern-bg']}></div>
+
+          <div className={style.proposalPattern}></div>
+      </div>
       <TextImageBlock
         text={content['proposal-second'].text.split('\r\n')}
         url={content['proposal-second'].url}
         alt={content['proposal-second'].alt}
         specificClass={'about-second-page'}
+        buttonModal
       />
 
       <Tasks title={content.tasks.title} list={content.tasks.items} />
@@ -63,8 +67,11 @@ export const About: FC<any> = ({ content }) => {
       <OurTarget title={content['our_target'].title} />
 
       <Goal title={content.goal.title} list={content.goal.list} />
-      
+
       <section className={style.logo}>
+          <div className={style.pattern}>
+              <Image src={patternImg} width={patternImg.width} height={patternImg.height} alt='' quality={100} />
+          </div>
         <NewTypography text={content.works_title} variant={'h2'} tag={'h2'} />
         <div className={style.img}>
           <Image src={logoImg} alt='' width={logoImg.width} height={logoImg.height} />

@@ -29,7 +29,6 @@ const variant = {
 export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, image, tags, className, slug, light, published }, ref) => {
   const caseRef = useRef(null)
   const classes = cn(style.wrap, light && style.caseLight, className, 'case')
-
   const onMouseEnter = () => {
     if (published) {
       document?.querySelector('.cursor')?.classList.add('show')
@@ -87,6 +86,7 @@ export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, i
               height={900}
             />
           </motion.div>
+          {!published && (<div className={style.label}>Скоро</div>)}
         </div>
         <div className={style.content}>
           <div className={style.heading}>

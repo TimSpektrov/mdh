@@ -35,7 +35,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  @include bp-min(xl) {
+  @include bp-min(xxl) {
     grid-auto-rows: 600px;
     grid-template-columns: 608px 1fr 608px;
   }
@@ -47,7 +47,7 @@
 
 .item {
   border-radius: 20px;
-  @include bp-min(xl) {
+  @include bp-min(xxl) {
     &:nth-child(4n + 2) {
       grid-column: span 2;
     }

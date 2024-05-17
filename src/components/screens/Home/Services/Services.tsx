@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import style from './Services.module.scss';
+import { addNbspParse } from '@/helpers';
 
 const containerVariant = {
   hidden: {
@@ -95,7 +96,7 @@ export const Services: FC<ServicesProps> = ({ services }) => {
               <motion.span
                 variants={textVariant}
                 custom={1.7}
-              >{description}</motion.span>
+              >{addNbspParse(description)}</motion.span>
             </Text>
             {isPublic &&
               <Link href={`/services/${slug}`} legacyBehavior passHref>

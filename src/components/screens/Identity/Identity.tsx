@@ -4,7 +4,7 @@ import { Hero } from './Hero';
 import { Structure } from "./Structure";
 import { Complex } from '@/components/ui/Complex';
 import { Tariff } from './Tariff';
-import { Callback } from '@/components/ui/Callback';
+import { Callback } from '@/components/oldComponents/Callback';
 import style from './Identity.module.scss'
 import { IRate } from '@/types/type';
 import { NewWorksList } from '@/components/ui/NewWorksList';

@@ -14,6 +14,10 @@ import img11 from './assets/images/11.jpg'
 import img12 from './assets/images/12.jpg'
 import img13 from './assets/images/13.jpg'
 import img14 from './assets/images/14.jpg'
+import img15 from './assets/images/15.jpg'
+import img16 from './assets/images/16.jpg'
+import img17 from './assets/images/17.jpg'
+import img18 from './assets/images/18.jpg'
 import { NewTypography } from '@/components/ui/NewTypography';
 import { motion, MotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
 import { OurTargetAnimImage } from '@/components/blocks/sections/OurTarget/OurTargetAmimImage/OurTargetAnimImage';
@@ -68,7 +72,7 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
       initial='hidden'
       whileInView='visible'
       viewport={{
-        amount: window.innerWidth > 767 ? .8 : 0.4,
+        amount: window.innerWidth > 767 ? .8 : 0.35,
         once: true,
     }}
       onMouseMove={(e: React.MouseEvent) => handleMouseMove(e)}
@@ -85,10 +89,17 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
         </div>
         <div className={styles.center}>
           <div className={styles['center-container']} style={{translate: `${x}px ${y}px`}} >
+            <OurTargetAnimImage imageSrc={img15} custom={1} width={img15.width} height={img15.height}/>
+            <OurTargetAnimImage imageSrc={img16} custom={1} width={img16.width} height={img16.height}/>
+            <OurTargetAnimImage imageSrc={img17} custom={1} width={img17.width} height={img17.height}/>
+            <OurTargetAnimImage imageSrc={img18} custom={1} width={img18.width} height={img18.height}/>
             <OurTargetAnimImage imageSrc={img6} custom={1} width={img6.width} height={img6.height}/>
             <OurTargetAnimImage imageSrc={img8} custom={1} width={img8.width} height={img8.height}/>
           </div>
           <motion.div className={styles['mobile-container']} style={{ y: yPos }} >
+            <OurTargetAnimImage imageSrc={img8} custom={2} width={img8.width} height={img8.height}/>
+            <OurTargetAnimImage imageSrc={img4} custom={2} width={img4.width} height={img4.height}/>
+            <OurTargetAnimImage imageSrc={img11} custom={1} width={img11.width} height={img11.height}/>
             <OurTargetAnimImage imageSrc={img6} custom={2} width={img6.width} height={img6.height}/>
             <OurTargetAnimImage imageSrc={img4} custom={2} width={img4.width} height={img4.height}/>
             <OurTargetAnimImage imageSrc={img11} custom={1} width={img11.width} height={img11.height}/>
@@ -98,10 +109,17 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
             <OurTargetAnimImage imageSrc={img8} custom={1} width={img8.width} height={img8.height}/>
             <OurTargetAnimImage imageSrc={img5} custom={2} width={img5.width} height={img5.height}/>
             <OurTargetAnimImage imageSrc={img12} custom={1} width={img12.width} height={img12.height}/>
+            <OurTargetAnimImage imageSrc={img8} custom={1} width={img8.width} height={img8.height}/>
+            <OurTargetAnimImage imageSrc={img5} custom={2} width={img5.width} height={img5.height}/>
+            <OurTargetAnimImage imageSrc={img12} custom={1} width={img12.width} height={img12.height}/>
           </motion.div>
           <div className={styles['center-container']} style={{translate: `${x}px ${y}px`}} >
             <OurTargetAnimImage imageSrc={img7} custom={2} width={img7.width} height={img7.height}/>
             <OurTargetAnimImage imageSrc={img9} custom={2} width={img9.width} height={img9.height}/>
+            <OurTargetAnimImage imageSrc={img15} custom={1} width={img15.width} height={img15.height}/>
+            <OurTargetAnimImage imageSrc={img16} custom={1} width={img16.width} height={img16.height}/>
+            <OurTargetAnimImage imageSrc={img17} custom={1} width={img17.width} height={img17.height}/>
+            <OurTargetAnimImage imageSrc={img18} custom={1} width={img18.width} height={img18.height}/>
           </div>
         </div>
         <div className={styles.right} style={{translate: `${x}px ${y}px`}}>

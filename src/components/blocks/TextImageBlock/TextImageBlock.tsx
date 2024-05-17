@@ -88,7 +88,7 @@ export const TextImageBlock: FC<ITextImageBlock> = ({text, url, alt, specificCla
             height={750}
           />
         </motion.div>
-      <div className={styles['pattern-bg']}></div>
+      {/*<div className={styles['pattern-bg']}></div>*/}
     </motion.section>
   )
 }

@@ -8,8 +8,8 @@ export const Title: FC<TitleProps> = ({ className, children, variant, color, acc
 
   const classes = cn(
     variant ? styles[`${variant}`] : styles.h2,
-    color ? styles[`${color}`] : styles.dark,
-    accent && styles[`${accent}`],
+    color ? styles[`color-${color}`] : styles.dark,
+    accent && styles[`accent-${accent}`],
     className
   )
 

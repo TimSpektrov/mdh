@@ -1,7 +1,7 @@
 @import '@/styles/helpers/vars.scss';
 @import '@/styles/helpers/mixins.scss';
 .section {
-  display: flex;
+  display: grid;
   @include container;
   gap: 16px;
   position: relative;
@@ -20,11 +20,12 @@
     padding-bottom: 120px;
   }
   @include bp-max(xxl){
-    flex-direction: column;
+    //flex-direction: column;
   }
   @include bp-min(xxl){
-    justify-content: space-between;
-    align-items: center;
+    grid-template-columns: 48% 600px;
+      justify-content: space-between;
+      //align-items: center;
     & > * {
       flex: 0 0 calc(50% - 30px);
     }

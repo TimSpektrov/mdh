@@ -36,6 +36,7 @@ $bRadius: 16px;
   @include bp-min(md) {
     grid-template-columns: 1fr 580px 1fr;
     display: grid;
+    align-items: center;
   }
 
   @include bp-max(xl) {
@@ -72,7 +73,8 @@ $bRadius: 16px;
     //@include bp-max(md) {
     //}
     @include bp-min(md) {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       //flex-direction: column;
       justify-content: center;
       align-items: stretch;
@@ -176,7 +178,7 @@ $bRadius: 16px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $gapS;
-    & > div:first-child {
+    & > div:nth-child(3n + 1) {
       grid-column: span 2;
     }
   //@include bp-max(md) {

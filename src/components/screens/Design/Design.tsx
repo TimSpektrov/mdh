@@ -6,10 +6,11 @@ import { Mockup } from './Mockup';
 import { Complex } from '@/components/ui/Complex';
 import { Steps } from './Steps';
 import { Proposal } from './Proposal';
-import { Callback } from '@/components/ui/Callback';
+import { Callback } from '@/components/oldComponents/Callback';
 import style from './Design.module.scss';
 import { NewWorksList } from '@/components/ui/NewWorksList';
 import { Feedback } from '@/components/oldComponents/Feedback';
+import { WorksList } from '@/components/oldComponents/WorksList';
 
 export const Design: FC<any> = ({ content }) => {
 
@@ -32,11 +33,11 @@ export const Design: FC<any> = ({ content }) => {
           wrapClass={style.complex}
           columnClass={style.column}
           title={content.advantages.left}
-          data={content.advantages.items}
+          data={content.advantages.items.reverse()}
         />
 
         <Steps
-          data={content.stages.items}
+          data={content.stages.items.reverse()}
           title={content.stages.title}
           image_url={content.stages.image_url}
           image_alt={content.stages.image_alt}
@@ -46,14 +47,15 @@ export const Design: FC<any> = ({ content }) => {
       <Proposal
         title={content.proposal.title}
         description={content.proposal.description}
-        data={content.proposal.items}
+        data={content.proposal.items.reverse()}
       />
       <Callback background='light-dark'/>
-      <NewWorksList
-        works={content.works}
-        specificClass={'full-design-page'}
-        writeBtn
-      />
+      {/*<NewWorksList*/}
+      {/*  works={content.works}*/}
+      {/*  specificClass={'full-design-page'}*/}
+      {/*  writeBtn*/}
+      {/*/>*/}
+      <WorksList works={content.works} wrapClass={style.works} itemClass={style.worksItem} dark />
       <Feedback/>
     </>
   );

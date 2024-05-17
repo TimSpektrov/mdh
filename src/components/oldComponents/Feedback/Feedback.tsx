@@ -16,6 +16,7 @@ import { usePopupStore } from "@/store/usePopapStore";
 import data from '@json/data.json';
 import btnStyle from '@/components/ui/Button/Button.module.scss'
 import style from './Feedback.module.scss';
+import { addNbspParse } from '@/helpers';
 
 // Основной компонент
 export const Feedback: FC<FeedbackProps> = ({ title, desc }) => {
@@ -164,7 +165,7 @@ export const FeedbackContent: FC<FeedbackProps> = ({ title, desc }) => {
             <div className="form__group">
               <div className={`form__btn ${style.form__btn}`}>
                 <button className={cn(btnStyle.btn, btnStyle['btn--secondary'], btnStyle['btn--large'], btnStyle['btn--white'], style.btn)} type='submit'>Отправить</button>
-                <div className="accept">Нажимая на кнопку, вы соглашаетесь с <a href='#'>политикой конфиденциальности</a></div>
+                <div className="accept">{addNbspParse('Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>')}</div>
               </div>
             </div>
           </div>
