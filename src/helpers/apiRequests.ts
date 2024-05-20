@@ -16,7 +16,6 @@ export const VACANCIES_URL = '/api/vacancies'
 export const HOME_URL = '/api/main'
 export const ABOUT_US_URL = '/api/aboutus'
 export const PRODUCT_DESIGN_URL = '/api/product-design'
-
 export const api = axios.create({
   baseURL: BASE_URL
 })

@@ -33,6 +33,7 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
   const [y, setY] = useState(0)
   // scroll mobile
   const [yPos, setYPos] = useState<MotionValue<string>>();
+  const [yPosText, setYPosText] = useState<MotionValue<string>>();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     layoutEffect: false,
@@ -47,12 +48,15 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
     restSpeed: 20
   };
   const scrollY = useSpring(scrollYProgress, spring);
-  const options = ['20%', '-20%'];
-  const yPosition = useTransform(scrollY, [1, 0], options);
+  const yPosition = useTransform(scrollY, [1, 0], ['20%', '-20%']);
+  const yPositionText = useTransform(scrollY, [1, 0], ['20%', '-20%']);
 
   useEffect(() => {
-    setYPos(yPosition);
-  }, [yPosition]);
+    if(window.innerWidth < width ) {
+      setYPos(yPosition);
+      setYPosText(yPositionText);
+    }
+  }, [yPosition, yPositionText]);
 
   // parallax desktop
   // const imgAnimation = useAnimation()
@@ -60,8 +64,8 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
   const handleMouseMove = (e: React.MouseEvent) => {
     if(width <= window.innerWidth) {
       const { clientX, clientY } = e
-      const moveX = clientX - window.innerWidth / 2
-      const moveY = clientY - window.innerHeight / 2
+      const moveX = (-clientX + window.innerWidth / 2) * 2
+      const moveY = (-clientY + window.innerHeight / 2) * 3
       const offsetFactor = 15
 
       setX(moveX / offsetFactor )
@@ -76,13 +80,13 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
       initial='hidden'
       whileInView='visible'
       viewport={{
-        amount: window.innerWidth > 767 ? .8 : 0.38,
+        amount: window.innerWidth > 767 ? .8 : 0.25,
         once: true,
     }}
       onMouseMove={(e: React.MouseEvent) => handleMouseMove(e)}
     >
 
-      <motion.div className={styles.parallax} style={{ y: yPos }}>
+      <motion.div className={styles.parallax} style={{ y: yPos}}>
         <div className={styles.left} style={{translate: `${x}px ${y}px`}} >
           <OurTargetAnimImage imageSrc={img1} custom={3} width={img1.width} height={img1.height} />
           <OurTargetAnimImage imageSrc={img3} custom={1} width={img3.width} height={img3.height}/>
@@ -102,22 +106,22 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
           </div>
           <motion.div className={styles['mobile-container']} >
             <OurTargetAnimImage imageSrc={img8} custom={2} width={img8.width} height={img8.height}/>
-            <OurTargetAnimImage imageSrc={img4} custom={2} width={img4.width} height={img4.height}/>
-            <OurTargetAnimImage imageSrc={img11} custom={1} width={img11.width} height={img11.height}/>
+            <OurTargetAnimImage imageSrc={img1} custom={2} width={img1.width} height={img1.height}/>
+            <OurTargetAnimImage imageSrc={img2} custom={1} width={img2.width} height={img2.height}/>
             <OurTargetAnimImage imageSrc={img6} custom={2} width={img6.width} height={img6.height}/>
             <OurTargetAnimImage imageSrc={img4} custom={2} width={img4.width} height={img4.height}/>
             <OurTargetAnimImage imageSrc={img11} custom={1} width={img11.width} height={img11.height}/>
           </motion.div>
-          <motion.div style={{ y: yPos }}>
+          <motion.div style={{ y: yPosText, position: 'relative', zIndex: 2 }}>
             <NewTypography text={title} variant={'h2'} tag={'h2'} />
           </motion.div>
           <motion.div className={styles['mobile-container']} >
-            <OurTargetAnimImage imageSrc={img8} custom={1} width={img8.width} height={img8.height}/>
+            <OurTargetAnimImage imageSrc={img7} custom={1} width={img7.width} height={img7.height}/>
             <OurTargetAnimImage imageSrc={img5} custom={2} width={img5.width} height={img5.height}/>
             <OurTargetAnimImage imageSrc={img12} custom={1} width={img12.width} height={img12.height}/>
-            <OurTargetAnimImage imageSrc={img8} custom={1} width={img8.width} height={img8.height}/>
-            <OurTargetAnimImage imageSrc={img5} custom={2} width={img5.width} height={img5.height}/>
-            <OurTargetAnimImage imageSrc={img12} custom={1} width={img12.width} height={img12.height}/>
+            <OurTargetAnimImage imageSrc={img9} custom={1} width={img9.width} height={img9.height}/>
+            <OurTargetAnimImage imageSrc={img13} custom={2} width={img13.width} height={img13.height}/>
+            <OurTargetAnimImage imageSrc={img14} custom={1} width={img14.width} height={img14.height}/>
           </motion.div>
           <div className={styles['center-container']} style={{translate: `${x}px ${y}px`}} >
             <OurTargetAnimImage imageSrc={img7} custom={2} width={img7.width} height={img7.height}/>
