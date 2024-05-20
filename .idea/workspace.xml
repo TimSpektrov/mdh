@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1da4383-ea6c-4a1c-86ea-d900241717ea" name="Changes" comment="" />
+    <list default="true" id="166a4ea8-f510-4c94-8ac7-245aa3429358" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,11 +18,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="2ffqVZVLiy8r4iqQ8yyQXF05lzm" />
+  <component name="ProjectId" id="2gZKQpO0MseAlhRwASysGBf0Irz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,27 +35,26 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/github/secreate/mdh",
+    "last_opened_file_path": "D:/github/secreate/front",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\github\\secreate\\mdh\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f1da4383-ea6c-4a1c-86ea-d900241717ea" name="Changes" comment="" />
-      <created>1714202503542</created>
+      <changelist id="166a4ea8-f510-4c94-8ac7-245aa3429358" name="Changes" comment="" />
+      <created>1715899645788</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1714202503542</updated>
-      <workItem from="1714202505028" duration="822000" />
-      <workItem from="1714634406873" duration="332000" />
-      <workItem from="1714981016794" duration="3707000" />
+      <updated>1715899645788</updated>
+      <workItem from="1715899646924" duration="687000" />
+      <workItem from="1715902004027" duration="110000" />
+      <workItem from="1715929188031" duration="10000" />
     </task>
     <servers />
   </component>

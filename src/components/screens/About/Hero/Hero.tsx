@@ -70,7 +70,6 @@ const itemVariants = {
 };
 
 export const Hero: FC<IHero> = ({title, description, list = [], specificClass = 'page' }) => {
-  console.log(list);
   return (
     <motion.section
       className={cn(style.wrapper, style[specificClass])}

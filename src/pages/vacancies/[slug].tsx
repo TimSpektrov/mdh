@@ -9,8 +9,6 @@ import { VACANCIES_URL } from '@/helpers/apiRequests';
 const VacancyPage: NextPage = () => {
   const {query} = useRouter()
   const slug = query.slug
-
-  console.log(query);
   const {content, fetchData } = usePageDateStore(state => ({
     content: state.content,
     fetchData: state.fetchData,

@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import cn from 'classnames'
 import { Emails } from "@/components/oldComponents/Emails";
 import { Logo } from "@/components/oldComponents/Logo";
-import { Select, Field, FieldFile } from "@/components/ui/Form";
+import { Select, Field, FieldFile } from "@/components/oldComponents/Form";
 
 import { useScrollbarWidth } from "@/hooks/useScrollbarWidth";
 import { useModalStore } from "@/store/useModalStore";

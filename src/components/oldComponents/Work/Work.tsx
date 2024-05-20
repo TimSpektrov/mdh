@@ -35,7 +35,6 @@ export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, i
 
   const classes = cn(style.wrap, light && style.caseLight, className, 'case')
 
-  console.log('slug', slug, 'published', slug);
   const onMouseEnter = () => {
     if (published) {
       document?.querySelector('.cursor')?.classList.add('show')

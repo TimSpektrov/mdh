@@ -5,7 +5,6 @@ import style from './Conditions.module.scss';
 import { addNbspParse, toHtmlList } from '@/helpers';
 
 export const Conditions: FC<ConditionsProps> = ({ conditions, offers }) => {
-  console.log(conditions);
 
   return (
     <div className={style.wrapper}>

@@ -51,7 +51,6 @@ export const About: FC<any> = ({ content }) => {
         specificClass={'about-first-page'}
         buttonModal
       />
-
           <div className={style.proposalPattern}></div>
       </div>
       <TextImageBlock

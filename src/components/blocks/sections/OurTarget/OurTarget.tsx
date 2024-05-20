@@ -26,6 +26,8 @@ interface IOurTarget {
   title: string;
 }
 
+const width = 1200;
+
 export const OurTarget:FC<IOurTarget> = ({title}) => {
   const [x, setX] = useState(0)
   const [y, setY] = useState(0)
@@ -56,13 +58,15 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
   // const imgAnimation = useAnimation()
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    const { clientX, clientY } = e
-    const moveX = clientX - window.innerWidth / 2
-    const moveY = clientY - window.innerHeight / 2
-    const offsetFactor = 15
+    if(width <= window.innerWidth) {
+      const { clientX, clientY } = e
+      const moveX = clientX - window.innerWidth / 2
+      const moveY = clientY - window.innerHeight / 2
+      const offsetFactor = 15
 
-    setX(moveX / offsetFactor )
-    setY(moveY / offsetFactor )
+      setX(moveX / offsetFactor )
+      setY(moveY / offsetFactor )
+    }
   }
 
   return (
@@ -72,13 +76,13 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
       initial='hidden'
       whileInView='visible'
       viewport={{
-        amount: window.innerWidth > 767 ? .8 : 0.35,
+        amount: window.innerWidth > 767 ? .8 : 0.38,
         once: true,
     }}
       onMouseMove={(e: React.MouseEvent) => handleMouseMove(e)}
     >
 
-      <motion.div className={styles.parallax}>
+      <motion.div className={styles.parallax} style={{ y: yPos }}>
         <div className={styles.left} style={{translate: `${x}px ${y}px`}} >
           <OurTargetAnimImage imageSrc={img1} custom={3} width={img1.width} height={img1.height} />
           <OurTargetAnimImage imageSrc={img3} custom={1} width={img3.width} height={img3.height}/>
@@ -96,7 +100,7 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
             <OurTargetAnimImage imageSrc={img6} custom={1} width={img6.width} height={img6.height}/>
             <OurTargetAnimImage imageSrc={img8} custom={1} width={img8.width} height={img8.height}/>
           </div>
-          <motion.div className={styles['mobile-container']} style={{ y: yPos }} >
+          <motion.div className={styles['mobile-container']} >
             <OurTargetAnimImage imageSrc={img8} custom={2} width={img8.width} height={img8.height}/>
             <OurTargetAnimImage imageSrc={img4} custom={2} width={img4.width} height={img4.height}/>
             <OurTargetAnimImage imageSrc={img11} custom={1} width={img11.width} height={img11.height}/>
@@ -104,8 +108,10 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
             <OurTargetAnimImage imageSrc={img4} custom={2} width={img4.width} height={img4.height}/>
             <OurTargetAnimImage imageSrc={img11} custom={1} width={img11.width} height={img11.height}/>
           </motion.div>
-          <NewTypography text={title} variant={'h2'} tag={'h2'} />
-          <motion.div className={styles['mobile-container']} style={{ y: yPos }} >
+          <motion.div style={{ y: yPos }}>
+            <NewTypography text={title} variant={'h2'} tag={'h2'} />
+          </motion.div>
+          <motion.div className={styles['mobile-container']} >
             <OurTargetAnimImage imageSrc={img8} custom={1} width={img8.width} height={img8.height}/>
             <OurTargetAnimImage imageSrc={img5} custom={2} width={img5.width} height={img5.height}/>
             <OurTargetAnimImage imageSrc={img12} custom={1} width={img12.width} height={img12.height}/>

@@ -11,7 +11,7 @@ import inputStyle from '@/components/ui/Form/Field/Field.module.scss';
 export const Select: FC<SelectProps> = ({ textError }) => {
 
   const { asPath } = useRouter()
-  const isServicesPage = (asPath.indexOf("services") != -1)
+  const isServicesPage = (asPath.indexOf("services") != -1) ? true : false
 
   const { items, selectItem, unselectItem } = useSelectStore()
   const [selectedItems, setSelectedItems] = useState<SelectOption[]>([]);
@@ -19,30 +19,18 @@ export const Select: FC<SelectProps> = ({ textError }) => {
 
   useEffect(() => {
     switch (asPath) {
-      case "/services/ux-audit":
-        setSelectedItems(items.filter(item => item.selected && item.service === "ux-audit"))
-        setOptionItems(items.filter(item => item.service === "ux-audit"))
-        break;
-      case "/services/redesign":
-        setSelectedItems(items.filter(item => item.selected && item.service === "redesign"))
-        setOptionItems(items.filter(item => item.service === "redesign"))
-        break;
-      case "/services/no-code":
-        setSelectedItems(items.filter(item => item.selected && item.service === "no-code"))
-        setOptionItems(items.filter(item => item.service === "no-code"))
-        break;
       case "/services/identity":
-        setSelectedItems(items.filter(item => item.selected && item.service === "identity"))
+        setSelectedItems(items.filter(item => item.selected !== false && item.service === "identity"))
         setOptionItems(items.filter(item => item.service === "identity"))
         break;
-      case "/services/design-promo-materials":
-        setSelectedItems(items.filter(item => item.selected && item.service === "design-promo-materials"))
-        setOptionItems(items.filter(item => item.service === "design-promo-materials"))
+      case "/services/ux-audit":
+        setSelectedItems(items.filter(item => item.selected !== false && item.service === "ux-audit"))
+        setOptionItems(items.filter(item => item.service === "ux-audit"))
         break;
       default:
-        setSelectedItems(items.filter(item => item.selected && item.service === undefined))
+        setSelectedItems(items.filter(item => item.selected !== false && item.service === undefined))
         setOptionItems(items.filter(item => item.service === undefined))
-        // unselectItem
+        unselectItem
         break;
     }
   }, [items, asPath, unselectItem])

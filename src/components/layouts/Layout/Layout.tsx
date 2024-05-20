@@ -14,7 +14,7 @@ import { useContactsDateStore } from '@/store/useContextDataStore';
 import { usePageDateStore } from '@/store/usePageDataStore';
 
 const DynamicPopup = dynamic(() => import('@/components/ui/Popup/Popup').then(component => component.Popup))
-const DynamicModal = dynamic(() => import('@/components/ui/Modal/Modal').then(component => component.Modal))
+const DynamicModal = dynamic(() => import('@/components/oldComponents/Modal').then(component => component.Modal))
 const DynamicCursor = dynamic(() => import('@/components/ui/Cursor/Cursor').then(component => component.Cursor))
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
