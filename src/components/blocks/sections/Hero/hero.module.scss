@@ -39,6 +39,24 @@
 
         &:first-child {
           background-color: $black;
+          @include bp-max(sm) {
+            padding-top: 20px;
+          }
+          @include bp-min(sm) {
+            padding-top: 30px;
+          }
+          @include bp-min(md) {
+            padding-top: 35px;
+          }
+          @include bp-min(lg) {
+            padding-top: 50px;
+          }
+          @include bp-min(xxl) {
+            padding-top: 60px;
+          }
+          @include bp-min(xxxl) {
+            padding-top: 70px;
+          }
         }
         &:not(:first-child) {
           background-color: $Neutral-White-1;

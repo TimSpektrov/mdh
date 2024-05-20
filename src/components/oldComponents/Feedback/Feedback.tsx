@@ -159,9 +159,9 @@ export const FeedbackContent: FC<FeedbackProps> = ({ title, desc }) => {
             </div>
           </div>
           <div className={`form__footer ${style.form__footer}`}>
-            {/* <div className="form__group">
+            <div className="form__group">
               <FieldFile />
-            </div> */}
+            </div>
             <div className="form__group">
               <div className={`form__btn ${style.form__btn}`}>
                 <button className={cn(btnStyle.btn, btnStyle['btn--secondary'], btnStyle['btn--large'], btnStyle['btn--white'], style.btn)} type='submit'>Отправить</button>

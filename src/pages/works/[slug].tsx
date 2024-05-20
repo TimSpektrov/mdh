@@ -7,12 +7,22 @@ import data from '@json/data.json';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HorisontalScrollNavigation } from '@/components/ui/HorisontalScrollNavigation';
 import { Feedback } from '@/components/oldComponents/Feedback';
+import { usePageDateStore } from '@/store/usePageDataStore';
+import { useEffect } from 'react';
+import { CONTACTS_URL } from '@/helpers/apiRequests';
 
 interface IParams extends ParsedUrlQuery {
   slug?: string;
 }
 
 const WorkPage: NextPage<IWork> = (props: IWork) => {
+  const { fetchData } = usePageDateStore(state => ({
+    content: state.content,
+    fetchData: state.fetchData,
+  }))
+  useEffect(() => {
+    fetchData(CONTACTS_URL, 'not')
+  }, []);
   return (
     <>
       <HorisontalScrollNavigation key={'scrollNavTop'} position="top" />

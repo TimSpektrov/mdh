@@ -62,39 +62,40 @@
 
   @include bp-min(xl) {
     background-repeat: no-repeat;
-    background-size: 400px;
+    //background-size: 400px;
 
     &:nth-child(1) {
       @include bp-min(xl) {
-        background-image: url('./assets/images/redesign1.svg');
+        background-image: url('./assets/images/redesign1s.svg');
       }
       @include bp-min(xxl) {
-        background-image: url('./assets/images/redesign1s.svg');
+        background-image: url('./assets/images/redesign1.svg');
       }
     }
     &:nth-child(2) {
       @include bp-min(xl) {
-        background-image: url('./assets/images/redesign2.svg');
+        background-image: url('./assets/images/redesign2s.svg');
       }
       @include bp-min(xxl) {
-        background-image: url('./assets/images/redesign2s.svg');
+        background-image: url('./assets/images/redesign2.svg');
       }
     }
     &:nth-child(3) {
       @include bp-min(xl) {
-        background-image: url('./assets/images/redesign3.svg');
+        background-image: url('./assets/images/redesign3s.svg');
       }
       @include bp-min(xxl) {
-        background-image: url('./assets/images/redesign3s.svg');
+        background-image: url('./assets/images/redesign3.svg');
       }
     }
     &:nth-child(4) {
       @include bp-min(xl) {
-        background-image: url('./assets/images/redesign4.svg');
-      }
-      @include bp-min(xxl) {
         background-image: url('./assets/images/redesign4s.svg');
       }
+      @include bp-min(xxl) {
+        background-image: url('./assets/images/redesign4.svg');
+      }
+
     }
     &:nth-child(1){
       background-position: right bottom;
@@ -111,7 +112,7 @@
   }
 
   @include bp-min(xl) {
-    background-size: 470px;
+    //background-size: 470px;
   }
 }
 
