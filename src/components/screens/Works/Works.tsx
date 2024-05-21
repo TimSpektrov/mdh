@@ -33,7 +33,6 @@ export const Works: FC<WorksProps> = (props) => {
     works = [...props.works]
   }
 
-
   useEffect(() => {
     scroll(
       (info) => {

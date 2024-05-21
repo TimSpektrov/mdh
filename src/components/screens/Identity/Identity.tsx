@@ -7,7 +7,7 @@ import { Tariff } from './Tariff';
 import { Callback } from '@/components/oldComponents/Callback';
 import style from './Identity.module.scss'
 import { IRate } from '@/types/type';
-import { NewWorksList } from '@/components/ui/NewWorksList';
+import { WorksList } from '@/components/oldComponents/WorksList';
 import { Feedback } from '@/components/oldComponents/Feedback';
 
 export const Identity: FC<any> = ({content}) => {
@@ -26,11 +26,12 @@ export const Identity: FC<any> = ({content}) => {
       />
       <Tariff title={content.tariff.title} rates={content.tariff.rates.sort((a: IRate, b: IRate) => a.uniqueId - b.uniqueId)} description={content.tariff.description} />
       <Callback background='light' className={style.callback} />
-      <NewWorksList
-        works={content.works}
-        specificClass={'identity-page'}
-        writeBtn
-      />
+      {/*<WorksList*/}
+      {/*  works={content.works}*/}
+      {/*  specificClass={'identity-page'}*/}
+      {/*  writeBtn*/}
+      {/*/>*/}
+      <WorksList dark works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
       <Feedback />
     </>
   );
