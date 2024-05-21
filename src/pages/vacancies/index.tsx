@@ -11,12 +11,11 @@ const VacanciesPage: NextPage<VacanciesProps> = () => {
     content: state.content,
     fetchData: state.fetchData,
   }))
-
   useEffect(() => {
     fetchData(VACANCIES_URL, 'vacancy')
-  }, []);
-
+  }, [fetchData]);
   if(!content?.vacancy) return  null
+
   return <Vacancies content={content.vacancy} />;
 }
 

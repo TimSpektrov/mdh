@@ -24,6 +24,7 @@ export const addNbsp = (value: string) => {
 }
 
 export const addNbspParse = (value: string) => {
+  console.log(value);
   return parse(addNbsp(value))
 }
 
@@ -38,4 +39,31 @@ export const toHtmlList = (str: string) => {
   return arr.length > 1 ?
     ('<ul>' + (arr.map((str) => '<li>' + str + '</li>').join('')) + '</ul>') :
     ('<p>' + arr[0] + '</p>')
+}
+
+export const setRotatePosition = (index: number, length: number) => {
+  const value = ((index + 1) / (length + 1))
+
+  if(value === .25) return {
+    left: `100%`,
+    translate: `0 -50%`
+  }
+  if(value === .5) return {
+    top: `100%`,
+    translate: `-50% 0`
+  }
+
+  if(value === .75) return {
+    right: `100%`,
+    translate: `0 -50%`
+  }
+
+
+
+  // return {
+  //   index,
+  //   // left,
+  //   // top,
+  //    value,
+  // }
 }

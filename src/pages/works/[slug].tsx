@@ -11,6 +11,13 @@ import { usePageDateStore } from '@/store/usePageDataStore';
 import { useEffect } from 'react';
 import { CONTACTS_URL } from '@/helpers/apiRequests';
 
+const navigation = data?.works?.map((item) => ({
+  id: item.id,
+  name: item.title,
+  slug: item.slug,
+  published: item.published
+}));
+
 interface IParams extends ParsedUrlQuery {
   slug?: string;
 }
@@ -22,10 +29,10 @@ const WorkPage: NextPage<IWork> = (props: IWork) => {
   }))
   useEffect(() => {
     fetchData(CONTACTS_URL, 'not')
-  }, []);
+  }, [fetchData]);
   return (
     <>
-      <HorisontalScrollNavigation key={'scrollNavTop'} position="top" />
+      <HorisontalScrollNavigation key={'scrollNavTop'} position="top" navigation={navigation} />
       <AnimatePresence mode="wait">
         <motion.div
           initial={{ opacity: 0 }}

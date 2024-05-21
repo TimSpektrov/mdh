@@ -3,20 +3,19 @@ import { HorisontalScrollNavigationProps } from '.';
 import cn from 'classnames';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { useRouter, usePathname } from 'next/navigation';
-
-import data from '@json/data.json';
 import style from './HorisontalScrollNavigation.module.scss';
 
-const navigation = data?.works?.map((item) => ({
-  id: item.id,
-  name: item.title,
-  slug: item.slug,
-  published: item.published
-}));
+// import data from '@json/data.json';
+// const navigation = data?.works?.map((item) => ({
+//   id: item.id,
+//   name: item.title,
+//   slug: item.slug,
+//   published: item.published
+// }));
 
 export const HorisontalScrollNavigation: FC<
   HorisontalScrollNavigationProps
-> = ({ className, variant, position }) => {
+> = ({ className, variant, position, navigation }) => {
   const route = useRouter();
   const pathName = usePathname();
 

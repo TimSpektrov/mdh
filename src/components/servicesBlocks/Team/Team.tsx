@@ -18,7 +18,6 @@ interface ITeam {
   title?: string;
   list: string[];
 }
-
 function useOpacity(
   value: MotionValue<number>,
   // distance: number,
@@ -152,28 +151,49 @@ export const Team: FC<ITeam> = ({ title, list }) => {
                 />
               );
             })}
-
         </div>
         <motion.div className={styles['card-last']} style={{opacity}}>
-          <motion.div className={styles['label-last']}>Команда вашего продукта</motion.div>
-            <motion.svg
-              viewBox="0 0 444 444"
+          <motion.div
+            className={styles['label-last']}
+            style={{
+              opacity,
+              transition: `opacity .5s ${.25}s`,
+            }}
+          >Команда вашего продукта</motion.div>
+          <motion.svg
+            viewBox="0 0 444 444"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={styles['orange-last']}
+          >
+            <circle
+              cx="222"
+              cy="222"
+              r="219"
+              stroke="#E2591C"
+              strokeWidth="6"
+              strokeMiterlimit="3.8637"
+              strokeLinecap="round"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className={styles['orange-last']}
-            >
-              <circle
-                cx="222"
-                cy="222"
-                r="219"
-                stroke="#E2591C"
-                strokeWidth="6"
-                strokeMiterlimit="3.8637"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </motion.svg>
+            />
+          </motion.svg>
+          <div className={styles['finish-labels-container']}>
+            {list.length > 0 &&
+              list.map((label, index) => (
+                <motion.div
+                  className={styles['finish-labels']}
+                  key={index}
+                  style={{
+                    opacity,
+                    transition: `opacity .5s ${.25 * index + 1}s`,
+
+                }}
+                >{label}</motion.div>
+              ))
+            }
+          </div>
         </motion.div>
+
       </motion.div>
     </motion.section>
   );
