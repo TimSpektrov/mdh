@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { InfoBlockProps } from ".";
 import cn from 'classnames';
 import { motion } from 'framer-motion';
 import { useRouter } from "next/router";
 import style from './InfoBlock.module.scss';
 import { addNbspParse } from '@/helpers';
+import { IInfoCase } from '@/components/screens/Case';
 
 const fadeInUpVariant = {
   hidden: {
@@ -21,27 +21,27 @@ const fadeInUpVariant = {
   }
 }
 
-export const InfoBlock: FC<InfoBlockProps> = ({ variant, title, content, list, data }) => {
+export const InfoBlock: FC<IInfoCase> = ({ variant, title, content, list, data }) => {
 
   const router = useRouter()
 
   const classes = cn(
     style.wrap,
     variant ? style[variant] : style.light,
-    (!content && !list && !data) && style.wide,
+    (!content?.length && !list?.length && !data?.length) && style.wide,
     data && style.brighter
   )
 
   const titleClasses = cn(
     style.title,
-    (!content && !list && !data) && style.titleLarge
+    (!content?.length && !list?.length && !data?.length) && style.titleLarge
   )
-  
+
   return (
     <section className={classes}>
       {title &&
         <motion.div
-          initial={{ opacity: 0, y: (!content && !list && !data) ? 60 : 40 }}
+          initial={{ opacity: 0, y: (!content?.length && !list?.length && !data?.length) ? 60 : 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ amount: 'some', once: true, margin: '50px' }}
           transition={{ duration: 0.9, ease: 'backInOut' }}
@@ -49,9 +49,9 @@ export const InfoBlock: FC<InfoBlockProps> = ({ variant, title, content, list, d
           key={router.query + title}
         >{addNbspParse(title)}</motion.div>
       }
-      {(content || list || data) &&
+      {((content && content?.length > 0) || (list && list.length > 0) || (data && data.length > 0)) &&
         <div className={style.body}>
-          {content &&
+          {content && content.length > 0 &&
             <div className={style.content}>
               {content.map((item, index) => (
                 <div className={style.contentItem} key={index}>
@@ -65,23 +65,23 @@ export const InfoBlock: FC<InfoBlockProps> = ({ variant, title, content, list, d
                       key={router.query + item.title}
                     >{addNbspParse(item.title)}</motion.div>
                   }
-                  {item.desc &&
+                  {item.description &&
                     <motion.div
                       initial="hidden"
                       whileInView="visible"
                       variants={fadeInUpVariant}
                       viewport={{ amount: 'some', once: true, margin: '50px' }}
                       className={style.contentItemDesc}
-                      key={router.query + item.desc}
-                    >{addNbspParse(item.desc)}</motion.div>
+                      key={router.query + item.description}
+                    >{addNbspParse(item.description)}</motion.div>
                   }
                 </div>
               ))}
             </div>
           }
-          {list &&
+          {list && list.length > 0 &&
             <div className={style.list}>
-              {list.map((item, index) => (
+              {list?.length > 0 && list.map((item, index) => (
                 <div className={style.listItem} key={index}>
                   {item.title &&
                     <motion.div
@@ -93,21 +93,21 @@ export const InfoBlock: FC<InfoBlockProps> = ({ variant, title, content, list, d
                       key={router.query + item.title}
                     >{addNbspParse(item.title)}</motion.div>
                   }
-                  {item.desc &&
+                  {item.description &&
                     <motion.div
                       initial="hidden"
                       whileInView="visible"
                       variants={fadeInUpVariant}
                       viewport={{ amount: 'some', once: true, margin: '50px' }}
                       className={style.listItemDesc}
-                      key={router.query + item.desc}
-                    >{addNbspParse(item.desc)}</motion.div>
+                      key={router.query + item.description}
+                    >{addNbspParse(item.description)}</motion.div>
                   }
                 </div>
               ))}
             </div>
           }
-          {data &&
+          {data && data.length > 0 &&
             <motion.ul
               initial="hidden"
               whileInView="visible"
@@ -118,8 +118,8 @@ export const InfoBlock: FC<InfoBlockProps> = ({ variant, title, content, list, d
             >
               {data.map((item,index) => (
                 <li className={style.dataItem} key={index}>
-                  <span className={style.dataItemTitle}>{item.title}</span>
-                  <span className={style.dataItemDesc}>{item.desc}</span>
+                  {item.title && <span className={style.dataItemTitle}>{addNbspParse(item.title)}</span>}
+                  {item.description && <span className={style.dataItemDesc}>{addNbspParse(item.description)}</span>}
                 </li>
               ))}
             </motion.ul>

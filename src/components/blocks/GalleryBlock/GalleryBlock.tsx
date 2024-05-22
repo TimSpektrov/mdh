@@ -2,7 +2,7 @@ import { FC, useRef, useState, useEffect } from 'react'
 import { GalleryBlockProps } from '.';
 import Image from "next/image";
 import cn from 'classnames';
-import { AnimatePresence, motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import 'react-indiana-drag-scroll/dist/style.css';
 
@@ -70,8 +70,8 @@ const GalleryBlock: FC<GalleryBlockProps> = ({ variant, direction, images }) => 
       <section className={classes} ref={refVertical}>
         {images && images.map((item, index) => {
           return (
-            <motion.div className={style.image} style={getIndex(index)} key={item.image + index}>
-              <Image src={item.image} alt={item.alt ?? ''} width={441} height={908} quality={100} />
+            <motion.div className={style.image} style={getIndex(index)} key={`vertical-${index}`}>
+              <Image src={item} alt={''} width={441} height={908} quality={100} />
             </motion.div>
           )
         })}
@@ -83,8 +83,8 @@ const GalleryBlock: FC<GalleryBlockProps> = ({ variant, direction, images }) => 
       <ScrollContainer className={classes} component={'section'} mouseScroll={{ overscroll: true }}>
         <div className={style.track} style={{ gridTemplateColumns: `repeat(${images.length}, auto)` }}>
           {images && images.map((item, index) => (
-            <div className={style.image} key={item.image + index}>
-              <Image src={item.image} alt={item.alt ?? ''} width={441} height={908} quality={100} />
+            <div className={style.image} key={item + index}>
+              <Image src={item} alt={''} width={441} height={908} quality={100} />
             </div>
           ))}
         </div>

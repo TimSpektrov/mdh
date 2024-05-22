@@ -5,5 +5,5 @@ interface ImageEntity {
 
 export interface SliderBlockProps {
   variant: 'dark' | 'light'
-  images: ImageEntity[]
+  images: string[]
 }

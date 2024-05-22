@@ -13,9 +13,7 @@ import style from './HorisontalScrollNavigation.module.scss';
 //   published: item.published
 // }));
 
-export const HorisontalScrollNavigation: FC<
-  HorisontalScrollNavigationProps
-> = ({ className, variant, position, navigation }) => {
+export const HorisontalScrollNavigation: FC<HorisontalScrollNavigationProps> = ({ className, variant, position, navigation }) => {
   const route = useRouter();
   const pathName = usePathname();
 
@@ -44,7 +42,7 @@ export const HorisontalScrollNavigation: FC<
                 currentPath === pathName && style.active,
                 item.published && style.link
               )}
-              key={item.id}
+              key={item.name}
             >
               {item.name}
             </div>

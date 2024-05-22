@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { TextBlockProps } from ".";
 import cn from 'classnames'
 import { motion } from 'framer-motion';
 import { useRouter } from "next/router";
 
 import style from './TextBlock.module.scss'
 import { addNbspParse } from '@/helpers';
+import { ITextBlock } from '@/components/screens/Case';
 
 const fadeInUpVariant = {
   hidden: {
@@ -22,7 +22,7 @@ const fadeInUpVariant = {
   }
 }
 
-export const TextBlock: FC<TextBlockProps> = ({ variant, title, content, feedback }) => {
+export const TextBlock: FC<ITextBlock> = ({ variant, title, content, feedback }) => {
 
   const router = useRouter()
 
@@ -44,7 +44,7 @@ export const TextBlock: FC<TextBlockProps> = ({ variant, title, content, feedbac
         >{addNbspParse(title)}</motion.div>
       }
 
-      {(content || feedback) &&
+      {(content || feedback.name) &&
         <div className={style.body}>
           {content &&
             <div className={style.content}>
@@ -60,25 +60,25 @@ export const TextBlock: FC<TextBlockProps> = ({ variant, title, content, feedbac
                       key={router.query + item.title}
                     >{addNbspParse(item.title)}</motion.div>
                   }
-                  {item.desc &&
+                  {item.description &&
                     <motion.div
                       initial="hidden"
                       whileInView="visible"
                       variants={fadeInUpVariant}
                       viewport={{ amount: 'some', once: true, margin: '50px' }}
                       className={style.contentItemDesc}
-                      key={router.query + item.desc}
-                    >{addNbspParse(item.desc)}</motion.div>
+                      key={router.query + item.description}
+                    >{addNbspParse(item.description)}</motion.div>
                   }
                 </div>
               ))}
             </div>
           }
 
-          {feedback &&
+          {/*{feedback.name &&*/}
             <div className={style.feedback}>
-              {feedback.map((item, index) => (
-                <div className={style.feedbackItem} key={index}>
+              {/*{feedback.map((item, index) => (*/}
+                <div className={style.feedbackItem} key={0}>
                   <div className={style.user}>
                     <motion.div
                       initial="hidden"
@@ -86,17 +86,17 @@ export const TextBlock: FC<TextBlockProps> = ({ variant, title, content, feedbac
                       variants={fadeInUpVariant}
                       viewport={{ amount: 'some', once: true, margin: '50px' }}
                       className={style.userName}
-                      key={router.query + item.name}
-                    >{addNbspParse(item.name)}</motion.div>
-                    {item.position &&
+                      key={router.query + feedback.name}
+                    >{addNbspParse(feedback.name)}</motion.div>
+                    {feedback.position &&
                       <motion.div
                         initial="hidden"
                         whileInView="visible"
                         variants={fadeInUpVariant}
                         viewport={{ amount: 'some', once: true, margin: '50px' }}
                         className={style.userPosition}
-                        key={router.query + item.position}
-                      >{addNbspParse(item.position)}</motion.div>}
+                        key={router.query + feedback.position}
+                      >{addNbspParse(feedback.position)}</motion.div>}
                   </div>
                   <motion.div
                     initial="hidden"
@@ -104,12 +104,12 @@ export const TextBlock: FC<TextBlockProps> = ({ variant, title, content, feedbac
                     variants={fadeInUpVariant}
                     viewport={{ amount: 'some', once: true, margin: '50px' }}
                     className={style.text}
-                    key={router.query + item.text}
-                  >{addNbspParse(item.text)}</motion.div>
+                    key={router.query + feedback.text}
+                  >{addNbspParse(feedback.text)}</motion.div>
                 </div>
-              ))}
+              {/*)}*/}
             </div>
-          }
+          {/*}*/}
         </div>
       }
     </div>

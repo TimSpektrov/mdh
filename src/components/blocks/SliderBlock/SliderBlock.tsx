@@ -51,8 +51,8 @@ export const SliderBlock: FC<SliderBlockProps> = ({ variant, images }) => {
             return (
               <div className={style.sliderItem} key={index}>
                 <Image
-                  src={`${image.image}`}
-                  alt={`${image.alt}`}
+                  src={image}
+                  alt={''}
                   width={1227}
                   height={600}
                   quality={100}

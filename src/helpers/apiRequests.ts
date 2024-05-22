@@ -5,7 +5,7 @@ export const CONTACTS_URL = '/api/contacts/'
 export const SERVICES_URL = '/api/services/'
 export const TAGS_URL = '/api/tags/'
 export const WORKS_URL = '/api/works/'
-
+export const WORK_ITEM_URL = '/api/fit'
 export const AUDIT_URL = '/api/audit'
 export const IDENTITY_URL = '/api/identity'
 export const REDESIGN_URL = '/api/redesign'

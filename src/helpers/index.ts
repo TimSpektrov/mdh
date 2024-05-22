@@ -24,7 +24,6 @@ export const addNbsp = (value: string) => {
 }
 
 export const addNbspParse = (value: string) => {
-  console.log(value);
   return parse(addNbsp(value))
 }
 

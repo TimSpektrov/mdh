@@ -6,5 +6,5 @@ interface ImageEntity {
 export interface GalleryBlockProps {
   direction: 'vertical' | 'horizontal'
   variant: 'dark' | 'light'
-  images: ImageEntity[]
+  images: string[]
 }

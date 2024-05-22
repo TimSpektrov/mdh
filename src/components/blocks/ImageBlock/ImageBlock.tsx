@@ -1,5 +1,4 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { ImageBlockProps } from '.';
 import Image from 'next/image';
 import cn from 'classnames';
 import {
@@ -11,11 +10,13 @@ import {
 } from 'framer-motion';
 
 import style from './ImageBlock.module.scss';
+import { IImageCase } from '@/components/screens/Case';
 
-const ImageBlock: FC<ImageBlockProps> = ({
+const ImageBlock: FC<IImageCase> = ({
   variant,
   reverse,
-  images,
+  image_url,
+  image_alt,
   full
 }) => {
   const [yPos, setYPos] = useState<MotionValue<string>>();
@@ -49,28 +50,24 @@ const ImageBlock: FC<ImageBlockProps> = ({
     <>
       {full ? (
         <div className={classes}>
-          {images[0].image && (
             <Image
-              src={images[0].image}
-              alt={images[0].alt ?? ''}
+              src={image_url}
+              alt={image_alt}
               width={1920 * ratio}
               height={1080 * ratio}
               quality={100}
             />
-          )}
         </div>
       ) : (
         <section className={classes} ref={ref}>
           <motion.div className={style.image} style={{ y: yPos }}>
-            {images[0].image && (
               <Image
-                src={`${images[0].image}`}
-                alt={images[0].alt ?? ''}
+                src={image_url}
+                alt={image_alt}
                 width={1258 * ratio}
                 height={699 * ratio}
                 quality={100}
               />
-            )}
           </motion.div>
         </section>
       )}
