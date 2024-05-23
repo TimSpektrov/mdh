@@ -48,8 +48,8 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
     restSpeed: 20
   };
   const scrollY = useSpring(scrollYProgress, spring);
-  const yPosition = useTransform(scrollY, [1, 0], ['20%', '-20%']);
-  const yPositionText = useTransform(scrollY, [1, 0], ['20%', '-20%']);
+  const yPosition = useTransform(scrollYProgress, [1, 0], ['20%', '-20%']);
+  const yPositionText = useTransform(scrollYProgress, [1, 0], ['20%', '-20%']);
 
   useEffect(() => {
     if(window.innerWidth < width ) {

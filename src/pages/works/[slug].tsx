@@ -1,9 +1,5 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { ParsedUrlQuery } from 'querystring';
+import { NextPage } from 'next';
 import { Case, IBeforeAfterCase, IGalleryCase, IImageCase, IInfoCase, ISliderCase } from '@/components/screens/Case';
-import { IWork } from '@/types/IWork';
-
-import data from '@json/data.json';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HorisontalScrollNavigation } from '@/components/ui/HorisontalScrollNavigation';
 import { Feedback } from '@/components/oldComponents/Feedback';
@@ -12,20 +8,23 @@ import { useEffect } from 'react';
 import { WORK_ITEM_URL } from '@/helpers/apiRequests';
 import { useRouter } from 'next/router';
 
-interface IParams extends ParsedUrlQuery {
-  slug?: string;
-}
+// interface IParams extends ParsedUrlQuery {
+//   slug?: string;
+// }
 
-const WorkPage: NextPage<IWork> = (props: IWork) => {
+const WorkPage: NextPage = () => {
   const {query} = useRouter()
   const slug = query.slug
+
   const {content, fetchData } = usePageDateStore(state => ({
     content: state.content,
     fetchData: state.fetchData,
   }))
   // fetchData(VACANCIES_URL + '/' + slug, slug )
   useEffect(() => {
+    console.log(WORK_ITEM_URL + '/' + slug);
     if(typeof slug === 'string') {
+      console.log(WORK_ITEM_URL + '/' + slug);
       fetchData(WORK_ITEM_URL + '/' + slug, slug )
     }
   }, [fetchData, slug]);
@@ -34,7 +33,6 @@ const WorkPage: NextPage<IWork> = (props: IWork) => {
   if(typeof slug !== 'string' || !content || !content[slug]) return  null
 
   const textBlocks = content[slug].text_blocks.map((item: IInfoCase) => {
-    console.log(item);
     return item?.feedback?.name ?
      {
       blockType: 'TextBlock',
@@ -93,7 +91,7 @@ const WorkPage: NextPage<IWork> = (props: IWork) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          key={props.slug}
+          // key={props.slug}
         >
           <Case hero={content[slug].hero} blocks={pageContent}/>
         </motion.div>
@@ -106,26 +104,26 @@ const WorkPage: NextPage<IWork> = (props: IWork) => {
 
 export default WorkPage;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: data.works.map((work) => ({ params: { slug: work.slug } })),
-    fallback: false
-  };
-};
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   return {
+//     paths: data.works.map((work) => ({ params: { slug: work.slug } })),
+//     fallback: false
+//   };
+// };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { slug } = context.params as IParams;
-
-  const props = data.works.find((work) => slug === work.slug);
-
-  if (!props?.published) {
-    return {
-      notFound: true
-    };
-  }
-
-  return {
-    props,
-    revalidate: 60
-  };
-};
+// export const getStaticProps: GetStaticProps = async (context) => {
+//   const { slug } = context.params as IParams;
+//
+//   const props = data.works.find((work) => slug === work.slug);
+//
+//   if (!props?.published) {
+//     return {
+//       notFound: true
+//     };
+//   }
+//
+//   return {
+//     props,
+//     revalidate: 60
+//   };
+// };
