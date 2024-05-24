@@ -21,6 +21,7 @@ import img18 from './assets/images/18.jpg'
 import { NewTypography } from '@/components/ui/NewTypography';
 import { motion, MotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
 import { OurTargetAnimImage } from '@/components/blocks/sections/OurTarget/OurTargetAmimImage/OurTargetAnimImage';
+import { springOurTarget } from '@/helpers/animation';
 
 interface IOurTarget {
   title: string;
@@ -40,14 +41,14 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
     target: ref,
     offset: ['start end', 'end start']
   });
-  const spring = {
-    mass: 0.4,
-    stiffness: 200,
-    damping: 40,
-    restDelta: 0.001,
-    restSpeed: 20
-  };
-  const scrollY = useSpring(scrollYProgress, spring);
+  // const spring = {
+  //   mass: 0.4,
+  //   stiffness: 200,
+  //   damping: 40,
+  //   restDelta: 0.001,
+  //   restSpeed: 20
+  // };
+  const scrollY = useSpring(scrollYProgress, springOurTarget);
   const yPosition = useTransform(scrollYProgress, [1, 0], ['20%', '-20%']);
   const yPositionText = useTransform(scrollYProgress, [1, 0], ['20%', '-20%']);
 

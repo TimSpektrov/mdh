@@ -8,10 +8,6 @@ import { useEffect } from 'react';
 import { WORK_ITEM_URL } from '@/helpers/apiRequests';
 import { useRouter } from 'next/router';
 
-// interface IParams extends ParsedUrlQuery {
-//   slug?: string;
-// }
-
 const WorkPage: NextPage = () => {
   const {query} = useRouter()
   const slug = query.slug
@@ -20,7 +16,6 @@ const WorkPage: NextPage = () => {
     content: state.content,
     fetchData: state.fetchData,
   }))
-  // fetchData(VACANCIES_URL + '/' + slug, slug )
   useEffect(() => {
     console.log(WORK_ITEM_URL + '/' + slug);
     if(typeof slug === 'string') {
@@ -103,27 +98,3 @@ const WorkPage: NextPage = () => {
 };
 
 export default WorkPage;
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   return {
-//     paths: data.works.map((work) => ({ params: { slug: work.slug } })),
-//     fallback: false
-//   };
-// };
-
-// export const getStaticProps: GetStaticProps = async (context) => {
-//   const { slug } = context.params as IParams;
-//
-//   const props = data.works.find((work) => slug === work.slug);
-//
-//   if (!props?.published) {
-//     return {
-//       notFound: true
-//     };
-//   }
-//
-//   return {
-//     props,
-//     revalidate: 60
-//   };
-// };

@@ -12,6 +12,7 @@ import { isMobile } from 'react-device-detect';
 import { Grandis } from '@/styles/fonts';
 import { useContactsDateStore } from '@/store/useContextDataStore';
 import { usePageDateStore } from '@/store/usePageDataStore';
+import { springLayout } from '@/helpers/animation';
 
 const DynamicPopup = dynamic(() => import('@/components/ui/Popup/Popup').then(component => component.Popup))
 const DynamicModal = dynamic(() => import('@/components/oldComponents/Modal').then(component => component.Modal))
@@ -22,7 +23,6 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
   // const [loader, setLoader] = useState(true)
   const [mobile, setMobile] = useState(false)
   const { route } = useRouter()
-  const spring = { mass: 0.3, stiffness: 190, damping: 28, restDelta: .001, restSpeed: 20 }
   useEffect(() => { setMobile(isMobile) }, [])
 
   const { fetchContacts, loadingData } = useContactsDateStore(state => ({
@@ -50,7 +50,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
             {route !== '/404' && <Footer />}
           </>
         ) : (
-          <ScrollerMotion spring={spring}>
+          <ScrollerMotion spring={springLayout}>
             <main className="main">{children}</main>
             {route !== '/404' && <Footer />}
           </ScrollerMotion>

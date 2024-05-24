@@ -1,9 +1,10 @@
 @import '@/styles/helpers/vars';
 @import '@/styles/helpers/mixins';
 .section {
-  // min-height: 100vh;
+   min-height: 100vh;
   background-color: $white;
-  height: 200vh;
+  height: 300vh;
+  overflow: hidden;
   @include container();
   padding-top: 120px;
   padding-bottom: 120px;
@@ -13,11 +14,21 @@
   }
 
   h2 {
-    margin-bottom: 60px;
+    //margin-bottom: 60px;
     text-align: center;
     span {
       color: $orange;
     }
+    @include bp-max(md) {
+      margin-bottom: 36px;
+    }
+    @include bp-min(md) {
+      margin-bottom: 48px;
+    }
+    @include bp-min(xl) {
+      margin-bottom: 60px;
+    }
+
   }
 }
 .inner {
@@ -32,35 +43,76 @@
   position: absolute;
   left: 50%;
   translate: -50%;
-  width: 30%;
+  width: 100%;
+
+  @include bp-max(md) {
+    width: 328px;
+  }
+  @include bp-min(md) {
+    width: 28.5%;
+  }
+  //@include bp-min(lg) {
+  //  width: 28.5%;
+  //}
+  @include bp-min(xxxl) {
+    width: 30%;
+  }
 }
 
 .label,
 .label-new,
 .label-last,
 .finish-labels {
-  position: relative;
   display: inline-block;
-  padding: 16px 24px;
-  margin-bottom: 60px;
+  //padding: 16px 24px;
+  //margin-bottom: 60px;
   border-radius: 3em;
   background-color: $peach;
   font-family: $secondaryFont;
   color: $black;
-  font-size: 24px;
+  //font-size: 24px;
   white-space: nowrap;
   border: 1px solid $peach;
-  &:before {
-    content: '';
+
+  @include bp-max(md) {
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 50%;
-    width: 16px;
-    height: 16px;
-    translate: -50% 50%;
-    rotate: 45deg;
-    background-color: $peach;
+    translate: -50% -50%;
+    font-size: 18px;
+    padding: 16px;
   }
+  @include bp-min(md) {
+    position: relative;
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 36px;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      translate: -50% 50%;
+      rotate: 45deg;
+      background-color: $peach;
+    }
+  }
+  @include bp-min(xl) {
+    font-size: 18px;
+    padding: 16px;
+    margin-bottom: 60px;
+  }
+  @include bp-min(xxl) {
+    font-size: 20px;
+    padding: 16px 24px;
+
+  }
+  @include bp-min(xxxl) {
+    font-size: 24px;
+  }
+
   box-sizing: border-box;
 }
 
@@ -136,12 +188,17 @@
     display: none;
   }
   &-container {
-    position: absolute;
-    bottom: 6px;
-    left: 50%;
-    translate: -50% 0;
-    width: 100%;
-    height: 0;
-    padding-top: 100%;
+    @include bp-max(md) {
+      display: none;
+    }
+    @include bp-min(md) {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      translate: -50% 0;
+      width: 100%;
+      height: 0;
+      padding-top: 100%;
+    }
   }
 }

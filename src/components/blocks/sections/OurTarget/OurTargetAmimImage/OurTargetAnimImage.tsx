@@ -37,7 +37,11 @@ interface IOurTargetAnimImage {
 export const OurTargetAnimImage: FC<IOurTargetAnimImage> = ({width, height, imageSrc, custom}) => {
 
   return (
-    <motion.div className={styles.item} variants={imgAnimation} custom={custom}>
+    <motion.div
+      className={styles.item}
+      variants={imgAnimation}
+      custom={custom}
+    >
       <Image
         width={width}
         height={height}

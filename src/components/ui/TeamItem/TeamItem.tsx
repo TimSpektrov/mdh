@@ -1,45 +1,46 @@
 import { FC } from 'react';
 import { motion, MotionValue, useTransform } from 'framer-motion';
 import styles from '@/components/servicesBlocks/Team/team.module.scss';
+import { isMobile } from 'react-device-detect';
 
 interface ITeamItem {
   index: number;
   length: number;
   title: string;
-  scrollProgress?: any;
+  scrollProgress: MotionValue;
   dataOffset?: any;
 }
 
-function useParallax(
+function useTransformX(
   value: MotionValue<number>,
   distance: number,
   index: number,
   length: number
 ) {
   const distVal: number = ((length - 1) / 2 - index) * -distance;
-
-  return useTransform(value, [0.5, 1], [`${distVal}%`, '0%']);
+  return useTransform(value, [.5, .9], [`${distVal}%`, '0%']);
+}
+function useTransformY(
+  value: MotionValue<number>,
+  distance: number,
+  index: number,
+) {
+  const distVal: number = (index) * distance;
+  return useTransform(value, [.5, .9], [`${distVal}%`, '0%']);
 }
 
-// const useRotate = (value: MotionValue<number>, index: number, length: number) => {
-//
-// // формула
-//   return useTransform(value, [0.5, 1], [0, 1]);
-// }
-
 export const TeamItem: FC<ITeamItem> = ({
-                                      index,
-                                      length,
-                                      title,
-                                      scrollProgress
-                                    }) => {
-  const x = useParallax(scrollProgress, 63, index, length);
-
-  // const rotate = useRotate(scrollProgress, index, length);
-  // const opacity = useOpacity(scrollProgress, 63, index, length);
+  index,
+  length,
+  title,
+  scrollProgress,
+}) => {
+  const x = useTransformX(scrollProgress, 63, index, length);
+  const y = useTransformY(scrollProgress, 63, index);
+  const opacity = useTransform(scrollProgress, [.899, .9], [1, 0])
 
   return (
-    <motion.div key={index} className={styles.card} style={{ x }}>
+    <motion.div key={index} className={styles.card} style={{ x: isMobile ? '0%' : x, opacity, y: isMobile ? y : '0%' }}>
       <motion.div className={styles.label}>{title}</motion.div>
       <div className={styles.img}>
         <motion.svg

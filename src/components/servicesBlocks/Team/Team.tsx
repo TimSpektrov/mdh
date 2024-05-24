@@ -1,139 +1,75 @@
 import {
   CSSProperties,
-  FC,
-  useRef,
+  FC, useEffect,
+  useRef, useState
 } from 'react';
 import styles from './team.module.scss';
 import { NewTypography } from '@/components/ui/NewTypography';
 import cn from 'classnames';
 import {
-  motion, MotionValue,
+  motion,
   useScroll,
-  useSpring,
-  useTransform
+  useTransform,
+  Variants
 } from 'framer-motion';
 import { TeamItem } from '@/components/ui/TeamItem/TeamItem';
+import { isMobile } from 'react-device-detect';
 
 interface ITeam {
   title?: string;
   list: string[];
 }
-function useOpacity(
-  value: MotionValue<number>,
-  // distance: number,
-  // index: number,
-  // length: number
-) {
-  // const distVal: number = ((length - 1) / 2 - index) * -distance;
 
-  return useTransform(value, [.99, 1], [0, 1]);
+const itemVariants: Variants ={
+  show: (custom: number) => ({
+    opacity: 1,
+    transition: {
+      delay: (.7 + custom * .35),
+      duration: .7,
+    }
+  }),
+  hide: {
+    opacity: 0,
+    // transition: {
+    //   duration: 0.7,
+    //   delayChildren: 0.3,
+    //   staggerChildren: 0.1
+    // }
+  },
 }
 
 export const Team: FC<ITeam> = ({ title, list }) => {
   const length = list.length;
   const ref = useRef<HTMLElement>(null);
-
-  // const itemAnimation = {
-  //   hidden: {
-  //     x: 0
-  //   },
-  //   visible: (custom: number) => ({
-  //     x: `${((length - 1) / 2 - custom) * 100}%`,
-  //     transition: {
-  //       ease: 'linear',
-  //       duration: 2.5,
-  //       delay: 4.2
-  //     }
-  //   })
-  // };
-  // const opacityAnimation = {
-  //   hidden: {
-  //     opacity: 1
-  //   },
-  //   visible: {
-  //     opacity: 0,
-  //     transition: {
-  //       delay: 6
-  //     }
-  //   }
-  // };
-  // const oldTitleAnimation = {
-  //   hidden: {},
-  //   visible: {
-  //     color: 'rgba(0,0,0,0)',
-  //     transition: {
-  //       duration: 0.2,
-  //       delay: 6.3
-  //     }
-  //   }
-  // };
-  // const newTitleAnimation = {
-  //   hidden: {
-  //     opacity: 0,
-  //     width: '0',
-  //     color: 'rgba(0,0,0,0)'
-  //   },
-  //   visible: {
-  //     opacity: [0, 1, 1],
-  //     width: ['0', 'fit-content', 'fit-content'],
-  //     color: ['rgba(0,0,0,0)', 'rgba(0,0,0,0)', 'rgba(0,0,0,1)'],
-  //     transition: {
-  //       duration: 0.5,
-  //       delay: 6.3,
-  //       times: [0, 0.6, 1]
-  //     }
-  //   }
-  // };
-  // const orangeAnimation = {
-  //   hidden: (custom: number) => ({
-  //     rotate: `${(360 / length) * custom + 90}deg`
-  //   }),
-  //   visible: (custom: number) => ({
-  //     rotate: [
-  //       `${(360 / length) * custom + 90}deg`,
-  //       `${(360 / length) * custom + 450}deg`
-  //     ],
-  //     transition: {
-  //       ease: 'linear',
-  //       duration: 2.5,
-  //       repeat: 2
-  //     }
-  //   })
-  // };
-
   const { scrollYProgress } = useScroll({
     layoutEffect: false,
     target: ref,
     offset: ['start end', 'end end']
   });
 
-  const opacity = useOpacity(scrollYProgress)
-  const spring = {
-    mass: 0.3,
-    stiffness: 190,
-    damping: 28,
-    restDelta: 0.001,
-    restSpeed: 20
-  };
-  const scrollY = useSpring(scrollYProgress, spring);
-  const sectionPosition = useTransform(
-    scrollY,
-    [0, 0.5, 1],
-    ['0%', '0%', '100%']
+  const sectionDesktopPosition = useTransform(
+    scrollYProgress,
+    [0, 0.33, 1],
+    ['0%', '0%', '200%']
   );
-  // const itemPosition = useTransform(scrollY, [0, 0.5, 1], ['0%', '0%', '100%']);
-
+  const lastOpacity = useTransform(scrollYProgress,[0, 0.89, .9], [0, 0, 1])
+  const [isDown, setIsDown] = useState(false);
+  useEffect(() => {
+    const scrollPos = () => {
+      console.log(isMobile);
+      setIsDown(lastOpacity.get() >= 1)
+    };
+    window.addEventListener('scroll', scrollPos);
+    // return window.removeEventListener('scroll', scrollPos)
+  }, []);
   return (
     <motion.section
       ref={ref}
       className={styles.section}
       initial="hidden"
       whileInView="visible"
-      viewport={{
-        once: true
-      }}
     >
-      <motion.div className={styles.inner} style={{ y: sectionPosition }}>
+      <motion.div className={styles.inner} style={{ y: sectionDesktopPosition }} >
         {title && <NewTypography text={title} variant={'h2'} tag={'h2'} />}
         <div
           className={cn(styles.container)}
@@ -151,49 +87,54 @@ export const Team: FC<ITeam> = ({ title, list }) => {
                 />
               );
             })}
-        </div>
-        <motion.div className={styles['card-last']} style={{opacity}}>
           <motion.div
-            className={styles['label-last']}
-            style={{
-              opacity,
-              transition: `opacity .5s ${.25}s`,
-            }}
-          >Команда вашего продукта</motion.div>
-          <motion.svg
-            viewBox="0 0 444 444"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className={styles['orange-last']}
+            className={styles['card-last']}
+            animate={ isDown ? 'show' : 'hide'}
           >
-            <circle
-              cx="222"
-              cy="222"
-              r="219"
-              stroke="#E2591C"
-              strokeWidth="6"
-              strokeMiterlimit="3.8637"
-              strokeLinecap="round"
+            <motion.div
+              className={styles['label-last']}
+              style={{opacity: lastOpacity }}
+            >
+              Команда вашего продукта
+            </motion.div>
+            <motion.svg
+              style={{opacity: lastOpacity }}
+              viewBox="0 0 444 444"
               fill="none"
-            />
-          </motion.svg>
-          <div className={styles['finish-labels-container']}>
-            {list.length > 0 &&
-              list.map((label, index) => (
-                <motion.div
-                  className={styles['finish-labels']}
-                  key={index}
-                  style={{
-                    opacity,
-                    transition: `opacity .5s ${.25 * index + 1}s`,
+              xmlns="http://www.w3.org/2000/svg"
+              className={styles['orange-last']}
+            >
+              <circle
+                cx="222"
+                cy="222"
+                r="219"
+                stroke="#E2591C"
+                strokeWidth="6"
+                strokeMiterlimit="3.8637"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </motion.svg>
+            <motion.div
+              className={styles['finish-labels-container']}
 
-                }}
-                >{label}</motion.div>
-              ))
-            }
-          </div>
-        </motion.div>
-
+            >
+              {list.length > 0 &&
+                list.map((label, index) => (
+                  <motion.div
+                    className={cn(styles['finish-labels'])}
+                    key={index}
+                    variants={itemVariants}
+                    custom={index}
+                    // style={{
+                    //   opacity: lastOpacity,
+                    // }}
+                  >{label}</motion.div>
+                ))
+              }
+            </motion.div>
+          </motion.div>
+        </div>
       </motion.div>
     </motion.section>
   );
