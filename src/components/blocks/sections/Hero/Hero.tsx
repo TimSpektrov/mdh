@@ -50,7 +50,7 @@ export const Hero = ({ title, description, specificClass = 'page'}: IHero) => {
               key={index}
               variants={index === 0 ? animTitle : animTitle2}
               custom={1 + index}
-            >{title}</motion.div>
+            >{addNbspParse(title)}</motion.div>
           </div>
           ))}
       </h1>

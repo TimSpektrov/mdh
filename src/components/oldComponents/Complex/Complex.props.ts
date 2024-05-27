@@ -8,7 +8,7 @@ interface Data {
 export interface ComplexProps {
   columnClass?: string
   data: Data[]
-  title: React.ReactNode
+  title: string
   wrapClass?: string
   innerClass?: string
 };

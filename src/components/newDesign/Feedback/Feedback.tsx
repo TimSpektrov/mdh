@@ -113,8 +113,8 @@ export const FeedbackContent: FC<FeedbackProps> = ({ title, desc }) => {
       <div className={style.top}>
         {title && desc ?
           <div className={style.heading}>
-            <Title variant='h1'>{parse(title)}</Title>
-            <Text className={style.desc}>{parse(desc)}</Text>
+            <Title variant='h1'>{addNbspParse(title)}</Title>
+            <Text className={style.desc}>{addNbspParse(desc)}</Text>
           </div>
           :
           <div className={style.heading}>

@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { SelectOption, useSelectStore } from '@/store/useSelectStore';
 import style from './Select.module.scss';
 import inputStyle from '@/components/ui/Form/Field/Field.module.scss';
+import { addNbspParse } from '@/helpers';
 
 export const Select: FC<SelectProps> = ({ textError }) => {
 
@@ -61,7 +62,7 @@ export const Select: FC<SelectProps> = ({ textError }) => {
         {optionItems.map(({ id, selected, title }) => (
           <div key={id} className={style.item} onClick={() => selectItem(id)}>
             <Icon className={style.checkbox} name={selected ? 'checkbox-checked' : 'checkbox-unchecked'} />
-            <span>{title}</span>
+            <span>{addNbspParse(title)}</span>
           </div>
         ))}
       </div>

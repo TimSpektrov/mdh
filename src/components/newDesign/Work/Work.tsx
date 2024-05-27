@@ -6,6 +6,7 @@ import { Tags } from '@/components/newDesign/Tags';
 import { motion } from 'framer-motion';
 import style from './Work.module.scss';
 import { IWork } from '@/types/IWork';
+import { addNbspParse } from '@/helpers';
 
 const variant = {
   default: {
@@ -91,11 +92,11 @@ export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, i
         <div className={style.content}>
           <div className={style.heading}>
             <h3 className={cn(style.title, light ? 'light' : 'dark')} >
-              <span>{title}</span>
+              {title && <span>{addNbspParse(title)}</span>}
             </h3>
             {tags && <Tags tags={tags} className={style.tags} />}
           </div>
-          <p className={cn(style.desc, light ? 'light' : 'dark')}>{desc}</p>
+          {desc && <p className={cn(style.desc, light ? 'light' : 'dark')}>{addNbspParse(desc)}</p>}
         </div>
       </motion.div>
     </Link>
