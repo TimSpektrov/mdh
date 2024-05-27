@@ -50,11 +50,17 @@
       min-width: max-content;
       gap: 3vw;
       padding: 15vw 7vw;
+      @include bp-max(sm) {
+        padding: 60px 55px;
+        gap: 40px
+      }
     }
 
     .image {
       width: 21vw;
+      min-width: 104px;
       position: relative;
+      pointer-events: none;
       &:nth-child(4n + 2) {
         top: -20%;
       }

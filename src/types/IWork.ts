@@ -38,7 +38,7 @@ export interface IWork {
   showAbout?: boolean,
   showDesign?: boolean,
   showIdentity?: boolean,
-  published?: boolean,
+  published: boolean,
   slug?: string
   seoTitle?: string,
   seoDesc?: string,

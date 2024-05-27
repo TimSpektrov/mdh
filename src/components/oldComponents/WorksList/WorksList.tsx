@@ -10,6 +10,7 @@ import { useModalStore } from '@/store/useModalStore';
 
 import style from './WorksList.module.scss';
 import { useRouter } from 'next/router';
+import { IWork } from '@/types/IWork';
 
 const slideUpVariant = {
   hidden: {
@@ -58,11 +59,13 @@ export const WorksList: FC<WorksListProps> = ({
   const pathName = usePathname();
   const route = useRouter()
 
+  const sortWorks = works.sort((a: IWork, b: IWork) => +b.published - +a.published)
+
   return (
     <section className={cn(style.works, dark && style.dark, wrapClass)}>
       <div className={cn(style.list, 'grid')}>
-        {works && works.length > 0 ? (
-          works.map(({ id, image, light, className, ...data }, index) => (
+        {sortWorks && sortWorks.length > 0 ? (
+          sortWorks.map(({ id, image, light, className, ...data }, index) => (
             <MotionWork
               initial="hidden"
               whileInView="visible"
@@ -74,7 +77,7 @@ export const WorksList: FC<WorksListProps> = ({
                 itemClass,
                 (pathName !== '/' && pathName !== '/services/identity') &&
                   index + 1 === works.length &&
-                  (works.length % 2 === 1 ? style.wide : '')
+                  (sortWorks.length % 2 === 1 ? style.wide : '')
               )}
               light={light}
               image={image}
