@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { motion, MotionValue, useTransform } from 'framer-motion';
+import { motion, MotionValue, useSpring, useTransform } from 'framer-motion';
 import styles from '@/components/servicesBlocks/Team/team.module.scss';
 import { isMobile } from 'react-device-detect';
 
@@ -26,7 +26,9 @@ function useTransformY(
   index: number,
 ) {
   const distVal: number = (index) * distance;
-  return useTransform(value, [.5, .9], [`${distVal}%`, '0%']);
+  const spring = { mass: 0.4, stiffness: 200, damping: 40, restDelta: .001, restSpeed: 20 }
+  const scrollSpring = useSpring(distVal, spring)
+  return useTransform(scrollSpring, [.5, .9], [`${distVal}%`, '0%']);
 }
 
 export const TeamItem: FC<ITeamItem> = ({

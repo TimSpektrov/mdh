@@ -12,6 +12,7 @@ import { WorksList } from '@/components/oldComponents/WorksList';
 import style from './Works.module.scss'
 
 export const Works: FC<WorksProps> = (props) => {
+
   const filterRef = useRef<any>(null);
   const searchParam = useSearchParams();
   const [openFilter, closeFilter, setFilterPosition] = useFilterStore(
@@ -19,6 +20,7 @@ export const Works: FC<WorksProps> = (props) => {
   );
 
   let works: IWork[] = [];
+
 
   if(searchParam.get('tag')) {
     props.works.filter((el) => {

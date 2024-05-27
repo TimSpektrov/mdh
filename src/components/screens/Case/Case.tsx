@@ -11,7 +11,6 @@ import style from './Case.module.scss';
 import parse from 'html-react-parser';
 
 export const Case: FC<CaseProps> = ({ blocks, hero } ) => {
-  // const { query } = useRouter();
 
   return (
     <>
@@ -32,14 +31,14 @@ export const Case: FC<CaseProps> = ({ blocks, hero } ) => {
       {/*    />*/}
       {/*  )}*/}
 
-      {/*{query.slug &&*/}
-      {/*  query.slug === 'fit-service' &&*/}
-      {/*  data.pageHero?.blockShow === true && (*/}
-      {/*    <HeroFitServiceBlock*/}
-      {/*      autoImage={data.pageHero?.autoImage}*/}
-      {/*      images={data.pageHero?.images}*/}
-      {/*    />*/}
-      {/*  )}*/}
+     {/*{query.slug &&*/}
+     {/*  query.slug === 'fit-service' &&*/}
+     {/*  data.works[0].pageHero?.blockShow === true && (*/}
+     {/*    <HeroFitServiceBlock*/}
+     {/*      autoImage={data.works[0].pageHero?.autoImage}*/}
+     {/*      images={data.works[0].pageHero?.images}*/}
+     {/*    />*/}
+     {/*  )}*/}
 
       <section className={style.hero}>
         {hero.show_video ? (
