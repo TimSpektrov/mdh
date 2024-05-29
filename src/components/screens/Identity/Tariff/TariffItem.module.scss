@@ -122,11 +122,10 @@
       }
 
       &.locked {
-        opacity: 0.2;
+        //opacity: 0.2;
 
         .icon {
           color: $light;
-
         }
       }
     }

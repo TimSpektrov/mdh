@@ -44,35 +44,45 @@ const groupVariants = {
   }
 }
 interface ITextImageBlock {
+  title?: string;
   text: string[];
   url: string;
   alt: string;
   specificClass: string;
   buttonModal?: boolean;
 }
-export const TextImageBlock: FC<ITextImageBlock> = ({text, url, alt, specificClass, buttonModal = false}) => {
+export const TextImageBlock: FC<ITextImageBlock> = ({title, text, url, alt, specificClass, buttonModal = false}) => {
   const [toggleModal] = useModalStore(state => [state.toggleModal])
   return (
     <motion.section
       className={cn(styles.section, styles[specificClass])}
       initial='hidden'
       whileInView='visible'
-      viewport={{ amount: .5, once: true }}
+      viewport={{ amount: .4, once: true }}
     >
-      <motion.div className={styles.left} variants={groupVariants}>
-        {text.map((item,i) =>(
-          <motion.div
-            className={styles['content-item']}
-            key={i}
-            variants={textVariants}
-          >
-            {addNbspParse(item)}
-          </motion.div>
-      ))}
-        {buttonModal && (<motion.div variants={textVariants} className={styles['btn-group']}>
-          <Button color='orange' onClick={toggleModal}>Работать с нами</Button>
-        </motion.div>)}
-      </motion.div>
+      {title &&
+        <motion.h2
+          variants={textVariants}
+          className={styles.title}
+        >
+          {addNbspParse(title.replace('<h2>','').replace('</h2>',''))}
+        </motion.h2>
+      }
+      <div className={styles.container}>
+        <motion.div className={styles.left} variants={groupVariants}>
+          {text.map((item,i) =>(
+            <motion.div
+              className={styles['content-item']}
+              key={i}
+              variants={textVariants}
+            >
+              {addNbspParse(item)}
+            </motion.div>
+          ))}
+          {buttonModal && (<motion.div variants={textVariants} className={styles['btn-group']}>
+            <Button color='orange' onClick={toggleModal}>Работать с нами</Button>
+          </motion.div>)}
+        </motion.div>
 
         <motion.div
           className={styles.right}
@@ -82,12 +92,14 @@ export const TextImageBlock: FC<ITextImageBlock> = ({text, url, alt, specificCla
           viewport={{ amount: .5, once: true }}
         >
           <Image className={styles.image}
-            src={url}
-            alt={alt}
-            width={1124}
-            height={750}
+                 src={url}
+                 alt={alt}
+                 width={1124}
+                 height={750}
           />
         </motion.div>
+      </div>
+
       {/*<div className={styles['pattern-bg']}></div>*/}
     </motion.section>
   )

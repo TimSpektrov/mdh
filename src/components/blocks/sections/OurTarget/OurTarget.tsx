@@ -67,7 +67,9 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
       const { clientX, clientY } = e
       const moveX = (-clientX + window.innerWidth / 2) * 2
       const moveY = (-clientY + window.innerHeight / 2) * 3
-      const offsetFactor = 15
+      const offsetFactor = 25
+
+
 
       setX(moveX / offsetFactor )
       setY(moveY / offsetFactor )

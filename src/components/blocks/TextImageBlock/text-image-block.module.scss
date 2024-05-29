@@ -1,11 +1,7 @@
 @import '@/styles/helpers/vars.scss';
 @import '@/styles/helpers/mixins.scss';
 .section {
-  display: grid;
   @include container;
-  gap: 16px;
-  position: relative;
-  overflow: hidden;
 
   @include bp-max(md){
     padding-top: 48px;
@@ -19,9 +15,14 @@
     padding-top: 120px;
     padding-bottom: 120px;
   }
-  @include bp-max(xxl){
-    //flex-direction: column;
-  }
+}
+.container {
+  display: grid;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+
+
   @include bp-min(xxl){
     grid-template-columns: 48% 600px;
       justify-content: space-between;
@@ -67,7 +68,24 @@
     }
   }
 }
+.title {
+  font-family: $secondaryFont;
+  font-weight: 700;
+  margin: 0;
+  font-size: 24px;
+  line-height: 140%;
+  text-transform: uppercase;
+  @include bp-min(md) {
+    font-size: 26px;
+  }
+  @include bp-min(xl) {
+    font-size: 38px;
+  }
 
+  span {
+    color: $orange;
+  }
+}
 .left {
   // Variants
   h1, h2, h3, h4 {

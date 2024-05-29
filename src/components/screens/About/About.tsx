@@ -31,6 +31,14 @@ export const About: FC<any> = ({ content }) => {
       "description": "Мы понимаем, что продукты и сервисы, которые придумываются и воплощаются сегодня значительным образом меняют повседневность"
     }
   ]
+
+  // костыль для proposal
+  const proposal2text = content['proposal-second'].text.split('\r\n');
+  const proposal2 = {
+    title: proposal2text[0],
+    text: proposal2text.slice(1),
+  }
+
   return (
     <>
       <Head>
@@ -54,7 +62,8 @@ export const About: FC<any> = ({ content }) => {
           <div className={style.proposalPattern}></div>
       </div>
       <TextImageBlock
-        text={content['proposal-second'].text.split('\r\n')}
+        title={proposal2.title}
+        text={proposal2.text}
         url={content['proposal-second'].url}
         alt={content['proposal-second'].alt}
         specificClass={'about-second-page'}

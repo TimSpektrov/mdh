@@ -35,11 +35,11 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
   }))
   useEffect(() => {
     fetchContacts()
-  }, []);
+  }, [loading]);
 
   return (
     <>
-      <Loader loader={loading || loadingData || (!content && route !== '/services/product-design' && route !== '/contact')} />
+      <Loader loader={loading || loadingData || (!content && typeof content !== 'object' && route !== '/services/product-design' && route !== '/contact')} />
       <DynamicPopup className={Grandis.variable} />
       <DynamicCursor />
       <div className="wrapper">
@@ -47,12 +47,12 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
         {mobile ? (
           <>
             <main className="main">{children}</main>
-            {route !== '/404' && <Footer />}
+            {(loading || loadingData || (!content && typeof content !== 'object' && route !== '/services/product-design' && route !== '/contact' && route !== '/404')) && <Footer />}
           </>
         ) : (
           <ScrollerMotion spring={springLayout}>
             <main className="main">{children}</main>
-            {route !== '/404' && <Footer />}
+            {(loading || loadingData || (!content && typeof content !== 'object' && route !== '/services/product-design' && route !== '/contact' && route !== '/404')) && <Footer />}
           </ScrollerMotion>
         )}
       </div>

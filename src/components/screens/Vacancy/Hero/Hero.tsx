@@ -22,7 +22,7 @@ export const Hero: FC<HeroProps> = ({ title, desc, image }) => {
       </div>
       <div className={style.body}>
         <div className={style.content}>
-          <Title variant="h2">{title}</Title>
+          <Title variant="h2">{addNbspParse(title)}</Title>
           <Text>{desc && addNbspParse(desc)}</Text>
         </div>
         <Button color="orange" href="#feedback" onClick={scrollToFeedback}>

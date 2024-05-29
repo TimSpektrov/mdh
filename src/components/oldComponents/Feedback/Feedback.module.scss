@@ -118,7 +118,7 @@
 .emails {
   @include bp-min(md) {
     flex-direction: row;
-    justify-content: space-between;
+    //justify-content: space-between;
     width: 100%;
   }
   a {
@@ -131,7 +131,7 @@
       line-height: 31px;
     }
 
-    @include bp-min(xl) {
+    @include bp-min(xxl) {
       font-size: 36px;
       line-height: 46px;
     }

@@ -105,6 +105,7 @@
           right: -.3em;
           border-radius: .8em;
           z-index: -1;
+          background-color: $yellow2;
         }
       }
 
@@ -196,5 +197,20 @@
 .product-design-page {
   span:before {
     background-color: $yellow2;
+  }
+}
+
+.identity-page {
+  .hero__description-wrapper {
+    @include bp-min(xl) {
+      background-image: url(assets/img/hero-bg.svg);
+      background-size: 790px;
+      background-repeat: no-repeat;
+      background-position: 840px 0;
+    }
+
+    @include bp-min(xxxl) {
+      background-position: right top;
+    }
   }
 }

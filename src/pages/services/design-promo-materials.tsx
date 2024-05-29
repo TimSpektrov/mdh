@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { Hero } from 'src/components/blocks/sections/Hero';
-import { WorksList as WorksListSection } from '@/components/blocks/sections/WorksList/WorksList';
+import { WorksListSection as WorksListSection } from '@/components/servicesBlocks/WorksListSection/WorksListSection';
 import { NewCallback } from '@/components/ui/NewCallback';
 import { Advantages } from '@/components/blocks/sections/Advantages';
 import Image from 'next/image';

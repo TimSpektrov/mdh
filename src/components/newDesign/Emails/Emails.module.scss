@@ -2,10 +2,15 @@
 
 .email {
 	display: flex;
-	//flex-direction: column;
 	align-items: flex-start;
 	gap: 24px;
-	width: max-content;
+    @include bp-max(md) {
+      flex-direction: column;
+    }
+    @include bp-min(md) {
+      justify-content: space-between;
+    }
+
 }
 
 .item {
@@ -39,7 +44,7 @@
     font-size: 24px;
   }
 
-  @include bp-min(xl) {
+  @include bp-min(xxl) {
     font-size: 36px;
   }
   &:hover {

@@ -76,7 +76,7 @@
     translate: 0 -30%;
     opacity: 0;
     border-radius: 16px;
-    transition: opacity .3s linear, translate .5s linear, rotate .5s linear;
+    transition: opacity .2s .1s cubic-bezier(.4,.8,.65,1), translate .3s cubic-bezier(.4,.8,.65,1), rotate .3s cubic-bezier(.4,.8,.65,1);
     pointer-events: none;
     .item:hover & {
       opacity: 1;

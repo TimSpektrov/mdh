@@ -2,9 +2,11 @@ import { FC } from 'react';
 import styles from './work-items.module.scss'
 import Image from 'next/image';
 import cn from 'classnames';
+import { addNbspParse } from '@/helpers';
 export interface IWorkItem {
   id: number;
   title: string;
+  description: string;
   image1?: string;
   image2?: string;
 }
@@ -18,7 +20,7 @@ export const WorkItems: FC<IWorkItems> = ({list, specificClass = 'page'}) => {
       {list.map((item, index) => (
         <div className={styles.item} key={index}>
           <div className={styles['item-num']}>{index + 1}</div>
-          {item.title}
+          {addNbspParse(item.title)}
           {item.image1 && (
             <Image
               className={styles['img-1']}

@@ -30,12 +30,13 @@
   justify-content: stretch;
 
   font-family: $thirdFont;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 140%;
   @include bp-max(md) {
     padding: 16px;
     gap: 18px;
   }
+
   @include bp-min(md) {
     padding: 36px;
     gap: 24px;

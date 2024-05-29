@@ -6,7 +6,7 @@
     background-image: url(./assets/new-feedback2.svg);
     background-size: 273px;
     background-repeat: no-repeat;
-    //background-position: right top;
+    background-position: right top;
   }
 
   @include bp-min(md) {
@@ -209,12 +209,12 @@
 }
 
 .submit {
-
   border: 1px solid $yellow;
   background-color: $yellow;
   color: $black;
   cursor: pointer;
   transition: .2s background-color;
+  font-weight: 400;
 
   @include bp-min(lg) {
     min-width: 147px;

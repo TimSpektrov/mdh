@@ -1,12 +1,15 @@
 @import '@/styles/helpers/vars.scss';
 
 .email {
-	display: flex;
-	//flex-direction: column;
-	align-items: flex-start;
-  //justify-content: space-between;
-	gap: 24px;
-	//width: max-content;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  @include bp-max(md) {
+    flex-direction: column;
+  }
+  @include bp-min(md) {
+    justify-content: space-between;
+  }
 }
 
 .item {
@@ -23,7 +26,7 @@
   color: $gray-2;
 
   @include bp-min(md) {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
   }
   

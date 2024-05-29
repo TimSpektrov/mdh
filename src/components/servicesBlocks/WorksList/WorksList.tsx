@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styles from './works-list.module.scss'
 import { NewTypography } from '@/components/ui/NewTypography';
-import { IWorkItem, WorkItems } from '@/components/blocks/WorkItems/WorkItems';
+import { IWorkItem, WorkItems } from './WorkItems';
 import cn from 'classnames';
 
 interface IWorksList {

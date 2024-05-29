@@ -55,15 +55,18 @@
   z-index: 1;
 
   @include bp-min(md) {
-    padding: 60px 36px 0;
+    padding: 60px 36px;
   }
 
   @include bp-min(lg) {
-    padding: 120px 36px 0;
+    padding: 120px 36px 60px;
+  }
+  @include bp-min(xl) {
+    padding: 120px 36px;
   }
 
   @include bp-min(xxl) {
-    padding: 120px 193px 0;
+    padding: 120px 193px;
   }
 
   h2 {
@@ -99,35 +102,37 @@
   mix-blend-mode: difference;
   width: 433px;
   height: 433px;
-  left: -345px;
-  top: 78px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -375px;
 
   @include bp-min(md) {
-    top: -62px;
-    left: -265px;
+    left: -340px;
+  }
+  @include bp-min(sm) {
+    left: -330px;
   }
 
   @include bp-min(lg) {
     width: 645px;
     height: 645px;
-    top: -148px;
-    left: -447px;
+    left: -530px;
   }
 
   @include bp-min(xl) {
-    width: 1117px;
-    height: 1117px;
-    left: -855px;
-    top: -394px;
+    width: 1000px;
+    height: 1000px;
+    left: -840px;
   }
 
   @include bp-min(xxl) {
-    left: -837px;
+    width: 1117px;
+    height: 1117px;
+    left: -915px;
   }
 
   @include bp-min(xxxl) {
-    top: -414px;
-    left: -763px;
+    left: -830px;
   }
 
   img {

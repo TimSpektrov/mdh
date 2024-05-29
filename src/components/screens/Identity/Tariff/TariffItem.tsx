@@ -19,11 +19,11 @@ const TariffItem: FC<IRate> = ({
   volume,
   structure,
   uniqueId,
+  id,
 }) => {
   
   const [currentPrice, setCurrentPrice] = useState<string>('')
   const [oldPrice, setOldPrice] = useState<string>('')
-
   useEffect(() => {
     const cp = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
     const op = oldprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')

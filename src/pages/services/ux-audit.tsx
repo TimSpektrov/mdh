@@ -3,10 +3,9 @@ import { Hero } from 'src/components/blocks/sections/Hero';
 import { Advantages } from 'src/components/blocks/sections/Advantages';
 import Image from 'next/image';
 import { Stages } from '@/components/blocks/sections/Stages/Stages';
-import { CardRates } from '@/components/blocks/CardRates';
+import { CardRates } from '@/components/servicesBlocks/CardRates';
 import styles from '@/components/blocks/sections/Advantages/advantages.module.scss'
 import Head from 'next/head';
-import { NewWorksList } from '@/components/ui/NewWorksList';
 import { useEffect } from 'react';
 import { usePageDateStore } from '@/store/usePageDataStore';
 import { AUDIT_URL } from '@/helpers/apiRequests';

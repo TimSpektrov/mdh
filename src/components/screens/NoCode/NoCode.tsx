@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Head from "next/head";
 import { Hero } from 'src/components/blocks/sections/Hero';
-import { WorksList as WorkListSection } from '@/components/blocks/sections/WorksList/WorksList';
+import { WorksListSection as WorkListSection } from '@/components/servicesBlocks/WorksListSection/WorksListSection';
 import { Stages } from '@/components/blocks/sections/Stages';
 import { StagesRedesign } from '@/components/blocks/StagesRedisign';
 import { NewCallback } from '@/components/ui/NewCallback';
@@ -9,7 +9,7 @@ import { Feedback } from '@/components/newDesign/Feedback';
 import { WorksList } from '@/components/newDesign/WorksList';
 
 export const NoCode: FC<any> = ({content}) => {
-
+  console.log(content);
   return (
     <>
       <Head>

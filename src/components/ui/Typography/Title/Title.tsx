@@ -3,7 +3,7 @@ import { TitleProps } from '.';
 import cn from 'classnames'
 import styles from './Title.module.scss';
 
-export const Title: FC<TitleProps> = ({ className, children, variant, color, accent , style}) => {
+export const Title: FC<TitleProps> = ({ className, children, variant, color = 'dark', accent , style}) => {
 
 
   const classes = cn(

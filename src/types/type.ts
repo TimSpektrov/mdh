@@ -37,7 +37,7 @@ export interface INavigate {
 }
 
 export interface IRateStructure {
-  id: string;
+  id: number;
   name: string;
   locked: boolean;
 }

@@ -7,15 +7,21 @@
   @include bp-max(xl) {
     padding-top: 60px;
     padding-bottom: 60px;
-    & h2 {
-      text-align: center;
-      margin-bottom: 36px;
-    }
   }
   @include bp-min(xl) {
     padding-top: 120px;
     padding-bottom: 120px;
-    & h2 {
+  }
+  h2 {
+    @include bp-max(md) {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    @include bp-min(md) {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    @include bp-min(xl) {
       margin-bottom: 48px;
     }
   }

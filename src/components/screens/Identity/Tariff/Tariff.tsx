@@ -34,7 +34,7 @@ export const Tariff: FC<TariffProps> = ({ title, description, rates, discount })
             popular={popular}
             term={term}
             volume={volume}
-            structure={structure}
+            structure={structure.sort((a,b) => a.id - b.id).sort((a,b) => +a.locked - +b.locked)}
             uniqueId={uniqueId}
           />
         ))}

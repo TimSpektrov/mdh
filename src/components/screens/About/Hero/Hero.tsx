@@ -94,10 +94,10 @@ export const Hero: FC<IHero> = ({title, description, list = [], specificClass = 
               )}
             >
               <Title variant='h3' color='light' className={style.name}>
-                <div>{title}</div>
+                <div>{addNbspParse(title)}</div>
               </Title>
               <Text className={style.desc} tag='div'>
-                <div>{description}</div>
+                <div>{addNbspParse(description)}</div>
               </Text>
             </motion.div>
           ))}
