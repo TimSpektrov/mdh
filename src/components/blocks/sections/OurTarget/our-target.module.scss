@@ -113,7 +113,18 @@ $bRadius: 16px;
     }
   }
 }
-
+.text-container {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+  }
+}
 .item {
   position: relative;
   overflow: hidden;

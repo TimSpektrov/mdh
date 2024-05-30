@@ -112,11 +112,11 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
             <OurTargetAnimImage imageSrc={img11} custom={1} width={img11.width} height={img11.height}/>
           </motion.div>
           <motion.div
+            className={styles['text-container']}
             style={{
               x: isMobile? 0 : primaryX,
               y: isMobile? 0 : primaryY,
-              position: 'relative',
-              zIndex: 2 }}
+            }}
           >
             <NewTypography text={title} variant={'h2'} tag={'h2'} />
           </motion.div>
@@ -130,8 +130,6 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
           </motion.div>
           <motion.div
             className={styles['center-container']}
-
-            // style={{translate: `${x}px ${y}px`}}
           >
             <OurTargetAnimImage imageSrc={img7} custom={2} width={img7.width} height={img7.height}/>
             <OurTargetAnimImage imageSrc={img9} custom={2} width={img9.width} height={img9.height}/>
@@ -143,8 +141,6 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
         </div>
         <motion.div
           className={styles.right}
-
-          // style={{translate: `${x}px ${y}px`}}
         >
           <OurTargetAnimImage imageSrc={img10} custom={2} width={img10.width} height={img10.height}/>
           <OurTargetAnimImage imageSrc={img11} custom={4} width={img11.width} height={img11.height}/>
