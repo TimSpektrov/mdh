@@ -1,14 +1,12 @@
-import {
-  CSSProperties,
-  FC, useEffect,
-  useRef, useState
-} from 'react';
+import { CSSProperties, FC, useEffect, useRef, useState } from 'react';
 import styles from './team.module.scss';
 import { NewTypography } from '@/components/ui/NewTypography';
 import cn from 'classnames';
 import {
   motion,
+  MotionValue,
   useScroll,
+  useSpring,
   useTransform,
   Variants
 } from 'framer-motion';
@@ -20,48 +18,62 @@ interface ITeam {
   list: string[];
 }
 
-const itemVariants: Variants ={
+const itemVariants: Variants = {
   show: (custom: number) => ({
     opacity: 1,
     transition: {
-      delay: (.7 + custom * .35),
-      duration: .7,
+      delay: 0.7 + custom * 0.35,
+      duration: 0.7
     }
   }),
   hide: {
-    opacity: 0,
+    opacity: 0
     // transition: {
     //   duration: 0.7,
     //   delayChildren: 0.3,
     //   staggerChildren: 0.1
     // }
-  },
-}
+  }
+};
 
 export const Team: FC<ITeam> = ({ title, list }) => {
   const length = list.length;
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const [yPos, setYPos] = useState<MotionValue<string>>();
   const { scrollYProgress } = useScroll({
     layoutEffect: false,
     target: ref,
     offset: ['start end', 'end end']
   });
+  const spring = {
+    mass: 0.3,
+    stiffness: 190,
+    damping: 28,
+    restDelta: 0.001,
+    restSpeed: 20
+  };
+  const scrollY = useSpring(scrollYProgress, spring);
 
   const sectionDesktopPosition = useTransform(
-    scrollYProgress,
+    scrollY,
     [0, 0.33, 1],
-    ['0%', '0%', '200%']
+    ['0', '0', '200%']
   );
-  const lastOpacity = useTransform(scrollYProgress,[0, 0.89, .9], [0, 0, 1])
+  const lastOpacity = useTransform(scrollYProgress, [0, 0.89, 0.9], [0, 0, 1]);
   const [isDown, setIsDown] = useState(false);
   useEffect(() => {
     const scrollPos = () => {
       console.log(isMobile);
-      setIsDown(lastOpacity.get() >= 1)
+      setIsDown(lastOpacity.get() >= 1);
     };
     window.addEventListener('scroll', scrollPos);
-    // return window.removeEventListener('scroll', scrollPos)
-  }, []);
+
+    return () => window.removeEventListener('scroll', scrollPos);
+  }, [lastOpacity]);
+
+  useEffect(() => {
+    setYPos(sectionDesktopPosition);
+  }, [sectionDesktopPosition]);
   return (
     <motion.section
       ref={ref}
@@ -69,7 +81,7 @@ export const Team: FC<ITeam> = ({ title, list }) => {
       initial="hidden"
       whileInView="visible"
     >
-      <motion.div className={styles.inner} style={{ y: sectionDesktopPosition }} >
+      <motion.div className={styles.inner} style={{ y: yPos }}>
         {title && <NewTypography text={title} variant={'h2'} tag={'h2'} />}
         <div
           className={cn(styles.container)}
@@ -89,16 +101,16 @@ export const Team: FC<ITeam> = ({ title, list }) => {
             })}
           <motion.div
             className={styles['card-last']}
-            animate={ isDown ? 'show' : 'hide'}
+            animate={isDown ? 'show' : 'hide'}
           >
             <motion.div
               className={styles['label-last']}
-              style={{opacity: lastOpacity }}
+              style={{ opacity: lastOpacity }}
             >
               Команда вашего продукта
             </motion.div>
             <motion.svg
-              style={{opacity: lastOpacity }}
+              style={{ opacity: lastOpacity }}
               viewBox="0 0 444 444"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -115,10 +127,7 @@ export const Team: FC<ITeam> = ({ title, list }) => {
                 fill="none"
               />
             </motion.svg>
-            <motion.div
-              className={styles['finish-labels-container']}
-
-            >
+            <motion.div className={styles['finish-labels-container']}>
               {list.length > 0 &&
                 list.map((label, index) => (
                   <motion.div
@@ -129,9 +138,10 @@ export const Team: FC<ITeam> = ({ title, list }) => {
                     // style={{
                     //   opacity: lastOpacity,
                     // }}
-                  >{label}</motion.div>
-                ))
-              }
+                  >
+                    {label}
+                  </motion.div>
+                ))}
             </motion.div>
           </motion.div>
         </div>

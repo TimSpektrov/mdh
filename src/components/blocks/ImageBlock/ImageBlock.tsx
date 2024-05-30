@@ -36,7 +36,7 @@ const ImageBlock: FC<IImageCase> = ({
     restSpeed: 20
   };
   const scrollY = useSpring(scrollYProgress, spring);
-  const options = reverse ? ['-10%', '10%'] : ['20%', '-20%'];
+  const options = reverse ? ['-10%', '10%'] : ['10%', '-10%'];
   const yPosition = useTransform(scrollY, [1, 0], options);
 
   useEffect(() => {

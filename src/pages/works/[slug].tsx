@@ -17,9 +17,7 @@ const WorkPage: NextPage = () => {
     fetchData: state.fetchData,
   }))
   useEffect(() => {
-    console.log(WORK_ITEM_URL + '/' + slug);
     if(typeof slug === 'string') {
-      console.log(WORK_ITEM_URL + '/' + slug);
       fetchData(WORK_ITEM_URL + '/' + slug, slug )
     }
   }, [fetchData, slug]);
@@ -76,10 +74,9 @@ const WorkPage: NextPage = () => {
   })
   const pageContent = [...textBlocks, ...imageBlocks, ...beforeBlocks, ...sliderBlocks, ...galleryBlocks].sort((a, b) => a.id - b.id)
 
-  console.log(content[slug]);
   return (
     <>
-      <HorisontalScrollNavigation key={'scrollNavTop'} position="top" navigation={content[slug].all_cases}  />
+      <HorisontalScrollNavigation key={'scrollNavTop'} id={1} position="top" navigation={content[slug].all_cases}  />
       <AnimatePresence mode="wait">
         <motion.div
           initial={{ opacity: 0 }}
@@ -91,7 +88,7 @@ const WorkPage: NextPage = () => {
           <Case hero={content[slug].hero} blocks={pageContent}/>
         </motion.div>
       </AnimatePresence>
-      <HorisontalScrollNavigation key={'scrollNavBottom'} position="bottom" navigation={content[slug].all_cases} />
+      <HorisontalScrollNavigation key={'scrollNavBottom'} id={2} position="bottom" navigation={content[slug].all_cases} />
       <Feedback />
     </>
   );

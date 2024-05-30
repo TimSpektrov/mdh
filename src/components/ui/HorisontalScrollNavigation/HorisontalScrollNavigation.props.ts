@@ -16,4 +16,5 @@ export interface HorisontalScrollNavigationProps {
   className?: string;
   variant?: 'light' | 'dark';
   position: 'top' | 'bottom';
+  id: number;
 }

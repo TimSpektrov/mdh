@@ -7,6 +7,7 @@ import { Tags } from '@/components/ui';
 import { motion } from 'framer-motion';
 import style from './Work.module.scss';
 import { IWork } from '@/types/IWork';
+import { addNbspParse } from '@/helpers';
 
 const variant = {
   default: {
@@ -96,18 +97,18 @@ export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, i
         </div>
         <div className={style.content}>
           <div className={style.heading}>
-            <Title
-              variant="h4"
+            {title && <Title
+              variant='h4'
               color={light ? 'light' : 'dark'}
               className={style.title}
             >
-              <span>{title}</span>
-            </Title>
+              <span>{addNbspParse(title)}</span>
+            </Title>}
             {tags && <Tags tags={tags} className={style.tags} />}
           </div>
-          <Text color={light ? 'light' : 'dark'} className={style.desc}>
-            {desc}
-          </Text>
+          {desc && <Text color={light ? 'light' : 'dark'} className={style.desc}>
+            {addNbspParse(desc)}
+          </Text>}
         </div>
       </motion.div>
     </Link>
