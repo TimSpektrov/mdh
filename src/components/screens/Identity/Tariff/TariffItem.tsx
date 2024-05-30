@@ -8,6 +8,7 @@ import style from './TariffItem.module.scss'
 import { IRate } from '@/types/type';
 import { useModalStore } from '@/store/useModalStore';
 import { useSelectStore } from '@/store/useSelectStore';
+import { addNbspParse } from '@/helpers';
 
 const TariffItem: FC<IRate> = ({
   name,
@@ -52,7 +53,7 @@ const TariffItem: FC<IRate> = ({
         <div className={style.top}>
           <div className={style.heading}>
             <Title color='white'>{ name }</Title>
-            <Text className={style.desc} color='light'>{ desc }</Text>
+            <Text className={style.desc} color='light'>{ addNbspParse(desc) }</Text>
           </div>
           <div className={style.price}>
             <span className={style.priceCurrent}>{currentPrice} ₽</span>
@@ -65,21 +66,21 @@ const TariffItem: FC<IRate> = ({
             <ul>
               <li>
                 <Icon className={style.icon} name='watch' />
-                <Text tag='span' color='light'>{ term }</Text>
+                <Text tag='span' color='light'>{ addNbspParse(term) }</Text>
               </li>
               <li>
                 <Icon className={style.icon} name='book' />
-                <Text tag='span' color='light'>{ volume }</Text>
+                <Text tag='span' color='light'>{ addNbspParse(volume) }</Text>
               </li>
             </ul>
           </div>
           <div className={style.content}>
-            <Title variant='h4' color='white'>Что войдет в брендбук </Title>
+            <Title variant='h4' color='white'>{addNbspParse('Что войдет в брендбук')}</Title>
             <ul>
               {structure && structure.map(({id, name, locked}) => (
                 <li key={id} className={locked ? style.locked : ''}>
                   <Icon className={style.icon} name={locked ? 'lock' : 'check'} />
-                  <Text tag='span' color='light'>{ name }</Text>
+                  <Text tag='span' color='light'>{ addNbspParse(name) }</Text>
                 </li>
               ))}
             </ul>

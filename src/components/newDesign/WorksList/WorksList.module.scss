@@ -48,10 +48,8 @@
 .item {
   border-radius: 20px;
   @include bp-min(xxl) {
-    &:nth-child(4n + 2) {
-      grid-column: span 2;
-    }
-    &:nth-child(4n + 3) {
+    &:nth-child(4n + 2),
+    &:nth-child(4n + 3){
       grid-column: span 2;
     }
   }

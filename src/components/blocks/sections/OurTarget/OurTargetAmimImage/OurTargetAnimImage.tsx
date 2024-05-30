@@ -12,6 +12,7 @@ const imgAnimation = {
     transition: {
       delay: (custom - 1) * .2,
       ease: 'easeInOut',
+      duration: .8,
     }
   })
 }
@@ -23,7 +24,7 @@ const curtainAnimation = {
   visible: (custom: number) => ({
     translate: `0% 101%`,
     transition: {
-      delay: (custom - 1) * .2,
+      delay: (custom - 1) * .3,
       ease: 'easeInOut',
     }
   })

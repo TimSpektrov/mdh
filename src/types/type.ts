@@ -15,7 +15,7 @@ export interface IVacancy {
 }
 
 export interface IService {
-  id: string;
+  id: number;
   title: string;
   description: string;
   slug: string;

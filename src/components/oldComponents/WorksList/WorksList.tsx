@@ -11,6 +11,7 @@ import { useModalStore } from '@/store/useModalStore';
 import style from './WorksList.module.scss';
 import { useRouter } from 'next/router';
 import { IWork } from '@/types/IWork';
+import { bigItemWork } from '@/helpers';
 
 const slideUpVariant = {
   hidden: {
@@ -52,7 +53,6 @@ const fadeInVariant = {
 export const WorksList: FC<WorksListProps> = ({
   works,
   wrapClass,
-  itemClass,
   dark
 }) => {
   const toggleModal = useModalStore((state) => state.toggleModal);
@@ -60,7 +60,7 @@ export const WorksList: FC<WorksListProps> = ({
   const route = useRouter()
 
   const sortWorks = works.sort((a: IWork, b: IWork) => +b.published - +a.published)
-
+  const bigItem = bigItemWork(sortWorks.length)
   return (
     <section className={cn(style.works, dark && style.dark, wrapClass)}>
       <div className={cn(style.list, 'grid')}>
@@ -73,11 +73,9 @@ export const WorksList: FC<WorksListProps> = ({
               viewport={{ amount: 0.15, once: true }}
               key={id}
               className={cn(
-                'column',
-                itemClass,
-                (pathName !== '/' && pathName !== '/services/identity') &&
-                  index + 1 === works.length &&
-                  (sortWorks.length % 2 === 1 ? style.wide : '')
+                style.item,
+                { [style['big']]: index === bigItem },
+                { [style['after-big']]: index > bigItem}
               )}
               light={light}
               image={image}

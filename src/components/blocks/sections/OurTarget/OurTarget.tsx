@@ -74,7 +74,7 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
         initial='hidden'
         whileInView='visible'
         viewport={{
-          amount: 0.25,
+          amount: isMobile ? .13 : 0.25,
           once: true,
         }}
         // animate={imgAnimation}
@@ -85,9 +85,9 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
           className={styles.left}
           // style={{translate: `${x}px ${y}px`}}
         >
-          <OurTargetAnimImage imageSrc={img1} custom={3} width={img1.width} height={img1.height} />
+          <OurTargetAnimImage imageSrc={img1} custom={2} width={img1.width} height={img1.height} />
           <OurTargetAnimImage imageSrc={img3} custom={1} width={img3.width} height={img3.height}/>
-          <OurTargetAnimImage imageSrc={img2} custom={4} width={img2.width} height={img2.height}/>
+          <OurTargetAnimImage imageSrc={img2} custom={1} width={img2.width} height={img2.height}/>
           <OurTargetAnimImage imageSrc={img4} custom={2} width={img4.width} height={img4.height}/>
           <div></div>
           <OurTargetAnimImage imageSrc={img5} custom={2} width={img5.width} height={img5.height}/>
@@ -107,7 +107,7 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
             <OurTargetAnimImage imageSrc={img8} custom={2} width={img8.width} height={img8.height}/>
             <OurTargetAnimImage imageSrc={img1} custom={2} width={img1.width} height={img1.height}/>
             <OurTargetAnimImage imageSrc={img2} custom={1} width={img2.width} height={img2.height}/>
-            <OurTargetAnimImage imageSrc={img6} custom={2} width={img6.width} height={img6.height}/>
+            <OurTargetAnimImage imageSrc={img6} custom={1} width={img6.width} height={img6.height}/>
             <OurTargetAnimImage imageSrc={img4} custom={2} width={img4.width} height={img4.height}/>
             <OurTargetAnimImage imageSrc={img11} custom={1} width={img11.width} height={img11.height}/>
           </motion.div>
@@ -143,9 +143,9 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
           className={styles.right}
         >
           <OurTargetAnimImage imageSrc={img10} custom={2} width={img10.width} height={img10.height}/>
-          <OurTargetAnimImage imageSrc={img11} custom={4} width={img11.width} height={img11.height}/>
+          <OurTargetAnimImage imageSrc={img11} custom={1} width={img11.width} height={img11.height}/>
           <OurTargetAnimImage imageSrc={img12} custom={1} width={img12.width} height={img12.height}/>
-          <OurTargetAnimImage imageSrc={img13} custom={3} width={img13.width} height={img13.height}/>
+          <OurTargetAnimImage imageSrc={img13} custom={2} width={img13.width} height={img13.height}/>
           <OurTargetAnimImage imageSrc={img14} custom={1} width={img14.width} height={img14.height}/>
         </motion.div>
       </motion.div>

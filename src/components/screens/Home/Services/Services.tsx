@@ -64,6 +64,8 @@ const lineVariant = {
 }
 
 export const Services: FC<ServicesProps> = ({ services }) => {
+  const sortServices  = services.sort((a,b) => a.id - b.id)
+  console.log(sortServices);
   return (
     <section className={style.wrapper}>
       <div className={style.list}>

@@ -13,30 +13,82 @@
 }
 
 .list {
-	grid-auto-rows: 397px;
-	gap: 16px;
-	
-	@include bp-min(md) {
-		grid-auto-rows: 500px;
-	}
-	
-	@include bp-min(xl) {
-		grid-auto-rows: 650px;
-	}
-	
-	@include bp-min(xxl) {
-		grid-auto-rows: 740px;
-	}
+  grid-auto-rows: 397px;
+  gap: 16px;
 
-	@include bp-min(xxxl) {
-		grid-auto-rows: 900px;
-	}
-
-  .wide {
-    grid-column: span 12 !important;
+  @include bp-min(md) {
+    grid-auto-rows: 500px;
   }
+
+  @include bp-min(xl) {
+    grid-auto-rows: 650px;
+  }
+
+  @include bp-min(xxl) {
+    grid-auto-rows: 740px;
+  }
+
+  @include bp-min(xxxl) {
+    grid-auto-rows: 900px;
+  }
+
+  //.wide {
+  //  grid-column: span 12 !important;
+  //}
 }
 
+.item {
+  @include bp-max(md) {
+    grid-column: span 12;
+  }
+  @include bp-min(md) {
+    grid-column: span 6;
+  }
+
+  @include bp-min(xxl) {
+    &:nth-child(4n + 1),
+    &:nth-child(4n + 4) {
+      grid-column: span 5;
+    }
+    &:nth-child(4n + 2),
+    &:nth-child(4n + 3) {
+      grid-column: span 7;
+    }
+  }
+  @include bp-min(xxxl) {
+    &:nth-child(4n + 1),
+    &:nth-child(4n + 4) {
+      grid-column: span 4;
+    }
+    &:nth-child(4n + 2),
+    &:nth-child(4n + 3) {
+      grid-column: span 8;
+    }
+  }
+  &.big {
+    @include bp-min(md) {
+      grid-column: span 12;
+    }
+  }
+  &.after-big {
+    @include bp-min(xxl) {
+      &:nth-child(4n + 3) {
+        grid-column: span 5;
+      }
+      &:nth-child(4n + 2) {
+        grid-column: span 7;
+      }
+    }
+    @include bp-min(xxxl) {
+      &:nth-child(4n + 3) {
+        grid-column: span 4;
+      }
+      &:nth-child(4n + 2) {
+        grid-column: span 8;
+      }
+    }
+  }
+}
 .btnGroup {
   display: flex;
   align-items: center;
