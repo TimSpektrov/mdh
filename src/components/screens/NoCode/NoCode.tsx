@@ -38,12 +38,6 @@ export const NoCode: FC<any> = ({content}) => {
       <NewCallback
         specificClass={'no-code-page'}
       />
-      {/*<NewWorksList*/}
-      {/*  works={content.works}*/}
-      {/*  specificClass={'no-code-page'}*/}
-      {/*  writeBtn*/}
-      {/*  moreBtn*/}
-      {/*/>*/}
       <WorksList works={content.works} dark moreBtn writeBtn />
       <Feedback />
     </>

@@ -17,7 +17,6 @@ import { NewCallback } from '@/components/ui/NewCallback';
 
 
 export const Identity: FC<any> = ({content}) => {
-  console.log(content);
   const localContent = {
     hero: {
       title: 'Айдентика',

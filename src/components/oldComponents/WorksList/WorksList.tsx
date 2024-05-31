@@ -60,7 +60,6 @@ export const WorksList: FC<WorksListProps> = ({
   const route = useRouter()
 
   const sortWorks = works.sort((a: IWork, b: IWork) => +b.published - +a.published)
-  sortWorks.length = 2
   const bigItem = bigItemWork(sortWorks.length)
   return (
     <section className={cn(style.works, dark && style.dark, wrapClass)}>

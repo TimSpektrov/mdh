@@ -23,7 +23,7 @@ const ProductDesign: NextPage = () => {
         list: [
           {
             title: 'Сайт',
-            description: 'От простых веб-визиток до многофункциональных онлайн систем',
+            description: 'От простых веб-визиток до многофункциональ<wbr/>ных онлайн систем',
             img_desktop: '/assets/images/productCard/1d.png',
             img_mob: '/assets/images/productCard/1m.png',
             alt: '',

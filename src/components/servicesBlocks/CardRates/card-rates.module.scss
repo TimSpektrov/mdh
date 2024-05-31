@@ -24,11 +24,10 @@
   margin-inline: auto;
   background-color: $white1;
   border-radius: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: stretch;
-
+  //display: flex;
+  //flex-direction: column;
+  //align-items: stretch;
+  //justify-content: stretch;
   font-family: $thirdFont;
   font-size: 16px;
   line-height: 140%;
@@ -64,6 +63,16 @@
   background-color: $white;
   border-radius: 16px;
   position: relative;
+
+  @include bp-min(md) {
+    margin-bottom: 20px;
+  }
+  @include bp-min(md) {
+    margin-bottom: 24px;
+  }
+  @include bp-min(xxl) {
+    margin-bottom: 36px;
+  }
 
   &-bg {
     position: absolute;
@@ -108,15 +117,18 @@
 
   @include bp-max(md) {
     padding: 38px 12px;
+    margin-bottom: 24px;
   }
   @include bp-min(md) {
     padding: 48px 36px;
+    margin-bottom: 36px;
   }
 
   @include bp-min(xxl) {
     background-image: url("./assets/img/bg.svg");
     background-position: right bottom;
     background-repeat: no-repeat;
+    margin-bottom: 48px;
   }
 
   &__title {
@@ -209,11 +221,13 @@
 }
 
 .advanced {
-
-  @include bp-max(md) {
-  }
+  margin-bottom: 24px;
   @include bp-min(md) {
     padding: 12px 36px;
+  }
+
+  @include bp-min(xxl) {
+    margin-bottom: 36px;
   }
 
   &__title {
@@ -288,7 +302,7 @@
 }
 
 .btn{
-
+  width: 100%;
   border-radius: 16px;
   background-color: $orange;
   color: $white;
