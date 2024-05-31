@@ -53,7 +53,6 @@ export const OurTarget:FC<IOurTarget> = ({title}) => {
   useEffect(() => {
     const getWindow = () => {
       setIsMobile(window.innerWidth < 1200)
-      console.log(window.innerWidth, window.innerWidth < 1200);
     }
     window.addEventListener('resize', getWindow)
 

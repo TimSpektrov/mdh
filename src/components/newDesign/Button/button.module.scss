@@ -1,0 +1,94 @@
+@import '@/styles/helpers/vars';
+
+.btn {
+  outline: none;
+  font-family: $secondaryFont;
+  font-weight: 400;
+  line-height: 1.2;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: black;
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+  cursor: pointer;
+  @include bp-max(md) {
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+  @include bp-min(md) {
+    padding: 20px 48px;
+    font-size: 18px;
+  }
+  @include bp-min(xl) {
+    font-size: 20px;
+  }
+}
+// Variants
+.orange {
+  color: $white;
+  background-color: $orange;
+  &:hover,
+  &:focus {
+    background-color: $orange--hover;
+  }
+}
+.transparent-orange {
+  color: $white;
+  border-color: $orange;
+  &:hover,
+  &:focus {
+    background-color: $orange--hover;
+    border-color: $orange--hover;
+  }
+}
+.yellow {
+  background-color: $yellow;
+  &:hover,
+  &:focus {
+    background-color: $yellow-hover;
+  }
+}
+.transparent-yellow {
+  border-color: $yellow;
+  &:hover,
+  &:focus {
+    background-color: $yellow-hover;
+    border-color: $yellow-hover;
+  }
+}
+.blue {
+  color: $white;
+  background-color: $blue;
+  &:hover,
+  &:focus {
+    background-color: $blue-hover;
+  }
+}
+.transparent-blue {
+  color: $white;
+  border-color: $blue;
+  &:hover,
+  &:focus {
+    background-color: $blue-hover;
+    border-color: $blue-hover;
+  }
+}
+.black {
+  color: $white;
+  background-color: $black;
+  &:hover,
+  &:focus {
+    background-color: $black-2;
+  }
+}
+
+.transparent-black {
+  color: $black;
+  border-color: $black;
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $black;
+  }
+}
+

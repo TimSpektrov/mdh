@@ -1,10 +1,8 @@
 import { NextPage } from 'next';
 import { Hero } from 'src/components/blocks/sections/Hero';
-import { Advantages } from 'src/components/blocks/sections/Advantages';
-import Image from 'next/image';
+import { Advantages } from 'src/components/servicesBlocks/Advantages';
 import { Stages } from '@/components/blocks/sections/Stages/Stages';
 import { CardRates } from '@/components/servicesBlocks/CardRates';
-import styles from '@/components/blocks/sections/Advantages/advantages.module.scss'
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { usePageDateStore } from '@/store/usePageDataStore';
@@ -19,7 +17,7 @@ const UxAuditPage: NextPage = () => {
     }))
     useEffect(() => {
       fetchData(AUDIT_URL, 'audit')
-    }, []);
+    }, [fetchData]);
   if(!content?.audit) return  null
 
   return (
@@ -36,14 +34,19 @@ const UxAuditPage: NextPage = () => {
       />
       <Advantages
         specificClass={'audit-page'}
-        left={(
-          <Image
-            className={styles['audit-page-img']}
-            src={content.audit.advantage_image.url}
-            alt={content.audit.advantage_image.alt}
-            width={1920}
-            height={1080}
-          />)}
+        left={{
+          type: 'image',
+          text: content.audit.advantage_image.url,
+          alt: content.audit.advantage_image.alt
+        }
+          // <Image
+          //   className={styles['audit-page-img']}
+          //   src={content.audit.advantage_image.url}
+          //   alt={content.audit.advantage_image.alt}
+          //   width={1920}
+          //   height={1080}
+          // />
+          }
         right={content.audit.advantage_list}
       />
       <Stages specificClass={'audit-page'} list={content.audit.stages.stage_items} title={content.audit.stages.title}/>

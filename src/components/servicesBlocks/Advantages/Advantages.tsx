@@ -1,12 +1,13 @@
 import styles from './advantages.module.scss'
 import cn from 'classnames'
-import { AdvantagesList, TAdvantagesItem } from '@/components/blocks/AdvantagesList';
+import { AdvantagesList, TAdvantagesItem } from 'src/components/servicesBlocks/Advantages/AdvantagesList';
 import { FC } from 'react';
 import { motion } from 'framer-motion'
 import { isMobile } from 'react-device-detect';
+import { AdvantageLeft, IAdvantagesLeft } from '@/components/servicesBlocks/Advantages/AdvantageLeft';
 
 interface IAdvantages {
-  left: JSX.Element;
+  left: IAdvantagesLeft;
   right: TAdvantagesItem[];
   specificClass?: string;
 }
@@ -58,7 +59,7 @@ export const Advantages: FC<IAdvantages> = ({ specificClass = 'page', left, righ
         custom={custom}
         className={cn(styles.advantages__container, 'container')}
       >
-        {left}
+        <AdvantageLeft type={left.type} text={left.text} alt={left.alt} />
         <AdvantagesList list={right} specificClass={specificClass} />
       </motion.div>
     </motion.section>

@@ -43,7 +43,7 @@ export interface IRateStructure {
 }
 
 export interface IRate {
-  id?: number;
+  id: number;
   name: string;
   desc: string;
   price: number;

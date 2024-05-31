@@ -180,3 +180,17 @@
     }
   }
 }
+
+.identity-page {
+  background-image: linear-gradient($white 50%,$black 50%);
+  box-shadow: 0 1px $black;
+  .inner {
+    background-color: $white1;
+  }
+  .btn {
+    background-color: #F8CD12;
+    &:hover {
+      background-color: #F5B90A ;
+    }
+  }
+}

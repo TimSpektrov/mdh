@@ -11,7 +11,7 @@ import { usePopupStore } from "@/store/usePopapStore";
 
 import style from './NewCallback.module.scss';
 import { NewTypography } from '@/components/ui/NewTypography';
-import { addNbsp, addNbspParse } from '@/helpers';
+import { addNbspParse } from '@/helpers';
 
 export interface CallbackProps {
   background?: 'dark' | 'light' | 'light-dark' | 'dark-light';

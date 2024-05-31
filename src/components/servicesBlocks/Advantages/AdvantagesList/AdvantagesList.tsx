@@ -2,7 +2,6 @@ import styles from './advantages-list.module.scss'
 import cn from 'classnames';
 import { NewTypography } from '@/components/ui/NewTypography';
 import { addNbspParse } from '@/helpers';
-import { log } from 'next/dist/server/typescript/utils';
 
 export interface TAdvantagesItem {
   title: string;

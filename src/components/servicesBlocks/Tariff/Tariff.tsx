@@ -1,30 +1,127 @@
 import { FC } from 'react';
 import { TariffProps } from '.';
 import TariffItem from './TariffItem';
-import { Title, Text } from '@/components/ui/Typography';
-
 import style from './Tariff.module.scss';
-import { addNbspParse } from '@/helpers';
+import { NewTypography } from '@/components/ui/NewTypography';
 
 export const Tariff: FC<TariffProps> = ({ title, description, rates, discount }) => {
+  const sortRates = rates.sort((a,b) => a.id - b.id)
+  const ratesChecks = [
+    [
+      {
+      id: 1,
+      locked: false,
+      name: 'Логотип (1 вариант)',
+      },
+      {
+      id: 2,
+      locked: false,
+      name: 'Фирменный цвет',
+      },
+      {
+      id: 3,
+      locked: false,
+      name: 'Фирменный шрифт',
+      },
+      {
+      id: 4,
+      locked: false,
+      name: 'Примеры использования на носителях',
+      },
+      {
+      id: 5,
+      locked: true,
+      name: 'Фирменная графика',
+      },
+      {
+      id: 6,
+      locked: true,
+      name: 'Индивидуальное руководство по использованию фирменного стиля и элементов айдентики',
+      },
+    ],
+    [
+      {
+        id: 1,
+        locked: false,
+        name: 'Логотип (до 3- х вариантов)',
+      },
+      {
+        id: 2,
+        locked: false,
+        name: 'Фирменная цветовая палитра',
+      },
+      {
+        id: 3,
+        locked: false,
+        name: 'Набор фирменных шрифтов',
+      },
+      {
+        id: 4,
+        locked: false,
+        name: 'Примеры использования на носителях',
+      },
+      {
+        id: 5,
+        locked: true,
+        name: 'Фирменная графика',
+      },
+      {
+        id: 6,
+        locked: true,
+        name: 'Индивидуальное руководство по использованию фирменного стиля и элементов айдентики',
+      },
+    ],
+    [
+      {
+        id: 1,
+        locked: false,
+        name: 'Логотип (до 3- х вариантов + комментарии)',
+      },
+      {
+        id: 2,
+        locked: false,
+        name: 'Фирменная цветовая палитра',
+      },
+      {
+        id: 3,
+        locked: false,
+        name: 'Набор фирменных шрифтов',
+      },
+      {
+        id: 4,
+        locked: false,
+        name: 'Примеры использования на носителях',
+      },
+      {
+        id: 5,
+        locked: false,
+        name: 'Фирменная графика',
+      },
+      {
+        id: 6,
+        locked: false,
+        name: 'Индивидуальное руководство по использованию фирменного стиля и элементов айдентики',
+      },
+    ]
+  ]
   return (
     <section className={style.wrapper}>
       <div className={style.heading}>
-        <Title accent='mint' color='light'>{addNbspParse(title)}</Title>
-        <Text color='light'>{description}</Text>
+        {title && <NewTypography text={title} variant={'h2'} tag={'h2'} />}
+        {description && <NewTypography text={description} variant={'p'} tag={'p'} />}
       </div>
-      {discount &&
-        <div className={style.discount}>
-          <div className={style.label}>
-            <DiscountLabel />
-          </div>
-          <div className={style.percent}>
-            <DiscountPercent />
-          </div>
-        </div>
-      }
+      {/*{discount &&*/}
+      {/*  <div className={style.discount}>*/}
+      {/*    <div className={style.label}>*/}
+      {/*      <DiscountLabel />*/}
+      {/*    </div>*/}
+      {/*    <div className={style.percent}>*/}
+      {/*      <DiscountPercent />*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*}*/}
       <div className={style.list}>
-        {rates && rates.map(({ id, name, desc, popular, price, structure, term, volume, oldprice, uniqueId }) => (
+        {rates && rates.map(({ id, name, desc, popular, price, structure, term, volume, oldprice, uniqueId }, index) => (
           <TariffItem
             key={id}
             name={name}
@@ -34,8 +131,9 @@ export const Tariff: FC<TariffProps> = ({ title, description, rates, discount })
             popular={popular}
             term={term}
             volume={volume}
-            structure={structure}
+            structure={ratesChecks[index]}
             uniqueId={uniqueId}
+            id={id}
           />
         ))}
       </div>

@@ -1,17 +1,20 @@
 import { FC } from 'react';
-import Head from 'next/head';
-import { Hero } from './Hero';
-import { Hero as NewHero } from '@/components/servicesBlocks/Hero'
-
-import { Structure } from "./Structure";
-import { Complex } from '@/components/ui/Complex';
-import { Tariff } from './Tariff';
-import { Callback } from '@/components/oldComponents/Callback';
 import style from './Identity.module.scss'
-import { IRate } from '@/types/type';
-import { WorksList } from '@/components/oldComponents/WorksList';
-import { Feedback } from '@/components/oldComponents/Feedback';
+import Head from 'next/head';
+// import { Hero } from './Hero';
+import { Hero } from '@/components/servicesBlocks/Hero'
+// import { Structure } from "./Structure";
 import { WorksListSection as WorkListSection } from '@/components/servicesBlocks/WorksListSection';
+// import { Complex } from '@/components/ui/Complex';
+import { Advantages } from '@/components/servicesBlocks/Advantages';
+// import { Tariff } from './Tariff';
+// import { IRate } from '@/types/type';
+import { Tariff } from '@/components/servicesBlocks/Tariff';
+import { Callback } from '@/components/oldComponents/Callback';
+import { WorksList } from '@/components/newDesign/WorksList';
+import { Feedback } from '@/components/newDesign/Feedback';
+import { NewCallback } from '@/components/ui/NewCallback';
+
 
 export const Identity: FC<any> = ({content}) => {
   console.log(content);
@@ -46,6 +49,35 @@ export const Identity: FC<any> = ({content}) => {
         },
 
       ]
+    },
+    advantages: {
+      left: {
+        type: 'text',
+        text: 'Используем комплексный подход для достижения  <span>ваших целей</span>'
+      },
+      right: [
+        {
+          title: 'АКТУАЛЬНАЯ',
+          description: 'красивая и коммерчески успешная айдентика',
+          id: 1,
+        },
+        {
+          title: '100% УНИКАЛЬНОСТЬ',
+          description: 'разработанных элементов айдентики',
+          id: 2,
+        },
+        {
+          title: 'ПОКАЗЫВАЕМ НА ПРИМЕРАХ',
+          description: 'как использовать и сочетать все элементы',
+          id: 3,
+        },
+
+      ]
+    },
+    tariff: {
+      title: 'Делаем всё, чтобы продукт стал частью жизни пользователей',
+      description: 'Для проекта мы собираем команду специалистов на каждый этап работы. Вам не нужно тратить время и ресурсы для дополнительного поиска сотрудников. Наша команда полностью покроет весь список задач по проекту.',
+      rates: []
     }
   }
   return (
@@ -55,26 +87,39 @@ export const Identity: FC<any> = ({content}) => {
         <meta name="description" content={content.meta.title} />
       </Head>
       {/*<Hero title={content.hero.title} description={content.hero.description} itemList={content.hero.items.split('\r\n')} />*/}
-      <NewHero title={localContent.hero.title} description={localContent.hero.description}  specificClass={'identity-page'}/>
-      <Structure title={content.structure.title} image={content.structure.image} items={content.structure.items} />
+      <Hero title={localContent.hero.title} description={localContent.hero.description}  specificClass={'identity-page'}/>
+      {/*<Structure title={content.structure.title} image={content.structure.image} items={content.structure.items} />*/}
       <WorkListSection
         title={localContent.workListSection.title}
         list={localContent.workListSection.list}
+        specificClass={'identity-page'}
       />
-      <Complex
-        title={content.advantages.text}
-          data={content.advantages.items}
-        innerClass={style.complexInner}
+      {/*<Complex*/}
+      {/*  title={content.advantages.text}*/}
+      {/*    data={content.advantages.items}*/}
+      {/*  innerClass={style.complexInner}*/}
+      {/*/>*/}
+      <Advantages
+        left={{type: 'text', text: localContent.advantages.left.text, alt: '' }
+          // <NewTypography text={localContent.advantages.left} variant={'h1'} />
+        }
+        right={localContent.advantages.right}
       />
 
-      <Tariff title={content.tariff.title} rates={content.tariff.rates.sort((a: IRate, b: IRate) => a.uniqueId - b.uniqueId)} description={content.tariff.description} />
-      <Callback background='light' className={style.callback} />
+      {/*<Tariff title={content.tariff.title} rates={content.tariff.rates.sort((a: IRate, b: IRate) => a.uniqueId - b.uniqueId)} description={content.tariff.description} />*/}
+      <Tariff rates={content.tariff.rates} title={content.tariff.title} description={content.tariff.description} />
+      {/*<Callback background={'light'} className={style.callback} />*/}
       {/*<WorksList*/}
       {/*  works={content.works}*/}
       {/*  specificClass={'identity-page'}*/}
       {/*  writeBtn*/}
       {/*/>*/}
-      <WorksList dark works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
+      {/*<WorksList dark works={content.works} wrapClass={style.works} itemClass={style.worksItem} />*/}
+      {/*<Feedback />*/}
+      <NewCallback
+        specificClass={'identity-page'}
+      />
+      <WorksList works={content.works} dark moreBtn writeBtn />
       <Feedback />
     </>
   );

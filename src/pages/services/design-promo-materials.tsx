@@ -1,10 +1,8 @@
 import { NextPage } from 'next';
 import { Hero } from 'src/components/blocks/sections/Hero';
-import { WorksListSection as WorksListSection } from '@/components/servicesBlocks/WorksListSection/WorksListSection';
+import { WorksListSection } from '@/components/servicesBlocks/WorksListSection/WorksListSection';
 import { NewCallback } from '@/components/ui/NewCallback';
-import { Advantages } from '@/components/blocks/sections/Advantages';
-import Image from 'next/image';
-import styles from '@/components/blocks/sections/Advantages/advantages.module.scss';
+import { Advantages } from '@/components/servicesBlocks/Advantages';
 import Head from 'next/head';
 import { usePageDateStore } from '@/store/usePageDataStore';
 import { useEffect } from 'react';
@@ -20,7 +18,7 @@ const DesignPromoMaterials: NextPage<any> = () => {
   }))
   useEffect(() => {
     fetchData(DESIGN_PROMO_MATERIALS_URL, 'designPromo')
-  }, []);
+  }, [fetchData]);
 
   if(!content?.designPromo) return  null
   return (
@@ -31,15 +29,11 @@ const DesignPromoMaterials: NextPage<any> = () => {
       </Head>
       <Hero title={content.designPromo.hero.title} description={content.designPromo.hero.description} specificClass={'promo-materials-page'} />
       <Advantages
-        left={(
-          <Image
-            width={1920}
-            height={1080}
-            className={styles['audit-page-img']}
-            src={content.designPromo.advantages.image.url}
-            alt={content.designPromo.advantages.image.alt}
-          />
-       )}
+        left={{
+          type: 'image',
+          text: content.designPromo.advantages.image.url,
+          alt: content.designPromo.advantages.image.alt
+        }}
         right={content.designPromo.advantages.items}
         specificClass={'promo-materials-page'}
       />

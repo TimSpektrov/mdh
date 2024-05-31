@@ -3,6 +3,7 @@ import styles from './work-items.module.scss'
 import Image from 'next/image';
 import cn from 'classnames';
 import { addNbspParse } from '@/helpers';
+import { NewTypography } from '@/components/ui/NewTypography';
 export interface IWorkItem {
   id: number;
   title: string;
@@ -20,7 +21,13 @@ export const WorkItems: FC<IWorkItems> = ({list, specificClass = 'page'}) => {
       {list.map((item, index) => (
         <div className={styles.item} key={index}>
           <div className={styles['item-num']}>{index + 1}</div>
-          {addNbspParse(item.title)}
+          <div className={styles['item-text']}>
+            <NewTypography text={item.title} variant={'h3'} tag={'h3'} />
+            <NewTypography text={item.description} variant={'p'} tag={'p'} />
+
+            {/*{addNbspParse(item.title)}*/}
+            {/*{addNbspParse(item.description)}*/}
+          </div>
           {item.image1 && (
             <Image
               className={styles['img-1']}

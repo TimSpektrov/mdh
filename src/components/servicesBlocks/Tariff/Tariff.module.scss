@@ -1,7 +1,7 @@
 @import '@/styles/helpers/vars';
 
 .wrapper {
-  background-color: $black;
+  background-color: $white;
   padding: 48px 16px;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,7 @@
   @include bp-min(xxxl) {
     padding: 120px 191px;
   }
+
 }
 
 .heading {
@@ -44,23 +45,24 @@
 .list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 36px;
   position: relative;
   z-index: 3;
   
-  @include bp-min(md) {
-    gap: 48px;
+  @include bp-max(xl) {
+    gap: calc(32px + 24px);
   }
-  
   @include bp-min(xl) {
+    gap: 16px;
     flex-direction: row;
     align-items: stretch;
-    justify-content: space-between;
-    gap: 16px;
+    justify-content: center;
   }
-  
-  @include bp-min(xxl) {
+  @include bp-max(xl) {
+  }
+
+  @include bp-min(xxxl) {
     gap: 24px;
   }
 }

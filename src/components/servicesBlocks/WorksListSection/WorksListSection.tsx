@@ -13,7 +13,6 @@ export const WorksListSection: FC<IWorksList> = ({title, list, specificClass = '
   return (
     <section className={cn(styles.section, styles[specificClass])}>
       {title && (<NewTypography text={title} variant={'h2'} tag={'h2'} />)}
-
       <WorkItems list={list} specificClass={specificClass}/>
     </section>
   )

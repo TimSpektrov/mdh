@@ -9,7 +9,6 @@ import { Feedback } from '@/components/newDesign/Feedback';
 import { WorksList } from '@/components/newDesign/WorksList';
 
 export const NoCode: FC<any> = ({content}) => {
-  console.log(content);
   return (
     <>
       <Head>

@@ -40,29 +40,18 @@ export const toHtmlList = (str: string) => {
     ('<p>' + arr[0] + '</p>')
 }
 
-export const setRotatePosition = (index: number, length: number) => {
-  const value = ((index + 1) / (length + 1))
+export const addSpacesToNumber = (number: number) => {
+  // Преобразуем число в строку.
+  const numberString = number.toString();
 
-  if(value === .25) return {
-    left: `100%`,
-    translate: `0 -50%`
-  }
-  if(value === .5) return {
-    top: `100%`,
-    translate: `-50% 0`
-  }
+  // Создаем массив цифр.
+  const digits = numberString.split('');
 
-  if(value === .75) return {
-    right: `100%`,
-    translate: `0 -50%`
+  // Добавляем пробел через каждые три цифры.
+  for (let i = digits.length - 3; i > 0; i -= 3) {
+    digits.splice(i, 0, ' ');
   }
 
-
-
-  // return {
-  //   index,
-  //   // left,
-  //   // top,
-  //    value,
-  // }
+  // Преобразуем массив цифр обратно в строку.
+  return digits.join('');
 }

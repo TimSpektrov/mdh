@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import Head from 'next/head';
 import { Hero } from '@/components/blocks/sections/Hero';
-import { Advantages } from '@/components/blocks/sections/Advantages';
-import styles from '@/components/blocks/sections/Advantages/advantages.module.scss';
+import { Advantages } from '@/components/servicesBlocks/Advantages';
 import { StagesRedesign } from '@/components/blocks/StagesRedisign';
 import { NewFeedback } from '@/components/blocks/NewFeedback';
 import { setUppercase } from '@/helpers';
@@ -26,18 +25,11 @@ export const Redesign: FC<any> = ({content}) => {
       />
       <Advantages
         specificClass={'redesign-page'}
-        left={(
-          <video
-            className={styles['redesign-video']}
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster={content.advantage_video.poster_url}
-          >
-            <source src={content.advantage_video.url} />
-          </video>
-        )}
+        left={{
+          type: 'video',
+          text: content.advantage_video.url,
+          alt: content.advantage_video.poster_url
+        }}
         right={content.advantage_list}
       />
       <StagesRedesign list={content.stages.items} specificClass={'redesign-page'} />
