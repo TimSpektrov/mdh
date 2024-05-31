@@ -22,8 +22,8 @@ export const WorkItems: FC<IWorkItems> = ({list, specificClass = 'page'}) => {
         <div className={styles.item} key={index}>
           <div className={styles['item-num']}>{index + 1}</div>
           <div className={styles['item-text']}>
-            <NewTypography text={item.title} variant={'h3'} tag={'h3'} />
-            <NewTypography text={item.description} variant={'p'} tag={'p'} />
+            {item.title && <NewTypography text={item.title} variant={'h3'} tag={'h3'} />}
+            {item.description && <NewTypography text={item.description} variant={'p'} tag={'p'} />}
 
             {/*{addNbspParse(item.title)}*/}
             {/*{addNbspParse(item.description)}*/}
