@@ -27,9 +27,9 @@ export const AdvantageLeft: FC<IAdvantagesLeft> = ({ type, text, alt }) => {
           loop
           muted
           playsInline
-          poster={text}
+          poster={alt}
         >
-          <source src={alt} />
+          <source src={text} />
         </video>
       );
     default:
