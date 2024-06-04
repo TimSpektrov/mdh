@@ -124,6 +124,7 @@
 .emails {
   gap: 20px;
   margin-top: auto;
+  flex-direction: column;
   a {
     font-size: 36px;
     line-height: 46px;

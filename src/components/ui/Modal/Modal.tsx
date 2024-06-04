@@ -209,7 +209,7 @@ export const Modal: FC<ModalProps> = ({className}) => {
             </div>
           </div>
         </form>
-        <Emails emails={emails} className={style.emails} />
+        {/*<Emails emails={emails} className={style.emails} />*/}
       </div>
     </div>
   );
