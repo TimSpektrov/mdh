@@ -103,6 +103,7 @@ export const Identity: FC<any> = ({content}) => {
           // <NewTypography text={localContent.advantages.left} variant={'h1'} />
         }
         right={localContent.advantages.right}
+        specificClass={'identity-page'}
       />
 
       {/*<Tariff title={content.tariff.title} rates={content.tariff.rates.sort((a: IRate, b: IRate) => a.uniqueId - b.uniqueId)} description={content.tariff.description} />*/}

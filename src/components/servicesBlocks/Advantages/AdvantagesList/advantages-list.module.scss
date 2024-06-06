@@ -57,17 +57,11 @@ $border: 1px solid $Neutral-Gray;
   }
 }
 
-.redesign-page {
-  .advantages-list__item {
-    h3{
-      color: $black;
-    }
-  }
-}
-
+.redesign-page,
+.identity-page,
 .promo-materials-page {
   .advantages-list__item {
-    h3 {
+    h3{
       color: $black;
     }
   }

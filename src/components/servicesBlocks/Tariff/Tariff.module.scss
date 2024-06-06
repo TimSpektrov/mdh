@@ -58,8 +58,8 @@
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
-  }
-  @include bp-max(xl) {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   @include bp-min(xxxl) {

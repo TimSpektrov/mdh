@@ -32,3 +32,11 @@
     background-color: $white1;
   }
 }
+.identity-page {
+  background-color: $white1;
+  h2 {
+    @include bp-min(xl) {
+      text-align: left;
+    }
+  }
+}

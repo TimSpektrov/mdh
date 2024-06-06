@@ -59,7 +59,12 @@
 .inner {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  @include bp-max(md) {
+    gap: 24px;
+  }
+  @include bp-min(md) {
+    gap: 36px;
+  }
 }
 
 .top {
@@ -89,9 +94,15 @@
 }
 
 .heading {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  //display: flex;
+  //flex-direction: column;
+  //gap: 8px;
+  h3 {
+    margin-bottom: 8px;
+    & + p {
+      margin-bottom: 24px;
+    }
+  }
 }
 
 .desc {
@@ -131,7 +142,7 @@
 
     li {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 8px;
 
       &.locked {
@@ -146,7 +157,7 @@
 }
 
 .icon-container {
-  background-color: $yellow;
+  background-color: $yellow2;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -232,7 +243,7 @@
   padding: 8px 12px;
   border-radius: 50px;
   color: $black;
-  background-color: $yellow;
+  background-color: $yellow2;
   font-family: $secondaryFont;
   font-weight: 700;
   font-size: 18px;
