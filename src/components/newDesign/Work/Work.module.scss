@@ -92,7 +92,7 @@
 
 .heading {
   display: flex;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
@@ -104,7 +104,8 @@
   align-items: center;
   gap: 16px;
   position: relative;
-  flex: 1 0 auto;
+  //flex: 1 0 auto;
+  flex-grow: 1;
   font-weight: 700;
   margin: 0;
 
@@ -116,7 +117,7 @@
   }
 
   @include bp-max(sm) {
-    font-size: 24px;
+    font-size: 18px;
   }
   @include bp-min(sm) {
     font-size: 20px;
@@ -161,7 +162,7 @@
 
 .tags {
   flex-wrap: wrap;
-  flex: 1 0 100%;
+  //flex: 1 0 100%;
 
   @include bp-min(xl) {
     flex: 0 0 auto;

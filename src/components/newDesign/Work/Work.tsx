@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import style from './Work.module.scss';
 import { IWork } from '@/types/IWork';
 import { addNbspParse } from '@/helpers';
+import { NewTypography } from '@/components/ui/NewTypography';
 
 const variant = {
   default: {
@@ -91,6 +92,7 @@ export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, i
         </div>
         <div className={style.content}>
           <div className={style.heading}>
+            {/*{title && (<NewTypography text={title} variant={'h4-alt'} tag={'h3'}/>)}*/}
             <h3 className={cn(style.title, light ? 'light' : 'dark')} >
               {title && <span>{addNbspParse(title)}</span>}
             </h3>

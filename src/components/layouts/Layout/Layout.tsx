@@ -32,6 +32,8 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
   const {loading, content} = usePageDateStore(state => ({
     loading: state.loading,
     content: state.content,
+    isLoadContent: state.isLoadContent,
+    setIsLoadContent: state.setIsLoadContent,
   }))
   useEffect(() => {
     fetchContacts()
