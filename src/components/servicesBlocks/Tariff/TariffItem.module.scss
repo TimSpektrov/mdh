@@ -101,6 +101,10 @@
     margin-bottom: 8px;
     & + p {
       margin-bottom: 24px;
+      @media screen and (min-width: 1200px) and (max-width: 1250px) {
+        min-height: 2.8em;
+        padding-inline: 8px;
+      }
     }
   }
 }
