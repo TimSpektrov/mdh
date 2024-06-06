@@ -32,8 +32,6 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
   const {loading, content} = usePageDateStore(state => ({
     loading: state.loading,
     content: state.content,
-    isLoadContent: state.isLoadContent,
-    setIsLoadContent: state.setIsLoadContent,
   }))
   useEffect(() => {
     fetchContacts()
@@ -51,12 +49,12 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
         {mobile ? (
           <>
             <main className="main">{children}</main>
-            {(isLoader || route !== '/404') && <Footer />}
+            {(!isLoader || route !== '/404') && <Footer />}
           </>
         ) : (
           <ScrollerMotion spring={springLayout}>
             <main className="main">{children}</main>
-            {isLoader || route !== '/404' && <Footer />}
+            {!isLoader || route !== '/404' && <Footer />}
           </ScrollerMotion>
         )}
       </div>
