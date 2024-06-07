@@ -14,15 +14,15 @@ export interface SelectState {
   unselectItem: () => void;
 }
 
-const projectsList = [
+export const projectsList = [
   { id: 0, title: 'Мобильное приложение', selected: false },
   { id: 1, title: 'Веб-сайт', selected: false },
   { id: 2, title: 'Айдентика', selected: false },
   { id: 3, title: 'Печатная продукция', selected: false },
   { id: 4, title: 'Презентация', selected: false },
   { id: 5, title: 'Другое', selected: false },
-  { id: 6, title: 'UX-аудит Экспресс', selected: false, service: 'ux-audit' },
-  { id: 7, title: 'UX-аудит Комплексный', selected: false, service: 'ux-audit' },
+  { id: 6, title: 'Экспресс UX-аудит', selected: false, service: 'ux-audit' },
+  { id: 7, title: 'Комплексный UX-аудит', selected: false, service: 'ux-audit' },
   { id: 8, title: 'Другое', selected: false, service: 'ux-audit' },
   { id: 9, title: 'Айдентика Лайт', selected: false, service: 'identity' },
   { id: 10, title: 'Айдентика Стандарт', selected: false, service: 'identity' },

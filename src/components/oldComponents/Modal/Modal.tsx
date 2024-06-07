@@ -111,7 +111,7 @@ export const Modal: FC<ModalProps> = ({className}) => {
 
   return (
     <div className={cn(style.modal, showModal && style.show, className)} onClick={ e => (e.currentTarget === e.target) && handleClick() }>
-      <div className={style.content}>
+      <div className={style.content} onClick={ e => (e.currentTarget === e.target) && handleClick() }>
         <Icon name="close" className={style.close} onClick={handleClick} size={24}/>
         {/* <div className={style.close} onClick={handleClick}></div> */}
         <div className={style.header}>

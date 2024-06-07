@@ -72,6 +72,7 @@ export const WorksList: FC<WorksListProps> = ({
                 { [style['after-big']]: index > bigItem}
 
               )}
+              dark
               light={light}
               image={image}
               {...data}

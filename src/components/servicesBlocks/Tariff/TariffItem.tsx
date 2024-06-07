@@ -46,8 +46,8 @@ const TariffItem: FC<IRate> = ({
   const classes = cn(style.wrap, popular && style.popular)
 
   return (
-    <div className={classes} onClick={() => { toggleModal(); selectItem(Number(uniqueId));
-     }}>
+    <div className={classes} onClick={() => { toggleModal(); selectItem(Number(uniqueId));}}
+    >
       {popular && (
         <div className={style.label}>Popular</div>
       )}

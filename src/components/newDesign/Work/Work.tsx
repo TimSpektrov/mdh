@@ -28,9 +28,9 @@ const variant = {
   },
 }
 
-export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, image, tags, className, slug, light, published }, ref) => {
+export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, image, tags, className, slug, light, published , dark}, ref) => {
   const caseRef = useRef(null)
-  const classes = cn(style.wrap, light && style.caseLight, className, 'case')
+  const classes = cn(style.wrap, light && style.caseLight, className, 'case', dark && style.dark)
   const onMouseEnter = () => {
     if (published) {
       document?.querySelector('.cursor')?.classList.add('show')
@@ -78,21 +78,18 @@ export const Work = forwardRef<HTMLAnchorElement | any, IWork>(({ title, desc, i
         animate="default"
         ref={caseRef}
       >
-        <div className={style.img}>
-          <motion.div className={style.imgInner} variants={variant} >
-            <Image
-              src={image}
-              alt=''
-              quality={100}
-              width={1224}
-              height={900}
-            />
-          </motion.div>
-          {!published && (<div className={style.label}>Скоро</div>)}
-        </div>
+        <motion.div className={style.imgInner} variants={variant} >
+          <Image
+            src={image}
+            alt=''
+            quality={100}
+            width={1224}
+            height={900}
+          />
+        </motion.div>
+        {!published && (<div className={style.label}>Скоро</div>)}
         <div className={style.content}>
           <div className={style.heading}>
-            {/*{title && (<NewTypography text={title} variant={'h4-alt'} tag={'h3'}/>)}*/}
             <h3 className={cn(style.title, light ? 'light' : 'dark')} >
               {title && <span>{addNbspParse(title)}</span>}
             </h3>

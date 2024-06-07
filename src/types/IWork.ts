@@ -44,7 +44,7 @@ export interface IWork {
   seoDesc?: string,
   className?: string,
   index?: number,
-
+  dark?: boolean,
   pageContent?: IBlocks[],
   pageHero?: HeroEntity,
   seoHeading?: string

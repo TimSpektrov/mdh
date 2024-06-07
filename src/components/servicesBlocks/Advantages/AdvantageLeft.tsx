@@ -3,7 +3,7 @@ import { NewTypography } from '@/components/ui/NewTypography';
 import styles from './advantages.module.scss';
 import Image from 'next/image';
 export interface IAdvantagesLeft {
-  type: string;
+  type: 'video' | 'text' | 'image';
   text: string;
   alt: string;
 }

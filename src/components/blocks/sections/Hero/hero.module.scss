@@ -6,7 +6,7 @@
   align-items: stretch;
   justify-content: stretch;
 
-  @include bp-min(xxl) {
+  @include bp-min(xl) {
     min-height: 100vh;
     min-height: 100dvh;
   }
@@ -19,6 +19,10 @@
     background-size: cover;
     box-shadow: 0 1px $black;
     flex-grow: 1;
+
+    @include bp-max(xl) {
+      height: 262px;
+    }
   }
   &__title {
     margin: 0;

@@ -1,21 +1,33 @@
-import { CSSProperties, FC, useState } from 'react';
+import { CSSProperties, FC, useEffect, useState } from 'react';
 import styles from './card-rates.module.scss'
 import cn from 'classnames';
 import check from '@img/svg/check.svg'
 import { motion } from 'framer-motion';
 import { addNbspParse } from '@/helpers';
 import { useModalStore } from '@/store/useModalStore';
+import { useSelectStore } from '@/store/useSelectStore';
 
 export const CardRates: FC<any> = ({content}) => {
   const [activeButton, setActiveButton] = useState(0);
   const [activeHover, setActiveHover] = useState(0);
-  const [toggleModal] = useModalStore((state) => [state.toggleModal]);
+  const { toggleModal, showModal } = useModalStore()
+  const { selectItem, unselectItem, items } = useSelectStore()
 
+  useEffect(() => {
+    !showModal && unselectItem()
+  }, [showModal, unselectItem])
   const handleClickButton = (num: number) => {
     setActiveButton(num)
     setActiveHover(num)
   }
-
+  const openModal = () => {
+    const title = content[activeButton].audit_type;
+    const item = items.filter(item => item.title === title)
+    toggleModal();
+    if(items.length > 0) {
+      selectItem(Number(item[0].id));
+    }
+  }
   const advanced = content[activeButton].when.split('\r\n')
   return(
     <section className={styles.section}>
@@ -103,7 +115,8 @@ export const CardRates: FC<any> = ({content}) => {
             </div>
           </ul>
         </motion.div>
-        <button className={styles.btn} onClick={toggleModal}>Заказать аудит</button>
+        <button className={styles.btn} onClick={openModal}
+        >Заказать аудит</button>
       </div>
     </section>
   )
