@@ -18,14 +18,7 @@
     background-repeat: repeat-x;
     background-size: cover;
     box-shadow: 0 1px $black;
-
-    @include bp-max(xxl) {
-      height: 262px;
-    }
-    @include bp-min(xxl) {
-      height: 418px;
-      flex-grow: 1;
-    }
+    flex-grow: 1;
   }
   &__title {
     margin: 0;
