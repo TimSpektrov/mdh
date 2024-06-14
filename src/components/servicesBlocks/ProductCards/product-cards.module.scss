@@ -49,9 +49,6 @@
       grid-column: span 6;
     }
   }
-
-  //.card
-  //}
 }
 
 .card {
@@ -128,9 +125,16 @@
   }
   &:nth-child(4n) {
     background-image: url(./assets/images/pattern.svg);
-    background-position: right bottom;
+
     background-repeat: no-repeat;
-    background-size: 70%;
+    @include bp-max(md) {
+      background-size: 110%;
+      background-position: -130% 130%;
+    }
+    @include bp-min(md) {
+      background-size: 70%;
+      background-position: right bottom;
+    }
   }
 
   h3 {

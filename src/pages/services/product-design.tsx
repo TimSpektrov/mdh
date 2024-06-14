@@ -5,6 +5,7 @@ import { Hero } from '@/components/servicesBlocks/Hero';
 import { StagesRedesign } from '@/components/servicesBlocks/StagesRedesign';
 import { ProductCards } from '@/components/servicesBlocks/ProductCards/ProductCards';
 import { Team } from '@/components/servicesBlocks/Team/Team';
+import { NewTeam } from '@/components/servicesBlocks/NewTeam';
 
 const ProductDesign: NextPage = () => {
 
@@ -133,6 +134,7 @@ const ProductDesign: NextPage = () => {
     fetchData: state.fetchData,
     loading: state.loading
   }))
+
   // useEffect(() => {
   //   fetchData(PRODUCT_DESIGN_URL, 'productDesign')
   // }, []);
@@ -151,7 +153,9 @@ const ProductDesign: NextPage = () => {
       />
       <StagesRedesign list={content.productDesign.stagesRedesign.items} title={content.productDesign.stagesRedesign.title} specificClass={'product-design-page'}/>
       <ProductCards list={content.productDesign.product.list} title={content.productDesign.product.title} />
-      <Team title={content.productDesign.team.title} list={content.productDesign.team.items} />
+      {/*<Team title={content.productDesign.team.title} list={content.productDesign.team.items} />*/}
+      <NewTeam title={content.productDesign.team.title} list={content.productDesign.team.items}/>
+      <ProductCards list={content.productDesign.product.list} title={content.productDesign.product.title} />
     </>
   )
 }

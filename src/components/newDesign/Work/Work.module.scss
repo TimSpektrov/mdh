@@ -80,10 +80,12 @@
 
 .heading {
   display: flex;
-  //flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  @include bp-max(xl) {
+    flex-wrap: wrap;
+  }
 }
 
 .title {
@@ -150,7 +152,7 @@
 
 .tags {
   flex-wrap: wrap;
-  //flex: 1 0 100%;
+  flex: 1 0 100%;
 
   @include bp-min(xl) {
     flex: 0 0 auto;

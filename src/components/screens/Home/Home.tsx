@@ -24,7 +24,7 @@ export const Home: FC<any> = ({content}) => {
       <WorksList works={content.works} wrapClass={style.works} itemClass={style.worksItem} />
       <Design title={content.design.title} description={content.design.description} />
       <Services services={content.services} />
-      <Telegram title={content.telegram.title} description={content.telegram.description} />
+      {/*<Telegram title={content.telegram.title} description={content.telegram.description} />*/}
       <Feedback />
 
     </>

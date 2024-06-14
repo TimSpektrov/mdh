@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import styles from './team.module.scss';
 import { NewTypography } from '@/components/ui/NewTypography';
 import cn from 'classnames';
@@ -37,7 +37,6 @@ const itemVariants: Variants = {
 };
 
 export const Team: FC<ITeam> = ({ title, list }) => {
-  const length = list.length;
   const ref = useRef<HTMLDivElement>(null);
   const [yPos, setYPos] = useState<MotionValue<string>>();
   const { scrollYProgress } = useScroll({
@@ -85,7 +84,6 @@ export const Team: FC<ITeam> = ({ title, list }) => {
         {title && <NewTypography text={title} variant={'h2'} tag={'h2'} />}
         <div
           className={cn(styles.container)}
-          style={{ '--length': length } as CSSProperties}
         >
           {list.length > 0 &&
             list.map((title, index) => {
@@ -127,7 +125,7 @@ export const Team: FC<ITeam> = ({ title, list }) => {
                 fill="none"
               />
             </motion.svg>
-            <motion.div className={styles['finish-labels-container']}>
+            <div className={styles['finish-labels-container']}>
               {list.length > 0 &&
                 list.map((label, index) => (
                   <motion.div
@@ -142,7 +140,7 @@ export const Team: FC<ITeam> = ({ title, list }) => {
                     {label}
                   </motion.div>
                 ))}
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </motion.div>

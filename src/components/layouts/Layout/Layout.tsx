@@ -42,8 +42,8 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
     <>
       {/*<Loader loader={loading || loadingData || (!content && route !== '/services/product-design' && route !== '/contact')} />*/}
       <Loader loader={isLoader} />
-      <DynamicPopup className={Grandis.variable} />
-      <DynamicCursor />
+      {!isLoader && <DynamicPopup className={Grandis.variable} />}
+      {!isLoader && <DynamicCursor />}
       <div className="wrapper">
         <Header />
         {mobile ? (
@@ -54,11 +54,11 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
         ) : (
           <ScrollerMotion spring={springLayout}>
             <main className="main">{children}</main>
-            {!isLoader || route !== '/404' && <Footer />}
+            {(!isLoader || route !== '/404') && <Footer />}
           </ScrollerMotion>
         )}
       </div>
-      <DynamicModal className={Grandis.variable}/>
+      {!isLoader && <DynamicModal className={Grandis.variable}/>}
     </>
   );
 };

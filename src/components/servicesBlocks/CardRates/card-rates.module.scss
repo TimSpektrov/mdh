@@ -64,7 +64,7 @@
   border-radius: 16px;
   position: relative;
 
-  @include bp-min(md) {
+  @include bp-max(md) {
     margin-bottom: 20px;
   }
   @include bp-min(md) {
